@@ -1,0 +1,92 @@
+[
+  {
+    "path": "backup/empty-copy.txt",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "backup/report-copy.txt",
+    "size": 17,
+    "sha256": "2c3098a2e68980dbd007b54aeeadbffbff3ab8515ea7c1cb3b5659548046b746"
+  },
+  {
+    "path": "data/february.csv",
+    "size": 15,
+    "sha256": "19729c3e5d4ea8e9ae07dbe0df4ea315c1d2bc69ddf136c27ea12aa8a3419a1f"
+  },
+  {
+    "path": "data/january.csv",
+    "size": 15,
+    "sha256": "ba20888a67c74847ba64b2cf3746e2b918b3e435c5cbd5b4aef312c5fe04b3a7"
+  },
+  {
+    "path": "empty.txt",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "incoming/report.txt",
+    "size": 17,
+    "sha256": "2c3098a2e68980dbd007b54aeeadbffbff3ab8515ea7c1cb3b5659548046b746"
+  },
+  {
+    "path": "notes/archive-notes.txt",
+    "size": 8,
+    "sha256": "acddd4f94f448529065697eac3a0bfb6ed358a22e4bc59101e3966885ea7d36d"
+  },
+  {
+    "path": "notes/one.txt",
+    "size": 4,
+    "sha256": "82a5f8bf6ec19baad113b7f1744ba4163b6efbcbd73e79d9d98f129c63688c44"
+  },
+  {
+    "path": "notes/two.txt",
+    "size": 4,
+    "sha256": "6bfcb6c5681d9f6419de309da99bd826b8558d25e42a98511e85aad92a9b1d88"
+  },
+  {
+    "path": "notes/Текст с пробелами.txt",
+    "size": 16,
+    "sha256": "7b3dd3bf3b95f936b97bd7ccc0b6c32d2411e82dcaa7e08d14ca8b760a1f247f"
+  },
+  {
+    "path": "other/report.txt",
+    "size": 17,
+    "sha256": "8b5c5b10fbf4afdd230e29a9fd4292741900a3eb563b54924b44a4eff1365191"
+  },
+  {
+    "path": "photos/readme.md",
+    "size": 26,
+    "sha256": "dcd364fe17e37035f34222437784543ec478b9379bf5b2c25b11c8ef1c11a60d"
+  },
+  {
+    "path": "set-a-copy/a.txt",
+    "size": 6,
+    "sha256": "90c877f65b3141d28d51619fd2bbc862c49c48be4fab42386062f532e27e4fd6"
+  },
+  {
+    "path": "set-a-copy/sub/b.md",
+    "size": 7,
+    "sha256": "1a26417491f915994a558d790278bf0a7dde56e16dbb87effde011215c2fe713"
+  },
+  {
+    "path": "set-a/a.txt",
+    "size": 6,
+    "sha256": "90c877f65b3141d28d51619fd2bbc862c49c48be4fab42386062f532e27e4fd6"
+  },
+  {
+    "path": "set-a/sub/b.md",
+    "size": 7,
+    "sha256": "1a26417491f915994a558d790278bf0a7dde56e16dbb87effde011215c2fe713"
+  },
+  {
+    "path": "set-different/a.txt",
+    "size": 14,
+    "sha256": "26943fbf8844093e48eaa6d6b9aa77fb88717f800cc0ee57fe47fe0b76a94b7e"
+  },
+  {
+    "path": "set-different/sub/b.md",
+    "size": 8,
+    "sha256": "1d52392e4e84d71582d103fe83258044c4c7ad655c40dccc809c11ea3c4113a5"
+  }
+]

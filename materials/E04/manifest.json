@@ -1,0 +1,13 @@
+{
+  "code": "E04",
+  "issue": 10,
+  "title": "[E04] Распознавание PDF",
+  "goal": "Распознай все три страницы input/scan.pdf и сохрани текст с заголовками и абзацами. Сверь со сканом каждое имя, дату и число.",
+  "inputs": [
+    "input/scan.pdf"
+  ],
+  "checks": [
+    "checks/expected.json",
+    "checks/transcript.md"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "code": "E12",
+  "issue": 18,
+  "title": "[E12] Объясняющая иллюстрация",
+  "goal": "Создай иллюстрацию «Как сделать резервную копию файла» из трёх шагов: выбрать, скопировать и вставить в резервную папку. Покажи, что исходный файл сохраняется.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/rasterize.html"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}

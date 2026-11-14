@@ -1,0 +1,4 @@
+scenario,ticket_KZT,participants,fixed_cost_KZT,variable_per_person_KZT
+базовый,25000,30,300000,5000
+оптимистичный,27000,40,300000,4500
+пессимистичный,22000,20,330000,6000

@@ -1,0 +1,26 @@
+{
+  "базовый": {
+    "revenue": 750000,
+    "cost": 450000,
+    "profit": 300000,
+    "break_even": 15
+  },
+  "оптимистичный": {
+    "revenue": 1080000,
+    "cost": 480000,
+    "profit": 600000,
+    "break_even": 14
+  },
+  "пессимистичный": {
+    "revenue": 440000,
+    "cost": 450000,
+    "profit": -10000,
+    "break_even": 21
+  },
+  "edge_case": {
+    "ticket": 5000,
+    "variable": 5000,
+    "expected": "недостижима"
+  },
+  "sensitivity_base_at_10_participants": -100000
+}

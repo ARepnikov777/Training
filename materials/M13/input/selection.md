@@ -1,0 +1,1 @@
+Откройте /catalog?category=laptop. Соберите все 20 ноутбуков со всех страниц. Поля: id,name,category,price,currency,supplier,availability,ram_GB,ssd_GB,screen_inches,source_url. Пропущенные значения оставить пустыми/не указано. Собирать через браузер; чтение catalog.json допустимо только для проверки. Пагинация: по 10 записей.

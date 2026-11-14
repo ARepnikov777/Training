@@ -1,0 +1,5 @@
+reportlab==5.1.0
+Pillow==13.0.0
+pypdf==7.1.0
+pytest==9.2.0
+ruff==0.17.5

@@ -1,0 +1,11 @@
+{
+  "README.md": "23a04da88db4196edd2577d91c42fa164a59d17cfa9124aa844f677541001fd7",
+  "checks/contradictions.md": "097796a9c5eff380975f026044926d381e5d44a1d7c34fe17d0e776909369288",
+  "checks/expected.json": "a5be5bfe3c81e51446c54dfbfc9be0f7dc80cde307ce76f2823d6a8da11deed9",
+  "checks/timeline.json": "524fbba79e3528b0ca65024b547ea1e7be806dc868a48992aed9e7485805e42c",
+  "checks/transcript.md": "b403a90a9c0ba37afc24d83b443d103d4ee7bb3c4e995c2d2fcf7cec96e45897",
+  "input/audio-info.json": "5605ed4f3277faf965fae27d639f0da3c01f7c62b3a125451ecd568ddb1d00be",
+  "input/meeting.mp3": "9de06cc4759ca8b3e9e22154d0fba44a1587ff307bac72c32a0905d743015343",
+  "input/notes.md": "574914ba5892f19069ab6cfde70d5e15fd27a0b66afae88191bcaadd8526fe3f",
+  "manifest.json": "aef0dfc17b669d9ea8d90c19dfcd5b8129b496a88b872baa48ea5bdbc5092db6"
+}

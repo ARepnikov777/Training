@@ -1,0 +1,19 @@
+{
+  "code": "H09",
+  "issue": 45,
+  "title": "[H09] Исследование с независимой проверкой",
+  "goal": "Подготовь записку о готовности вымышленного курса к локальной практике по шести документам. Поручи другому агенту проверить ключевые выводы и разбери его замечания.",
+  "inputs": [
+    "input/question.md",
+    "input/source-policy.md",
+    "input/sources/01-program.md",
+    "input/sources/02-materials.md",
+    "input/sources/03-budget.md",
+    "input/sources/04-acceptance.md",
+    "input/sources/05-revision.md",
+    "input/sources/06-risks.md"
+  ],
+  "checks": [
+    "checks/key-points.md"
+  ]
+}

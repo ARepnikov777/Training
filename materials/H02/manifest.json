@@ -1,0 +1,15 @@
+{
+  "code": "H02",
+  "issue": 38,
+  "title": "[H02] Командная доработка проекта",
+  "goal": "Поручи двум агентам независимо исправить скидку и границу бесплатной доставки в разных рабочих деревьях. Проверь их изменения, объедини их и запусти общие проверки.",
+  "inputs": [
+    "input/project/SPEC.md",
+    "input/project/discount.py",
+    "input/project/shipping.py",
+    "input/project/test_existing.py"
+  ],
+  "checks": [
+    "checks/cases.json"
+  ]
+}

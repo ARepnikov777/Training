@@ -1,0 +1,26 @@
+{
+  "date": "20.11.2026",
+  "room": "305",
+  "start": "10:00",
+  "participants": 15,
+  "budget_KZT": 180000,
+  "tasks": [
+    {
+      "owner": "Анна",
+      "action": "подготовить архивы",
+      "deadline": "18.11.2026"
+    },
+    {
+      "owner": "Илья",
+      "action": "проверить стенд",
+      "deadline": "19.11.2026"
+    },
+    {
+      "owner": "Мария",
+      "action": "проверить читаемость",
+      "deadline": null
+    }
+  ],
+  "cancelled": "Кофе-брейк за 25000 KZT",
+  "proposal_only": "Покупка наклеек"
+}

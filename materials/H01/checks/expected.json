@@ -1,0 +1,36 @@
+{
+  "file_count": 18,
+  "duplicate_file_groups": [
+    [
+      "backup/report-copy.txt",
+      "incoming/report.txt"
+    ],
+    [
+      "set-a/a.txt",
+      "set-a-copy/a.txt"
+    ],
+    [
+      "set-a/sub/b.md",
+      "set-a-copy/sub/b.md"
+    ],
+    [
+      "backup/empty-copy.txt",
+      "empty.txt"
+    ]
+  ],
+  "duplicate_folder_groups": [
+    [
+      "set-a",
+      "set-a-copy"
+    ],
+    [
+      "set-a/sub",
+      "set-a-copy/sub"
+    ]
+  ],
+  "basename_conflicts": [
+    "report.txt",
+    "a.txt",
+    "b.md"
+  ]
+}

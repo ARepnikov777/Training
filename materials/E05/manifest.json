@@ -1,0 +1,12 @@
+{
+  "code": "E05",
+  "issue": 11,
+  "title": "[E05] Из документа в памятку",
+  "goal": "Сократи шестистраничную инструкцию input/instruction.pdf до одностраничного чек-листа, сохранив все обязательные действия и ссылки на страницы.",
+  "inputs": [
+    "input/instruction.pdf"
+  ],
+  "checks": [
+    "checks/mandatory-actions.md"
+  ]
+}

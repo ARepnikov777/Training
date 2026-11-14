@@ -1,0 +1,15 @@
+{
+  "code": "M02",
+  "issue": 23,
+  "title": "[M02] Изменение существующего проекта",
+  "goal": "Исправь скидку в готовом проекте и добавь расчёт заказа с положительным дробным количеством товара. Проверь новые примеры и прежний сценарий без скидки.",
+  "inputs": [
+    "input/project/SPEC.md",
+    "input/project/cart.py",
+    "input/project/test_existing.py"
+  ],
+  "checks": [
+    "checks/cases.json",
+    "checks/invalid.md"
+  ]
+}

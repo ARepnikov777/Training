@@ -1,0 +1,23 @@
+{
+  "source_rows": 12,
+  "clean_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "conflict_id": "5",
+  "conflict_values": [
+    500,
+    550
+  ],
+  "duplicates_collapsed": 1,
+  "clean_rows": 9,
+  "clean_amount": 5000,
+  "balance": "12 = 9 итоговых + 1 схлопнутый повтор + 2 конфликтующих варианта"
+}

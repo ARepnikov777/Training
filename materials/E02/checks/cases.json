@@ -1,0 +1,20 @@
+[
+  {
+    "price": 1000,
+    "quantity": 3,
+    "discount_percent": 10,
+    "expected": 2700
+  },
+  {
+    "price": 100,
+    "quantity": 2,
+    "discount_percent": 100,
+    "expected": 0
+  },
+  {
+    "price": 99,
+    "quantity": 1,
+    "discount_percent": 0,
+    "expected": 99
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "code": "E08",
+  "issue": 14,
+  "title": "[E08] Таблица расходов",
+  "goal": "Собери электронную таблицу расходов из input/expenses.csv: рассчитай формулами суммы по категориям и общий итог, затем построй диаграмму.",
+  "inputs": [
+    "input/expenses.csv",
+    "input/rules.md"
+  ],
+  "checks": [
+    "checks/expected.json"
+  ]
+}

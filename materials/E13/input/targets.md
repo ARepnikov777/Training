@@ -1,0 +1,1 @@
+Сравните http://127.0.0.1:8765/product?id=P001 , http://127.0.0.1:8765/product?id=P002 , http://127.0.0.1:8765/product?id=P003 . Одна конфигурация Orion L15 /16 GB/512 GB. В таблице: supplier, name, ram_GB, ssd_GB, screen_inches, price, currency, availability, ссылка и ваше фактическое время проверки. null означает «не указано», а не «нет в наличии». Доставку не рассчитывать.

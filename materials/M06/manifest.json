@@ -1,0 +1,15 @@
+{
+  "code": "M06",
+  "issue": 27,
+  "title": "[M06] Из аудио в протокол",
+  "goal": "Расшифруй вложенную русскоязычную аудиозапись и составь протокол решений и поручений. У ключевых решений укажи таймкоды; не придумывай отсутствующие сроки.",
+  "inputs": [
+    "input/audio-info.json",
+    "input/meeting.mp3"
+  ],
+  "checks": [
+    "checks/expected.json",
+    "checks/timeline.json",
+    "checks/transcript.md"
+  ]
+}

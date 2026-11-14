@@ -1,0 +1,16 @@
+{
+  "code": "H10",
+  "issue": 46,
+  "title": "[H10] Визуальная история",
+  "goal": "Создай четыре сцены истории о роботе, который наводит порядок в файлах. Сохрани внешность робота и янтарного чемодана по вложенному брифу во всех сценах.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/rasterize.html",
+    "input/robot.svg"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}

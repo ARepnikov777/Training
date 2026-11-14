@@ -1,0 +1,15 @@
+{
+  "code": "M10",
+  "issue": 31,
+  "title": "[M10] Серия изображений",
+  "goal": "Создай три иллюстрации «Мастерской идей» для заданных сюжетов, сохранив общие цвета, форму элементов и повторяющийся символ.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/rasterize.html"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}

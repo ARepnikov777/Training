@@ -1,0 +1,18 @@
+{
+  "code": "H14",
+  "issue": 50,
+  "title": "[H14] Сквозной браузерный сценарий",
+  "goal": "Выполни в браузере повторяемый сценарий: создай заявку, измени её поля и статус, найди по ID и проверь сохранение после перезагрузки.",
+  "inputs": [
+    "input/START.md",
+    "input/scenario.md",
+    "input/site/app.js",
+    "input/site/catalog.json",
+    "input/site/config.json",
+    "input/site/serve.py",
+    "input/site/style.css"
+  ],
+  "checks": [
+    "checks/expected.json"
+  ]
+}

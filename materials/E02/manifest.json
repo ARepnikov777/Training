@@ -1,0 +1,15 @@
+{
+  "code": "E02",
+  "issue": 8,
+  "title": "[E02] Исправление ошибки",
+  "goal": "Исправь расчёт процентной скидки в готовой функции cart.total. Сначала добавь тест на неверную сумму, затем покажи его падение до исправления и прохождение после.",
+  "inputs": [
+    "input/project/SPEC.md",
+    "input/project/cart.py",
+    "input/project/test_existing.py"
+  ],
+  "checks": [
+    "checks/cases.json",
+    "checks/invalid.md"
+  ]
+}

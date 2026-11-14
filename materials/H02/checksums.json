@@ -1,0 +1,9 @@
+{
+  "README.md": "e5587b4e9271da46c44085bb4f9838c13018e8e51c64760fd330ef7d05941e15",
+  "checks/cases.json": "5747a1699ce8c3a5e76c4bb4684ddfa2795a3d4138ae058cb53fdf570fc2434e",
+  "input/project/SPEC.md": "1a208fd020ef2094125fe26a9aa45d6dd99ebe29bc480ee314a7ec1fe2589ab4",
+  "input/project/discount.py": "31485df33f0408590861691b51fda30b7671cfb76557d7c0cb6096b8e106050e",
+  "input/project/shipping.py": "27513064abba47ae2a59c1af41f12bfa16eb797d9a537cad4da698e72b245870",
+  "input/project/test_existing.py": "09cafdabeeb8874f54123b58608ecbade20cd587bf9cb91b671504dda10b5c6a",
+  "manifest.json": "3651cf1d1c77d7cbeabfe0feb671a7f4e7e002b295803f3d38cbe2b9d7e5464e"
+}

@@ -1,0 +1,9 @@
+{
+  "README.md": "e822fba6a031863fa90ce97c042afc1d9bc9507ba26f84d056a373e4230a0510",
+  "checks/cases.json": "49fe5eaf3ff4af3199b678c14729eef61858dd9e47729dfcfc4f7370a76d5741",
+  "checks/invalid.md": "c2a729e9bc30cce0e3864dc93192fde53a7211079ddcf3320b6462e98ca89a07",
+  "input/project/SPEC.md": "b2f962fbf7a073f8c04e2709a28b405d0a2a6efb91fd1f555d80d07ad197559e",
+  "input/project/cart.py": "31485df33f0408590861691b51fda30b7671cfb76557d7c0cb6096b8e106050e",
+  "input/project/test_existing.py": "c56b52b997d3344119e6145021a67b485a2d67fb4bb8cf3950c80c355e8feacf",
+  "manifest.json": "9e7f5be5e501a339de92c3426b8b9d9765432149f6a8dfb4cf36945517d10d5f"
+}

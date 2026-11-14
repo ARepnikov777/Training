@@ -1,0 +1,5 @@
+build-cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+_state.json

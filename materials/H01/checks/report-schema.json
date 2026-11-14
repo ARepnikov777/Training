@@ -1,0 +1,23 @@
+{
+  "duplicate_files": [
+    [
+      "relative/path",
+      "relative/other"
+    ]
+  ],
+  "duplicate_folders": [
+    [
+      "folder",
+      "other-folder"
+    ]
+  ],
+  "name_conflicts": [
+    {
+      "name": "report.txt",
+      "paths": [
+        "incoming/report.txt",
+        "other/report.txt"
+      ]
+    }
+  ]
+}

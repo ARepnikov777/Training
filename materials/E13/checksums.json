@@ -1,0 +1,12 @@
+{
+  "README.md": "e4e197e4a6fe7704a2fff00d4edcae7d7b317f82433e37dff0079c4dbfc005fc",
+  "checks/expected.json": "d019656a71f7f449faf5de4736b3f031de02988c5f2a2d8f93abf30296dc6ef2",
+  "input/START.md": "4044c3f4ac16b781d007ae981b27c17edbc09ef040e7339ab6916c0b2e98980d",
+  "input/site/app.js": "4da7dd6605987cfe6de1443c4e31bf113482458a0bcd5fa6e0547f846e36b5d2",
+  "input/site/catalog.json": "565f0ae971ebc725134715efcbc08b7e6966faf54d11288483c7a13a167ab7b7",
+  "input/site/config.json": "3b3caecaaf196e6301372640d8aa443683069e6ce23da7c9ef468c1f02e54e89",
+  "input/site/serve.py": "5b087382c114ed8a06145bb2bbd7e6ebf19fddeadb97385474b9353c6e841ed4",
+  "input/site/style.css": "c83e4b3f9fe63b2a0497f9e4ccf75c3fe7e10fb85417cecf4cb281e397761e25",
+  "input/targets.md": "a3b37e22c8a004c00808ba5e08769ee97807012f582cb71029c3cb901c2a5413",
+  "manifest.json": "bad325cc340d407a60ea22542c07a77acc41a951386c2029b8ebb8f6cec78e1c"
+}

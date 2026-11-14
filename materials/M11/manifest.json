@@ -1,0 +1,21 @@
+{
+  "code": "M11",
+  "issue": 32,
+  "title": "[M11] Комплект карточек товара",
+  "goal": "Подготовь пять одинаково оформленных карточек из вложенных изображений предметов: удали фон, выровняй предметы и сохрани их цвет, пропорции и детали.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/product-1.png",
+    "input/product-2.png",
+    "input/product-3.png",
+    "input/product-4.png",
+    "input/product-5.png",
+    "input/provenance.md",
+    "input/rasterize.html"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}

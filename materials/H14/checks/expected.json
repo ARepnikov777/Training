@@ -1,0 +1,7 @@
+{
+  "initial_status": "новая",
+  "final_status": "в работе",
+  "final_description": "Страницы 1–3 и итог",
+  "per_run_new_ticket": 1,
+  "persists_after_reload": true
+}

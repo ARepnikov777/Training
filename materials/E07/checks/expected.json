@@ -1,0 +1,11 @@
+{
+  "input": 8,
+  "output": 5,
+  "duplicates_removed": 1,
+  "exceptions": 2,
+  "total_amount": 580,
+  "exception_ids": [
+    "3",
+    "7"
+  ]
+}

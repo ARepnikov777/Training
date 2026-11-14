@@ -1,0 +1,8 @@
+{
+  "README.md": "368c3513e3d7072de0a1727f503edf8d27f597fc2cf8d0186cecd7fc9ccc98e5",
+  "checks/expected.json": "de3e8493635f26b300cd1bc0fea6477748b4284d3f06fb10f356cfac8b70f8aa",
+  "input/actual.csv": "09caa20994b0c23a7319cc383ab1ff5aa644fe2b93a0c963b8918c53b743fb6b",
+  "input/plan.csv": "c02fbb9f22b78317b675383323fa44e6a8ae27a9a7a1a2a3f4e51f1243d7a6cf",
+  "input/rules.md": "6a432a3c3fd0ba0884e1e1abaaf9cf37b60cfb4f2be6fd34be354825a3cd45ad",
+  "manifest.json": "c50db46cf2023a65bc8cfdf18dfb4be460eab98115975db5333a1d2ea2e7122e"
+}

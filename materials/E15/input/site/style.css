@@ -1,0 +1,9 @@
+:root { font: 18px/1.55 system-ui,sans-serif; color: #172b3a; background: #f5f7fa; }
+body { margin: 0; } header { padding: 18px 5%; background: #fff; border-bottom: 1px solid #b8c8d6; }
+nav { display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0; } a { color: #0758a0; }
+main { max-width: 980px; margin: 36px auto; padding: 0 24px; }
+label { display: block; margin: 16px 0; } input,textarea,select,button { font: inherit; padding: 8px; max-width: 95%; }
+input:not([type=checkbox]),textarea { display: block; width: 430px; } button { cursor: pointer; }
+table { border-collapse: collapse; width: 100%; background: white; } td,th { padding: 10px; border: 1px solid #c1ccd5; text-align: left; }
+section { border: 1px solid #b8c8d6; padding: 16px; margin: 20px 0; background: white; }
+:focus-visible { outline: 3px solid #bd6100; outline-offset: 2px; }

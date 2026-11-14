@@ -1,0 +1,14 @@
+{
+  "code": "E07",
+  "issue": 13,
+  "title": "[E07] Очистка CSV",
+  "goal": "Очисти input/dirty.csv: удали повторы, приведи даты и категории к правилам input/rules.json, вынеси непригодные строки отдельно и объясни баланс записей.",
+  "inputs": [
+    "input/dirty.csv",
+    "input/rules.json"
+  ],
+  "checks": [
+    "checks/clean.csv",
+    "checks/expected.json"
+  ]
+}

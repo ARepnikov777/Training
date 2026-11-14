@@ -1,0 +1,8 @@
+* text=auto eol=lf
+materials/** -text
+downloads/** binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.mp3 binary
+*.zip binary

@@ -1,0 +1,18 @@
+{
+  "code": "M14",
+  "issue": 35,
+  "title": "[M14] Проверка формы",
+  "goal": "Проверь локальную форму по восьми готовым сценариям и найди нарушения правил email и длины имени. Для каждого результата сохрани входные данные и доказательство.",
+  "inputs": [
+    "input/START.md",
+    "input/scenarios.md",
+    "input/site/app.js",
+    "input/site/catalog.json",
+    "input/site/config.json",
+    "input/site/serve.py",
+    "input/site/style.css"
+  ],
+  "checks": [
+    "checks/known-defects.md"
+  ]
+}

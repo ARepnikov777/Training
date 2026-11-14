@@ -1,0 +1,9 @@
+{
+  "README.md": "30fa6b7e691c2dd3953952b890565738b5f2bb4b855640e1d000cab2acfc235e",
+  "checks/expected.md": "587cf8a482f3896203c355aa836faee8ffdad138d2b898c77bfda659182ea38f",
+  "input/01-text.pdf": "7ce24c85607c591f31f537d6e4fc63df5ee4f85f2ff001108597ad046bf164e3",
+  "input/02-scan.pdf": "3f424cceea3f5f68377b9a71bb0c3c55bc422a4450d8fb567f38d31149254f08",
+  "input/03-rotated-table.pdf": "306af1b2666dcd0842cefabc5daa01a94c7205a60846897b1931df644d6c884d",
+  "input/04-broken.pdf": "eca6a6505cb2129162243d3b9e066c42731c8315911b6fd2f2f92d6feacd6bcd",
+  "manifest.json": "e86174a39692b6374fdc13083268044ee0a28ad535aab2156d956752b3e9a718"
+}

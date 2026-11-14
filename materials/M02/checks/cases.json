@@ -1,0 +1,32 @@
+[
+  {
+    "price": 1000,
+    "quantity": 3,
+    "discount_percent": 10,
+    "expected": 2700
+  },
+  {
+    "price": 100,
+    "quantity": 2,
+    "discount_percent": 100,
+    "expected": 0
+  },
+  {
+    "price": 99,
+    "quantity": 1,
+    "discount_percent": 0,
+    "expected": 99
+  },
+  {
+    "price": 200,
+    "quantity": 1.5,
+    "discount_percent": 10,
+    "expected": 270
+  },
+  {
+    "price": 10,
+    "quantity": 0.25,
+    "discount_percent": 0,
+    "expected": 2.5
+  }
+]

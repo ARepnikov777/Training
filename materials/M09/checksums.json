@@ -1,0 +1,13 @@
+{
+  "README.md": "a13199583680efb92dcdc636b82df966b454375922a26a28ad34df926cd700be",
+  "checks/expected.json": "1f388dd4158a99cbbfe29111a9333acbec0af46790080cc666a2fe37814bba1e",
+  "input/claims.md": "fb540f721abcc75618952ce398fa3586bbf35dc9f129722255c616b83b7ef406",
+  "input/source-policy.md": "ecab17f36069940d736e67b930c89defc6b3664596987712a87c2bfea3398e7d",
+  "input/sources/01-program.md": "fd26df468598ad77623f3f2cccd26f12c6fed22787e570a387fca9e969d67176",
+  "input/sources/02-materials.md": "28fe81e48a9ea826583d7000f379ddabb4fe5981c810d10ac8225919a6c3c43f",
+  "input/sources/03-budget.md": "4853dfbffc0cd92162239357a313d30d9cb285820ac5e7b3c65c43035faccd08",
+  "input/sources/04-acceptance.md": "403916c4ef583820b7cdf824bf369db244293bf295ed9442fcca78ceb7322f03",
+  "input/sources/05-revision.md": "21c167ea1778014e50c632a72eebb597fef104ec11e242967a7b982b7d6bb609",
+  "input/sources/06-risks.md": "496ee29a53b3693255c5e4c5eb4dd71291af9e8c3d630ca2b68d6edd09e09a5f",
+  "manifest.json": "2fc18fbd156f5ff727591439b993142c14ae56698c5ba1f793f2e3cc49166cc0"
+}

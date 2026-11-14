@@ -1,0 +1,17 @@
+{
+  "code": "H06",
+  "issue": 42,
+  "title": "[H06] Из встречи в рабочий пакет",
+  "goal": "Составь протокол и список задач по аудиозаписи и черновым заметкам. Найди их противоречия, учти позднюю отмену кофе-брейка и сохрани таймкоды доказательств.",
+  "inputs": [
+    "input/audio-info.json",
+    "input/meeting.mp3",
+    "input/notes.md"
+  ],
+  "checks": [
+    "checks/contradictions.md",
+    "checks/expected.json",
+    "checks/timeline.json",
+    "checks/transcript.md"
+  ]
+}

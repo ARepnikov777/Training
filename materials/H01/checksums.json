@@ -1,0 +1,9 @@
+{
+  "README.md": "b701d1c5adae64690dfc22a0a268c3e9395fcdf7e424cd802cb6a4209a750b85",
+  "checks/expected.json": "0490f3382c1918a3428a464f003b1f987da861efe411cd79e171260770f3b36a",
+  "checks/original-manifest.json": "68e5faa25d109a5ad7b17b5beb82f7be3fc3f518ff50f91b30d1373912bb4fce",
+  "checks/report-schema.json": "3c2d035a94a007fb41ce07d4b2f60d41ba4420484bcd3436a28ee970ba88c41e",
+  "input/archive.zip": "0c6aa39fbbb22b8a22cf0077bd1a69712e6e0ca0807c1b69e144df8840e51afe",
+  "input/rules.md": "43a8326221550d30300a011bdc010427b1d96abebf7595dac5379299482953fe",
+  "manifest.json": "3a56570d0e0be32c60ba2b9355b72e7b0bf769e503c34ff186c8db387c3c791b"
+}

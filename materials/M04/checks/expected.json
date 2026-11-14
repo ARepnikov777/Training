@@ -1,0 +1,28 @@
+{
+  "page1": {
+    "quantity_total": 20,
+    "amount_total_KZT": 128000
+  },
+  "page2": {
+    "quantity_total": 40,
+    "amount_total_KZT": 256000
+  },
+  "page3": {
+    "quantity_total": 60,
+    "amount_total_KZT": 384000
+  },
+  "row_order": [
+    "A101",
+    "A102",
+    "A103",
+    "A104",
+    "ИТОГО"
+  ],
+  "columns": [
+    "Артикул",
+    "Наименование",
+    "Кол-во, шт.",
+    "Цена, KZT",
+    "Сумма, KZT"
+  ]
+}

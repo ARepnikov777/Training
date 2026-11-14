@@ -1,0 +1,17 @@
+{
+  "code": "E11",
+  "issue": 17,
+  "title": "[E11] Редактирование изображения",
+  "goal": "Удали фон у вложенного изображения чашки, сохранив ручку и отверстие внутри неё. Сдай прозрачный PNG и квадратную карточку на заданном фоне.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/product-1.png",
+    "input/provenance.md",
+    "input/rasterize.html"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}

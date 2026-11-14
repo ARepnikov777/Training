@@ -1,0 +1,38 @@
+[
+  {
+    "id": "P001",
+    "name": "Orion L15 / 16 GB / 512 GB",
+    "category": "laptop",
+    "price": 245000,
+    "currency": "KZT",
+    "supplier": "Учебный Альфа",
+    "availability": "в наличии",
+    "ram_GB": 16,
+    "ssd_GB": 512,
+    "screen_inches": 15.6
+  },
+  {
+    "id": "P002",
+    "name": "Orion L15 / 16 GB / 512 GB",
+    "category": "laptop",
+    "price": 239000,
+    "currency": "KZT",
+    "supplier": "Учебный Бета",
+    "availability": "нет в наличии",
+    "ram_GB": 16,
+    "ssd_GB": 512,
+    "screen_inches": 15.6
+  },
+  {
+    "id": "P003",
+    "name": "Orion L15 / 16 GB / 512 GB",
+    "category": "laptop",
+    "price": 249000,
+    "currency": "KZT",
+    "supplier": "Учебный Гамма",
+    "availability": null,
+    "ram_GB": 16,
+    "ssd_GB": 512,
+    "screen_inches": 15.6
+  }
+]

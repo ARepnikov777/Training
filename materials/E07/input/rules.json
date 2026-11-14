@@ -1,0 +1,18 @@
+{
+  "key": "id",
+  "dates": [
+    "YYYY-MM-DD",
+    "DD.MM.YYYY",
+    "YYYY/MM/DD",
+    "DD-MM-YYYY"
+  ],
+  "output_date": "YYYY-MM-DD",
+  "category_aliases": {
+    "Food": "Еда",
+    "еда": "Еда",
+    "Transport": "Транспорт",
+    "транспорт": "Транспорт",
+    "office": "Канцелярия"
+  },
+  "duplicate_rule": "Первую корректную строку id сохранить; полностью совпадающий повтор удалить. Конфликтующий id — в exceptions; неверная дата/неизвестная категория — в exceptions."
+}

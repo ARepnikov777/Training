@@ -1,0 +1,13 @@
+{
+  "README.md": "22f95deccb5b95f6b9e683e93ae44df8ebb6987fea6493f59068e65ef59dfb18",
+  "checks/expected.json": "9f761fb9223e1f831e69b175757e18d169a76473ccea93c7a78964c2173657e2",
+  "input/START.md": "4044c3f4ac16b781d007ae981b27c17edbc09ef040e7339ab6916c0b2e98980d",
+  "input/participant.json": "c7a02a50563ca27d6c34bb56b7e412a3b3610bf3b06a9fa6fd3601f9e4b43336",
+  "input/scenario.md": "d2741c5faaba77aa7942577caa178dd120b4106d35b8a2324e61733cc33e8d91",
+  "input/site/app.js": "4da7dd6605987cfe6de1443c4e31bf113482458a0bcd5fa6e0547f846e36b5d2",
+  "input/site/catalog.json": "565f0ae971ebc725134715efcbc08b7e6966faf54d11288483c7a13a167ab7b7",
+  "input/site/config.json": "3b3caecaaf196e6301372640d8aa443683069e6ce23da7c9ef468c1f02e54e89",
+  "input/site/serve.py": "5b087382c114ed8a06145bb2bbd7e6ebf19fddeadb97385474b9353c6e841ed4",
+  "input/site/style.css": "c83e4b3f9fe63b2a0497f9e4ccf75c3fe7e10fb85417cecf4cb281e397761e25",
+  "manifest.json": "af9e408805b5cfe20f1897e3e11060012217f345e074ce53253a06d62b02e0f3"
+}

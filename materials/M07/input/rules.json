@@ -1,0 +1,40 @@
+{
+  "schema": [
+    "id",
+    "date",
+    "category",
+    "amount"
+  ],
+  "mapping": {
+    "a.csv": [
+      "id",
+      "date",
+      "category",
+      "amount"
+    ],
+    "b.csv": [
+      "operation_id",
+      "day",
+      "type",
+      "sum"
+    ],
+    "c.csv": [
+      "ID",
+      "timestamp",
+      "group",
+      "value"
+    ]
+  },
+  "category_aliases": {
+    "Food": "Еда",
+    "еда": "Еда",
+    "Travel": "Транспорт",
+    "дорога": "Транспорт",
+    "Office": "Канцелярия",
+    "офис": "Канцелярия"
+  },
+  "date_format": "YYYY-MM-DD",
+  "key": "id",
+  "same_id_same_fields": "одна итоговая запись; указать все источники",
+  "conflict": "все варианты id вывести в conflicts.csv, в итог не включать"
+}
