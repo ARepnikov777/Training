@@ -1,0 +1,73 @@
+$ python -B -m unittest -v test_sort_files.py
+test_all_twelve_files_have_required_categories (test_sort_files.CopyFilesTests.test_all_twelve_files_have_required_categories) ... FAIL
+test_copies_preserve_every_byte (test_sort_files.CopyFilesTests.test_copies_preserve_every_byte) ... FAIL
+test_output_cannot_be_created_inside_source (test_sort_files.CopyFilesTests.test_output_cannot_be_created_inside_source) ... FAIL
+test_repeat_on_fresh_copy_matches_first_run (test_sort_files.CopyFilesTests.test_repeat_on_fresh_copy_matches_first_run) ... FAIL
+test_source_names_and_bytes_remain_unchanged (test_sort_files.CopyFilesTests.test_source_names_and_bytes_remain_unchanged) ... ok
+
+======================================================================
+FAIL: test_all_twelve_files_have_required_categories (test_sort_files.CopyFilesTests.test_all_twelve_files_have_required_categories)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-E01\submissions\EnterFC\E01\test_sort_files.py", line 34, in test_all_twelve_files_have_required_categories
+    self.assertEqual(set(contents(self.output)), EXPECTED)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'tables/table-4.csv'
+'tables/table-3.csv'
+'documents/notes.md'
+'documents/manual.pdf'
+'images/picture-2.png'
+'images/picture-4.png'
+'documents/readme.txt'
+'tables/table-2.csv'
+'tables/table-1.csv'
+'documents/record.json'
+'images/picture-1.png'
+'images/picture-3.png'
+
+======================================================================
+FAIL: test_copies_preserve_every_byte (test_sort_files.CopyFilesTests.test_copies_preserve_every_byte)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-E01\submissions\EnterFC\E01\test_sort_files.py", line 39, in test_copies_preserve_every_byte
+    self.assertEqual(len(contents(self.output)), 12)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 12
+
+======================================================================
+FAIL: test_output_cannot_be_created_inside_source (test_sort_files.CopyFilesTests.test_output_cannot_be_created_inside_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-E01\submissions\EnterFC\E01\test_sort_files.py", line 69, in test_output_cannot_be_created_inside_source
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_repeat_on_fresh_copy_matches_first_run (test_sort_files.CopyFilesTests.test_repeat_on_fresh_copy_matches_first_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-E01\submissions\EnterFC\E01\test_sort_files.py", line 60, in test_repeat_on_fresh_copy_matches_first_run
+    self.assertEqual(set(contents(repeat)), EXPECTED)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'tables/table-4.csv'
+'tables/table-3.csv'
+'documents/notes.md'
+'documents/manual.pdf'
+'images/picture-2.png'
+'images/picture-4.png'
+'documents/readme.txt'
+'tables/table-2.csv'
+'tables/table-1.csv'
+'documents/record.json'
+'images/picture-1.png'
+'images/picture-3.png'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.039s
+
+FAILED (failures=4)
+
+exit_code=1
