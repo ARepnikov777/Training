@@ -6,13 +6,13 @@
 <rect x="226" y="398" width="120" height="96" rx="14" fill="#172b3a"/>
 <circle cx="286" cy="440" r="12" fill="#f1b34a"/><path d="M286 446v24" stroke="#f1b34a" stroke-width="10"/>
 <text x="286" y="610" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="middle">E01-kit</text>
-<text x="286" y="670" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="400" fill="#172b3a" text-anchor="middle">оригинал</text>
-<rect x="116" y="700" width="340" height="64" rx="32" fill="#172b3a"/>
-<text x="286" y="745" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="600" fill="white" text-anchor="middle">только чтение</text>
+<text x="286" y="670" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="400" fill="#172b3a" text-anchor="middle">оригинал</text>
+<rect x="66" y="710" width="440" height="80" rx="40" fill="#172b3a"/>
+<text x="286" y="765" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="600" fill="white" text-anchor="middle">только чтение</text>
 <path d="M590 390h230" stroke="#1d8794" stroke-width="16"/>
 <g data-src="arrow" transform=" translate(-280.0 102.0) scale(1.2 1.2)"><path d="M900 240h200m-60-60 60 60-60 60" fill="none" stroke="#1d8794" stroke-width="16" vector-effect="non-scaling-stroke"/></g>
-<text x="800" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" fill="#1d8794" text-anchor="middle">копия</text>
+<text x="800" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#1d8794" text-anchor="middle">копия</text>
 <g data-src="folder" transform="translate(492.5 54.5) scale(1.35 1.35)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
 <text x="1316" y="610" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="middle">E01-work</text>
-<text x="1316" y="670" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="400" fill="#172b3a" text-anchor="middle">рабочая копия</text>
+<text x="1316" y="670" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="400" fill="#172b3a" text-anchor="middle">рабочая копия</text>
 </svg>

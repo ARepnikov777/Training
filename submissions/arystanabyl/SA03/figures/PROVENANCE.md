@@ -12,8 +12,10 @@ AI-генератор изображений не использовался. SV
 Общее для всех рисунков:
 - холст `width="1600" height="900" viewBox="0 0 1600 900"`, фон `#f5f7fa`;
 - палитра `#172b3a`, `#1d8794`, `#f1b34a`, `#7063a3` и белый; галочка «OK» — `#1d8794`;
-- шрифт меток `Segoe UI, Arial, sans-serif` (блок команды на fig-06 — `Consolas, monospace`), кегль 36–52 px;
+- шрифт меток `Segoe UI, Arial, sans-serif` (блок команды на fig-06 — `Consolas, monospace`), кегль не менее 52 px;
 - подписи «Рисунок N. …» на рисунки не ставились — их даёт вёрстка.
+
+Изменения: круг 1 — R-1, R-3.
 
 Экспорт PNG: headless Microsoft Edge,
 `msedge.exe --headless=new --disable-gpu --hide-scrollbars --user-data-dir=<TEMP>\sa03-edge --window-size=1600,900 --screenshot=<png> file:///<svg>`.
@@ -21,7 +23,7 @@ AI-генератор изображений не использовался. SV
 
 | Рисунок | Элементы elements.svg (id) | Нарисовано заново |
 |---|---|---|
-| fig-01 | `arrow`, `document` (файл E01.zip), `circle` (основа галочки) | окно браузера с адресной строкой и заголовком Issue #7, кнопка «Скачать комплект», бейдж SHA-256, белая галочка, метки E01.zip и хэш 006F40B1…1382 |
+| fig-01 | `arrow`, `document` (файл E01.zip), `circle` (основа галочки) | окно браузера с адресной строкой и заголовком Issue #7, кнопка «Скачать полный комплект E01.zip», бейдж SHA-256, белая галочка, метки E01.zip и хэш 006F40B1…1382 |
 | fig-02 | `document` (E01.zip, README.md), `arrow`, `folder` (E01-kit, вложенная E01 с белой заливкой, input, checks) | метки |
 | fig-03 | `document` ×2 (README.md, input/rules.md), `circle` (полупрозрачное стекло лупы), `arrow`, `folder` ×3 | обод и ручка лупы, метки категорий documents · images · tables с расширениями |
 | fig-04 | `folder` ×2 (E01-kit, E01-work), `arrow` | замок, продление стрелки (отрезок), плашка «только чтение», метки «копия», «оригинал», «рабочая копия» |
