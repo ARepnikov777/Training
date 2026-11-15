@@ -38,6 +38,7 @@ PR: [#88](https://github.com/ARepnikov777/Training/pull/88)
 | Отрицательный сценарий | [`evidence/negative-scenario.md`](evidence/negative-scenario.md) |
 | Журнал запуска | [`run-log.md`](run-log.md) |
 | Именованные субагенты Claude Code и их проверка | [`agents/`](agents/), [`evidence/agents-probe.md`](evidence/agents-probe.md) |
+| Проверочный запуск субагентов в дочерних workspace Orca | [`evidence/orca-subagents-check.md`](evidence/orca-subagents-check.md) |
 
 Коротко по существу: практикум 20 ноября, аудитория 305, начало 10:00, 15
 участников. Поручения: Анна - архивы до 18 ноября, Илья - стенд до 19 ноября,
