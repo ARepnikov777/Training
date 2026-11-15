@@ -1,0 +1,2 @@
+Clean temporary package copy, Python standard library only.
+PASS: source hashes, matrix contract, required cases and extraction citations

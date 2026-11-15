@@ -1,0 +1,46 @@
+{
+  "archive_url": "https://raw.githubusercontent.com/ARepnikov777/Training/22aad84cc6666d2b0abca011e95a96b12e69c9cd/downloads/H05.zip",
+  "archive_sha256": "ba5c0e717a09b5414a93276e68ed85b2f9d7613b32ad7051a5e403d174f25b03",
+  "files": [
+    {
+      "path": "source/H05/README.md",
+      "bytes": 2495,
+      "sha256": "9cb51a3d3049425b9f23ba579ece6972579fce6323d4f660232d29d181388be7"
+    },
+    {
+      "path": "source/H05/checks/expected.json",
+      "bytes": 585,
+      "sha256": "0796a3d5be37c8d21a2194b63800d569bb4f79aeccaa96970f566038607e34eb"
+    },
+    {
+      "path": "source/H05/checksums.json",
+      "bytes": 548,
+      "sha256": "16a302ccb5bd93319a6b3c967f59f5aa7ec79e58d48111dbd37bcd937e9a23ad"
+    },
+    {
+      "path": "source/H05/input/appendix.pdf",
+      "bytes": 25761,
+      "sha256": "0bc28b297d6bf6f4424b71fcd0f6413402f770a1d81edde3dfd8d0f939e5cf77"
+    },
+    {
+      "path": "source/H05/input/contract.pdf",
+      "bytes": 26203,
+      "sha256": "751d95c60048e3236aff2a7ef9dcddbfdde04db7b2c6098000905394db897fec"
+    },
+    {
+      "path": "source/H05/input/specification.pdf",
+      "bytes": 25620,
+      "sha256": "1d4c031eabb9e10b7ff8856e6a8f41c4f22938a1ba15b7695ae1e3ad04f4adc4"
+    },
+    {
+      "path": "source/H05/manifest.json",
+      "bytes": 593,
+      "sha256": "d1d383572eb57b657fbf7c6756048994ac50b37c3b945f602110c819d9e9fb68"
+    },
+    {
+      "path": "source/H05.zip",
+      "bytes": 75922,
+      "sha256": "ba5c0e717a09b5414a93276e68ed85b2f9d7613b32ad7051a5e403d174f25b03"
+    }
+  ]
+}

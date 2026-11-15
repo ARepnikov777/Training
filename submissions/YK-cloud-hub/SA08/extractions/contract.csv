@@ -1,0 +1,12 @@
+parameter,value,unit,source_file,page,quote,notes
+model,Orion L15,,contract.pdf,1,"Поставка: 12 ноутбуков Orion L15, RAM 16 GB, SSD 512 GB.",
+quantity,12,ноутбуков,contract.pdf,1,"Поставка: 12 ноутбуков Orion L15, RAM 16 GB, SSD 512 GB.",
+ram,16,GB,contract.pdf,1,"Поставка: 12 ноутбуков Orion L15, RAM 16 GB, SSD 512 GB.",
+storage,512,GB,contract.pdf,1,"Поставка: 12 ноутбуков Orion L15, RAM 16 GB, SSD 512 GB.",SSD
+unit_price,245000,KZT,contract.pdf,1,Цена единицы: 245000 KZT.,
+total_price,2940000,KZT,contract.pdf,1,Общая сумма: 2940000 KZT.,
+delivery_date,20.11.2026,,contract.pdf,1,Срок поставки: 20.11.2026.,
+warranty,12,месяцев,contract.pdf,1,Гарантия: 12 месяцев.,
+vat,включён в цену,,contract.pdf,1,НДС включён в цену.,
+initial_setup,NOT_STATED,,contract.pdf,1,,Проверена страница 1 из 1.
+location,аудитория 305,,contract.pdf,1,Адрес: аудитория 305.,

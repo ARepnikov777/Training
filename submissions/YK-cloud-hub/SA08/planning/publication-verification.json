@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-15",
+  "milestone": "https://github.com/ARepnikov777/Training/milestone/7",
+  "parent": 59,
+  "issues": [
+    {
+      "number": 115,
+      "title": "[SA08/T1] Проверить входы и утвердить контракт и граф",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 116,
+      "title": "[SA08/T2] Извлечь условия договора C-17",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 117,
+      "title": "[SA08/T3] Извлечь условия приложения №1",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 118,
+      "title": "[SA08/T4] Извлечь условия технической спецификации",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 119,
+      "title": "[SA08/T5] Сопоставить документы и подготовить вопросы поставщику",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 120,
+      "title": "[SA08/T6] Провести независимое ревью и отрицательный сценарий",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 121,
+      "title": "[SA08/T7] Собрать воспроизводимый пакет и подготовить единый PR",
+      "milestone": 7,
+      "parent": "https://api.github.com/repos/ARepnikov777/Training/issues/59",
+      "assignees": [
+        "YK-cloud-hub"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    }
+  ],
+  "checks": {
+    "native_children": 7,
+    "milestone_open_issues": 8,
+    "local_bodies_equal_published": true,
+    "parent_original_body_preserved": true
+  }
+}
