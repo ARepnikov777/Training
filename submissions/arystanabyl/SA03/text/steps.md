@@ -196,7 +196,7 @@ $ref = Get-Content "$HOME\Course\E01-kit\E01\checksums.json" -Encoding UTF8 -Raw
 $ref.PSObject.Properties | Where-Object Name -like 'input/files/*' |
   Where-Object { (Get-FileHash (Join-Path "$HOME\Course\E01-work" $_.Name)).Hash.ToLower() -ne $_.Value } |
   ForEach-Object { "ИЗМЕНЁН: $($_.Name)" }   # пустой вывод = исходники целы
-# S6 — содержимое result совпадает с исходниками (добавлено в v1.1)
+# S6 — содержимое result совпадает с исходниками
 (Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File).Count   # 12
 Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File |
   Where-Object { (Get-FileHash $_.FullName).Hash -ne (Get-FileHash "$HOME\Course\E01-work\input\files\$($_.Name)").Hash } |
@@ -219,6 +219,44 @@ Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File |
   Ошибка «не удаётся найти путь» в этой проверке — в `result` лежит лишний файл, которого нет в `input\files`.
 
 См. рисунок 6.
+
+## Что приложить к сдаче
+
+**Зачем.** Полный порядок описан в разделе «Подготовка и сдача задания» README репозитория; здесь суть.
+
+**Сделай.**
+
+1. В клоне репозитория создай ветку `student/LOGIN/E01` (`LOGIN` — твой GitHub-логин) и папку
+   `submissions/LOGIN/E01/`.
+2. Положи в неё только нужное:
+   - `README.md` — что сделано, как запустить, все пункты DoD из issue с доказательствами,
+     журнал;
+   - скрипт решения из `E01-solution`;
+   - копию `result/` из `E01-work`;
+   - `evidence/` — вывод проверок S6 (три строки `OK`, пустые выводы, число `12`).
+3. Не клади `E01-kit`, весь `E01-work`, `.git`, токены и кеши.
+4. Сохрани результат и отправь ветку командами из README репозитория:
+
+```bash
+git add submissions/LOGIN/E01
+git diff --cached --check
+git diff --cached
+git commit -m "[E01] Решение задания"
+git push -u origin student/LOGIN/E01
+```
+
+5. В GitHub открой Pull Request: base — `main`, compare — `student/LOGIN/E01`. В описании напиши
+   `Задание: #7`. Не пиши `Closes`: задание остаётся открытым для других.
+   Слить PR может только преподаватель.
+
+**Проверь.** `git status` показывает изменения только в `submissions/LOGIN/E01/`, а в PR нет `E01-kit` и `.git`.
+
+**Если не так.**
+
+- В `git status` лишние папки: не добавляй их, `git add` делай только для `submissions/LOGIN/E01`.
+- Замечания преподавателя: исправь новыми коммитами в той же ветке.
+
+См. рисунок 7.
 
 ## Частые ошибки
 
