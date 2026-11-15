@@ -68,7 +68,21 @@ $ref = Get-Content "$HOME\Course\E01-kit\E01\checksums.json" -Encoding UTF8 -Raw
 $ref.PSObject.Properties | Where-Object Name -like 'input/files/*' |
   Where-Object { (Get-FileHash (Join-Path "$HOME\Course\E01-work" $_.Name)).Hash.ToLower() -ne $_.Value } |
   ForEach-Object { "ИЗМЕНЁН: $($_.Name)" }   # пустой вывод = исходники целы
+# S6 — содержимое result совпадает с исходниками (добавлено в v1.1)
+(Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File).Count   # 12
+Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File |
+  Where-Object { (Get-FileHash $_.FullName).Hash -ne (Get-FileHash "$HOME\Course\E01-work\input\files\$($_.Name)").Hash } |
+  ForEach-Object { "НЕ СОВПАДАЕТ: $($_.Name)" }   # пустой вывод = содержимое совпадает
 ```
+
+### Изменения после Freeze
+
+- **v1.1, 2026-11-15 11:03.** Причина: на `join_check` ветвь text сообщила, а координатор подтвердил, что
+  канон S6 не покрывает п. 1 DoD E01 «содержимое файлов совпадает с исходниками».
+  Добавлены две команды выше. Координатор прогнал их на ручной раскладке E01:
+  12 файлов, пустой вывод; после порчи `table-1.csv` — `НЕ СОВПАДАЕТ: table-1.csv`.
+  Таблица рисунков не менялась: fig-06 показывает сверку категорий, это не противоречит
+  добавленной проверке.
 
 S5 руководство описывает как процесс: поручить агенту или написать скрипт по
 rules.md и положить результат в `E01-work\result`. Готовый скрипт решения E01 в
