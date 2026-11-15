@@ -1,0 +1,17 @@
+{
+  "code": "M01",
+  "issue": 22,
+  "title": "[M01] Умный организатор файлов",
+  "goal": "Доработай сортировщик файлов: добавь рекурсивный обход, предварительный просмотр, сохранение одноимённых файлов и журнал. Покажи, что предварительный просмотр не меняет файлы.",
+  "inputs": [
+    "input/files/a/report.txt",
+    "input/files/b/report.txt",
+    "input/files/c/data.csv",
+    "input/files/c/note.md",
+    "input/rules.md",
+    "input/starter.py"
+  ],
+  "checks": [
+    "checks/expected.json"
+  ]
+}

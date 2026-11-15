@@ -1,0 +1,14 @@
+test_output_ancestor_cannot_copy_back_into_source (test_sorter.SorterTests) ... FAIL
+
+======================================================================
+FAIL: test_output_ancestor_cannot_copy_back_into_source (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 125, in test_output_ancestor_cannot_copy_back_into_source
+    copy_files(source, self.base, dry_run=False)
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

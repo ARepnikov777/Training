@@ -1,0 +1,11 @@
+{
+  "README.md": "f2c68c6cba757b70daceb4faac7d5492c61c9c3a45491afd0a6d05a7710b78b0",
+  "checks/expected.json": "feca3afda9558726ac6e636efb11c2ae2e1f3c36cdc7eabc01d65000182f6ca2",
+  "input/files/a/report.txt": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+  "input/files/b/report.txt": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+  "input/files/c/data.csv": "0651cb0dd358dd3ae9a73649d227baaef80bdd29bdcfcc0236f2be543746203e",
+  "input/files/c/note.md": "c2f92031c1bdc84166a86e6003926514861b838b5cda62775be8cc6fd066caac",
+  "input/rules.md": "01fec5271bac146a4d6d653eb85df0e1a8e25e863bd23edfdf75407fde414ffd",
+  "input/starter.py": "0e684a5a08aca2127297d1669d3280286c46fd3c730a1087ef93eaa977ce7e7a",
+  "manifest.json": "5b1d390d290d1772234b1bc605ccb8292718f4768d8e02231309963a40bd2cef"
+}
