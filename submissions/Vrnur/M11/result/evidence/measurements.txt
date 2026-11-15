@@ -1,0 +1,41 @@
+card-1: bbox=(150,235,1050,966) w×h=900×731 centre=(600.0,600.5) margins=(np.int64(150), np.int64(235), np.int64(150), np.int64(234)) aspect_err=0.07% old_bg_px=0
+    OK  size_1200x1200
+    OK  corner_bg
+    OK  long_side_900±20
+    OK  center_±20
+    OK  margins>=100
+    OK  aspect_err<1%
+    OK  no_old_bg_pixels
+card-2: bbox=(234,149,966,1050) w×h=732×901 centre=(600.0,599.5) margins=(np.int64(234), np.int64(149), np.int64(234), np.int64(150)) aspect_err=0.25% old_bg_px=0
+    OK  size_1200x1200
+    OK  corner_bg
+    OK  long_side_900±20
+    OK  center_±20
+    OK  margins>=100
+    OK  aspect_err<1%
+    OK  no_old_bg_pixels
+card-3: bbox=(243,150,957,1050) w×h=714×900 centre=(600.0,600.0) margins=(np.int64(243), np.int64(150), np.int64(243), np.int64(150)) aspect_err=0.06% old_bg_px=0
+    OK  size_1200x1200
+    OK  corner_bg
+    OK  long_side_900±20
+    OK  center_±20
+    OK  margins>=100
+    OK  aspect_err<1%
+    OK  no_old_bg_pixels
+card-4: bbox=(246,149,953,1050) w×h=707×901 centre=(599.5,599.5) margins=(np.int64(246), np.int64(149), np.int64(247), np.int64(150)) aspect_err=0.01% old_bg_px=0
+    OK  size_1200x1200
+    OK  corner_bg
+    OK  long_side_900±20
+    OK  center_±20
+    OK  margins>=100
+    OK  aspect_err<1%
+    OK  no_old_bg_pixels
+card-5: bbox=(306,150,894,1050) w×h=588×900 centre=(600.0,600.0) margins=(np.int64(306), np.int64(150), np.int64(306), np.int64(150)) aspect_err=0.07% old_bg_px=0
+    OK  size_1200x1200
+    OK  corner_bg
+    OK  long_side_900±20
+    OK  center_±20
+    OK  margins>=100
+    OK  aspect_err<1%
+    OK  no_old_bg_pixels
+ALL OK
