@@ -16,12 +16,17 @@
 <rect x="1130" y="150" width="430" height="250" rx="24" fill="#7063a3" stroke="#172b3a" stroke-width="8"/>
 <text x="1345" y="245" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle">PR</text>
 <text x="1345" y="335" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle">Задание: #7</text>
-<text x="40" y="640" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">Не класть:</text>
-<rect x="40" y="680" width="720" height="180" rx="20" fill="white" stroke="#172b3a" stroke-width="8"/>
-<g data-src="folder" transform="translate(-110.0 674.0) scale(0.4 0.4)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
-<text x="230" y="790" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">E01-kit</text>
-<path d="M222 778H415" stroke="#7063a3" stroke-width="8" stroke-linecap="round"/>
-<rect x="840" y="680" width="720" height="180" rx="20" fill="white" stroke="#172b3a" stroke-width="8"/>
-<text x="1200" y="790" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="middle">.git</text>
-<path d="M1105 778H1295" stroke="#7063a3" stroke-width="8" stroke-linecap="round"/>
+<text x="40" y="598" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">Не класть:</text>
+<rect x="40" y="620" width="740" height="100" rx="20" fill="white" stroke="#172b3a" stroke-width="8"/>
+<text x="80" y="688" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">E01-kit</text>
+<path d="M72 672H252" stroke="#7063a3" stroke-width="5" stroke-linecap="round"/>
+<rect x="820" y="620" width="740" height="100" rx="20" fill="white" stroke="#172b3a" stroke-width="8"/>
+<text x="860" y="688" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">.git</text>
+<path d="M852 672H942" stroke="#7063a3" stroke-width="5" stroke-linecap="round"/>
+<rect x="40" y="740" width="740" height="100" rx="20" fill="white" stroke="#172b3a" stroke-width="8"/>
+<text x="80" y="808" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">E01-work целиком</text>
+<path d="M72 792H532" stroke="#7063a3" stroke-width="5" stroke-linecap="round"/>
+<rect x="820" y="740" width="740" height="100" rx="20" fill="white" stroke="#172b3a" stroke-width="8"/>
+<text x="860" y="808" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">токены и кеши</text>
+<path d="M852 792H1222" stroke="#7063a3" stroke-width="5" stroke-linecap="round"/>
 </svg>
