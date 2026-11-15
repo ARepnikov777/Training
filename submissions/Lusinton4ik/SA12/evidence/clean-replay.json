@@ -1,0 +1,167 @@
+{
+  "cwd": "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-clean-replay-20261115",
+  "base_url": "http://127.0.0.1:8876",
+  "steps": [
+    {
+      "phase": "interrupt",
+      "command": [
+        "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+        "-X",
+        "utf8",
+        "collector.py",
+        "--base-url",
+        "http://127.0.0.1:8876",
+        "--output",
+        "result",
+        "--page",
+        "4ae4f703-3f10-491d-9814-82ca93249972",
+        "--fail-third"
+      ],
+      "pid": 12748,
+      "started": "2026-11-15T11:03:14.604353+00:00",
+      "ended": "2026-11-15T11:04:29.440098+00:00",
+      "exit": 2,
+      "count": 20,
+      "complete": false,
+      "completed_pages": [
+        1,
+        2
+      ],
+      "errors": [
+        {
+          "url": "http://127.0.0.1:8876/catalog?page=3&fail=1",
+          "status": 503,
+          "resolved": false
+        }
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "phase": "resume",
+      "command": [
+        "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+        "-X",
+        "utf8",
+        "collector.py",
+        "--base-url",
+        "http://127.0.0.1:8876",
+        "--output",
+        "result",
+        "--page",
+        "4ae4f703-3f10-491d-9814-82ca93249972"
+      ],
+      "pid": 37464,
+      "started": "2026-11-15T11:04:29.445275+00:00",
+      "ended": "2026-11-15T11:06:12.789909+00:00",
+      "exit": 0,
+      "count": 50,
+      "complete": true,
+      "completed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [
+        {
+          "url": "http://127.0.0.1:8876/catalog?page=3&fail=1",
+          "status": 503,
+          "resolved": true
+        }
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "phase": "rerun",
+      "command": [
+        "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+        "-X",
+        "utf8",
+        "collector.py",
+        "--base-url",
+        "http://127.0.0.1:8876",
+        "--output",
+        "result",
+        "--page",
+        "4ae4f703-3f10-491d-9814-82ca93249972"
+      ],
+      "pid": 12368,
+      "started": "2026-11-15T11:06:12.792011+00:00",
+      "ended": "2026-11-15T11:06:13.034022+00:00",
+      "exit": 0,
+      "count": 50,
+      "complete": true,
+      "completed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [
+        {
+          "url": "http://127.0.0.1:8876/catalog?page=3&fail=1",
+          "status": 503,
+          "resolved": true
+        }
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "validation_json": {
+    "command": [
+      "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+      "-X",
+      "utf8",
+      "validate.py",
+      "--data",
+      "result/products.json",
+      "--expected-ids",
+      "kit/H13/checks/expected-ids.json",
+      "--catalog",
+      "kit/H13/input/site/catalog.json"
+    ],
+    "exit": 0,
+    "report": {
+      "ok": true,
+      "count": 50,
+      "unique_count": 50,
+      "errors": []
+    },
+    "stderr": ""
+  },
+  "validation_csv": {
+    "command": [
+      "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+      "-X",
+      "utf8",
+      "validate.py",
+      "--data",
+      "result/products.csv",
+      "--expected-ids",
+      "kit/H13/checks/expected-ids.json",
+      "--catalog",
+      "kit/H13/input/site/catalog.json"
+    ],
+    "exit": 0,
+    "report": {
+      "ok": true,
+      "count": 50,
+      "unique_count": 50,
+      "errors": []
+    },
+    "stderr": ""
+  },
+  "code_sha256": {
+    "collector.py": "6b28bb6e838b245c7c9133dc4629dfaa4a31afffe1064fcd64c029af3f985031",
+    "validate.py": "f1aa4a1819cb27d1f2ba34197f20c12b5cf004fd5f6835bef54e244ac000865a"
+  },
+  "formatting_normalization": {
+    "validator_ast_unchanged": true,
+    "reason": "remove EOF blank line; validations repeated with final file"
+  }
+}

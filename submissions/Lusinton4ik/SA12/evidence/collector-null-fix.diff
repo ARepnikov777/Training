@@ -1,0 +1,57 @@
+﻿diff --git a/submissions/Lusinton4ik/SA12/evidence/collector-before-null-fix.py.txt b/submissions/Lusinton4ik/SA12/collector.py
+index cbffc8b..c20a829 100644
+--- a/submissions/Lusinton4ik/SA12/evidence/collector-before-null-fix.py.txt
++++ b/submissions/Lusinton4ik/SA12/collector.py
+@@ -48,12 +48,21 @@ def load_checkpoint(path, base):
+         if len(records) > 50 or len(records) < 10 * len(done):
+             raise ValueError("inconsistent record count")
+         for key, record in records.items():
+-            if not isinstance(record, dict) or set(record) != set(FIELDS) or record["id"] != key or not isinstance(key, str) or not key:
++            if not isinstance(record, dict) or set(record) != set(FIELDS) or record["id"] != key or not isinstance(key, str) or not key or key == "None":
+                 raise ValueError("invalid record")
+-            if any(not isinstance(record[field], str) for field in ("name", "category", "currency", "supplier", "availability", "source_url")):
++            if any(not isinstance(record[field], str) or record[field] == "None" for field in ("name", "category", "currency", "supplier", "source_url")):
+                 raise ValueError("invalid text field")
+-            if any(type(record[field]) not in (int, float) or not math.isfinite(record[field]) for field in ("price", "ram_GB", "ssd_GB", "screen_inches")):
+-                raise ValueError("invalid numeric field")
++            if record["availability"] == "None":
++                record["availability"] = None
++            if record["availability"] is not None and not isinstance(record["availability"], str):
++                raise ValueError("invalid availability")
++            if type(record["price"]) is not int or any(record[field] is not None and type(record[field]) is not int for field in ("ram_GB", "ssd_GB")):
++                raise ValueError("invalid integer field")
++            screen = record["screen_inches"]
++            if screen is not None:
++                if type(screen) not in (int, float) or not math.isfinite(screen):
++                    raise ValueError("invalid screen_inches")
++                record["screen_inches"] = float(screen)
+             source = urlparse(record["source_url"])
+             if source.scheme not in ("http", "https") or source.netloc != urlparse(base).netloc:
+                 raise ValueError("invalid source URL")
+@@ -118,12 +127,22 @@ def normalize_record(data):
+     if not isinstance(fields, dict) or set(fields) != set(FIELDS[:-1]):
+         raise CollectorError("Card has unexpected fields")
+     record = dict(fields)
++    for key in ("availability", "ram_GB", "ssd_GB", "screen_inches"):
++        if record[key] == "None":
++            record[key] = None
++    if any(not isinstance(record[key], str) or record[key] == "None" for key in ("id", "name", "category", "currency", "supplier")):
++        raise CollectorError("Invalid required text field")
++    if record["availability"] is not None and not isinstance(record["availability"], str):
++        raise CollectorError("Invalid availability")
+     try:
+-        for key in ("price", "ram_GB", "ssd_GB", "screen_inches"):
+-            number = float(record[key])
+-            if not math.isfinite(number):
++        record["price"] = int(record["price"])
++        for key in ("ram_GB", "ssd_GB"):
++            if record[key] is not None:
++                record[key] = int(record[key])
++        if record["screen_inches"] is not None:
++            record["screen_inches"] = float(record["screen_inches"])
++            if not math.isfinite(record["screen_inches"]):
+                 raise ValueError("non-finite number")
+-            record[key] = int(number) if number.is_integer() else number
+     except (TypeError, ValueError) as exc:
+         raise CollectorError(f"Invalid numeric field: {exc}") from exc
+     record["source_url"] = data.get("url")

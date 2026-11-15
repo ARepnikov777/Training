@@ -1,0 +1,40 @@
+﻿<!doctype html><meta charset="utf-8"><title>SA12 workflow</title><style>body{margin:24px;background:white;font-family:Arial}svg{max-width:none!important}.mermaid{margin-bottom:32px}</style><pre class="mermaid">stateDiagram-v2
+    [*] --&gt; Inputs
+    Inputs --&gt; Graph_check: [архив и инструкции доступны] / сохранить источники
+    Inputs --&gt; Recover: [иначе] / записать недоступный вход
+    Graph_check --&gt; Explore: [checker=0 и рендер просмотрен] / explorer
+    Graph_check --&gt; Escalate_human: [иначе] / сохранить дефект графа
+    Explore --&gt; Build: [контракт подтверждён] / worker
+    Explore --&gt; Recover: [иначе] / проверить исполнителя
+    Build --&gt; Validate_build: [тесты green и red сохранён] / другой worker
+    Build --&gt; Recover: [иначе] / прочитать живое состояние
+    Validate_build --&gt; Integrate: [оба комплекта тестов green] / координатор
+    Validate_build --&gt; Recover: [иначе] / сохранить причину
+    Integrate --&gt; Interrupt: [файлы сверены и конфликты отсутствуют] / один владелец
+    Integrate --&gt; Escalate_human: [иначе] / сохранить остаток
+    Interrupt --&gt; Resume: [20 записей и 503 и процесс завершён] / новый процесс
+    Interrupt --&gt; Recover: [иначе] / проверить checkpoint
+    Resume --&gt; Verify: [50 уникальных id] / независимая сверка
+    Resume --&gt; Recover: [иначе] / сохранить неполноту
+    Verify --&gt; Negative: [сверка всех полей=0 и повтор без дублей] / копия результата
+    Verify --&gt; Recover: [иначе] / сохранить расхождения
+    Negative --&gt; Review: [повреждение отклонено и исправление принято] / reviewer
+    Negative --&gt; Escalate_human: [иначе] / отрицательный тест не доказан
+    Review --&gt; Accept: [spec PASS и quality PASS] / координатор
+    Review --&gt; Fix: [иначе] / записать замечания
+    Fix --&gt; Review: [attempts &lt; N и elapsed &lt; T] / увеличить attempts и исправить
+    Fix --&gt; Escalate_human: [иначе] / предел исправлений
+    Recover --&gt; Reconcile: чтение живых файлов, процессов и GitHub
+    Reconcile --&gt; Explore: [retries &lt; N и elapsed &lt; T и повтор безопасен] / увеличить retries
+    Reconcile --&gt; Escalate_human: [иначе] / сохранить точку продолжения
+    Accept --&gt; Done_accepted: [все локальные критерии подтверждены] / подготовить сдачу
+    Accept --&gt; Escalate_human: [иначе] / перечислить незакрытые критерии
+    Done_accepted --&gt; [*]
+    Escalate_human --&gt; [*]
+</pre><pre class="mermaid">flowchart LR
+    Explore --&gt; Build
+    Explore --&gt; Validate_build
+    Build --&gt; Join{Оба отчёта и GREEN проверены}
+    Validate_build --&gt; Join
+    Join --&gt; Integrate
+</pre><script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true,theme:"neutral"});</script>

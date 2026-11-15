@@ -1,0 +1,23 @@
+﻿diff --git a/submissions/Lusinton4ik/SA12/evidence/collector-before-fix.py.txt b/submissions/Lusinton4ik/SA12/collector.py
+index 4ac0827..cbffc8b 100644
+--- a/submissions/Lusinton4ik/SA12/evidence/collector-before-fix.py.txt
++++ b/submissions/Lusinton4ik/SA12/collector.py
+@@ -98,13 +98,17 @@ class OrcaBrowser:
+             self.page = result.get("browserPageId")
+             if not self.page:
+                 raise CollectorError("Orca did not return a browser page ID")
+-        self.call("goto", "--page", self.page, "--url", url)
++        navigation = self.call("goto", "--page", self.page, "--url", url)
++        if navigation.get("effects", {}).get("loading") is True:
++            self.call("wait", "--page", self.page, "--load", "load")
+         expression = """(() => ({status: performance.getEntriesByType('navigation')[0]?.responseStatus, url: location.href, links: Array.from(document.querySelectorAll('table tr td a[href]'), a => a.href), fields: Object.fromEntries(Array.from(document.querySelectorAll('dl dt'), dt => [dt.textContent.trim(), dt.nextElementSibling?.textContent.trim()]))}))()"""
+         result = self.call("eval", "--page", self.page, "--expression", expression)
+         try:
+             value = json.loads(result["result"])
+             if not isinstance(value, dict) or type(value.get("status")) is not int:
+                 raise ValueError("missing navigation status")
++            if value.get("url") != url:
++                raise ValueError(f"navigation URL mismatch: expected {url}, got {value.get('url')}")
+             return value
+         except (KeyError, TypeError, ValueError) as exc:
+             raise CollectorError(f"Invalid Orca eval response: {exc}") from exc

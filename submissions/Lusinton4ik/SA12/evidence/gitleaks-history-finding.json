@@ -1,0 +1,9 @@
+﻿{
+    "RuleID":  "generic-api-key",
+    "File":  "materials/H09/checksums.json",
+    "StartLine":  3,
+    "EndLine":  3,
+    "Commit":  "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "Fingerprint":  "22aad84cc6666d2b0abca011e95a96b12e69c9cd:materials/H09/checksums.json:generic-api-key:3",
+    "Description":  "Detected a Generic API Key, potentially exposing access to various services and sensitive operations."
+}

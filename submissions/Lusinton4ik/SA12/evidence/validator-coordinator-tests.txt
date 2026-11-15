@@ -1,0 +1,15 @@
+test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) ... ok
+test_csv_does_not_round_numeric_values (test_validate.ValidatorTests.test_csv_does_not_round_numeric_values) ... ok
+test_duplicate_and_unexpected (test_validate.ValidatorTests.test_duplicate_and_unexpected) ... ok
+test_missing_record (test_validate.ValidatorTests.test_missing_record) ... ok
+test_read_error_is_json (test_validate.ValidatorTests.test_read_error_is_json) ... ok
+test_valid_csv (test_validate.ValidatorTests.test_valid_csv) ... ok
+test_valid_json_and_object_ids (test_validate.ValidatorTests.test_valid_json_and_object_ids) ... ok
+test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.663s
+
+OK
+
+exit=0

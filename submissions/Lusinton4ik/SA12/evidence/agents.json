@@ -1,0 +1,34 @@
+[
+  {
+    "checkout": "Субагентная-задача",
+    "agent": "/root/sa12_explore",
+    "result": "contract PASS",
+    "write": "none",
+    "type": "explorer",
+    "task": 110
+  },
+  {
+    "checkout": "SA12-worker",
+    "agent": "/root/sa12_collector",
+    "result": "code and TDD accepted; 15 collector / 12 validator tests; integrated27 PASS",
+    "write": "collector.py + tests/test_collector.py + evidence/collector-tests.txt + collector-report.md",
+    "type": "worker",
+    "task": 111
+  },
+  {
+    "checkout": "SA12-validator",
+    "agent": "/root/sa12_validator",
+    "result": "code and TDD accepted; 15 collector / 12 validator tests; integrated27 PASS",
+    "write": "validate.py + tests/test_validate.py + evidence/validator-tests.txt + validator-report.md",
+    "type": "worker",
+    "task": 112
+  },
+  {
+    "checkout": "Субагентная-задача",
+    "agent": "/root/sa12_review",
+    "result": "final local spec PASS, quality PASS, no open findings; publication by coordinator",
+    "write": "none",
+    "type": "reviewer",
+    "task": 114
+  }
+]

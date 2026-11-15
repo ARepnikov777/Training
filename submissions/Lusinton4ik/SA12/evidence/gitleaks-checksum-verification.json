@@ -1,0 +1,57 @@
+﻿[
+    {
+        "Path":  "README.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "checks/key-points.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/question.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/source-policy.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/sources/01-program.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/sources/02-materials.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/sources/03-budget.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/sources/04-acceptance.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/sources/05-revision.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "input/sources/06-risks.md",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    },
+    {
+        "Path":  "manifest.json",
+        "IsSha256":  true,
+        "MatchesFile":  true
+    }
+]

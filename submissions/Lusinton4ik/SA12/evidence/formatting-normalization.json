@@ -1,0 +1,5 @@
+{
+  "operation": "strip trailing whitespace and EOF blank lines in own text artifacts; kit excluded",
+  "logic_changed": false,
+  "validator_ast_unchanged": true
+}

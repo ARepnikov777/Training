@@ -1,0 +1,351 @@
+RED (scaffold; PowerShell; exit 1)
+$env:PYTHONDONTWRITEBYTECODE='1'
+& 'C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe' -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_validate.py -v 2>&1 | Out-String
+python.exe : test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) ...
+At line:126 char:1
++ & 'C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_bad_or_mis...ssing_url) ... :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) (url='http://localhost/product?id=2')
+... FAIL
+  test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url)
+(url='https://example.com/product?id=1') ... FAIL
+  test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) (url='http://localhost/other?id=1')
+... FAIL
+  test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url)
+(url='http://localhost/product?id=1&id=1') ... FAIL
+  test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) (url=None) ... FAIL
+test_csv_does_not_round_numeric_values (test_validate.ValidatorTests.test_csv_does_not_round_numeric_values) ... FAIL
+test_duplicate_and_unexpected (test_validate.ValidatorTests.test_duplicate_and_unexpected) ... FAIL
+test_missing_record (test_validate.ValidatorTests.test_missing_record) ... FAIL
+test_read_error_is_json (test_validate.ValidatorTests.test_read_error_is_json) ... ok
+test_valid_csv (test_validate.ValidatorTests.test_valid_csv) ... FAIL
+test_valid_json_and_object_ids (test_validate.ValidatorTests.test_valid_json_and_object_ids) ... FAIL
+test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field) ...
+  test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field)
+(field='price') ... FAIL
+  test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field)
+(field='currency') ... FAIL
+  test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field)
+(field='name') ... FAIL
+
+======================================================================
+FAIL: test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url)
+(url='http://localhost/product?id=2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 92, in test_bad_or_missing_url
+    self.assertTrue(any('source_url' in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url)
+(url='https://example.com/product?id=1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 92, in test_bad_or_missing_url
+    self.assertTrue(any('source_url' in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url)
+(url='http://localhost/other?id=1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 92, in test_bad_or_missing_url
+    self.assertTrue(any('source_url' in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url)
+(url='http://localhost/product?id=1&id=1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 92, in test_bad_or_missing_url
+    self.assertTrue(any('source_url' in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) (url=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 92, in test_bad_or_missing_url
+    self.assertTrue(any('source_url' in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_csv_does_not_round_numeric_values (test_validate.ValidatorTests.test_csv_does_not_round_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 99, in test_csv_does_not_round_numeric_values
+    self.assertTrue(any('price' in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_duplicate_and_unexpected (test_validate.ValidatorTests.test_duplicate_and_unexpected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 62, in test_duplicate_and_unexpected
+    self.assertTrue(any('duplicate' in e.lower() for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_missing_record (test_validate.ValidatorTests.test_missing_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 55, in test_missing_record
+    self.assertTrue(any('missing' in e.lower() for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_valid_csv (test_validate.ValidatorTests.test_valid_csv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 49, in test_valid_csv
+    self.assertEqual((code, report['ok']), (0, True), report)
+AssertionError: Tuples differ: (1, False) != (0, True)
+
+First differing element 0:
+1
+0
+
+- (1, False)
++ (0, True) : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['not implemented']}
+
+======================================================================
+FAIL: test_valid_json_and_object_ids (test_validate.ValidatorTests.test_valid_json_and_object_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 44, in test_valid_json_and_object_ids
+    self.assertEqual((code, report['ok'], report['count'], report['unique_count'], report['errors']),
+AssertionError: Tuples differ: (1, False, 0, 0, ['not implemented']) != (0, True, 50, 50, [])
+
+First differing element 0:
+1
+0
+
+- (1, False, 0, 0, ['not implemented'])
++ (0, True, 50, 50, [])
+
+======================================================================
+FAIL: test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field)
+(field='price')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 79, in test_wrong_fields_and_missing_field
+    self.assertTrue(any(field in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field)
+(field='currency')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 79, in test_wrong_fields_and_missing_field
+    self.assertTrue(any(field in e for e in report['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field)
+(field='name')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py",
+line 79, in test_wrong_fields_and_missing_field
+    self.assertTrue(any(field in e for e in report['errors']))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.254s
+
+FAILED (failures=13)
+
+
+
+GREEN (PowerShell; stdout and stderr captured by Python)
+$env:PYTHONDONTWRITEBYTECODE='1'
+& 'C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe' -X utf8 -c "import subprocess,sys; p=subprocess.run([sys.executable,'-X','utf8','-m','unittest','discover','-s','submissions/Lusinton4ik/SA12/tests','-p','test_validate.py','-v'],capture_output=True,text=True,encoding='utf-8'); print(p.stdout+p.stderr); print('exit code:',p.returncode); sys.exit(p.returncode)"
+test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) ... ok
+test_csv_does_not_round_numeric_values (test_validate.ValidatorTests.test_csv_does_not_round_numeric_values) ... ok
+test_duplicate_and_unexpected (test_validate.ValidatorTests.test_duplicate_and_unexpected) ... ok
+test_missing_record (test_validate.ValidatorTests.test_missing_record) ... ok
+test_read_error_is_json (test_validate.ValidatorTests.test_read_error_is_json) ... ok
+test_valid_csv (test_validate.ValidatorTests.test_valid_csv) ... ok
+test_valid_json_and_object_ids (test_validate.ValidatorTests.test_valid_json_and_object_ids) ... ok
+test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.686s
+
+OK
+
+exit code: 0
+
+NULLABLE RED (PowerShell)
+$env:PYTHONDONTWRITEBYTECODE='1'
+& 'C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe' -X utf8 -c "import subprocess,sys; p=subprocess.run([sys.executable,'-X','utf8','-m','unittest','discover','-s','submissions/Lusinton4ik/SA12/tests','-p','test_validate.py','-v'],capture_output=True,text=True,encoding='utf-8'); print(p.stdout+p.stderr); print('exit code:',p.returncode); sys.exit(p.returncode)"
+test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) ... ok
+test_catalog_missing_or_null_required_field_is_rejected (test_validate.ValidatorTests.test_catalog_missing_or_null_required_field_is_rejected) ... ok
+test_csv_does_not_round_numeric_values (test_validate.ValidatorTests.test_csv_does_not_round_numeric_values) ... ok
+test_duplicate_and_unexpected (test_validate.ValidatorTests.test_duplicate_and_unexpected) ... ok
+test_missing_record (test_validate.ValidatorTests.test_missing_record) ... ok
+test_null_rejected_when_reference_is_not_null (test_validate.ValidatorTests.test_null_rejected_when_reference_is_not_null) ... ok
+test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) ...
+  test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='availability') ... FAIL
+  test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='ram_GB') ... FAIL
+  test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='ssd_GB') ... FAIL
+  test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='screen_inches') ... FAIL
+test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) ...
+  test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value='None', csv=False) ... FAIL
+  test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value='None', csv=True) ... FAIL
+  test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value=42, csv=False) ... FAIL
+  test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value=42, csv=True) ... FAIL
+test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) ... FAIL
+test_read_error_is_json (test_validate.ValidatorTests.test_read_error_is_json) ... ok
+test_valid_csv (test_validate.ValidatorTests.test_valid_csv) ... ok
+test_valid_json_and_object_ids (test_validate.ValidatorTests.test_valid_json_and_object_ids) ... ok
+test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field) ... ok
+
+======================================================================
+FAIL: test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='availability')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 110, in test_nullable_fields_match_json_and_csv
+    self.assertEqual((code, report['ok']), (0, True), report)
+AssertionError: Tuples differ: (1, False) != (0, True)
+
+First differing element 0:
+1
+0
+
+- (1, False)
++ (0, True) : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='ram_GB')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 110, in test_nullable_fields_match_json_and_csv
+    self.assertEqual((code, report['ok']), (0, True), report)
+AssertionError: Tuples differ: (1, False) != (0, True)
+
+First differing element 0:
+1
+0
+
+- (1, False)
++ (0, True) : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='ssd_GB')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 110, in test_nullable_fields_match_json_and_csv
+    self.assertEqual((code, report['ok']), (0, True), report)
+AssertionError: Tuples differ: (1, False) != (0, True)
+
+First differing element 0:
+1
+0
+
+- (1, False)
++ (0, True) : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) (field='screen_inches')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 110, in test_nullable_fields_match_json_and_csv
+    self.assertEqual((code, report['ok']), (0, True), report)
+AssertionError: Tuples differ: (1, False) != (0, True)
+
+First differing element 0:
+1
+0
+
+- (1, False)
++ (0, True) : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value='None', csv=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 123, in test_nullable_fields_reject_missing_and_substitution
+    self.assertTrue(any(field in e for e in report['errors']), report)
+AssertionError: False is not true : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value='None', csv=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 123, in test_nullable_fields_reject_missing_and_substitution
+    self.assertTrue(any(field in e for e in report['errors']), report)
+AssertionError: False is not true : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value=42, csv=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 123, in test_nullable_fields_reject_missing_and_substitution
+    self.assertTrue(any(field in e for e in report['errors']), report)
+AssertionError: False is not true : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) (field='availability', value=42, csv=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 123, in test_nullable_fields_reject_missing_and_substitution
+    self.assertTrue(any(field in e for e in report['errors']), report)
+AssertionError: False is not true : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+======================================================================
+FAIL: test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-validator\submissions\Lusinton4ik\SA12\tests\test_validate.py", line 128, in test_nullable_fields_reject_missing_and_substitution
+    self.assertTrue(any(field in e for e in report['errors']), report)
+AssertionError: False is not true : {'ok': False, 'count': 0, 'unique_count': 0, 'errors': ['input error: catalog row has missing fields']}
+
+----------------------------------------------------------------------
+Ran 12 tests in 10.637s
+
+FAILED (failures=9)
+
+exit code: 1
+
+NULLABLE GREEN (PowerShell)
+$env:PYTHONDONTWRITEBYTECODE='1'
+& 'C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe' -X utf8 -c "import subprocess,sys; p=subprocess.run([sys.executable,'-X','utf8','-m','unittest','discover','-s','submissions/Lusinton4ik/SA12/tests','-p','test_validate.py','-v'],capture_output=True,text=True,encoding='utf-8'); print(p.stdout+p.stderr); print('exit code:',p.returncode); sys.exit(p.returncode)"
+test_bad_or_missing_url (test_validate.ValidatorTests.test_bad_or_missing_url) ... ok
+test_catalog_missing_or_null_required_field_is_rejected (test_validate.ValidatorTests.test_catalog_missing_or_null_required_field_is_rejected) ... ok
+test_csv_does_not_round_numeric_values (test_validate.ValidatorTests.test_csv_does_not_round_numeric_values) ... ok
+test_duplicate_and_unexpected (test_validate.ValidatorTests.test_duplicate_and_unexpected) ... ok
+test_missing_record (test_validate.ValidatorTests.test_missing_record) ... ok
+test_null_rejected_when_reference_is_not_null (test_validate.ValidatorTests.test_null_rejected_when_reference_is_not_null) ... ok
+test_nullable_fields_match_json_and_csv (test_validate.ValidatorTests.test_nullable_fields_match_json_and_csv) ... ok
+test_nullable_fields_reject_missing_and_substitution (test_validate.ValidatorTests.test_nullable_fields_reject_missing_and_substitution) ... ok
+test_read_error_is_json (test_validate.ValidatorTests.test_read_error_is_json) ... ok
+test_valid_csv (test_validate.ValidatorTests.test_valid_csv) ... ok
+test_valid_json_and_object_ids (test_validate.ValidatorTests.test_valid_json_and_object_ids) ... ok
+test_wrong_fields_and_missing_field (test_validate.ValidatorTests.test_wrong_fields_and_missing_field) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 16.823s
+
+OK
+
+exit code: 0

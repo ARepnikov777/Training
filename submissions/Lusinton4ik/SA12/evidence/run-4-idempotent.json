@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+    "-X",
+    "utf8",
+    "submissions\\Lusinton4ik\\SA12\\collector.py",
+    "--base-url",
+    "http://127.0.0.1:8875",
+    "--output",
+    "submissions\\Lusinton4ik\\SA12\\result"
+  ],
+  "exit": 0,
+  "before": {
+    "products.json": "d4f4efbcf2148e06d8ae9818d15e791bd6ca40b3c331b0f3928108718dde8b8f",
+    "products.csv": "2e66ee737cff2e44802963e859706fc215973febbc630d47f2f3146715c6e257",
+    "checkpoint.json": "9e1f4e3bf92967f1bc3eb1c799efb75490c5af344e7d5ad744ac9e4f54c77cb3"
+  },
+  "after": {
+    "products.json": "d4f4efbcf2148e06d8ae9818d15e791bd6ca40b3c331b0f3928108718dde8b8f",
+    "products.csv": "2e66ee737cff2e44802963e859706fc215973febbc630d47f2f3146715c6e257",
+    "checkpoint.json": "9e1f4e3bf92967f1bc3eb1c799efb75490c5af344e7d5ad744ac9e4f54c77cb3"
+  },
+  "unchanged": true,
+  "stdout": "",
+  "stderr": ""
+}

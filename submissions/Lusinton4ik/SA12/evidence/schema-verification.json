@@ -1,0 +1,47 @@
+{
+  "purpose": "schema verification after saved first browser result only",
+  "nullable_fields": [
+    "availability",
+    "ram_GB",
+    "screen_inches",
+    "ssd_GB"
+  ],
+  "types": {
+    "id": [
+      "str"
+    ],
+    "name": [
+      "str"
+    ],
+    "category": [
+      "str"
+    ],
+    "price": [
+      "int"
+    ],
+    "currency": [
+      "str"
+    ],
+    "supplier": [
+      "str"
+    ],
+    "availability": [
+      "NoneType",
+      "str"
+    ],
+    "ram_GB": [
+      "NoneType",
+      "int"
+    ],
+    "ssd_GB": [
+      "NoneType",
+      "int"
+    ],
+    "screen_inches": [
+      "NoneType",
+      "float"
+    ]
+  },
+  "records": 50,
+  "integral_float_screens": 0
+}

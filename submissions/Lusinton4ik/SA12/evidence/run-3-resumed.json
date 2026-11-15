@@ -1,0 +1,37 @@
+{
+  "command": [
+    "C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe",
+    "-X",
+    "utf8",
+    "submissions\\Lusinton4ik\\SA12\\collector.py",
+    "--base-url",
+    "http://127.0.0.1:8875",
+    "--output",
+    "submissions\\Lusinton4ik\\SA12\\result",
+    "--page",
+    "141fc764-0269-49e6-93d8-d0520ee760a8"
+  ],
+  "started": "2026-11-15T10:59:43.207039+00:00",
+  "ended": "2026-11-15T11:01:27.912876+00:00",
+  "pid": 25248,
+  "exit": 0,
+  "count": 50,
+  "completed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "pending_pages": [],
+  "complete": true,
+  "errors": [
+    {
+      "url": "http://127.0.0.1:8875/catalog?page=3&fail=1",
+      "status": 503,
+      "resolved": true
+    }
+  ],
+  "stdout": "",
+  "stderr": ""
+}

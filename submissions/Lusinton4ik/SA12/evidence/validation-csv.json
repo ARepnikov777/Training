@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+    "-X",
+    "utf8",
+    "submissions\\Lusinton4ik\\SA12\\validate.py",
+    "--data",
+    "submissions\\Lusinton4ik\\SA12\\result\\products.csv",
+    "--expected-ids",
+    "submissions\\Lusinton4ik\\SA12\\kit\\H13\\checks\\expected-ids.json",
+    "--catalog",
+    "submissions\\Lusinton4ik\\SA12\\kit\\H13\\input\\site\\catalog.json"
+  ],
+  "exit": 0,
+  "report": {
+    "ok": true,
+    "count": 50,
+    "unique_count": 50,
+    "errors": []
+  },
+  "stderr": ""
+}

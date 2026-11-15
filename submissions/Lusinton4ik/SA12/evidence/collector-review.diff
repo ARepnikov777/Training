@@ -1,0 +1,402 @@
+﻿diff --git a/submissions/Lusinton4ik/SA12/collector.py b/submissions/Lusinton4ik/SA12/collector.py
+new file mode 100644
+index 0000000..4ac0827
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/collector.py
+@@ -0,0 +1,218 @@
++"""Collect the synthetic catalog through an Orca browser tab."""
++import argparse
++import csv
++from datetime import datetime, timezone
++import json
++import math
++import os
++from pathlib import Path
++import subprocess
++import sys
++import uuid
++from urllib.parse import parse_qs, urlencode, urlparse
++
++ORCA = r"C:/Users/lyudm/AppData/Local/Programs/orca/resources/bin/orca.exe"
++FIELDS = ["id", "name", "category", "price", "currency", "supplier", "availability", "ram_GB", "ssd_GB", "screen_inches", "source_url"]
++PAGES = [1, 2, 3, 4, 5]
++
++class CollectorError(Exception):
++    pass
++
++def atomic_text(path, text):
++    temporary = path.with_name(path.name + ".tmp")
++    try:
++        with temporary.open("w", encoding="utf-8", newline="") as stream:
++            stream.write(text)
++            stream.flush()
++            os.fsync(stream.fileno())
++        os.replace(temporary, path)
++    finally:
++        if temporary.exists():
++            temporary.unlink()
++
++def json_text(value):
++    return json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
++
++def load_checkpoint(path, base):
++    try:
++        state = json.loads(path.read_text(encoding="utf-8"))
++        if not isinstance(state, dict) or state.get("schema_version") != 1 or state.get("base_url") != base:
++            raise ValueError("schema version or base URL mismatch")
++        records, done, pending, errors = (state[k] for k in ("records", "completed_pages", "pending_pages", "errors"))
++        if not isinstance(records, dict) or not isinstance(done, list) or not isinstance(pending, list) or not isinstance(errors, list):
++            raise ValueError("invalid checkpoint types")
++        if any(type(p) is not int for p in done + pending) or sorted(done + pending) != PAGES or len(set(done + pending)) != 5:
++            raise ValueError("invalid page lists")
++        if type(state.get("complete")) is not bool or state["complete"] != (not pending and len(records) == 50):
++            raise ValueError("inconsistent completion")
++        if len(records) > 50 or len(records) < 10 * len(done):
++            raise ValueError("inconsistent record count")
++        for key, record in records.items():
++            if not isinstance(record, dict) or set(record) != set(FIELDS) or record["id"] != key or not isinstance(key, str) or not key:
++                raise ValueError("invalid record")
++            if any(not isinstance(record[field], str) for field in ("name", "category", "currency", "supplier", "availability", "source_url")):
++                raise ValueError("invalid text field")
++            if any(type(record[field]) not in (int, float) or not math.isfinite(record[field]) for field in ("price", "ram_GB", "ssd_GB", "screen_inches")):
++                raise ValueError("invalid numeric field")
++            source = urlparse(record["source_url"])
++            if source.scheme not in ("http", "https") or source.netloc != urlparse(base).netloc:
++                raise ValueError("invalid source URL")
++        if any(not isinstance(e, dict) or not isinstance(e.get("url"), str) or type(e.get("status")) is not int or type(e.get("resolved")) is not bool for e in errors):
++            raise ValueError("invalid errors")
++        return state
++    except (OSError, ValueError, KeyError, TypeError) as exc:
++        raise CollectorError(f"Invalid checkpoint: {exc}") from exc
++
++def export(output, state):
++    records = list(state["records"].values())
++    atomic_text(output / "products.json", json_text(records))
++    import io
++    buf = io.StringIO(newline="")
++    writer = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator="\n")
++    writer.writeheader()
++    writer.writerows(records)
++    atomic_text(output / "products.csv", buf.getvalue())
++    atomic_text(output / "errors.json", json_text(state["errors"]))
++
++def save(output, state):
++    atomic_text(output / "checkpoint.json", json_text(state))
++    export(output, state)
++
++class OrcaBrowser:
++    def __init__(self, page=None):
++        self.page = page
++
++    def call(self, *args):
++        try:
++            result = subprocess.run([ORCA, *args, "--json"], capture_output=True, text=True, encoding="utf-8", timeout=45, check=True)
++            data = json.loads(result.stdout)
++            if not data.get("ok"):
++                raise CollectorError(f"Orca failed: {data.get('error')}")
++            return data["result"]
++        except (OSError, subprocess.SubprocessError, ValueError, KeyError) as exc:
++            raise CollectorError(f"Orca invocation failed: {exc}") from exc
++
++    def navigate(self, url):
++        if self.page is None:
++            result = self.call("tab", "create", "--url", "about:blank")
++            self.page = result.get("browserPageId")
++            if not self.page:
++                raise CollectorError("Orca did not return a browser page ID")
++        self.call("goto", "--page", self.page, "--url", url)
++        expression = """(() => ({status: performance.getEntriesByType('navigation')[0]?.responseStatus, url: location.href, links: Array.from(document.querySelectorAll('table tr td a[href]'), a => a.href), fields: Object.fromEntries(Array.from(document.querySelectorAll('dl dt'), dt => [dt.textContent.trim(), dt.nextElementSibling?.textContent.trim()]))}))()"""
++        result = self.call("eval", "--page", self.page, "--expression", expression)
++        try:
++            value = json.loads(result["result"])
++            if not isinstance(value, dict) or type(value.get("status")) is not int:
++                raise ValueError("missing navigation status")
++            return value
++        except (KeyError, TypeError, ValueError) as exc:
++            raise CollectorError(f"Invalid Orca eval response: {exc}") from exc
++
++def normalize_record(data):
++    fields = data.get("fields")
++    if not isinstance(fields, dict) or set(fields) != set(FIELDS[:-1]):
++        raise CollectorError("Card has unexpected fields")
++    record = dict(fields)
++    try:
++        for key in ("price", "ram_GB", "ssd_GB", "screen_inches"):
++            number = float(record[key])
++            if not math.isfinite(number):
++                raise ValueError("non-finite number")
++            record[key] = int(number) if number.is_integer() else number
++    except (TypeError, ValueError) as exc:
++        raise CollectorError(f"Invalid numeric field: {exc}") from exc
++    record["source_url"] = data.get("url")
++    if not isinstance(record["id"], str) or not record["id"] or not isinstance(record["source_url"], str) or not urlparse(record["source_url"]).netloc:
++        raise CollectorError("Card has invalid id or URL")
++    return record
++
++def collect(base_url, output, browser, fail_third=False):
++    output = Path(output)
++    base = base_url.rstrip("/")
++    checkpoint = output / "checkpoint.json"
++    try:
++        parsed = urlparse(base)
++        if parsed.scheme not in ("http", "https") or not parsed.netloc or parsed.path or parsed.query or parsed.fragment:
++            raise CollectorError("base URL must be an HTTP(S) origin")
++        resumed = checkpoint.exists()
++        state = load_checkpoint(checkpoint, base) if resumed else {"schema_version": 1, "base_url": base, "records": {}, "completed_pages": [], "pending_pages": PAGES.copy(), "errors": [], "complete": False}
++    except CollectorError as exc:
++        print(str(exc), file=sys.stderr)
++        return 1
++    output.mkdir(parents=True, exist_ok=True)
++    run_id = uuid.uuid4().hex
++    def event(kind, **data):
++        entry = {"timestamp": datetime.now(timezone.utc).isoformat(), "pid": os.getpid(), "run_id": run_id, "event": kind, **data}
++        with (output / "events.jsonl").open("a", encoding="utf-8") as stream:
++            stream.write(json.dumps(entry, ensure_ascii=False) + "\n")
++    try:
++        if resumed:
++            event("resume", count=len(state["records"]))
++        if state["complete"]:
++            export(output, state)
++            event("exit", code=0, count=len(state["records"]))
++            return 0
++        save(output, state)
++        for page in list(state["pending_pages"]):
++            query = {"page": page}
++            if fail_third and page == 3:
++                query["fail"] = 1
++            url = base + "/catalog?" + urlencode(query)
++            result = browser.navigate(url)
++            status = result.get("status")
++            event("navigation", url=url, status=status, count=len(state["records"]))
++            if status != 200:
++                if type(status) is not int:
++                    raise CollectorError("Missing HTTP status")
++                state["errors"].append({"url": url, "status": status, "resolved": False})
++                save(output, state)
++                code = 2 if status == 503 else 1
++                event("exit", code=code, count=len(state["records"]))
++                return code
++            links = result.get("links")
++            if not isinstance(links, list) or len(links) != 10 or len(set(links)) != 10:
++                raise CollectorError(f"Page {page} does not have 10 unique cards")
++            page_ids = set()
++            for link in links:
++                if not isinstance(link, str) or urlparse(link).netloc != parsed.netloc:
++                    raise CollectorError("Invalid card link")
++                card = browser.navigate(link)
++                event("navigation", url=link, status=card.get("status"), count=len(state["records"]))
++                if card.get("status") != 200:
++                    raise CollectorError(f"Card HTTP status {card.get('status')} at {link}")
++                record = normalize_record(card)
++                previous = state["records"].get(record["id"])
++                if record["id"] in page_ids or (previous is not None and previous["source_url"] != record["source_url"]):
++                    raise CollectorError(f"Duplicate product ID: {record['id']}")
++                page_ids.add(record["id"])
++                state["records"][record["id"]] = record
++                save(output, state)
++            state["completed_pages"].append(page)
++            state["pending_pages"].remove(page)
++            for error in state["errors"]:
++                q = urlparse(error["url"])
++                if q.path == "/catalog" and parse_qs(q.query).get("page") == [str(page)]:
++                    error["resolved"] = True
++            state["complete"] = not state["pending_pages"] and len(state["records"]) == 50
++            save(output, state)
++            event("page_complete", url=url, status=status, count=len(state["records"]), page=page)
++        code = 0 if state["complete"] else 1
++        event("exit", code=code, count=len(state["records"]))
++        return code
++    except (CollectorError, OSError, ValueError, TypeError) as exc:
++        print(f"Collection failed: {exc}", file=sys.stderr)
++        event("exit", code=1, error=str(exc), count=len(state["records"]))
++        return 1
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--base-url", required=True)
++    parser.add_argument("--output", required=True, type=Path)
++    parser.add_argument("--fail-third", action="store_true")
++    parser.add_argument("--page")
++    args = parser.parse_args()
++    return collect(args.base_url, args.output, OrcaBrowser(args.page), args.fail_third)
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/submissions/Lusinton4ik/SA12/tests/test_collector.py b/submissions/Lusinton4ik/SA12/tests/test_collector.py
+new file mode 100644
+index 0000000..338b94d
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/tests/test_collector.py
+@@ -0,0 +1,172 @@
++import csv
++import json
++import tempfile
++import unittest
++from pathlib import Path
++from urllib.parse import parse_qs, urlparse
++import sys
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
++import collector
++
++BASE = "http://localhost:8000"
++
++class FakeBrowser:
++    def __init__(self):
++        self.pages = []
++
++    def navigate(self, url):
++        parsed = urlparse(url)
++        query = parse_qs(parsed.query)
++        if parsed.path == "/catalog":
++            page = int(query["page"][0])
++            self.pages.append(page)
++            if query.get("fail") == ["1"]:
++                return {"status": 503, "url": url, "links": []}
++            return {"status": 200, "url": url, "links": [f"{BASE}/product?id=p{i}" for i in range((page-1)*10+1, page*10+1)]}
++        if parsed.path == "/product":
++            ident = query["id"][0]
++            return {"status": 200, "url": url, "fields": {"id": ident, "name": "Item " + ident, "category": "laptop", "price": "12.5", "currency": "USD", "supplier": "A", "availability": "yes", "ram_GB": "16", "ssd_GB": "512", "screen_inches": "15.6"}}
++        raise AssertionError(url)
++
++class CollectorTest(unittest.TestCase):
++    def setUp(self):
++        self.temp = tempfile.TemporaryDirectory()
++        self.addCleanup(self.temp.cleanup)
++        self.output = Path(self.temp.name)
++
++    def read(self, name):
++        return json.loads((self.output / name).read_text(encoding="utf-8"))
++
++    def test_interruption_resume_and_idempotent_rerun(self):
++        first = FakeBrowser()
++        self.assertEqual(collector.collect(BASE, self.output, first, True), 2)
++        cp = self.read("checkpoint.json")
++        self.assertEqual(first.pages, [1, 2, 3])
++        self.assertEqual(len(cp["records"]), 20)
++        self.assertEqual(cp["completed_pages"], [1, 2])
++        self.assertEqual(cp["pending_pages"], [3, 4, 5])
++        self.assertFalse(cp["complete"])
++        self.assertEqual(cp["errors"][0]["status"], 503)
++        self.assertFalse(cp["errors"][0]["resolved"])
++        self.assertIn("fail=1", cp["errors"][0]["url"])
++        self.assertEqual(self.read("errors.json"), cp["errors"])
++        second = FakeBrowser()
++        self.assertEqual(collector.collect(BASE, self.output, second), 0)
++        self.assertEqual(second.pages, [3, 4, 5])
++        cp = self.read("checkpoint.json")
++        self.assertTrue(cp["complete"])
++        self.assertTrue(cp["errors"][0]["resolved"])
++        products = self.read("products.json")
++        self.assertEqual(len(products), 50)
++        self.assertEqual(len({p["id"] for p in products}), 50)
++        self.assertEqual(products[0]["source_url"], BASE + "/product?id=p1")
++        self.assertEqual(products[0]["price"], 12.5)
++        self.assertEqual(products[0]["ram_GB"], 16)
++        with (self.output / "products.csv").open(encoding="utf-8", newline="") as f:
++            self.assertEqual(len(list(csv.DictReader(f))), 50)
++        third = FakeBrowser()
++        self.assertEqual(collector.collect(BASE, self.output, third), 0)
++        self.assertEqual(third.pages, [])
++        self.assertEqual(self.read("products.json"), products)
++        events = [json.loads(line) for line in (self.output / "events.jsonl").read_text(encoding="utf-8").splitlines()]
++        self.assertTrue(any(e.get("status") == 503 and "fail=1" in e.get("url", "") for e in events))
++        self.assertTrue(any(e.get("event") == "resume" for e in events))
++        self.assertTrue(any(e.get("event") == "exit" and e.get("code") == 0 for e in events))
++        self.assertTrue(all("timestamp" in e and "pid" in e and "run_id" in e for e in events))
++
++    def test_corrupt_checkpoint_leaves_all_files_unchanged(self):
++        (self.output / "checkpoint.json").write_text('{broken', encoding="utf-8")
++        (self.output / "products.json").write_text('untouched', encoding="utf-8")
++        before = {p.name: p.read_bytes() for p in self.output.iterdir()}
++        browser = FakeBrowser()
++        self.assertNotEqual(collector.collect(BASE, self.output, browser), 0)
++        self.assertEqual({p.name: p.read_bytes() for p in self.output.iterdir()}, before)
++        self.assertEqual(browser.pages, [])
++
++    def test_wrong_base_checkpoint_leaves_files_unchanged(self):
++        self.assertEqual(collector.collect(BASE, self.output, FakeBrowser(), True), 2)
++        before = {p.name: p.read_bytes() for p in self.output.iterdir()}
++        self.assertNotEqual(collector.collect("http://other.test", self.output, FakeBrowser()), 0)
++        self.assertEqual({p.name: p.read_bytes() for p in self.output.iterdir()}, before)
++
++class BoundaryTests(unittest.TestCase):
++    def test_duplicate_id_does_not_commit_invalid_completed_checkpoint(self):
++        class DuplicateBrowser(FakeBrowser):
++            def navigate(self, url):
++                result = super().navigate(url)
++                if url.endswith("id=p50"):
++                    result["fields"]["id"] = "p1"
++                return result
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, DuplicateBrowser()), 1)
++            cp = json.loads((output / "checkpoint.json").read_text(encoding="utf-8"))
++            self.assertEqual(cp["pending_pages"], [5])
++            self.assertEqual(cp["completed_pages"], [1, 2, 3, 4])
++            self.assertEqual(cp["records"]["p1"]["name"], "Item p1")
++
++class ProcessAndOrcaTests(unittest.TestCase):
++    def test_resume_in_a_new_python_process(self):
++        import subprocess
++        script = '''import sys
++from pathlib import Path
++sys.path.insert(0, sys.argv[1])
++from test_collector import FakeBrowser, BASE
++import collector
++browser = FakeBrowser()
++code = collector.collect(BASE, Path(sys.argv[2]), browser, sys.argv[3] == "fail")
++print("PAGES:", browser.pages)
++sys.exit(code)
++'''
++        test_dir = str(Path(__file__).resolve().parent)
++        with tempfile.TemporaryDirectory() as directory:
++            def run(mode):
++                return subprocess.run([sys.executable, "-X", "utf8", "-c", script, test_dir, directory, mode], capture_output=True, text=True, encoding="utf-8")
++            first = run("fail")
++            second = run("resume")
++            third = run("resume")
++            self.assertEqual((first.returncode, second.returncode, third.returncode), (2, 0, 0), (first.stderr, second.stderr, third.stderr))
++            self.assertIn("PAGES: [1, 2, 3]", first.stdout)
++            self.assertIn("PAGES: [3, 4, 5]", second.stdout)
++            self.assertIn("PAGES: []", third.stdout)
++            events = [json.loads(line) for line in (Path(directory) / "events.jsonl").read_text(encoding="utf-8").splitlines()]
++            self.assertGreaterEqual(len({e["pid"] for e in events}), 2)
++            self.assertEqual(len(json.loads((Path(directory) / "products.json").read_text(encoding="utf-8"))), 50)
++
++    def test_orca_commands_use_page_id_and_parse_eval_envelope(self):
++        from unittest.mock import patch
++        import subprocess
++        calls = []
++        responses = [
++            {"ok": True, "result": {"browserPageId": "page-42"}},
++            {"ok": True, "result": {"effects": {}}},
++            {"ok": True, "result": {"result": json.dumps({"status": 503, "url": BASE + "/catalog?page=3&fail=1", "links": [], "fields": {}}), "origin": BASE}},
++        ]
++        def run(argv, **kwargs):
++            calls.append((argv, kwargs))
++            return subprocess.CompletedProcess(argv, 0, json.dumps(responses.pop(0)), "")
++        with patch.object(collector.subprocess, "run", side_effect=run):
++            browser = collector.OrcaBrowser()
++            result = browser.navigate(BASE + "/catalog?page=3&fail=1")
++        self.assertEqual(result["status"], 503)
++        self.assertEqual(calls[0][0][1:3], ["tab", "create"])
++        self.assertEqual(calls[1][0][1:4], ["goto", "--page", "page-42"])
++        self.assertEqual(calls[2][0][1:4], ["eval", "--page", "page-42"])
++        self.assertTrue(all(call[1].get("timeout") and not call[1].get("shell", False) for call in calls))
++
++class CheckpointValidationTests(unittest.TestCase):
++    def test_checkpoint_with_invalid_record_is_rejected_without_changes(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser(), True), 2)
++            path = output / "checkpoint.json"
++            cp = json.loads(path.read_text(encoding="utf-8"))
++            cp["records"]["p1"]["price"] = "not-a-number"
++            path.write_text(json.dumps(cp), encoding="utf-8")
++            before = {p.name: p.read_bytes() for p in output.iterdir()}
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser()), 1)
++            self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, before)
++
++if __name__ == "__main__":
++    unittest.main()

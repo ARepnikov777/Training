@@ -1,0 +1,1279 @@
+﻿diff --git a/submissions/Lusinton4ik/SA12/README.md b/submissions/Lusinton4ik/SA12/README.md
+new file mode 100644
+index 0000000..cef4213
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/README.md
+@@ -0,0 +1,175 @@
++# SA12 — восстановимый браузерный сбор каталога
++
++Задание: [#74](https://github.com/ARepnikov777/Training/issues/74), исполнитель Lusinton4ik.
++Предметные уточнения: [H13 #49](https://github.com/ARepnikov777/Training/issues/49).
++[Веха SA12](https://github.com/ARepnikov777/Training/milestone/6), нативные подзадачи
++[#110](https://github.com/ARepnikov777/Training/issues/110),
++[#111](https://github.com/ARepnikov777/Training/issues/111),
++[#112](https://github.com/ARepnikov777/Training/issues/112),
++[#113](https://github.com/ARepnikov777/Training/issues/113),
++[#114](https://github.com/ARepnikov777/Training/issues/114).
++
++## Результат и источники
++
++`collector.py` собирает таблицы и карточки через DOM Orca, сохраняет прогресс по id
++в атомарном `result/checkpoint.json` и экспортирует `products.json`, `products.csv`,
++`errors.json`, `events.jsonl`. `validate.py` независимо сравнивает готовые JSON/CSV
++с 50 ожидаемыми id и всеми исходными полями. Он не импортирует сборщик.
++Итог: 50 уникальных товаров, JSON и CSV полностью совпали с эталоном по всем полям.
++Повторный запуск сохранил SHA-256 данных и checkpoint. Контролируемое удаление P050
++отклонено независимой проверкой, восстановленная копия принята.
++
++Закреплённый [H13.zip](sources/H13.zip) распакован в `kit/H13/`, SHA-256
++`278186e77b56325fbe1bd2e23dd4d317e162569ee1e1e6a0fbd7b311331637e7`.
++Исходники не исправлялись. Снимки постановок и уточнений: `sources/issue-74.json`,
++`sources/issue-49.json`; правила курса: `sources/course-AGENTS.md`.
++Полный JSON каталога/checks разрешены только для сверки после первого результата.
++
++## Как воспроизвести
++
++Нужны Python 3.10+ и работающий Orca с доступным встроенным браузером.
++В данном запуске использован временный официальный Python 3.12.10 embedded,
++поскольку `python` в PATH оказался системным псевдонимом без runtime.
++В PowerShell вместо `python` можно использовать полный путь к рабочему python.exe.
++Фактические команды/версии сохранены в evidence и run-log.
++Сторонние Python-пакеты не нужны. Пример ниже из этой папки (`SA12`).
++
++1. В отдельном терминале запустите неизменённый стенд:
++
++   ```powershell
++   python -X utf8 kit/H13/input/site/serve.py --port 8875
++   ```
++
++2. Из новой рабочей папки/с новым `--output` запустите сбор:
++
++   ```powershell
++   python -X utf8 collector.py --base-url http://127.0.0.1:8875 --output result --fail-third
++   ```
++
++   Ожидается **exit 2**: страницы 1–2 сохранены (20 товаров), HTTP 503 страницы 3
++   записан, процесс завершён. Это ожидаемый неполный результат, не успешный полный сбор.
++   Сохраните копию checkpoint до продолжения; серверный `_state.json` прогрессом не является.
++
++3. Новым процессом продолжите тот же output без флага отказа:
++
++   ```powershell
++   python -X utf8 collector.py --base-url http://127.0.0.1:8875 --output result
++   ```
++
++   Ожидается exit 0 и 50 уникальных id; страницы 1–2 не собираются снова,
++   ошибка страницы 3 остаётся в журнале с `resolved: true`.
++
++   Null в исходном стенде отображается строкой `None`: в результате это JSON null
++   и пустая CSV-ячейка. Ключи nullable-полей сохраняются. При восстановлении старого
++   checkpoint сборщик исправляет собственную прежнюю сериализацию availability.
++
++4. Повторите последнюю команду: exit 0, данные не меняются и дубли не добавляются.
++   Встроенные события содержат UTC, PID и run_id каждого процесса.
++
++5. После получения результата выполните обе независимые сверки:
++
++   ```powershell
++   python -X utf8 validate.py --data result/products.json --expected-ids kit/H13/checks/expected-ids.json --catalog kit/H13/input/site/catalog.json
++   python -X utf8 validate.py --data result/products.csv --expected-ids kit/H13/checks/expected-ids.json --catalog kit/H13/input/site/catalog.json
++   python -X utf8 -m unittest discover -s tests -v
++   python -X utf8 sources/graph_check.py workflow.md
++   ```
++
++   Ожидается `ok: true`, `count: 50`, `unique_count: 50`, `errors: []` и exit 0.
++   Validator на копии с удалённой записью или дубликатом обязан вернуть exit 1.
++   Не удаляйте действительный результат для отрицательного сценария.
++
++При незавершённой операции сначала проверьте процессы, checkpoint и events.
++Повреждённый или чужой checkpoint сборщик отклоняет без перезаписи. Для другого
++порта нужен новый output: base_url входит в контракт checkpoint.
++Сервер останавливается Ctrl+C в его терминале.
++
++## Граф, исполнители и проверки
++
++[workflow.md](workflow.md) сохранён до реализации, отрендерен и просмотрен:
++[состояния PNG](evidence/workflow.png), [SVG](evidence/workflow.svg),
++[зависимости PNG](evidence/dependencies.png). [Структурная проверка](evidence/graph-check.txt)
++не заменяет смысловую проверку, контроль счётчиков и фактические evidence.
++[Первый рендер до реализации](evidence/workflow-before-build.png) и
++[метаданные времени](evidence/graph-render-provenance.json): 10:28:53Z, до создания
++collector.py в worktree (10:33:35Z). Полная версия PNG улучшает масштаб изображения.
++[plan.md](plan.md), [briefs](briefs/), [run-log.md](run-log.md),
++[свидетельство ролей](evidence/agents.json).
++
++- `explorer` `/root/sa12_explore`: read-only контракт и смысловая проверка графа,
++  [отчёт](explorer-report.md); координатор сверил ссылки на строки.
++- `worker` `/root/sa12_collector`: только сборщик/его тесты/отчёт в SA12-worker,
++  [отчёт](collector-report.md), [RED/GREEN](evidence/collector-tests.txt).
++- Другой `worker` `/root/sa12_validator`: отдельный валидатор и синтетические тесты
++  в SA12-validator, [отчёт](validator-report.md), [RED/GREEN](evidence/validator-tests.txt).
++- `reviewer` `/root/sa12_review`: отдельная read-only проверка; первичное замечание
++  о loading:true сохранено в [первом ревью](reviewer-collector-initial.md).
++  [Scoped loading review](reviewer-collector-fix.md),
++  [nullable collector review](reviewer-null-collector.md),
++  [nullable validator review](reviewer-null-validator.md) — PASS.
++- Координатор интегрирует разрешённые файлы, повторяет проверки и владеет
++  единственным реальным браузерным сбором/checkpoint. Субагенты не публикуют и не переделегируют.
++
++## Definition of Done SA12 — дословно из issue
++
++- [x] Предметный результат удовлетворяет **всем** предметным критериям и формату раздела «Что передать заказчику»; в README для каждого есть отдельное доказательство, исходные материалы сохранены.
++- [x] Создана персональная GitHub-веха с результатом и критериями приёмки; это issue и нативно связанные подзадачи включены в неё, зависимости/владельцы/области записи определены и доступны по ссылкам.
++- [x] До реализации сохранён и проверен граф с минимум тремя типами субагентов, обоснованной параллельностью, наблюдаемыми условиями, ограниченными повторами, локальной приёмкой и эскалацией. Mermaid отрендерен и просмотрен; структурная проверка записана с её ограничениями.
++- [ ] Журнал и артефакты подтверждают реальные запуски `explorer`, `worker`, отдельного `reviewer`, успешную интеграцию и выбранный отрицательный сценарий; замечания reviewer исправлены либо явно оставлены как блокеры, локальный успех не объявлен при невыполненных критериях.
++- [ ] В одном PR в `main` переданы результат, исходники, `workflow.md`, брифы, `run-log.md`, отчёт reviewer и README с командами/порядком повторения. Ссылки на веху, подзадачи и PR добавлены в это issue; объединение PR оставлено преподавателю.
++
++| Критерий SA12 | Фактический результат и доказательство |
++|---|---|
++| Предметный результат / исходники | `result/products.json`, `products.csv`, checkpoint/errors/events; предметные доказательства ниже; [11 исходных файлов совпали с ZIP](evidence/source-integrity.json) |
++| Персональная веха / native sub-issues | [Веха](https://github.com/ARepnikov777/Training/milestone/6), #110–#114; [parent](evidence/tracker-parent.json), [native children](evidence/tracker-children.json); входы/зависимости/владельцы/files/branches в briefs |
++| Граф до реализации / пределы | workflow/plan, ранний Explore PASS в run-log, `graph-check.txt`, PNG/SVG; N=2, T=120мин от 10:26:17Z, до3 агентов; кодовые writers последовательно |
++| Реальные роли / интеграция / отрицательный сценарий | `agents.json`, run-log, отчёты и scoped review; [27 tests OK](evidence/integrated-tests.txt), negative validation ниже; итоговое независимое ревью дополняет этот набор |
++| Единый PR / ссылки / без merge | Публикация и обратная проверка PR выполняются после итогового ревью; ссылка будет указана здесь и в #74 |
++
++## Предметный DoD H13 — дословно из issue
++
++- [x] Выполнение прервано после сохранения части записей и продолжено из сохранённого состояния; есть доказательства обоих запусков.
++- [x] При доступности всех целевых страниц итог содержит ровно 50 уникальных записей без пропусков.
++- [x] Недоступные страницы перечислены в отчёте, частичный набор не объявлен полным; после восстановления страницы пропуск восполнен.
++- [x] Повторный запуск не дублирует уже собранные записи; переданы данные, состояние и инструкция воспроизведения.
++
++| Критерий H13 | Фактический результат и доказательство |
++|---|---|
++| Прерывание и новый процесс | [PID25520 exit2, count20](evidence/run-1.json), [checkpoint20](evidence/checkpoint-after-20.json); [PID25248 exit0, count50](evidence/run-3-resumed.json) |
++| 50 без пропусков | [JSON: 50/50, errors=[]](evidence/validation-json.json), [CSV: 50/50, errors=[]](evidence/validation-csv.json); сверены все исходные поля и URL карточки |
++| Недоступность и восстановление | [HTTP503](evidence/http-503.json), [скриншот](evidence/http-503.png), [HTTP200 страницы3](evidence/page-3-restored.json), [скриншот](evidence/page-3-restored.png); `result/errors.json` содержит прежний503 с resolved=true. checkpoint20 имеет complete=false |
++| Повтор без дублей / переданные данные | [Повтор exit0 и неизменные hashes](evidence/run-4-idempotent.json), `result/` и инструкция выше |
++
++Дополнительно: [испорченная копия49](evidence/negative-missing.json) получила
++[exit1, missing P050](evidence/negative-missing-validation.json);
++[исправленная копия50](evidence/negative-repaired.json) получила
++[exit0](evidence/negative-repaired-validation.json). Запись восстановлена из собственного
++браузерного результата. Полнота частичного набора не заявлялась.
++
++Первое продолжение до исправления null завершилось явной ошибкой без потери20 записей:
++[run-2-null-failure.json](evidence/run-2-null-failure.json),
++[наблюдение DOM P021](evidence/null-card-observation.json),
++[поздняя проверка схемы](evidence/schema-verification.json).
++Ошибка исправлена по RED→GREEN, затем ревью приняло исправление. Этот неуспешный
++запуск сохранён в журнале; успешное продолжение — run-3-resumed.json.
++Повтор из полностью чистой рабочей папки завершён: отдельные PID12748/37464/12368,
++exit2/0/0, 20/50/50, обе сверки JSON/CSV PASS. [Отчёт и точные команды](evidence/clean-replay.json),
++[события](evidence/clean-replay-events.jsonl), [финальный checkpoint](evidence/clean-replay-checkpoint.json).
++SHA-256 collector совпал с финальным исходником; в validator после прогона удалена
++только пустая строка EOF, равенство AST подтверждено, обе сверки повторены уже его
++финальным файлом, SHA-256 обновлён в отчёте. Это форматирование без изменения логики.
++
++## Ограничения
++
++Сборщик предназначен для данного синтетического пятистраничного стенда, не для
++произвольных сайтов. Путь Orca в collector.py сейчас соответствует среде исполнителя;
++на другой машине потребуется указать её путь. Изображения SVG/PNG графа доступны
++офлайн, повторный рендер HTML использует Mermaid CDN.
++Общие проверки организаторского проекта pytest/ruff не выполнялись для сдачи SA12;
++попытка worker запустить pytest показала отсутствие пакета. Проверяются собственные
++поведенческие unittest и реальный браузерный сценарий.
++
++Gitleaks истории вернул exit 1 на SHA-256 исходного H09; контрольная сумма
++пересчитана и совпала с файлом, см. [диагностику](evidence/gitleaks-history.md).
++Это не зелёный результат сканера; исключения и подавление не применялись.
++Staged scan выполняется перед коммитом. Преподавательская приёмка и merge не выполняются агентом.
+diff --git a/submissions/Lusinton4ik/SA12/collector.py b/submissions/Lusinton4ik/SA12/collector.py
+new file mode 100644
+index 0000000..c20a829
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/collector.py
+@@ -0,0 +1,241 @@
++"""Collect the synthetic catalog through an Orca browser tab."""
++import argparse
++import csv
++from datetime import datetime, timezone
++import json
++import math
++import os
++from pathlib import Path
++import subprocess
++import sys
++import uuid
++from urllib.parse import parse_qs, urlencode, urlparse
++
++ORCA = r"C:/Users/lyudm/AppData/Local/Programs/orca/resources/bin/orca.exe"
++FIELDS = ["id", "name", "category", "price", "currency", "supplier", "availability", "ram_GB", "ssd_GB", "screen_inches", "source_url"]
++PAGES = [1, 2, 3, 4, 5]
++
++class CollectorError(Exception):
++    pass
++
++def atomic_text(path, text):
++    temporary = path.with_name(path.name + ".tmp")
++    try:
++        with temporary.open("w", encoding="utf-8", newline="") as stream:
++            stream.write(text)
++            stream.flush()
++            os.fsync(stream.fileno())
++        os.replace(temporary, path)
++    finally:
++        if temporary.exists():
++            temporary.unlink()
++
++def json_text(value):
++    return json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
++
++def load_checkpoint(path, base):
++    try:
++        state = json.loads(path.read_text(encoding="utf-8"))
++        if not isinstance(state, dict) or state.get("schema_version") != 1 or state.get("base_url") != base:
++            raise ValueError("schema version or base URL mismatch")
++        records, done, pending, errors = (state[k] for k in ("records", "completed_pages", "pending_pages", "errors"))
++        if not isinstance(records, dict) or not isinstance(done, list) or not isinstance(pending, list) or not isinstance(errors, list):
++            raise ValueError("invalid checkpoint types")
++        if any(type(p) is not int for p in done + pending) or sorted(done + pending) != PAGES or len(set(done + pending)) != 5:
++            raise ValueError("invalid page lists")
++        if type(state.get("complete")) is not bool or state["complete"] != (not pending and len(records) == 50):
++            raise ValueError("inconsistent completion")
++        if len(records) > 50 or len(records) < 10 * len(done):
++            raise ValueError("inconsistent record count")
++        for key, record in records.items():
++            if not isinstance(record, dict) or set(record) != set(FIELDS) or record["id"] != key or not isinstance(key, str) or not key or key == "None":
++                raise ValueError("invalid record")
++            if any(not isinstance(record[field], str) or record[field] == "None" for field in ("name", "category", "currency", "supplier", "source_url")):
++                raise ValueError("invalid text field")
++            if record["availability"] == "None":
++                record["availability"] = None
++            if record["availability"] is not None and not isinstance(record["availability"], str):
++                raise ValueError("invalid availability")
++            if type(record["price"]) is not int or any(record[field] is not None and type(record[field]) is not int for field in ("ram_GB", "ssd_GB")):
++                raise ValueError("invalid integer field")
++            screen = record["screen_inches"]
++            if screen is not None:
++                if type(screen) not in (int, float) or not math.isfinite(screen):
++                    raise ValueError("invalid screen_inches")
++                record["screen_inches"] = float(screen)
++            source = urlparse(record["source_url"])
++            if source.scheme not in ("http", "https") or source.netloc != urlparse(base).netloc:
++                raise ValueError("invalid source URL")
++        if any(not isinstance(e, dict) or not isinstance(e.get("url"), str) or type(e.get("status")) is not int or type(e.get("resolved")) is not bool for e in errors):
++            raise ValueError("invalid errors")
++        return state
++    except (OSError, ValueError, KeyError, TypeError) as exc:
++        raise CollectorError(f"Invalid checkpoint: {exc}") from exc
++
++def export(output, state):
++    records = list(state["records"].values())
++    atomic_text(output / "products.json", json_text(records))
++    import io
++    buf = io.StringIO(newline="")
++    writer = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator="\n")
++    writer.writeheader()
++    writer.writerows(records)
++    atomic_text(output / "products.csv", buf.getvalue())
++    atomic_text(output / "errors.json", json_text(state["errors"]))
++
++def save(output, state):
++    atomic_text(output / "checkpoint.json", json_text(state))
++    export(output, state)
++
++class OrcaBrowser:
++    def __init__(self, page=None):
++        self.page = page
++
++    def call(self, *args):
++        try:
++            result = subprocess.run([ORCA, *args, "--json"], capture_output=True, text=True, encoding="utf-8", timeout=45, check=True)
++            data = json.loads(result.stdout)
++            if not data.get("ok"):
++                raise CollectorError(f"Orca failed: {data.get('error')}")
++            return data["result"]
++        except (OSError, subprocess.SubprocessError, ValueError, KeyError) as exc:
++            raise CollectorError(f"Orca invocation failed: {exc}") from exc
++
++    def navigate(self, url):
++        if self.page is None:
++            result = self.call("tab", "create", "--url", "about:blank")
++            self.page = result.get("browserPageId")
++            if not self.page:
++                raise CollectorError("Orca did not return a browser page ID")
++        navigation = self.call("goto", "--page", self.page, "--url", url)
++        if navigation.get("effects", {}).get("loading") is True:
++            self.call("wait", "--page", self.page, "--load", "load")
++        expression = """(() => ({status: performance.getEntriesByType('navigation')[0]?.responseStatus, url: location.href, links: Array.from(document.querySelectorAll('table tr td a[href]'), a => a.href), fields: Object.fromEntries(Array.from(document.querySelectorAll('dl dt'), dt => [dt.textContent.trim(), dt.nextElementSibling?.textContent.trim()]))}))()"""
++        result = self.call("eval", "--page", self.page, "--expression", expression)
++        try:
++            value = json.loads(result["result"])
++            if not isinstance(value, dict) or type(value.get("status")) is not int:
++                raise ValueError("missing navigation status")
++            if value.get("url") != url:
++                raise ValueError(f"navigation URL mismatch: expected {url}, got {value.get('url')}")
++            return value
++        except (KeyError, TypeError, ValueError) as exc:
++            raise CollectorError(f"Invalid Orca eval response: {exc}") from exc
++
++def normalize_record(data):
++    fields = data.get("fields")
++    if not isinstance(fields, dict) or set(fields) != set(FIELDS[:-1]):
++        raise CollectorError("Card has unexpected fields")
++    record = dict(fields)
++    for key in ("availability", "ram_GB", "ssd_GB", "screen_inches"):
++        if record[key] == "None":
++            record[key] = None
++    if any(not isinstance(record[key], str) or record[key] == "None" for key in ("id", "name", "category", "currency", "supplier")):
++        raise CollectorError("Invalid required text field")
++    if record["availability"] is not None and not isinstance(record["availability"], str):
++        raise CollectorError("Invalid availability")
++    try:
++        record["price"] = int(record["price"])
++        for key in ("ram_GB", "ssd_GB"):
++            if record[key] is not None:
++                record[key] = int(record[key])
++        if record["screen_inches"] is not None:
++            record["screen_inches"] = float(record["screen_inches"])
++            if not math.isfinite(record["screen_inches"]):
++                raise ValueError("non-finite number")
++    except (TypeError, ValueError) as exc:
++        raise CollectorError(f"Invalid numeric field: {exc}") from exc
++    record["source_url"] = data.get("url")
++    if not isinstance(record["id"], str) or not record["id"] or not isinstance(record["source_url"], str) or not urlparse(record["source_url"]).netloc:
++        raise CollectorError("Card has invalid id or URL")
++    return record
++
++def collect(base_url, output, browser, fail_third=False):
++    output = Path(output)
++    base = base_url.rstrip("/")
++    checkpoint = output / "checkpoint.json"
++    try:
++        parsed = urlparse(base)
++        if parsed.scheme not in ("http", "https") or not parsed.netloc or parsed.path or parsed.query or parsed.fragment:
++            raise CollectorError("base URL must be an HTTP(S) origin")
++        resumed = checkpoint.exists()
++        state = load_checkpoint(checkpoint, base) if resumed else {"schema_version": 1, "base_url": base, "records": {}, "completed_pages": [], "pending_pages": PAGES.copy(), "errors": [], "complete": False}
++    except CollectorError as exc:
++        print(str(exc), file=sys.stderr)
++        return 1
++    output.mkdir(parents=True, exist_ok=True)
++    run_id = uuid.uuid4().hex
++    def event(kind, **data):
++        entry = {"timestamp": datetime.now(timezone.utc).isoformat(), "pid": os.getpid(), "run_id": run_id, "event": kind, **data}
++        with (output / "events.jsonl").open("a", encoding="utf-8") as stream:
++            stream.write(json.dumps(entry, ensure_ascii=False) + "\n")
++    try:
++        if resumed:
++            event("resume", count=len(state["records"]))
++        if state["complete"]:
++            export(output, state)
++            event("exit", code=0, count=len(state["records"]))
++            return 0
++        save(output, state)
++        for page in list(state["pending_pages"]):
++            query = {"page": page}
++            if fail_third and page == 3:
++                query["fail"] = 1
++            url = base + "/catalog?" + urlencode(query)
++            result = browser.navigate(url)
++            status = result.get("status")
++            event("navigation", url=url, status=status, count=len(state["records"]))
++            if status != 200:
++                if type(status) is not int:
++                    raise CollectorError("Missing HTTP status")
++                state["errors"].append({"url": url, "status": status, "resolved": False})
++                save(output, state)
++                code = 2 if status == 503 else 1
++                event("exit", code=code, count=len(state["records"]))
++                return code
++            links = result.get("links")
++            if not isinstance(links, list) or len(links) != 10 or len(set(links)) != 10:
++                raise CollectorError(f"Page {page} does not have 10 unique cards")
++            page_ids = set()
++            for link in links:
++                if not isinstance(link, str) or urlparse(link).netloc != parsed.netloc:
++                    raise CollectorError("Invalid card link")
++                card = browser.navigate(link)
++                event("navigation", url=link, status=card.get("status"), count=len(state["records"]))
++                if card.get("status") != 200:
++                    raise CollectorError(f"Card HTTP status {card.get('status')} at {link}")
++                record = normalize_record(card)
++                previous = state["records"].get(record["id"])
++                if record["id"] in page_ids or (previous is not None and previous["source_url"] != record["source_url"]):
++                    raise CollectorError(f"Duplicate product ID: {record['id']}")
++                page_ids.add(record["id"])
++                state["records"][record["id"]] = record
++                save(output, state)
++            state["completed_pages"].append(page)
++            state["pending_pages"].remove(page)
++            for error in state["errors"]:
++                q = urlparse(error["url"])
++                if q.path == "/catalog" and parse_qs(q.query).get("page") == [str(page)]:
++                    error["resolved"] = True
++            state["complete"] = not state["pending_pages"] and len(state["records"]) == 50
++            save(output, state)
++            event("page_complete", url=url, status=status, count=len(state["records"]), page=page)
++        code = 0 if state["complete"] else 1
++        event("exit", code=code, count=len(state["records"]))
++        return code
++    except (CollectorError, OSError, ValueError, TypeError) as exc:
++        print(f"Collection failed: {exc}", file=sys.stderr)
++        event("exit", code=1, error=str(exc), count=len(state["records"]))
++        return 1
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--base-url", required=True)
++    parser.add_argument("--output", required=True, type=Path)
++    parser.add_argument("--fail-third", action="store_true")
++    parser.add_argument("--page")
++    args = parser.parse_args()
++    return collect(args.base_url, args.output, OrcaBrowser(args.page), args.fail_third)
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/submissions/Lusinton4ik/SA12/plan.md b/submissions/Lusinton4ik/SA12/plan.md
+new file mode 100644
+index 0000000..4f233c2
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/plan.md
+@@ -0,0 +1,40 @@
++# SA12 Implementation Plan
++
++> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development. Ограниченные задания ниже, без переделегирования.
++
++**Goal:** Восстановимый браузерный сбор 50 товаров по SA12/H13 с независимой проверкой.
++**Architecture:** Python stdlib запускает Orca CLI и читает DOM каталога/карточек. Один JSON checkpoint является источником прогресса. Отдельный validator не импортирует collector и сверяет готовый результат с эталонами только после первого результата.
++**Tech Stack:** Python 3.10+, Orca browser, GitHub MCP/CLI, Mermaid.
++**Spec:** sources/issue-74.json, sources/issue-49.json, kit/H13/input/scenario.md; workflow.md.
++
++## Global Constraints
++
++- Запись только submissions/Lusinton4ik/SA12/, исходные materials/downloads и чужие решения сохранены.
++- Сбор выполняй через браузер на локальном стенде; не заменяй его прямой выгрузкой исходного JSON.
++- /catalog.json не читать для сбора, только для итоговой сверки.
++- Сначала сохранить страницы 1–2 (20 записей), зарегистрировать HTTP 503 страницы 3 с fail=1, завершить процесс, продолжить новым процессом без fail=1.
++- Поля: id,name,category,price,currency,supplier,availability,ram_GB,ssd_GB,screen_inches,source_url.
++- Уточнение после первого результата (10:50Z): availability, ram_GB, ssd_GB, screen_inches могут быть null. В DOM это строка None, в JSON сохраняется null, в CSV пустое поле. Обязательные ключи сохраняются. screen_inches — float при наличии, остальные числовые поля — int.
++- source_url — абсолютная ссылка на карточку /product?id=…; CSV UTF-8, запятая, десятичная точка.
++- Не делать merge и не закрывать исходный H13. Субагенты не публикуют и не переделегируют.
++
++## Review Focus
++
++- Обрыв после атомарного checkpoint: сохранённые id не теряются.
++- Повтор завершённого запуска: ни дублей, ни повторного добавления.
++- Ошибка страницы: отметка неполноты и журнал URL/status, следующий запуск восстанавливает её.
++- Повреждённый/чужой checkpoint: явная ошибка вместо фиктивного успеха.
++- Набор с пропуском/дублем/неверным полем: независимая проверка отклоняет.
++
++## Декомпозиция и приёмка
++
++Пять задач обоснованы пятью отдельно проверяемыми выходами: контракт, сборщик,
++валидатор, предметный прогон, независимое ревью. Одна задача не дублирует другую.
++
++1. **Explore (`explorer`, read-only текущего checkout)**: прочитать входы, вернуть контракт и ссылки; никаких файлов/публикаций. Координатор сохраняет отчёт.
++2. **Build (`worker`, student/Lusinton4ik/SA12-worker, SA12-worker)**: только collector.py, tests/test_collector.py, evidence/collector-tests.txt, collector-report.md. Сначала поведенческий тест resume/503/dedupe и ожидаемый RED, затем минимальный код и GREEN. Не читать catalog.json/checks. CLI `collector.py --base-url URL --output DIR [--fail-third] [--page ID]`; exit 2 = управляемое прерывание, 0 = полный набор.
++3. **Validate_build (отдельный `worker`, student/Lusinton4ik/SA12-validator, SA12-validator)**: только validate.py, tests/test_validate.py, evidence/validator-tests.txt, validator-report.md. Контракт: `validate.py --data FILE --expected-ids FILE --catalog FILE`; exit 0 при точном совпадении 50 id и всех полей, иначе 1. Тесты RED → GREEN для пропуска, дубля, неверного поля и source_url. Не импортировать collector. Эталоны читать при реальной проверке после первого результата.
++4. **Run (координатор)**: интеграция по diff и повтор тестов; отдельные процессы fail/resume/rerun, evidence checkpoint20/503/50/недублей. Копия с удалённой записью отвергается validator, восстановленная принимается. Повторить по README в новой папке.
++5. **Review (`reviewer`, read-only интеграционного checkout)**: получить spec, отчёты и diff package, проверить соответствие и качество, вернуть отдельные вердикты. До 2 исправлений первоначальным владельцем файлов. Координатор сохраняет reviewer-report.md, README с полным DoD, проверяет gitleaks staged/history и создаёт один PR в main.
++
++Граф и его рендер проверяются до запуска Explore. Приёмка каждого этапа по наблюдаемым артефактам; run-log — журнал переходов и идентификаторов. GitHub-веха и native sub-issues создаются до реализации. Вся работа разрешена поручением выполнить issue целиком; дополнительные согласования способа исполнения не требуются.
+diff --git a/submissions/Lusinton4ik/SA12/run-log.md b/submissions/Lusinton4ik/SA12/run-log.md
+new file mode 100644
+index 0000000..e72f5ae
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/run-log.md
+@@ -0,0 +1,52 @@
++# SA12 run log
++
++Run SA12-20261115-01. Начало: 2026-11-15T10:26:17Z (начало управляемого выполнения, deadline 12:26:17Z). Пределы N=2, T=120 минут, максимум 3 субагента. Координатор /root. Базовый commit 746c00de1088a70cb75509285d1e09e23326de61.
++
++| Время UTC | Agent / тип | Состояние | Наблюдение → переход | Попытка | Артефакт / проверка |
++|---|---|---|---|---|---|
++| подготовка | /root coordinator | Inputs | Issue #74 назначен Lusinton4ik, #49 прочитан, исходная ветка чистая → Graph_check | 0 | sources, workflow.md, plan.md |
++
++Ruling: пользователь поручил выполнить задачу целиком и самостоятельно выбрать декомпозицию; это включает предусмотренные issue GitHub-веху, подзадачи, комментарии и один PR. Merge остаётся преподавателю.
++Ruling: процессные планы, брифы и журнал сохраняются внутри разрешённой папки SA12 вместо стандартных docs/. Роли используются без переопределения моделей: конфигурация роли имеет приоритет согласно AGENTS.
++
++## Проверка плана и интерфейсов координатором
++
++| Задача/пара | Производит → потребляет | Результат проверки |
++|---|---|---|
++| Explore | Контракт → брифы worker | Уточнение #49 старше неполного scenario: 503 обязателен до остановки |
++| Build | checkpoint и products.json/csv → Run | Один writer, atomic replace, полное состояние определяется 50 id + 5 страниц |
++| Validate_build | CLI с exit 0/1 → Verify/Negative | Не импортирует collector, эталоны читаются после первого результата |
++| Run | Два PID, 20/50 и контрольные копии → Review | Реальный DOM, исходные JSON не используются сборщиком |
++| Review | Вердикты spec/quality → Accept/Fix | Отдельная read-only роль, замечания возвращаются исходному владельцу |
++| Build + Validate_build | products.json/csv и 11 полей → validate --data | Разные файлы/worktree; числа нормализуются для CSV; source_url проверяется |
++| Run + Review | evidence → ручная приёмка | Частичный результат не называется полным; parent остаётся open |
++
++Ruling: предметные подзадачи не закрываются координатором до преподавательской приёмки; после локальной проверки отмечается результат в постановке/комментарии, родитель остаётся open.
++Ruling: граф до Build содержал последовательный порядок и текст о разрешённой параллельности; в 10:35Z добавлена наглядная диаграмма зависимостей без изменения исполняемых переходов. Фактическое выполнение остаётся последовательным.
++
++Ruling: history gitleaks exit 1 на исходном checksum H09; вычисление SHA-256 подтвердило,
++что значение является контрольной суммой файла, а не секретом. Не менять общий H09,
++не вводить исключение и не называть scan успешным. Доставка чистого SA12 допустима
++после отдельного staged scan; фактический exit истории и диагностика остаются в evidence.
++
++| Время UTC | Agent / тип | Состояние | Наблюдение → переход | Попытка | Артефакт / проверка |
++|---|---|---|---|---|---|
++| 10:29Z | /root coordinator | Graph_check | checker=0, Mermaid PNG сохранён и просмотрен → Explore | 0 | evidence/graph-check.txt, workflow.png |
++| 10:32Z | /root/sa12_explore explorer | Explore | контракт и граф PASS, ссылки сверены → Build | 0 | explorer-report.md |
++| 10:35Z | /root coordinator | Build | worker /root/sa12_collector работает в отдельном SA12-worker, только разрешённые файлы; отдельный validator ещё не запущен | 0 | briefs/collector.md |
++| 10:39Z | /root coordinator | Build → Validate_build | 7 collector tests OK, файлы перенесены после остановки writer; запущены /root/sa12_validator worker и /root/sa12_review reviewer | 0 | collector-coordinator-tests.txt, collector-review.diff |
++| 10:45Z | /root/sa12_review reviewer | Build task review → Fix | P2 loading:true без wait подтверждён контрактом Orca; исходный worker получил TDD исправление, validator tests 8 OK | attempts=1/2 | reviewer-collector-initial.md, validator-coordinator-tests.txt |
++| до 10:47:42Z | /root coordinator | Fix → Review | фикс ожидания loading и URL перенесён, 17 integrated tests OK → scoped re-review | attempts=1/2 | collector-fix.diff, integrated-tests.txt |
++
++| 10:49:00Z | PID25520 / worker code, coordinator owner | Interrupt → Resume | exit2, 20 записей, completed 1–2, HTTP503 page3, complete=false; процесс завершён | 0 | run-1.json, checkpoint-after-20.json, http-503.json |
++| 10:49:56Z | PID32936 / coordinator | Resume → Recover | exit1 на DOM P021: nullable None не распознан, checkpoint20 сохранён → Reconcile | 0 | run-2-null-failure.json, null-card-observation.json |
++| 10:50Z | /root coordinator | Reconcile → Explore → Build | живой checkpoint20 и завершённый PID проверены, retries=1/2; источник после первого результата подтвердил null в availability/характеристиках; schema уточняется, исходный worker получает регрессию | attempts=2/2 | DOM и поздняя проверка типов |
++
++| 10:53Z (проверка схемы) | /root/sa12_explore explorer | Explore → Build | nullable контракт повторно PASS; raw catalog прочитан только для проверки после первого результата | attempts=2/2 | schema-verification.json, explorer-report.md |
++| до 10:59:43Z | /root coordinator | Build → Validate_build → Integrate | 27 tests OK, source bytes совпали с архивом, collector scoped PASS; ожидается scoped validator verdict | attempts=2/2 | integrated-tests.txt, source-integrity.json, reviewer-null-collector.md |
++
++| 10:59:43Z | PID25248 / coordinator | Integrate → Resume | оба scoped review PASS, 27 tests OK, тот же checkpoint20; запущен новый процесс без fail | attempts=2/2 | reviewer-null-collector.md, reviewer-null-validator.md |
++| 11:01Z | /root coordinator | cleanup | прежний отказ удаления cache обойдён безопасным native Remove-Item только конкретных собственных .pyc, без recursive delete | 0 | SA12-worker __pycache__ не переносился |
++| 11:01:27Z | PID25248 / coordinator | Resume → Verify | exit0, 50 товаров, все страницы, прежний503 resolved=true | attempts=2/2 | run-3-resumed.json, result/errors.json |
++| 11:02Z | /root coordinator | Verify → Negative → Review | JSON/CSV exact50 PASS, rerun hashes unchanged, удалениеP050 отклонено49/exit1, восстановление из собственного результата PASS | attempts=2/2 | validation-json/csv.json, run-4-idempotent.json, negative-*-validation.json |
++| 11:06:13Z | PID12748 → PID37464 → PID12368 / coordinator | чистый сквозной повтор | exit2/0/0, 20/50/50, JSON/CSV validators PASS, код тот же SHA256 | attempts=2/2 | clean-replay.json, clean-replay-events.jsonl, clean-replay-checkpoint.json |
+diff --git a/submissions/Lusinton4ik/SA12/tests/test_collector.py b/submissions/Lusinton4ik/SA12/tests/test_collector.py
+new file mode 100644
+index 0000000..0065772
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/tests/test_collector.py
+@@ -0,0 +1,319 @@
++import csv
++import json
++import tempfile
++import unittest
++from pathlib import Path
++from urllib.parse import parse_qs, urlparse
++import sys
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
++import collector
++
++BASE = "http://localhost:8000"
++
++class FakeBrowser:
++    def __init__(self):
++        self.pages = []
++
++    def navigate(self, url):
++        parsed = urlparse(url)
++        query = parse_qs(parsed.query)
++        if parsed.path == "/catalog":
++            page = int(query["page"][0])
++            self.pages.append(page)
++            if query.get("fail") == ["1"]:
++                return {"status": 503, "url": url, "links": []}
++            return {"status": 200, "url": url, "links": [f"{BASE}/product?id=p{i}" for i in range((page-1)*10+1, page*10+1)]}
++        if parsed.path == "/product":
++            ident = query["id"][0]
++            return {"status": 200, "url": url, "fields": {"id": ident, "name": "Item " + ident, "category": "laptop", "price": "12", "currency": "USD", "supplier": "A", "availability": "yes", "ram_GB": "16", "ssd_GB": "512", "screen_inches": "15.6"}}
++        raise AssertionError(url)
++
++class CollectorTest(unittest.TestCase):
++    def setUp(self):
++        self.temp = tempfile.TemporaryDirectory()
++        self.addCleanup(self.temp.cleanup)
++        self.output = Path(self.temp.name)
++
++    def read(self, name):
++        return json.loads((self.output / name).read_text(encoding="utf-8"))
++
++    def test_interruption_resume_and_idempotent_rerun(self):
++        first = FakeBrowser()
++        self.assertEqual(collector.collect(BASE, self.output, first, True), 2)
++        cp = self.read("checkpoint.json")
++        self.assertEqual(first.pages, [1, 2, 3])
++        self.assertEqual(len(cp["records"]), 20)
++        self.assertEqual(cp["completed_pages"], [1, 2])
++        self.assertEqual(cp["pending_pages"], [3, 4, 5])
++        self.assertFalse(cp["complete"])
++        self.assertEqual(cp["errors"][0]["status"], 503)
++        self.assertFalse(cp["errors"][0]["resolved"])
++        self.assertIn("fail=1", cp["errors"][0]["url"])
++        self.assertEqual(self.read("errors.json"), cp["errors"])
++        second = FakeBrowser()
++        self.assertEqual(collector.collect(BASE, self.output, second), 0)
++        self.assertEqual(second.pages, [3, 4, 5])
++        cp = self.read("checkpoint.json")
++        self.assertTrue(cp["complete"])
++        self.assertTrue(cp["errors"][0]["resolved"])
++        products = self.read("products.json")
++        self.assertEqual(len(products), 50)
++        self.assertEqual(len({p["id"] for p in products}), 50)
++        self.assertEqual(products[0]["source_url"], BASE + "/product?id=p1")
++        self.assertEqual(products[0]["price"], 12)
++        self.assertEqual(products[0]["ram_GB"], 16)
++        with (self.output / "products.csv").open(encoding="utf-8", newline="") as f:
++            self.assertEqual(len(list(csv.DictReader(f))), 50)
++        third = FakeBrowser()
++        self.assertEqual(collector.collect(BASE, self.output, third), 0)
++        self.assertEqual(third.pages, [])
++        self.assertEqual(self.read("products.json"), products)
++        events = [json.loads(line) for line in (self.output / "events.jsonl").read_text(encoding="utf-8").splitlines()]
++        self.assertTrue(any(e.get("status") == 503 and "fail=1" in e.get("url", "") for e in events))
++        self.assertTrue(any(e.get("event") == "resume" for e in events))
++        self.assertTrue(any(e.get("event") == "exit" and e.get("code") == 0 for e in events))
++        self.assertTrue(all("timestamp" in e and "pid" in e and "run_id" in e for e in events))
++
++    def test_corrupt_checkpoint_leaves_all_files_unchanged(self):
++        (self.output / "checkpoint.json").write_text('{broken', encoding="utf-8")
++        (self.output / "products.json").write_text('untouched', encoding="utf-8")
++        before = {p.name: p.read_bytes() for p in self.output.iterdir()}
++        browser = FakeBrowser()
++        self.assertNotEqual(collector.collect(BASE, self.output, browser), 0)
++        self.assertEqual({p.name: p.read_bytes() for p in self.output.iterdir()}, before)
++        self.assertEqual(browser.pages, [])
++
++    def test_wrong_base_checkpoint_leaves_files_unchanged(self):
++        self.assertEqual(collector.collect(BASE, self.output, FakeBrowser(), True), 2)
++        before = {p.name: p.read_bytes() for p in self.output.iterdir()}
++        self.assertNotEqual(collector.collect("http://other.test", self.output, FakeBrowser()), 0)
++        self.assertEqual({p.name: p.read_bytes() for p in self.output.iterdir()}, before)
++
++class BoundaryTests(unittest.TestCase):
++    def test_duplicate_id_does_not_commit_invalid_completed_checkpoint(self):
++        class DuplicateBrowser(FakeBrowser):
++            def navigate(self, url):
++                result = super().navigate(url)
++                if url.endswith("id=p50"):
++                    result["fields"]["id"] = "p1"
++                return result
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, DuplicateBrowser()), 1)
++            cp = json.loads((output / "checkpoint.json").read_text(encoding="utf-8"))
++            self.assertEqual(cp["pending_pages"], [5])
++            self.assertEqual(cp["completed_pages"], [1, 2, 3, 4])
++            self.assertEqual(cp["records"]["p1"]["name"], "Item p1")
++
++class ProcessAndOrcaTests(unittest.TestCase):
++    def test_resume_in_a_new_python_process(self):
++        import subprocess
++        script = '''import sys
++from pathlib import Path
++sys.path.insert(0, sys.argv[1])
++from test_collector import FakeBrowser, BASE
++import collector
++browser = FakeBrowser()
++code = collector.collect(BASE, Path(sys.argv[2]), browser, sys.argv[3] == "fail")
++print("PAGES:", browser.pages)
++sys.exit(code)
++'''
++        test_dir = str(Path(__file__).resolve().parent)
++        with tempfile.TemporaryDirectory() as directory:
++            def run(mode):
++                return subprocess.run([sys.executable, "-X", "utf8", "-c", script, test_dir, directory, mode], capture_output=True, text=True, encoding="utf-8")
++            first = run("fail")
++            second = run("resume")
++            third = run("resume")
++            self.assertEqual((first.returncode, second.returncode, third.returncode), (2, 0, 0), (first.stderr, second.stderr, third.stderr))
++            self.assertIn("PAGES: [1, 2, 3]", first.stdout)
++            self.assertIn("PAGES: [3, 4, 5]", second.stdout)
++            self.assertIn("PAGES: []", third.stdout)
++            events = [json.loads(line) for line in (Path(directory) / "events.jsonl").read_text(encoding="utf-8").splitlines()]
++            self.assertGreaterEqual(len({e["pid"] for e in events}), 2)
++            self.assertEqual(len(json.loads((Path(directory) / "products.json").read_text(encoding="utf-8"))), 50)
++
++    def test_orca_commands_use_page_id_and_parse_eval_envelope(self):
++        from unittest.mock import patch
++        import subprocess
++        calls = []
++        responses = [
++            {"ok": True, "result": {"browserPageId": "page-42"}},
++            {"ok": True, "result": {"effects": {}}},
++            {"ok": True, "result": {"result": json.dumps({"status": 503, "url": BASE + "/catalog?page=3&fail=1", "links": [], "fields": {}}), "origin": BASE}},
++        ]
++        def run(argv, **kwargs):
++            calls.append((argv, kwargs))
++            return subprocess.CompletedProcess(argv, 0, json.dumps(responses.pop(0)), "")
++        with patch.object(collector.subprocess, "run", side_effect=run):
++            browser = collector.OrcaBrowser()
++            result = browser.navigate(BASE + "/catalog?page=3&fail=1")
++        self.assertEqual(result["status"], 503)
++        self.assertEqual(calls[0][0][1:3], ["tab", "create"])
++        self.assertEqual(calls[1][0][1:4], ["goto", "--page", "page-42"])
++        self.assertEqual(calls[2][0][1:4], ["eval", "--page", "page-42"])
++        self.assertTrue(all(call[1].get("timeout") and not call[1].get("shell", False) for call in calls))
++
++class CheckpointValidationTests(unittest.TestCase):
++    def test_checkpoint_with_invalid_record_is_rejected_without_changes(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser(), True), 2)
++            path = output / "checkpoint.json"
++            cp = json.loads(path.read_text(encoding="utf-8"))
++            cp["records"]["p1"]["price"] = "not-a-number"
++            path.write_text(json.dumps(cp), encoding="utf-8")
++            before = {p.name: p.read_bytes() for p in output.iterdir()}
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser()), 1)
++            self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, before)
++
++class NavigationTests(unittest.TestCase):
++    def test_loading_goto_waits_before_reading_card_dom(self):
++        from unittest.mock import patch
++        import subprocess
++        target = BASE + "/product?id=p1"
++        commands = []
++        loaded = False
++        def run(argv, **kwargs):
++            nonlocal loaded
++            command = argv[1]
++            commands.append(argv)
++            if command == "goto":
++                result = {"effects": {"loading": True}}
++            elif command == "wait":
++                loaded = True
++                result = {}
++            elif command == "eval":
++                value = {"status": 200, "url": target if loaded else BASE + "/catalog?page=1", "fields": {"id": "p1"} if loaded else {}, "links": []}
++                result = {"result": json.dumps(value), "origin": BASE}
++            else:
++                self.fail("Unexpected command: " + command)
++            return subprocess.CompletedProcess(argv, 0, json.dumps({"ok": True, "result": result}), "")
++        with patch.object(collector.subprocess, "run", side_effect=run):
++            result = collector.OrcaBrowser("page-42").navigate(target)
++        self.assertEqual(result["url"], target)
++        self.assertEqual(result["fields"]["id"], "p1")
++        self.assertEqual([cmd[1] for cmd in commands], ["goto", "wait", "eval"])
++        self.assertEqual(commands[1][1:6], ["wait", "--page", "page-42", "--load", "load"])
++
++    def test_mismatched_loaded_url_is_rejected(self):
++        from unittest.mock import patch
++        import subprocess
++        target = BASE + "/product?id=p1"
++        def run(argv, **kwargs):
++            result = {"effects": {}} if argv[1] == "goto" else {"result": json.dumps({"status": 200, "url": BASE + "/product?id=p2", "fields": {}}), "origin": BASE}
++            return subprocess.CompletedProcess(argv, 0, json.dumps({"ok": True, "result": result}), "")
++        with patch.object(collector.subprocess, "run", side_effect=run):
++            with self.assertRaises(collector.CollectorError):
++                collector.OrcaBrowser("page-42").navigate(target)
++
++class NullableFieldTests(unittest.TestCase):
++    def test_dom_nulls_survive_checkpoint_resume_and_csv_export(self):
++        class NullableBrowser(FakeBrowser):
++            def navigate(self, url):
++                result = super().navigate(url)
++                if url.endswith("id=p1"):
++                    result["fields"].update(availability="None", ram_GB="None", ssd_GB="None", screen_inches="None")
++                if url.endswith("id=p2"):
++                    result["fields"]["screen_inches"] = "14.0"
++                return result
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, NullableBrowser(), True), 2)
++            checkpoint = json.loads((output / "checkpoint.json").read_text(encoding="utf-8"))
++            for field in ("availability", "ram_GB", "ssd_GB", "screen_inches"):
++                self.assertIn(field, checkpoint["records"]["p1"])
++                self.assertIsNone(checkpoint["records"]["p1"][field])
++            self.assertIs(type(checkpoint["records"]["p2"]["screen_inches"]), float)
++            self.assertEqual(checkpoint["records"]["p2"]["screen_inches"], 14.0)
++            resumed = NullableBrowser()
++            self.assertEqual(collector.collect(BASE, output, resumed), 0)
++            self.assertEqual(resumed.pages, [3, 4, 5])
++            products = json.loads((output / "products.json").read_text(encoding="utf-8"))
++            self.assertIsNone(products[0]["availability"])
++            self.assertIsNone(products[0]["ram_GB"])
++            with (output / "products.csv").open(encoding="utf-8", newline="") as stream:
++                row = next(csv.DictReader(stream))
++            for field in ("availability", "ram_GB", "ssd_GB", "screen_inches"):
++                self.assertEqual(row[field], "")
++
++    def test_resume_loads_checkpoint_with_null_fields(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser(), True), 2)
++            path = output / "checkpoint.json"
++            checkpoint = json.loads(path.read_text(encoding="utf-8"))
++            for field in ("availability", "ram_GB", "ssd_GB", "screen_inches"):
++                checkpoint["records"]["p1"][field] = None
++            path.write_text(json.dumps(checkpoint), encoding="utf-8")
++            browser = FakeBrowser()
++            self.assertEqual(collector.collect(BASE, output, browser), 0)
++            self.assertEqual(browser.pages, [3, 4, 5])
++            products = json.loads((output / "products.json").read_text(encoding="utf-8"))
++            self.assertIsNone(products[0]["availability"])
++            self.assertIsNone(products[0]["screen_inches"])
++
++    def test_legacy_checkpoint_is_canonicalized_on_resume(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser(), True), 2)
++            path = output / "checkpoint.json"
++            checkpoint = json.loads(path.read_text(encoding="utf-8"))
++            checkpoint["records"]["p1"]["availability"] = "None"
++            checkpoint["records"]["p1"]["screen_inches"] = 14
++            path.write_text(json.dumps(checkpoint), encoding="utf-8")
++            browser = FakeBrowser()
++            self.assertEqual(collector.collect(BASE, output, browser), 0)
++            self.assertEqual(browser.pages, [3, 4, 5])
++            checkpoint = json.loads(path.read_text(encoding="utf-8"))
++            self.assertEqual(len(checkpoint["records"]), 50)
++            self.assertIsNone(checkpoint["records"]["p1"]["availability"])
++            self.assertIs(type(checkpoint["records"]["p1"]["screen_inches"]), float)
++            self.assertEqual(checkpoint["records"]["p1"]["screen_inches"], 14.0)
++
++    def test_invalid_legacy_checkpoint_is_not_rewritten(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser(), True), 2)
++            path = output / "checkpoint.json"
++            checkpoint = json.loads(path.read_text(encoding="utf-8"))
++            checkpoint["records"]["p1"]["availability"] = "None"
++            checkpoint["records"]["p2"]["price"] = None
++            path.write_text(json.dumps(checkpoint), encoding="utf-8")
++            before = {p.name: p.read_bytes() for p in output.iterdir()}
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser()), 1)
++            self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, before)
++
++    def test_non_nullable_and_invalid_values_are_rejected(self):
++        card = FakeBrowser().navigate(BASE + "/product?id=p1")
++        for field in ("id", "name", "category", "price", "currency", "supplier"):
++            with self.subTest(field=field):
++                invalid = {"url": card["url"], "fields": dict(card["fields"])}
++                invalid["fields"][field] = "None"
++                with self.assertRaises(collector.CollectorError):
++                    collector.normalize_record(invalid)
++        for field, value in (("price", "12.5"), ("ram_GB", "1.5"), ("screen_inches", "invalid")):
++            with self.subTest(field=field):
++                invalid = {"url": card["url"], "fields": dict(card["fields"])}
++                invalid["fields"][field] = value
++                with self.assertRaises(collector.CollectorError):
++                    collector.normalize_record(invalid)
++
++    def test_checkpoint_rejects_null_in_required_fields_without_changes(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output = Path(directory)
++            self.assertEqual(collector.collect(BASE, output, FakeBrowser(), True), 2)
++            path = output / "checkpoint.json"
++            original = json.loads(path.read_text(encoding="utf-8"))
++            for field in ("id", "name", "category", "price", "currency", "supplier", "source_url"):
++                with self.subTest(field=field):
++                    checkpoint = json.loads(json.dumps(original))
++                    checkpoint["records"]["p1"][field] = None
++                    path.write_text(json.dumps(checkpoint), encoding="utf-8")
++                    before = {p.name: p.read_bytes() for p in output.iterdir()}
++                    self.assertEqual(collector.collect(BASE, output, FakeBrowser()), 1)
++                    self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, before)
++
++if __name__ == "__main__":
++    unittest.main()
+diff --git a/submissions/Lusinton4ik/SA12/tests/test_validate.py b/submissions/Lusinton4ik/SA12/tests/test_validate.py
+new file mode 100644
+index 0000000..96ce4b0
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/tests/test_validate.py
+@@ -0,0 +1,163 @@
++import csv
++import json
++from pathlib import Path
++import subprocess
++import sys
++import tempfile
++import unittest
++
++SCRIPT = Path(__file__).resolve().parents[1] / 'validate.py'
++
++
++def rows():
++    return [dict(id=i, name=f'item {i}', category='test', price=123.45,
++                 currency='USD', supplier='synthetic', availability='yes',
++                 ram_GB=16, ssd_GB=512, screen_inches=15.6) for i in range(1, 51)]
++
++
++class ValidatorTests(unittest.TestCase):
++    def run_cli(self, data, *, csv_data=False, expected=None, catalog=None):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            catalog = rows() if catalog is None else catalog
++            expected = [r['id'] for r in rows()] if expected is None else expected
++            (root / 'ids.json').write_text(json.dumps(expected), encoding='utf-8')
++            (root / 'catalog.json').write_text(json.dumps(catalog), encoding='utf-8')
++            path = root / ('data.csv' if csv_data else 'data.json')
++            if csv_data:
++                with path.open('w', encoding='utf-8', newline='') as f:
++                    writer = csv.DictWriter(f, fieldnames=list(data[0]))
++                    writer.writeheader()
++                    writer.writerows(data)
++            else:
++                path.write_text(json.dumps(data), encoding='utf-8')
++            result = subprocess.run([sys.executable, '-X', 'utf8', str(SCRIPT), '--data', str(path),
++                                     '--expected-ids', str(root / 'ids.json'), '--catalog', str(root / 'catalog.json')],
++                                    capture_output=True, text=True, encoding='utf-8')
++            return result.returncode, json.loads(result.stdout)
++
++    def valid(self):
++        return [dict(row, source_url=f'http://localhost:8000/product?id={row["id"]}') for row in rows()]
++
++    def test_valid_json_and_object_ids(self):
++        code, report = self.run_cli(self.valid(), expected={'ids': list(range(1, 51))})
++        self.assertEqual((code, report['ok'], report['count'], report['unique_count'], report['errors']),
++                         (0, True, 50, 50, []))
++
++    def test_valid_csv(self):
++        code, report = self.run_cli(self.valid(), csv_data=True)
++        self.assertEqual((code, report['ok']), (0, True), report)
++
++    def test_missing_record(self):
++        code, report = self.run_cli(self.valid()[:-1])
++        self.assertEqual(code, 1)
++        self.assertFalse(report['ok'])
++        self.assertTrue(any('missing' in e.lower() for e in report['errors']))
++
++    def test_duplicate_and_unexpected(self):
++        data = self.valid()
++        data[0] = data[1].copy()
++        code, report = self.run_cli(data)
++        self.assertEqual(code, 1)
++        self.assertTrue(any('duplicate' in e.lower() for e in report['errors']))
++        data = self.valid()
++        data[0]['id'] = 999
++        code, report = self.run_cli(data)
++        self.assertEqual(code, 1)
++        self.assertTrue(any('unexpected' in e.lower() for e in report['errors']))
++
++    def test_wrong_fields_and_missing_field(self):
++        for field, value in [('price', 999), ('currency', 'EUR'), ('name', None)]:
++            with self.subTest(field=field):
++                data = self.valid()
++                if value is None:
++                    del data[0][field]
++                else:
++                    data[0][field] = value
++                code, report = self.run_cli(data)
++                self.assertEqual(code, 1)
++                self.assertTrue(any(field in e for e in report['errors']))
++
++    def test_bad_or_missing_url(self):
++        for url in ['http://localhost/product?id=2', 'https://example.com/product?id=1',
++                    'http://localhost/other?id=1', 'http://localhost/product?id=1&id=1', None]:
++            with self.subTest(url=url):
++                data = self.valid()
++                if url is None:
++                    del data[0]['source_url']
++                else:
++                    data[0]['source_url'] = url
++                code, report = self.run_cli(data)
++                self.assertEqual(code, 1)
++                self.assertTrue(any('source_url' in e for e in report['errors']))
++
++    def test_csv_does_not_round_numeric_values(self):
++        data = self.valid()
++        data[0]['price'] = '123.45001'
++        code, report = self.run_cli(data, csv_data=True)
++        self.assertEqual(code, 1)
++        self.assertTrue(any('price' in e for e in report['errors']))
++
++    def test_nullable_fields_match_json_and_csv(self):
++        for field in ('availability', 'ram_GB', 'ssd_GB', 'screen_inches'):
++            with self.subTest(field=field):
++                catalog = rows()
++                catalog[0][field] = None
++                data = self.valid()
++                data[0][field] = None
++                for is_csv in (False, True):
++                    code, report = self.run_cli(data, catalog=catalog, csv_data=is_csv)
++                    self.assertEqual((code, report['ok']), (0, True), report)
++
++    def test_nullable_fields_reject_missing_and_substitution(self):
++        for field in ('availability', 'ram_GB', 'ssd_GB', 'screen_inches'):
++            catalog = rows()
++            catalog[0][field] = None
++            for value in ('None', 42):
++                for is_csv in (False, True):
++                    with self.subTest(field=field, value=value, csv=is_csv):
++                        data = self.valid()
++                        data[0][field] = value
++                        code, report = self.run_cli(data, catalog=catalog, csv_data=is_csv)
++                        self.assertEqual(code, 1)
++                        self.assertTrue(any(field in e for e in report['errors']), report)
++            data = self.valid()
++            del data[0][field]
++            code, report = self.run_cli(data, catalog=catalog)
++            self.assertEqual(code, 1)
++            self.assertTrue(any(field in e for e in report['errors']), report)
++
++    def test_null_rejected_when_reference_is_not_null(self):
++        for field in ('availability', 'ram_GB', 'ssd_GB', 'screen_inches'):
++            data = self.valid()
++            data[0][field] = None
++            for is_csv in (False, True):
++                with self.subTest(field=field, csv=is_csv):
++                    code, report = self.run_cli(data, csv_data=is_csv)
++                    self.assertEqual(code, 1)
++                    self.assertTrue(any(field in e for e in report['errors']), report)
++
++    def test_catalog_missing_or_null_required_field_is_rejected(self):
++        for field, value in (('ram_GB', 'missing'), ('name', None)):
++            with self.subTest(field=field, value=value):
++                catalog = rows()
++                if value == 'missing':
++                    del catalog[0][field]
++                else:
++                    catalog[0][field] = value
++                code, report = self.run_cli(self.valid(), catalog=catalog)
++                self.assertEqual(code, 1)
++                self.assertTrue(report['errors'])
++
++    def test_read_error_is_json(self):
++        result = subprocess.run([sys.executable, '-X', 'utf8', str(SCRIPT), '--data', 'absent.json',
++                                 '--expected-ids', 'absent-ids.json', '--catalog', 'absent-catalog.json'],
++                                capture_output=True, text=True, encoding='utf-8')
++        self.assertEqual(result.returncode, 1)
++        report = json.loads(result.stdout)
++        self.assertFalse(report['ok'])
++        self.assertTrue(report['errors'])
++
++
++if __name__ == '__main__':
++    unittest.main()
+diff --git a/submissions/Lusinton4ik/SA12/validate.py b/submissions/Lusinton4ik/SA12/validate.py
+new file mode 100644
+index 0000000..84c15da
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/validate.py
+@@ -0,0 +1,146 @@
++"""Independent verification of a collected product catalogue."""
++import argparse
++import csv
++from decimal import Decimal, InvalidOperation
++import ipaddress
++import json
++from pathlib import Path
++from urllib.parse import parse_qs, urlsplit
++
++FIELDS = ('id', 'name', 'category', 'price', 'currency', 'supplier',
++          'availability', 'ram_GB', 'ssd_GB', 'screen_inches')
++NULLABLE = {'availability', 'ram_GB', 'ssd_GB', 'screen_inches'}
++
++
++def read_json(path):
++    with open(path, encoding='utf-8-sig') as stream:
++        return json.load(stream, parse_float=Decimal)
++
++
++def id_key(value):
++    if isinstance(value, bool) or not isinstance(value, (str, int)) or str(value) == '':
++        raise ValueError(f'invalid id: {value!r}')
++    return str(value)
++
++
++def local_url(value, product_id):
++    if not isinstance(value, str):
++        return False
++    try:
++        url = urlsplit(value)
++        host = url.hostname
++        local = host == 'localhost'
++        if not local and host:
++            try:
++                local = ipaddress.ip_address(host).is_loopback
++            except ValueError:
++                pass
++        query = parse_qs(url.query, keep_blank_values=True, strict_parsing=True)
++        return (url.scheme in ('http', 'https') and local and not url.username
++                and not url.password and url.port != 0 and url.path == '/product'
++                and query.get('id') == [product_id] and not url.fragment)
++    except ValueError:
++        return False
++
++
++def matches(actual, expected, is_csv):
++    if expected is None:
++        return actual == '' if is_csv else actual is None
++    if is_csv and isinstance(expected, (int, Decimal)) and not isinstance(expected, bool):
++        try:
++            number = Decimal(actual)
++            return number.is_finite() and number == expected
++        except (InvalidOperation, TypeError, ValueError):
++            return False
++    return type(actual) is type(expected) and actual == expected
++
++
++def validate(data_path, expected_path, catalog_path):
++    report = {'ok': False, 'count': 0, 'unique_count': 0, 'errors': []}
++    errors = report['errors']
++    try:
++        is_csv = Path(data_path).suffix.lower() == '.csv'
++        if is_csv:
++            with open(data_path, encoding='utf-8-sig', newline='') as stream:
++                reader = csv.DictReader(stream)
++                if not reader.fieldnames or len(reader.fieldnames) != len(set(reader.fieldnames)):
++                    raise ValueError('CSV has missing or duplicate headers')
++                data = list(reader)
++        else:
++            data = read_json(data_path)
++        expected = read_json(expected_path)
++        catalog = read_json(catalog_path)
++        if not isinstance(data, list) or not isinstance(catalog, list):
++            raise ValueError('data and catalog must be arrays')
++        if isinstance(expected, dict):
++            expected = expected['ids'] if 'ids' in expected else list(expected)
++        if not isinstance(expected, list):
++            raise ValueError('expected IDs must be an array or object')
++        expected_keys = [id_key(x) for x in expected]
++        if len(expected_keys) != 50 or len(set(expected_keys)) != 50:
++            raise ValueError('expected IDs must contain exactly 50 unique IDs')
++        catalog_by_id = {}
++        for row in catalog:
++            if not isinstance(row, dict) or any(f not in row or row[f] == '' or (row[f] is None and f not in NULLABLE) for f in FIELDS):
++                raise ValueError('catalog row has missing fields')
++            key = id_key(row['id'])
++            if key in catalog_by_id:
++                raise ValueError(f'duplicate catalog id {key}')
++            catalog_by_id[key] = row
++        if len(catalog) != 50 or set(catalog_by_id) != set(expected_keys):
++            raise ValueError('catalog IDs differ from expected IDs')
++        report['count'] = len(data)
++        if len(data) != 50:
++            errors.append(f'expected 50 records, got {len(data)}')
++        seen = set()
++        for index, row in enumerate(data, 1):
++            if not isinstance(row, dict):
++                errors.append(f'row {index}: expected object')
++                continue
++            try:
++                key = id_key(row.get('id'))
++            except ValueError as exc:
++                errors.append(f'row {index}: {exc}')
++                continue
++            if key in seen:
++                errors.append(f'duplicate id {key}')
++            seen.add(key)
++            if key not in expected_keys:
++                errors.append(f'unexpected id {key}')
++            for field in FIELDS:
++                if field not in row:
++                    errors.append(f'row {index} id {key}: missing {field}')
++                elif key in catalog_by_id and not matches(row[field], catalog_by_id[key][field], is_csv):
++                    errors.append(f'row {index} id {key}: mismatch {field}')
++            if not local_url(row.get('source_url'), key):
++                errors.append(f'row {index} id {key}: invalid or missing source_url')
++        report['unique_count'] = len(seen)
++        for key in sorted(set(expected_keys) - seen):
++            errors.append(f'missing id {key}')
++        if len(seen) != 50:
++            errors.append(f'expected 50 unique IDs, got {len(seen)}')
++    except (OSError, UnicodeError, ValueError, KeyError, csv.Error) as exc:
++        errors.append(f'input error: {exc}')
++    report['ok'] = not errors
++    return report
++
++
++def main():
++    class Parser(argparse.ArgumentParser):
++        def error(self, message):
++            raise ValueError(message)
++    parser = Parser()
++    parser.add_argument('--data', required=True)
++    parser.add_argument('--expected-ids', required=True)
++    parser.add_argument('--catalog', required=True)
++    try:
++        args = parser.parse_args()
++        report = validate(args.data, args.expected_ids, args.catalog)
++    except ValueError as exc:
++        report = {'ok': False, 'count': 0, 'unique_count': 0, 'errors': [f'arguments: {exc}']}
++    print(json.dumps(report, ensure_ascii=False))
++    return 0 if report['ok'] else 1
++
++
++if __name__ == '__main__':
++    raise SystemExit(main())
+diff --git a/submissions/Lusinton4ik/SA12/workflow.md b/submissions/Lusinton4ik/SA12/workflow.md
+new file mode 100644
+index 0000000..e4c903f
+--- /dev/null
++++ b/submissions/Lusinton4ik/SA12/workflow.md
+@@ -0,0 +1,95 @@
++# SA12: граф выполнения
++
++Создан до реализации и предметных запусков. Координатор — основная сессия Codex.
++Вход: issue #74, уточнения #49, закреплённый H13.zip с проверенной SHA-256.
++Цель: 50 товаров через DOM браузера, управляемый 503 после 20 записей,
++новый процесс продолжения, независимая сверка и один PR без merge.
++
++```mermaid
++stateDiagram-v2
++    [*] --> Inputs
++    Inputs --> Graph_check: [архив и инструкции доступны] / сохранить источники
++    Inputs --> Recover: [иначе] / записать недоступный вход
++    Graph_check --> Explore: [checker=0 и рендер просмотрен] / explorer
++    Graph_check --> Escalate_human: [иначе] / сохранить дефект графа
++    Explore --> Build: [контракт подтверждён] / worker
++    Explore --> Recover: [иначе] / проверить исполнителя
++    Build --> Validate_build: [тесты green и red сохранён] / другой worker
++    Build --> Recover: [иначе] / прочитать живое состояние
++    Validate_build --> Integrate: [оба комплекта тестов green] / координатор
++    Validate_build --> Recover: [иначе] / сохранить причину
++    Integrate --> Interrupt: [файлы сверены и конфликты отсутствуют] / один владелец
++    Integrate --> Escalate_human: [иначе] / сохранить остаток
++    Interrupt --> Resume: [20 записей и 503 и процесс завершён] / новый процесс
++    Interrupt --> Recover: [иначе] / проверить checkpoint
++    Resume --> Verify: [50 уникальных id] / независимая сверка
++    Resume --> Recover: [иначе] / сохранить неполноту
++    Verify --> Negative: [сверка всех полей=0 и повтор без дублей] / копия результата
++    Verify --> Recover: [иначе] / сохранить расхождения
++    Negative --> Review: [повреждение отклонено и исправление принято] / reviewer
++    Negative --> Escalate_human: [иначе] / отрицательный тест не доказан
++    Review --> Accept: [spec PASS и quality PASS] / координатор
++    Review --> Fix: [иначе] / записать замечания
++    Fix --> Review: [attempts < N и elapsed < T] / увеличить attempts и исправить
++    Fix --> Escalate_human: [иначе] / предел исправлений
++    Recover --> Reconcile: чтение живых файлов, процессов и GitHub
++    Reconcile --> Explore: [retries < N и elapsed < T и повтор безопасен] / увеличить retries
++    Reconcile --> Escalate_human: [иначе] / сохранить точку продолжения
++    Accept --> Done_accepted: [все локальные критерии подтверждены] / подготовить сдачу
++    Accept --> Escalate_human: [иначе] / перечислить незакрытые критерии
++    Done_accepted --> [*]
++    Escalate_human --> [*]
++```
++
++## Владельцы, артефакты и зависимости
++
++| Состояние | Владелец / тип | Вход, действие и наблюдаемый выход |
++|---|---|---|
++| Inputs, Graph_check | координатор | SHA-256 архива, снимки issue, checker и изображение графа |
++| Explore | `explorer` | Только чтение стенда и постановки; контракт DOM/полей/сбоя в отчёте, без правок |
++| Build | `worker` collector | collector.py, tests/test_collector.py, evidence/collector-tests.txt; отдельный SA12-worker worktree |
++| Validate_build | другой `worker` validator | validate.py, tests/test_validate.py, evidence/validator-tests.txt; отдельный SA12-validator worktree |
++| Integrate | координатор | Реальные diff, тесты, копирование только разрешённых файлов |
++| Interrupt, Resume | координатор запускает код worker | Один checkpoint; отдельные PID двух запусков, 20 товаров+503, затем 50 |
++| Verify, Negative | координатор запускает независимый validator | Проверка всех полей после первого результата, отклонение удалённой записи, восстановление и повтор |
++| Review | отдельный `reviewer` | Только чтение интеграции и evidence, два вердикта и замечания |
++| Fix | первоначальный `worker` | Только принадлежащие ему файлы, повтор затронутых проверок |
++| Recover, Reconcile | координатор | Неизвестный исход: сначала status/PID/checkpoint или чтение GitHub, без слепого повтора |
++| Accept | координатор | Сверка каждого DoD, README и единый PR |
++
++Разрешена параллельная аналитическая ветвь Explore с проектированием проверки полноты,
++если общий контракт уже известен; объединение только при наличии обоих проверенных отчётов.
++В этом запуске выбран последовательный порядок Build → Validate_build: он исключает
++двух пишущих владельцев одного состояния и упрощает интеграцию. Параллельность —
++разрешённая возможность, не требование запуска. Запрещены параллельные сборщики.
++
++Диаграмма зависимостей показывает две независимые ветви кода после контракта.
++Их можно выполнять параллельно только в указанных разных worktree; фактический
++запуск выбран последовательным и отмечается в run-log. Условие объединения —
++оба отчёта, реальные файлы и оба набора GREEN, а не только завершение агентов.
++
++```mermaid
++flowchart LR
++    Explore --> Build
++    Explore --> Validate_build
++    Build --> Join{Оба отчёта и GREEN проверены}
++    Validate_build --> Join
++    Join --> Integrate
++```
++
++## Пределы
++
++Решение координатора до исполнения: N=2 исправления/повтора, T=120 минут от первой
++записи run-log, максимум 3 субагента одновременно. Каждый агент получает до 20 минут
++в пределах исходного T. Общий deadline и счётчики сохраняются при восстановлении.
++Петля Review → Fix → Review увеличивает attempts перед каждым исправлением.
++Петля Recover → Reconcile → Explore увеличивает retries перед повтором и не сбрасывает
++attempts/T; уже завершённые этапы сверяются и пропускаются по живым артефактам.
++При неизвестном исходе создания issue/PR сначала GET/search, при зависшем агенте —
++list_agents и проверка файлов. Недоступный обязательный вход ведёт через Recover
++к Escalate_human, если безопасный повтор не восстановил его в пределах N/T.
++Escalate_human завершает текущий запуск и оставляет данные, журнал и точку продолжения.
++
++Done_accepted — локальная приёмка координатором. Merge и приёмка преподавателем
++остаются отдельными действиями человека. Структурный checker — эвристика, он не
++доказывает изменение счётчиков, семантику условий, реальность агентов или выполнения.
