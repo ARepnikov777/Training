@@ -1,0 +1,19 @@
+{
+  "code": "M09",
+  "issue": 30,
+  "title": "[M09] Проверка утверждений",
+  "goal": "Проверь восемь утверждений по вложенным первичным документам вымышленного организатора. Для каждого дай статус и точную ссылку, учитывая документ об изменениях.",
+  "inputs": [
+    "input/claims.md",
+    "input/source-policy.md",
+    "input/sources/01-program.md",
+    "input/sources/02-materials.md",
+    "input/sources/03-budget.md",
+    "input/sources/04-acceptance.md",
+    "input/sources/05-revision.md",
+    "input/sources/06-risks.md"
+  ],
+  "checks": [
+    "checks/expected.json"
+  ]
+}

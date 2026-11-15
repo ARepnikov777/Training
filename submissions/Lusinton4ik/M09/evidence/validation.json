@@ -1,0 +1,106 @@
+{
+  "reportSHA256": "57373bb899e4d275bc78fabcdc8c1231ccac0f9a75ba654a3cb2ab621c11e297",
+  "records": 8,
+  "statuses": [
+    "подтверждено",
+    "опровергнуто",
+    "опровергнуто",
+    "опровергнуто",
+    "подтверждено",
+    "опровергнуто",
+    "недостаточно данных",
+    "подтверждено"
+  ],
+  "links": [
+    {
+      "link": "../kit/M09/input/source-policy.md",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../ISSUE.md#definition-of-done-dod",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/01-program.md#состав",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#новое-начало",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/01-program.md#состав",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#новое-начало",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/01-program.md#начало",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#изменение-программы",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#новое-начало",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/02-materials.md#формат",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/01-program.md#состав",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#изменение-программы",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#новое-начало",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/03-budget.md#лимит",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#кофе",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/03-budget.md#лимит",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/05-revision.md#кофе",
+      "exists": true,
+      "anchorOK": true
+    },
+    {
+      "link": "../kit/M09/input/sources/06-risks.md#сбои",
+      "exists": true,
+      "anchorOK": true
+    }
+  ]
+}
