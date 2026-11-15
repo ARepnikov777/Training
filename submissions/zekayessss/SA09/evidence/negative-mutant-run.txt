@@ -1,0 +1,84 @@
+test_C1_create (tests.test_e2e.TestScenarios.test_C1_create) ... ok
+test_C2_rename_and_status (tests.test_e2e.TestScenarios.test_C2_rename_and_status) ... ok
+test_C3_restart_persists (tests.test_e2e.TestScenarios.test_C3_restart_persists) ... ok
+test_C4_blank_title_rejected (tests.test_e2e.TestScenarios.test_C4_blank_title_rejected) ... ok
+test_C5_import_valid_twice (tests.test_e2e.TestScenarios.test_C5_import_valid_twice) ... ok
+test_C6_import_mixed (tests.test_e2e.TestScenarios.test_C6_import_mixed) ... FAIL
+test_I1_search_case_insensitive (tests.test_e2e.TestScenarios.test_I1_search_case_insensitive) ... ok
+test_I2_status_filter_and_reset (tests.test_e2e.TestScenarios.test_I2_status_filter_and_reset) ... ok
+test_I3_reimport_updates_T001 (tests.test_e2e.TestScenarios.test_I3_reimport_updates_T001) ... ok
+test_I4_export_import_roundtrip (tests.test_e2e.TestScenarios.test_I4_export_import_roundtrip) ... ok
+test_I5_mixed_line_numbers (tests.test_e2e.TestScenarios.test_I5_mixed_line_numbers) ... FAIL
+test_NEG_good_row_kept (tests.test_e2e.TestScenarios.test_NEG_good_row_kept) ... FAIL
+test_static_index_and_js (tests.test_e2e.TestScenarios.test_static_index_and_js) ... ok
+
+======================================================================
+FAIL: test_C6_import_mixed (tests.test_e2e.TestScenarios.test_C6_import_mixed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nazirayesdaulet/orca/workspaces/Training/sa09-wt/scenarios/submissions/zekayessss/SA09/tests/test_e2e.py", line 237, in test_C6_import_mixed
+    self._check_mixed(srv)
+  File "/Users/nazirayesdaulet/orca/workspaces/Training/sa09-wt/scenarios/submissions/zekayessss/SA09/tests/test_e2e.py", line 222, in _check_mixed
+    self.assertEqual(
+AssertionError: Lists differ: [{'li[58 chars]тым'}] != [{'li[58 chars]тым'}, {'line': 4, 'id': 'T005', 'error': 'Нед[63 chars]о»'}]
+
+Second list contains 1 additional elements.
+First extra element 1:
+{'line': 4, 'id': 'T005', 'error': 'Недопустимый статус «архив»: разрешены «новая», «в работе», «готово»'}
+
+- [{'error': 'Название не может быть пустым', 'id': 'T004', 'line': 3}]
+?                                                                     ^
+
++ [{'error': 'Название не может быть пустым', 'id': 'T004', 'line': 3},
+?                                                                     ^
+
++  {'error': 'Недопустимый статус «архив»: разрешены «новая», «в работе», '
++            '«готово»',
++   'id': 'T005',
++   'line': 4}]
+
+======================================================================
+FAIL: test_I5_mixed_line_numbers (tests.test_e2e.TestScenarios.test_I5_mixed_line_numbers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nazirayesdaulet/orca/workspaces/Training/sa09-wt/scenarios/submissions/zekayessss/SA09/tests/test_e2e.py", line 306, in test_I5_mixed_line_numbers
+    rep = self._check_mixed(srv)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nazirayesdaulet/orca/workspaces/Training/sa09-wt/scenarios/submissions/zekayessss/SA09/tests/test_e2e.py", line 222, in _check_mixed
+    self.assertEqual(
+AssertionError: Lists differ: [{'li[58 chars]тым'}] != [{'li[58 chars]тым'}, {'line': 4, 'id': 'T005', 'error': 'Нед[63 chars]о»'}]
+
+Second list contains 1 additional elements.
+First extra element 1:
+{'line': 4, 'id': 'T005', 'error': 'Недопустимый статус «архив»: разрешены «новая», «в работе», «готово»'}
+
+- [{'error': 'Название не может быть пустым', 'id': 'T004', 'line': 3}]
+?                                                                     ^
+
++ [{'error': 'Название не может быть пустым', 'id': 'T004', 'line': 3},
+?                                                                     ^
+
++  {'error': 'Недопустимый статус «архив»: разрешены «новая», «в работе», '
++            '«готово»',
++   'id': 'T005',
++   'line': 4}]
+
+======================================================================
+FAIL: test_NEG_good_row_kept (tests.test_e2e.TestScenarios.test_NEG_good_row_kept)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nazirayesdaulet/orca/workspaces/Training/sa09-wt/scenarios/submissions/zekayessss/SA09/tests/test_e2e.py", line 321, in test_NEG_good_row_kept
+    self.assertEqual(rep["accepted"], [{"line": 3, "id": "G1", "action": "created"}])
+AssertionError: Lists differ: [] != [{'line': 3, 'id': 'G1', 'action': 'created'}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'line': 3, 'id': 'G1', 'action': 'created'}
+
+- []
++ [{'action': 'created', 'id': 'G1', 'line': 3}]
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.921s
+
+FAILED (failures=3)

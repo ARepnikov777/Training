@@ -1,0 +1,11 @@
+--- app/store.py	2026-11-15 15:35:10
++++ /var/folders/vg/bcn7n0xd4sx4sdfq1f4h79t00000gn/T/tmp.XRwBdYo85O/app/store.py	2026-11-15 15:36:20
+@@ -220,7 +220,7 @@
+             error = self._check_row(row)
+             if error:
+                 errors.append({"line": line, "id": row_id, "error": error})
+-                continue
++                break
+             values = {
+                 "title": row[1].strip(),
+                 "description": row[2],
