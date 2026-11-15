@@ -1,0 +1,62 @@
+test_decimal_precision_and_zero_categories (test_reporting.ReportingTests) ... FAIL
+test_empty_rows (test_reporting.ReportingTests) ... FAIL
+test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests) ... FAIL
+test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests) ... FAIL
+test_summarize_counts_and_totals (test_reporting.ReportingTests) ... FAIL
+
+======================================================================
+FAIL: test_decimal_precision_and_zero_categories (test_reporting.ReportingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 28, in test_decimal_precision_and_zero_categories
+    self.assertEqual(result["total"], Decimal("0.3"))
+AssertionError: Decimal('0') != Decimal('0.3')
+
+======================================================================
+FAIL: test_empty_rows (test_reporting.ReportingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 34, in test_empty_rows
+    self.assertEqual(summarize([], CATEGORIES), {"clean_rows": 0, "total": Decimal("0"), "category_totals": {"Еда": Decimal("0"), "Транспорт": Decimal("0"), "Канцелярия": Decimal("0")}})
+AssertionError: {'cle[51 chars]s': {}} != {'cle[51 chars]s': {'Еда': Decimal('0'), 'Транспорт': Decimal[30 chars]0')}}
+- {'category_totals': {}, 'clean_rows': 0, 'total': Decimal('0')}
++ {'category_totals': {'Еда': Decimal('0'),
++                      'Канцелярия': Decimal('0'),
++                      'Транспорт': Decimal('0')},
++  'clean_rows': 0,
++  'total': Decimal('0')}
+
+======================================================================
+FAIL: test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 39, in test_report_contains_sources_totals_balance_and_assumptions
+    self.assertIn(value, report)
+AssertionError: 'nov-1.csv' not found in ''
+
+======================================================================
+FAIL: test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 45, in test_report_empty_rows_keeps_all_categories
+    self.assertIn(category, report)
+AssertionError: 'Еда' not found in ''
+
+======================================================================
+FAIL: test_summarize_counts_and_totals (test_reporting.ReportingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 20, in test_summarize_counts_and_totals
+    self.assertEqual(summarize(ROWS, CATEGORIES), {
+AssertionError: {'clean_rows': 0, 'total': Decimal('0'), 'category_totals': {}} != {'clean_rows': 4, 'total': Decimal('1000'), 'category_to[85 chars]0')}}
+- {'category_totals': {}, 'clean_rows': 0, 'total': Decimal('0')}
++ {'category_totals': {'Еда': Decimal('500'),
++                      'Канцелярия': Decimal('300'),
++                      'Транспорт': Decimal('200')},
++  'clean_rows': 4,
++  'total': Decimal('1000')}
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=5)

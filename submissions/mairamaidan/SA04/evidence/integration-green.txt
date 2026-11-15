@@ -1,0 +1,47 @@
+$ python3 -m src.pipeline --input input --output result
+exit: 0
+
+$ python3 -m src.pipeline --input input --output result
+exit: 0
+
+Повторный запуск, SHA-256 до/после:
+clean.csv: 79a6e993b32fecaf75012127a6f40d582b33ea73413a1f6bc5cf64508d9397ed / 79a6e993b32fecaf75012127a6f40d582b33ea73413a1f6bc5cf64508d9397ed
+rejected.csv: 46f45b79d0862ca84cadfc0789ad30cc26d783bb9639b546ff07513ef149b11a / 46f45b79d0862ca84cadfc0789ad30cc26d783bb9639b546ff07513ef149b11a
+report.md: c206deeb18fba0e7f7c594f7e152e196b35bc5d32fc90a064ab0921922272d64 / c206deeb18fba0e7f7c594f7e152e196b35bc5d32fc90a064ab0921922272d64
+Совпадают: True
+
+$ python3 -m src.verify --input input --output result --expected checks/expected.json
+Контрольный H07 проверен
+exit: 0
+
+$ python3 -m src.verify --input input --output result/integration-negative --expected checks/expected.json
+Ошибка проверки H07: Расхождение report.md
+exit: 1
+
+$ python3 -m src.verify --input input --output result/integration-negative --expected checks/expected.json
+Контрольный H07 проверен
+exit: 0
+
+$ python3 -m unittest discover -s tests -v
+test_bad_header_and_broken_csv_raise (test_cleaning.CleaningTests) ... ok
+test_extra_fields_and_missing_file (test_cleaning.CleaningTests) ... ok
+test_h07 (test_cleaning.CleaningTests) ... ok
+test_multiline_record_keeps_raw_text_and_first_line (test_cleaning.CleaningTests) ... ok
+test_validation_duplicates_and_exact_raw_record (test_cleaning.CleaningTests) ... ok
+test_bad_header_fails (test_pipeline.PipelineTests) ... ok
+test_missing_input_fails (test_pipeline.PipelineTests) ... ok
+test_outputs_and_repeat (test_pipeline.PipelineTests) ... ok
+test_decimal_precision_and_zero_categories (test_reporting.ReportingTests) ... ok
+test_empty_rows (test_reporting.ReportingTests) ... ok
+test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests) ... ok
+test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests) ... ok
+test_summarize_counts_and_totals (test_reporting.ReportingTests) ... ok
+test_summarize_is_independent_of_caller_exponent_limits (test_reporting.ReportingTests) ... ok
+test_modified_rejected_input_is_not_accepted (test_verify.VerifyTests) ... ok
+test_original_and_tampering (test_verify.VerifyTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.262s
+
+OK
+exit: 0

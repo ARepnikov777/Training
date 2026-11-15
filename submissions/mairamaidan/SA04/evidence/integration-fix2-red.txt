@@ -1,0 +1,26 @@
+$ python3 -m unittest discover -s tests -p test_verify.py -v
+test_conflicting_report_values_are_rejected (test_verify.VerifyTests) ... test_modified_rejected_input_is_not_accepted (test_verify.VerifyTests) ... ok
+test_original_and_tampering (test_verify.VerifyTests) ... ok
+
+======================================================================
+FAIL: test_conflicting_report_values_are_rejected (test_verify.VerifyTests) (correct='- Общая сумма: 1000 KZT')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-integrate/submissions/mairamaidan/SA04/tests/test_verify.py", line 98, in test_conflicting_report_values_are_rejected
+    self.assertNotEqual(run("verify", *args).returncode, 0)
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_conflicting_report_values_are_rejected (test_verify.VerifyTests) (correct='| Еда | 500 |')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-integrate/submissions/mairamaidan/SA04/tests/test_verify.py", line 98, in test_conflicting_report_values_are_rejected
+    self.assertNotEqual(run("verify", *args).returncode, 0)
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.186s
+
+FAILED (failures=2)
+
+exit: 1

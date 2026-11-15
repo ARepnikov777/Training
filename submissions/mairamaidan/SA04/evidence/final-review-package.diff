@@ -1,0 +1,877 @@
+diff --git a/submissions/mairamaidan/SA04/src/__init__.py b/submissions/mairamaidan/SA04/src/__init__.py
+new file mode 100644
+index 0000000..e69de29
+
+diff --git a/submissions/mairamaidan/SA04/src/cleaning.py b/submissions/mairamaidan/SA04/src/cleaning.py
+new file mode 100644
+index 0000000..80371ba
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/src/cleaning.py
+@@ -0,0 +1,100 @@
++"""Validate and deduplicate transaction CSV records."""
++
++import csv
++import re
++from datetime import date
++from decimal import Decimal, InvalidOperation
++
++_DATE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}\Z")
++_HEADER = ["id", "date", "category", "amount"]
++
++
++def clean_files(paths, rules):
++    clean = []
++    rejected = []
++    seen_rows = set()
++    seen_ids = set()
++    source_rows = duplicate_rows = 0
++    for path in paths:
++        with path.open(encoding="utf-8", newline="") as stream:
++            lines = stream.readlines()
++        reader = csv.reader(lines, strict=True)
++        try:
++            if next(reader, None) != _HEADER:
++                raise ValueError(f"Неверный заголовок CSV: {path}")
++            while True:
++                first_line = reader.line_num + 1
++                try:
++                    row = next(reader)
++                except StopIteration:
++                    break
++                raw = "".join(lines[first_line - 1 : reader.line_num])
++                if raw.endswith("\r\n"):
++                    raw = raw[:-2]
++                elif raw.endswith(("\r", "\n")):
++                    raw = raw[:-1]
++                source_rows += 1
++                row_id = row[0] if row else ""
++                reason = None
++                if len(row) != 4:
++                    reason = "Неверное число полей"
++                else:
++                    row_id, date_text, category, amount_text = row
++                    if not row_id:
++                        reason = "Пустой id"
++                    elif not _DATE.fullmatch(date_text):
++                        reason = "Неверная дата"
++                    else:
++                        try:
++                            date.fromisoformat(date_text)
++                        except ValueError:
++                            reason = "Неверная дата"
++                    if reason is None and category not in rules["categories"]:
++                        reason = "Неизвестная категория"
++                    if reason is None:
++                        try:
++                            amount = Decimal(amount_text)
++                            if not amount.is_finite() or amount < 0:
++                                reason = "Неверная сумма"
++                        except InvalidOperation:
++                            reason = "Неверная сумма"
++                    if reason is None:
++                        key = tuple(row)
++                        if key in seen_rows:
++                            duplicate_rows += 1
++                            continue
++                        if row_id in seen_ids:
++                            reason = "Конфликт id"
++                        else:
++                            seen_rows.add(key)
++                            seen_ids.add(row_id)
++                            clean.append(
++                                {
++                                    "id": row_id,
++                                    "date": date_text,
++                                    "category": rules["categories"][category],
++                                    "amount": format(amount, "f"),
++                                }
++                            )
++                if reason is not None:
++                    rejected.append(
++                        {
++                            "source": path.name,
++                            "line_number": first_line,
++                            "raw_line": raw,
++                            "id": row_id,
++                            "reason": reason,
++                        }
++                    )
++        except csv.Error as exc:
++            raise ValueError(f"Ошибка CSV в {path}: {exc}") from exc
++    return {
++        "clean": clean,
++        "rejected": rejected,
++        "stats": {
++            "source_rows": source_rows,
++            "clean_rows": len(clean),
++            "duplicate_rows": duplicate_rows,
++            "rejected_rows": len(rejected),
++        },
++    }
+
+diff --git a/submissions/mairamaidan/SA04/src/pipeline.py b/submissions/mairamaidan/SA04/src/pipeline.py
+new file mode 100644
+index 0000000..aba7c63
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/src/pipeline.py
+@@ -0,0 +1,46 @@
++"""Воспроизводимый запуск обработки двух выгрузок."""
++
++import argparse
++import csv
++import json
++import sys
++from pathlib import Path
++
++from .cleaning import clean_files
++from .reporting import render_report
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--input", type=Path, required=True)
++    parser.add_argument("--output", type=Path, required=True)
++    args = parser.parse_args()
++    try:
++        paths = [args.input / "nov-1.csv", args.input / "nov-2.csv"]
++        rules = json.loads((args.input / "rules.json").read_text(encoding="utf-8"))
++        data = clean_files(paths, rules)
++        report = render_report(
++            data["clean"], data["stats"], [p.name for p in paths], rules
++        )
++        args.output.mkdir(parents=True, exist_ok=True)
++        for name, fields, rows in (
++            ("clean.csv", ["id", "date", "category", "amount"], data["clean"]),
++            (
++                "rejected.csv",
++                ["source", "line_number", "raw_line", "id", "reason"],
++                data["rejected"],
++            ),
++        ):
++            with (args.output / name).open("w", encoding="utf-8", newline="") as stream:
++                writer = csv.DictWriter(stream, fieldnames=fields)
++                writer.writeheader()
++                writer.writerows(rows)
++        (args.output / "report.md").write_text(report, encoding="utf-8")
++    except (OSError, ValueError, KeyError, TypeError, csv.Error) as exc:
++        print(f"Ошибка обработки: {exc}", file=sys.stderr)
++        return 1
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+
+diff --git a/submissions/mairamaidan/SA04/src/reporting.py b/submissions/mairamaidan/SA04/src/reporting.py
+new file mode 100644
+index 0000000..6001360
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/src/reporting.py
+@@ -0,0 +1,61 @@
++"""Точные показатели и детерминированный текст отчёта."""
++
++from decimal import MAX_EMAX, MIN_EMIN, Decimal, localcontext
++
++
++def summarize(clean_rows, categories):
++    amounts = [Decimal(row["amount"]) for row in clean_rows]
++    # Сохраняем все десятичные разряды даже при сумме длиннее контекста Decimal.
++    if amounts:
++        highest = max(amount.adjusted() for amount in amounts)
++        lowest = min(amount.as_tuple().exponent for amount in amounts)
++        precision = max(1, highest - lowest + 1 + len(str(len(amounts))))
++    else:
++        precision = 1
++    with localcontext() as context:
++        context.prec = precision
++        context.Emax = MAX_EMAX
++        context.Emin = MIN_EMIN
++        totals = {category: Decimal(0) for category in categories.values()}
++        for row, amount in zip(clean_rows, amounts):
++            totals[row["category"]] += amount
++        total = sum(amounts, Decimal(0))
++    return {"clean_rows": len(clean_rows), "total": total, "category_totals": totals}
++
++
++def render_report(clean_rows, stats, sources, rules):
++    summary = summarize(clean_rows, rules["categories"])
++    lines = ["# Отчёт", "", "## Источники"]
++    lines.extend("- " + source for source in sources)
++    if not sources:
++        lines.append("- Нет")
++    lines.extend(
++        [
++            "",
++            "## Показатели",
++            "- Уникальных операций: {}".format(summary["clean_rows"]),
++            "- Общая сумма: {} KZT".format(format(summary["total"], "f")),
++            "",
++            "| Категория | Сумма, KZT |",
++            "| --- | ---: |",
++        ]
++    )
++    for category, amount in summary["category_totals"].items():
++        lines.append("| {} | {} |".format(category, format(amount, "f")))
++    lines.extend(
++        [
++            "",
++            "## Баланс строк",
++            "- Исходных строк: {}".format(stats["source_rows"]),
++            "- Корректных уникальных строк: {}".format(stats["clean_rows"]),
++            "- Полных повторов: {}".format(stats["duplicate_rows"]),
++            "- Отклонённых строк: {}".format(stats["rejected_rows"]),
++            "",
++            "## Допущения",
++            "- Валидация предшествует исключению повторов: проверяются поля, реальная дата, категория и конечная неотрицательная сумма.",
++            "- Полный повтор совпадает по всем четырём исходным полям; повтор неверной записи отклоняется.",
++            "- При конфликте id с другими значениями сохраняется первая корректная запись, последующая отклоняется.",
++            "",
++        ]
++    )
++    return "\n".join(lines)
+
+diff --git a/submissions/mairamaidan/SA04/src/verify.py b/submissions/mairamaidan/SA04/src/verify.py
+new file mode 100644
+index 0000000..a2284e9
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/src/verify.py
+@@ -0,0 +1,157 @@
++"""Независимая сверка контрольного набора H07, не общий валидатор CSV."""
++
++import argparse
++import csv
++import json
++import sys
++from decimal import Decimal
++from pathlib import Path
++
++
++def read_csv(path, fields):
++    with path.open(encoding="utf-8", newline="") as stream:
++        reader = csv.DictReader(stream, strict=True)
++        if reader.fieldnames != fields:
++            raise ValueError(f"Неверная схема: {path}")
++        rows = list(reader)
++        if any(None in row or None in row.values() for row in rows):
++            raise ValueError(f"Неверная строка: {path}")
++        return rows
++
++
++def verify(input_dir, output_dir, expected_path):
++    expected = json.loads(expected_path.read_text(encoding="utf-8"))
++    rules = json.loads((input_dir / "rules.json").read_text(encoding="utf-8"))
++    fields = ["id", "date", "category", "amount"]
++    rejects = []
++    accepted = []
++    seen = set()
++    source_count = duplicates = 0
++    reasons = {
++        "A5": "Неверная дата",
++        "A6": "Неизвестная категория",
++        "A7": "Неверная сумма",
++    }
++    if set(expected["rejected_ids"]) != set(reasons):
++        raise ValueError("Неизвестный набор отклонений H07")
++    for name in ("nov-1.csv", "nov-2.csv"):
++        path = input_dir / name
++        with path.open(encoding="utf-8", newline="") as stream:
++            lines = stream.readlines()
++        reader = csv.reader(lines, strict=True)
++        if next(reader) != fields:
++            raise ValueError(f"Неверная схема: {path}")
++        while True:
++            start = reader.line_num + 1
++            try:
++                row = next(reader)
++            except StopIteration:
++                break
++            if len(row) != 4:
++                raise ValueError("Неизвестная строка H07")
++            source_count += 1
++            if row[0] in reasons:
++                defects = {
++                    "A5": (1, "bad-date"),
++                    "A6": (2, "Unknown"),
++                    "A7": (3, "-20"),
++                }
++                index, value = defects[row[0]]
++                if row[index] != value or (
++                    row[0] == "A6" and value in rules["categories"]
++                ):
++                    raise ValueError("Дефект отклонённой строки H07 изменён")
++                rejects.append(
++                    {
++                        "source": name,
++                        "line_number": str(start),
++                        "raw_line": "".join(lines[start - 1 : reader.line_num])
++                        .removesuffix("\n")
++                        .removesuffix("\r"),
++                        "id": row[0],
++                        "reason": reasons[row[0]],
++                    }
++                )
++            elif tuple(row) in seen:
++                duplicates += 1
++            else:
++                seen.add(tuple(row))
++                accepted.append(
++                    dict(
++                        zip(
++                            fields,
++                            [
++                                row[0],
++                                row[1],
++                                rules["categories"][row[2]],
++                                format(Decimal(row[3]), "f"),
++                            ],
++                        )
++                    )
++                )
++    clean = read_csv(output_dir / "clean.csv", fields)
++    rejected = read_csv(
++        output_dir / "rejected.csv",
++        ["source", "line_number", "raw_line", "id", "reason"],
++    )
++    if clean != accepted or len({row["id"] for row in clean}) != len(clean):
++        raise ValueError("Расхождение clean.csv")
++    if rejected != rejects or sorted(row["id"] for row in rejected) != sorted(
++        expected["rejected_ids"]
++    ):
++        raise ValueError("Расхождение rejected.csv")
++    counts = {
++        "source_rows": source_count,
++        "clean_rows": len(clean),
++        "duplicate_rows": duplicates,
++        "rejected_rows": len(rejected),
++    }
++    if any(counts[k] != expected[k] for k in counts) or source_count != len(
++        clean
++    ) + duplicates + len(rejected):
++        raise ValueError("Расхождение баланса")
++    totals = {category: Decimal(0) for category in rules["categories"].values()}
++    for row in clean:
++        totals[row["category"]] += Decimal(row["amount"])
++    if totals != {
++        k: Decimal(str(v)) for k, v in expected["category_totals"].items()
++    } or sum(totals.values()) != Decimal(str(expected["total"])):
++        raise ValueError("Расхождение контрольных сумм")
++    report = (output_dir / "report.md").read_text(encoding="utf-8").splitlines()
++    required = [
++        "- nov-1.csv",
++        "- nov-2.csv",
++        f"- Уникальных операций: {counts['clean_rows']}",
++        f"- Общая сумма: {expected['total']} KZT",
++        f"- Исходных строк: {source_count}",
++        f"- Корректных уникальных строк: {len(clean)}",
++        f"- Полных повторов: {duplicates}",
++        f"- Отклонённых строк: {len(rejected)}",
++    ]
++    required += [
++        f"| {category} | {amount} |"
++        for category, amount in expected["category_totals"].items()
++    ]
++    if any(report.count(line) != 1 for line in required):
++        raise ValueError("Расхождение report.md")
++
++
++def main():
++    parser = argparse.ArgumentParser(
++        description="Независимая проверка контрольного H07"
++    )
++    parser.add_argument("--input", type=Path, required=True)
++    parser.add_argument("--output", type=Path, required=True)
++    parser.add_argument("--expected", type=Path, required=True)
++    args = parser.parse_args()
++    try:
++        verify(args.input, args.output, args.expected)
++    except (OSError, ValueError, KeyError, TypeError, StopIteration, csv.Error) as exc:
++        print(f"Ошибка проверки H07: {exc}", file=sys.stderr)
++        return 1
++    print("Контрольный H07 проверен")
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+
+diff --git a/submissions/mairamaidan/SA04/tests/__init__.py b/submissions/mairamaidan/SA04/tests/__init__.py
+new file mode 100644
+index 0000000..e69de29
+
+diff --git a/submissions/mairamaidan/SA04/tests/test_cleaning.py b/submissions/mairamaidan/SA04/tests/test_cleaning.py
+new file mode 100644
+index 0000000..3c7f56d
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/tests/test_cleaning.py
+@@ -0,0 +1,157 @@
++import json
++import tempfile
++import unittest
++from pathlib import Path
++
++from src.cleaning import clean_files
++
++ROOT = Path(__file__).resolve().parents[1]
++RULES = {"categories": {"Food": "Еда", "Travel": "Транспорт", "Office": "Канцелярия"}}
++
++
++class CleaningTests(unittest.TestCase):
++    def test_h07(self):
++        rules = json.loads((ROOT / "input/rules.json").read_text(encoding="utf-8"))
++        result = clean_files(
++            [ROOT / "input/nov-1.csv", ROOT / "input/nov-2.csv"], rules
++        )
++        self.assertEqual(
++            result["stats"],
++            {
++                "source_rows": 8,
++                "clean_rows": 4,
++                "duplicate_rows": 1,
++                "rejected_rows": 3,
++            },
++        )
++        self.assertEqual(
++            [row["id"] for row in result["clean"]], ["A1", "A2", "A3", "A4"]
++        )
++        self.assertEqual([row["id"] for row in result["rejected"]], ["A5", "A6", "A7"])
++
++    def test_validation_duplicates_and_exact_raw_record(self):
++        with tempfile.TemporaryDirectory() as directory:
++            first = Path(directory) / "first.csv"
++            second = Path(directory) / "second.csv"
++            first.write_text(
++                "id,date,category,amount\n"
++                "a,2024-02-29,Food,0\n"
++                "b,2024-01-01,Travel,1.25\n"
++                "c,2024-01-01,Food,1e2\n"
++                "bad,2023-02-29,Food,1\n"
++                "bad2,2024-2-01,Food,1\n"
++                "bad3,2024-01-01,Unknown,1\n"
++                "bad4,2024-01-01,Food,-1\n"
++                "bad5,2024-01-01,Food,NaN\n"
++                "bad6,2024-01-01,Food,Infinity\n"
++                ",2024-01-01,Food,1\n"
++                "short,2024-01-01,Food\n"
++                '"quoted,id",2024-01-01,Unknown,1\n',
++                encoding="utf-8",
++            )
++            second.write_text(
++                "id,date,category,amount\n"
++                "a,2024-02-29,Food,0\n"
++                "a,2024-02-29,Food,2\n"
++                "bad,2023-02-29,Food,1\n",
++                encoding="utf-8",
++            )
++            result = clean_files([first, second], RULES)
++        self.assertEqual(
++            result["clean"],
++            [
++                {"id": "a", "date": "2024-02-29", "category": "Еда", "amount": "0"},
++                {
++                    "id": "b",
++                    "date": "2024-01-01",
++                    "category": "Транспорт",
++                    "amount": "1.25",
++                },
++                {"id": "c", "date": "2024-01-01", "category": "Еда", "amount": "100"},
++            ],
++        )
++        self.assertEqual(
++            result["stats"],
++            {
++                "source_rows": 15,
++                "clean_rows": 3,
++                "duplicate_rows": 1,
++                "rejected_rows": 11,
++            },
++        )
++        rejected = result["rejected"]
++        self.assertEqual(
++            [row["id"] for row in rejected],
++            [
++                "bad",
++                "bad2",
++                "bad3",
++                "bad4",
++                "bad5",
++                "bad6",
++                "",
++                "short",
++                "quoted,id",
++                "a",
++                "bad",
++            ],
++        )
++        self.assertEqual(rejected[8]["raw_line"], '"quoted,id",2024-01-01,Unknown,1')
++        self.assertEqual(
++            (rejected[8]["source"], rejected[8]["line_number"]), ("first.csv", 13)
++        )
++        self.assertEqual(
++            (rejected[9]["source"], rejected[9]["line_number"]), ("second.csv", 3)
++        )
++        self.assertEqual(
++            [row["reason"] for row in rejected],
++            [
++                "Неверная дата",
++                "Неверная дата",
++                "Неизвестная категория",
++                "Неверная сумма",
++                "Неверная сумма",
++                "Неверная сумма",
++                "Пустой id",
++                "Неверное число полей",
++                "Неизвестная категория",
++                "Конфликт id",
++                "Неверная дата",
++            ],
++        )
++
++    def test_bad_header_and_broken_csv_raise(self):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "bad.csv"
++            for contents in (
++                "date,id,category,amount\n",
++                'id,date,category,amount\n"unclosed\n',
++            ):
++                with self.subTest(contents=contents):
++                    path.write_text(contents, encoding="utf-8")
++                    with self.assertRaises((ValueError, OSError)):
++                        clean_files([path], RULES)
++
++    def test_extra_fields_and_missing_file(self):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "extra.csv"
++            path.write_text(
++                "id,date,category,amount\nx,2024-01-01,Food,1,extra\n", encoding="utf-8"
++            )
++            rejected = clean_files([path], RULES)["rejected"]
++            self.assertEqual(rejected[0]["reason"], "Неверное число полей")
++            with self.assertRaises(OSError):
++                clean_files([Path(directory) / "missing.csv"], RULES)
++
++    def test_multiline_record_keeps_raw_text_and_first_line(self):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory) / "multi.csv"
++            path.write_text(
++                'id,date,category,amount\n"a\nb",2024-01-01,Unknown,1\n',
++                encoding="utf-8",
++            )
++            rejected = clean_files([path], RULES)["rejected"]
++        self.assertEqual(rejected[0]["raw_line"], '"a\nb",2024-01-01,Unknown,1')
++        self.assertEqual(
++            (rejected[0]["source"], rejected[0]["line_number"]), ("multi.csv", 2)
++        )
+
+diff --git a/submissions/mairamaidan/SA04/tests/test_pipeline.py b/submissions/mairamaidan/SA04/tests/test_pipeline.py
+new file mode 100644
+index 0000000..dc85d54
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/tests/test_pipeline.py
+@@ -0,0 +1,83 @@
++import csv
++import shutil
++import subprocess
++import sys
++import tempfile
++import unittest
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def run(module, *args):
++    return subprocess.run(
++        [sys.executable, "-m", "src." + module, *map(str, args)],
++        cwd=ROOT,
++        capture_output=True,
++        text=True,
++        check=False,
++    )
++
++
++class PipelineTests(unittest.TestCase):
++    def test_outputs_and_repeat(self):
++        with tempfile.TemporaryDirectory() as temp:
++            output = Path(temp) / "fresh"
++            args = ("--input", ROOT / "input", "--output", output)
++            result = run("pipeline", *args)
++            self.assertEqual(result.returncode, 0, result.stderr)
++            first = {p.name: p.read_bytes() for p in output.iterdir()}
++            self.assertEqual(set(first), {"clean.csv", "rejected.csv", "report.md"})
++            with (output / "clean.csv").open(encoding="utf-8", newline="") as f:
++                self.assertEqual(
++                    list(csv.DictReader(f)),
++                    [
++                        {
++                            "id": "A1",
++                            "date": "2026-11-01",
++                            "category": "Еда",
++                            "amount": "100",
++                        },
++                        {
++                            "id": "A2",
++                            "date": "2026-11-01",
++                            "category": "Транспорт",
++                            "amount": "200",
++                        },
++                        {
++                            "id": "A3",
++                            "date": "2026-11-02",
++                            "category": "Канцелярия",
++                            "amount": "300",
++                        },
++                        {
++                            "id": "A4",
++                            "date": "2026-11-03",
++                            "category": "Еда",
++                            "amount": "400",
++                        },
++                    ],
++                )
++            self.assertEqual(run("pipeline", *args).returncode, 0)
++            self.assertEqual(first, {p.name: p.read_bytes() for p in output.iterdir()})
++
++    def test_missing_input_fails(self):
++        with tempfile.TemporaryDirectory() as temp:
++            result = run(
++                "pipeline",
++                "--input",
++                Path(temp) / "missing",
++                "--output",
++                Path(temp) / "out",
++            )
++            self.assertNotEqual(result.returncode, 0)
++            self.assertTrue(result.stderr)
++
++    def test_bad_header_fails(self):
++        with tempfile.TemporaryDirectory() as temp:
++            inputs = Path(temp) / "input"
++            shutil.copytree(ROOT / "input", inputs)
++            (inputs / "nov-1.csv").write_text("wrong,header\n", encoding="utf-8")
++            result = run("pipeline", "--input", inputs, "--output", Path(temp) / "out")
++            self.assertNotEqual(result.returncode, 0)
++            self.assertIn("заголовок", result.stderr)
+
+diff --git a/submissions/mairamaidan/SA04/tests/test_reporting.py b/submissions/mairamaidan/SA04/tests/test_reporting.py
+new file mode 100644
+index 0000000..7fe2de6
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/tests/test_reporting.py
+@@ -0,0 +1,128 @@
++import unittest
++from decimal import Decimal, localcontext
++
++from src.reporting import render_report, summarize
++
++CATEGORIES = {"Food": "Еда", "Travel": "Транспорт", "Office": "Канцелярия"}
++RULES = {"categories": CATEGORIES}
++ROWS = [
++    {"id": "1", "date": "2024-11-01", "category": "Еда", "amount": "200"},
++    {"id": "2", "date": "2024-11-02", "category": "Еда", "amount": "300"},
++    {"id": "3", "date": "2024-11-03", "category": "Транспорт", "amount": "200"},
++    {"id": "4", "date": "2024-11-04", "category": "Канцелярия", "amount": "300"},
++]
++STATS = {"source_rows": 8, "clean_rows": 4, "duplicate_rows": 1, "rejected_rows": 3}
++
++
++class ReportingTests(unittest.TestCase):
++    def test_summarize_counts_and_totals(self):
++        self.assertEqual(
++            summarize(ROWS, CATEGORIES),
++            {
++                "clean_rows": 4,
++                "total": Decimal(1000),
++                "category_totals": {
++                    "Еда": Decimal(500),
++                    "Транспорт": Decimal(200),
++                    "Канцелярия": Decimal(300),
++                },
++            },
++        )
++
++    def test_decimal_precision_and_zero_categories(self):
++        rows = [dict(ROWS[0], amount="0.1"), dict(ROWS[1], amount="0.2")]
++        result = summarize(rows, CATEGORIES)
++        self.assertEqual(result["total"], Decimal("0.3"))
++        self.assertEqual(
++            result["category_totals"],
++            {"Еда": Decimal("0.3"), "Транспорт": Decimal(0), "Канцелярия": Decimal(0)},
++        )
++        rows = [
++            dict(ROWS[0], amount="123456789012345678901234567890.1"),
++            dict(ROWS[1], amount="0.2"),
++        ]
++        self.assertEqual(
++            summarize(rows, CATEGORIES)["total"],
++            Decimal("123456789012345678901234567890.3"),
++        )
++
++    def test_summarize_is_independent_of_caller_exponent_limits(self):
++        with localcontext() as context:
++            context.Emax = 6
++            context.Emin = -6
++            small = summarize([dict(ROWS[0], amount="0.00000001")], CATEGORIES)
++            self.assertEqual(small["total"], Decimal("0.00000001"))
++            self.assertEqual(small["category_totals"]["Еда"], Decimal("0.00000001"))
++            large = summarize([dict(ROWS[0], amount="10000000")], CATEGORIES)
++            self.assertEqual(large["total"], Decimal(10000000))
++            self.assertEqual(large["category_totals"]["Еда"], Decimal(10000000))
++
++    def test_empty_rows(self):
++        self.assertEqual(
++            summarize([], CATEGORIES),
++            {
++                "clean_rows": 0,
++                "total": Decimal(0),
++                "category_totals": {
++                    "Еда": Decimal(0),
++                    "Транспорт": Decimal(0),
++                    "Канцелярия": Decimal(0),
++                },
++            },
++        )
++
++    def test_report_contains_sources_totals_balance_and_assumptions(self):
++        report = render_report(ROWS, STATS, ["nov-1.csv", "nov-2.csv"], RULES)
++        for value in (
++            "nov-1.csv",
++            "nov-2.csv",
++            "1000",
++            "KZT",
++            "Еда",
++            "500",
++            "Транспорт",
++            "200",
++            "Канцелярия",
++            "300",
++            "8",
++            "4",
++            "1",
++            "3",
++            "валидац",
++            "повтор",
++            "конфликт",
++        ):
++            self.assertIn(value.lower(), report.lower())
++        for line in (
++            "Исходных строк: 8",
++            "Корректных уникальных строк: 4",
++            "Полных повторов: 1",
++            "Отклонённых строк: 3",
++            "| Еда | 500 |",
++            "| Транспорт | 200 |",
++            "| Канцелярия | 300 |",
++        ):
++            self.assertIn(line, report)
++        self.assertEqual(
++            report, render_report(ROWS, STATS, ["nov-1.csv", "nov-2.csv"], RULES)
++        )
++
++    def test_report_empty_rows_keeps_all_categories(self):
++        report = render_report(
++            [],
++            {
++                "source_rows": 0,
++                "clean_rows": 0,
++                "duplicate_rows": 0,
++                "rejected_rows": 0,
++            },
++            [],
++            RULES,
++        )
++        for category in CATEGORIES.values():
++            self.assertIn(category, report)
++        self.assertIn("0", report)
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+diff --git a/submissions/mairamaidan/SA04/tests/test_verify.py b/submissions/mairamaidan/SA04/tests/test_verify.py
+new file mode 100644
+index 0000000..d5dd0c8
+--- /dev/null
++++ b/submissions/mairamaidan/SA04/tests/test_verify.py
+@@ -0,0 +1,82 @@
++import shutil
++import tempfile
++import unittest
++from pathlib import Path
++
++from test_pipeline import ROOT, run
++
++
++class VerifyTests(unittest.TestCase):
++    def test_original_and_tampering(self):
++        with tempfile.TemporaryDirectory() as temp:
++            output = Path(temp) / "out"
++            self.assertEqual(
++                run(
++                    "pipeline", "--input", ROOT / "input", "--output", output
++                ).returncode,
++                0,
++            )
++            args = (
++                "--input",
++                ROOT / "input",
++                "--output",
++                output,
++                "--expected",
++                ROOT / "checks/expected.json",
++            )
++            self.assertEqual(run("verify", *args).returncode, 0)
++            clean = output / "clean.csv"
++            original = clean.read_text(encoding="utf-8")
++            lines = original.splitlines(keepends=True)
++            for changed in (
++                "".join(lines[:-1]),
++                original + lines[-1],
++                original.replace("A1,", "AX,"),
++            ):
++                clean.write_text(changed, encoding="utf-8")
++                self.assertNotEqual(run("verify", *args).returncode, 0)
++            clean.write_text(original, encoding="utf-8")
++            rejected = output / "rejected.csv"
++            original_rejected = rejected.read_text(encoding="utf-8")
++            rejected.write_text(
++                original_rejected.replace("bad-date", "good-date"), encoding="utf-8"
++            )
++            self.assertNotEqual(run("verify", *args).returncode, 0)
++            rejected.write_text(original_rejected, encoding="utf-8")
++            report = output / "report.md"
++            original_report = report.read_text(encoding="utf-8")
++            report.write_text(
++                original_report.replace("1000 KZT", "1001 KZT"), encoding="utf-8"
++            )
++            self.assertNotEqual(run("verify", *args).returncode, 0)
++            report.write_text(original_report, encoding="utf-8")
++            self.assertEqual(run("verify", *args).returncode, 0)
++
++    def test_modified_rejected_input_is_not_accepted(self):
++        with tempfile.TemporaryDirectory() as temp:
++            inputs = Path(temp) / "input"
++            shutil.copytree(ROOT / "input", inputs)
++            output = Path(temp) / "out"
++            self.assertEqual(
++                run("pipeline", "--input", inputs, "--output", output).returncode, 0
++            )
++            source = inputs / "nov-2.csv"
++            source.write_text(
++                source.read_text(encoding="utf-8").replace("bad-date", "2026-11-04"),
++                encoding="utf-8",
++            )
++            rejected = output / "rejected.csv"
++            rejected.write_text(
++                rejected.read_text(encoding="utf-8").replace("bad-date", "2026-11-04"),
++                encoding="utf-8",
++            )
++            result = run(
++                "verify",
++                "--input",
++                inputs,
++                "--output",
++                output,
++                "--expected",
++                ROOT / "checks/expected.json",
++            )
++            self.assertNotEqual(result.returncode, 0)

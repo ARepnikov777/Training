@@ -1,0 +1,28 @@
+{
+  "checked_at_utc": "2026-11-15T11:03:16.614916Z",
+  "repository": "ARepnikov777/Training",
+  "parent": 55,
+  "milestone": 4,
+  "native_subissues": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "assignee": "mairamaidan",
+  "label": "subagents",
+  "verified": true,
+  "parent_state": "open",
+  "closed_children": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "pr": 136,
+  "draft": true
+}

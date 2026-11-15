@@ -1,0 +1,17 @@
+{
+  "source_rows": 8,
+  "clean_rows": 4,
+  "duplicate_rows": 1,
+  "rejected_rows": 3,
+  "rejected_ids": [
+    "A5",
+    "A6",
+    "A7"
+  ],
+  "total": 1000,
+  "category_totals": {
+    "Еда": 500,
+    "Транспорт": 200,
+    "Канцелярия": 300
+  }
+}

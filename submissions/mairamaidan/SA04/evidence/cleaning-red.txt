@@ -1,0 +1,62 @@
+$ python3 -m unittest discover -s tests -v
+test_bad_header_and_broken_csv_raise (test_cleaning.CleaningTests) ... test_h07 (test_cleaning.CleaningTests) ... FAIL
+test_multiline_record_keeps_raw_text_and_first_line (test_cleaning.CleaningTests) ... ERROR
+test_validation_duplicates_and_exact_raw_record (test_cleaning.CleaningTests) ... FAIL
+
+======================================================================
+ERROR: test_multiline_record_keeps_raw_text_and_first_line (test_cleaning.CleaningTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-clean/submissions/mairamaidan/SA04/tests/test_cleaning.py", line 69, in test_multiline_record_keeps_raw_text_and_first_line
+    self.assertEqual(rejected[0]['raw_line'], '"a\nb",2024-01-01,Unknown,1')
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_bad_header_and_broken_csv_raise (test_cleaning.CleaningTests) (contents='date,id,category,amount\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-clean/submissions/mairamaidan/SA04/tests/test_cleaning.py", line 62, in test_bad_header_and_broken_csv_raise
+    clean_files([path], RULES)
+AssertionError: (<class 'ValueError'>, <class 'OSError'>) not raised
+
+======================================================================
+FAIL: test_bad_header_and_broken_csv_raise (test_cleaning.CleaningTests) (contents='id,date,category,amount\n"unclosed\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-clean/submissions/mairamaidan/SA04/tests/test_cleaning.py", line 62, in test_bad_header_and_broken_csv_raise
+    clean_files([path], RULES)
+AssertionError: (<class 'ValueError'>, <class 'OSError'>) not raised
+
+======================================================================
+FAIL: test_h07 (test_cleaning.CleaningTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-clean/submissions/mairamaidan/SA04/tests/test_cleaning.py", line 16, in test_h07
+    self.assertEqual(result['stats'], {'source_rows': 8, 'clean_rows': 4, 'duplicate_rows': 1, 'rejected_rows': 3})
+AssertionError: {} != {'source_rows': 8, 'clean_rows': 4, 'duplicate_rows': 1, 'rejected_rows': 3}
+- {}
++ {'clean_rows': 4, 'duplicate_rows': 1, 'rejected_rows': 3, 'source_rows': 8}
+
+======================================================================
+FAIL: test_validation_duplicates_and_exact_raw_record (test_cleaning.CleaningTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-clean/submissions/mairamaidan/SA04/tests/test_cleaning.py", line 42, in test_validation_duplicates_and_exact_raw_record
+    self.assertEqual(result['clean'], [
+AssertionError: Lists differ: [] != [{'id': 'a', 'date': '2024-02-29', 'catego[171 chars]00'}]
+
+Second list contains 3 additional elements.
+First extra element 0:
+{'id': 'a', 'date': '2024-02-29', 'category': 'Еда', 'amount': '0'}
+
+- []
++ [{'amount': '0', 'category': 'Еда', 'date': '2024-02-29', 'id': 'a'},
++  {'amount': '1.25', 'category': 'Транспорт', 'date': '2024-01-01', 'id': 'b'},
++  {'amount': '100', 'category': 'Еда', 'date': '2024-01-01', 'id': 'c'}]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.009s
+
+FAILED (failures=4, errors=1)
+
+exit code: 1

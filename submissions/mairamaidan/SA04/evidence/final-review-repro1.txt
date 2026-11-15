@@ -1,0 +1,3 @@
+Controlled copy: conflicting total followed by original total
+actual exit=0 (expected nonzero)
+Контрольный H07 проверен
