@@ -1,0 +1,28 @@
+PASS: source/expected.json SHA-256 matches the issued material
+PASS: source/plan.csv SHA-256 matches the issued material
+PASS: source/actual.csv SHA-256 matches the issued material
+PASS: source/rules.md SHA-256 matches the issued material
+PASS: editable XLSX exists
+PASS: workbook has summary and two editable input sheets
+PASS: automatic/default calculation mode is enabled
+PASS: all union categories are present in source order
+PASS: category plan values are correct
+PASS: category actual values are correctly aggregated
+PASS: category deltas equal fact minus plan
+PASS: total plan, actual, and delta are 220000 / 235000 / 15000 KZT
+PASS: zero-plan category displays 'нет базы'
+PASS: zero-plan formula guards division
+PASS: summary plan and actual are formula-driven
+PASS: conditional highlighting covers all category rows
+PASS: highlight rule is exactly deviation > 0
+PASS: one category chart is present
+PASS: chart contains plan and actual series
+PASS: chart categories reference all four categories
+PASS: chart series reference plan and actual values
+PASS: chart title and KZT axis unit are present
+PASS: changing source plan B2 to 150000 recalculates the category to plan 150000 / delta 0 (observed 150000 / 0)
+PASS: the same edit recalculates totals to plan 230000 / delta 5000 without editing totals
+PASS: recalculated chart remains linked to the formula result ranges
+PASS: visual preview rendered from the XLSX first sheet and is non-empty
+
+Workbook SHA-256: bcc7530d70a8693fa8eba3becfeb5219bfb875618ae2a1f1abc116746cf8cf0e
