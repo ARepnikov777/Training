@@ -1,7 +1,7 @@
-# SA08 current checkpoint
+# SA08 delivery checkpoint
 
-Integration owner: coordinator, /Users/yerbolkozhagul/orca/workspaces/Training/SA08-integration, branch student/YK-cloud-hub/SA08. Original worktree contains the earlier preparation copy; authoritative results are here.
+Authoritative worktree: /Users/yerbolkozhagul/orca/workspaces/Training/SA08-integration, branch student/YK-cloud-hub/SA08. Local result and independent reviews accepted. User authorized commit/push/draft PR. Result commit b778f64 created. No push attempted, no PR exists.
 
-Completed: explorer input checks; three independent worker extractions in separate worktrees; worker synthesis; independent reviewer acceptance after one C-17 fix; a separate reviewer rejected the broken F01 proof and accepted the restored copy; clean-copy reproduction passed. Graph and briefs preceded extraction workers. Source hashes unchanged. Evidence and real agent IDs: run-log.md.
+BLOCKER: full-history Gitleaks exit 1 on a verified SHA-256 checksum at old commit 22aad84cc6666d2b0abca011e95a96b12e69c9cd, materials/H09/checksums.json:3, generic-api-key. See evidence/delivery-blocker.md. Do not bypass scanner or rewrite history. Ask only for a narrow exception to the proven false positive; delivery itself is already authorized. Proposed exact fingerprint file /tmp/sa08-gitleaksignore-proposed is NOT applied.
 
-Local coordinator acceptance and staged Gitleaks passed. Remaining: obtain authorization for commit/push/draft PR, then scan history before any authorized push. No commit, push or PR exists. Milestone 7 and issues 115-121 remain open for course delivery. No uncertain external operations. Do not rerun completed agents or overwrite first-result.
+Before resuming, verify live remote/PR state; no uncertain external operation is pending.

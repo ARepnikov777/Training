@@ -31,3 +31,4 @@ Ruling: synthesis and read-only review use integration worktree rather than extr
 | 2026-11-15T11:07:08.793231+00:00 | Accept | coordinator | final reviewer accepted, source/index reproduction PASS, staged Gitleaks clean | Done_accepted | fixes 1/2 | reviewer-report.md, evidence/final-verification.md |
 
 Local accepted only. Commit/push/PR and teacher acceptance remain pending. No external operation has unknown outcome.
+| 2026-11-15T11:13:28.799197+00:00 | Delivery | coordinator | commit b778f64 created; staged scan clean; full-history scan exit 1 on verified old checksum false positive | stop before push, request narrow exception decision | 0 | evidence/delivery-blocker.md |
