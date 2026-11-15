@@ -1,0 +1,3288 @@
+[
+  {
+    "utc": "2026-11-15T07:56:10.692994+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "7f835dd8-902e-482b-9ae2-87d0477b62fa",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e12]",
+              "    - link \"Каталог\" [ref=e13]",
+              "    - link \"Регистрация\" [ref=e14]",
+              "    - link \"Заказ\" [ref=e15]",
+              "    - link \"Заявки\" [ref=e16]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e11]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e19]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e20]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e17]",
+              "    - button \"Отправить\" [ref=e18]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:11.642012+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "ba9665f7-de44-446c-8182-5f4535922432",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e11": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e12": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e13": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e14": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e15": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e16": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e17": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e18": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e19": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e20": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e12]\n    - link \"Каталог\" [ref=e13]\n    - link \"Регистрация\" [ref=e14]\n    - link \"Заказ\" [ref=e15]\n    - link \"Заявки\" [ref=e16]\n- main\n  - heading \"Регистрация\" [level=1, ref=e11]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e19]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e20]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e17]\n    - button \"Отправить\" [ref=e18]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:12.437613+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "a30d8a4d-b39e-4b0d-9f6c-1aa2a446473c",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:13.884978+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e19",
+      "--value",
+      "Анна"
+    ],
+    "response": {
+      "id": "ea5a5ec5-22f1-407c-84f4-b99e02e86a3b",
+      "ok": true,
+      "result": {
+        "filled": "@e19",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e19]: Анна",
+              "        - StaticText \"Анна\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:15.044668+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e20",
+      "--value",
+      "anna@example.test"
+    ],
+    "response": {
+      "id": "130b7e7b-d90b-4052-b1de-93d246a259eb",
+      "ok": true,
+      "result": {
+        "filled": "@e20",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e20]: anna@example.test",
+              "        - StaticText \"anna@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:19.873395+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e17"
+    ],
+    "response": {
+      "id": "f8d0dcd6-f953-44a9-af8c-db018d97dca3",
+      "ok": true,
+      "result": {
+        "checked": "@e17",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e17]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:20.971040+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e18"
+    ],
+    "response": {
+      "id": "ac3a4e1b-24f4-422e-b96a-b38baeb15cec",
+      "ok": true,
+      "result": {
+        "clicked": "@e18",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: 905a8378-3d8f-472d-b547-8753316bc176\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:21.688712+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "a17442af-dd1f-4c50-87c2-23f25c222aba",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:22.341722+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "f2d6a321-37c9-4b71-a735-d144932edcb7",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"anna@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"anna@example.test\",\"name\":\"Анна\",\"token\":\"test-token-01\"},\"response\":{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},\"status\":201}],\"name\":\"Анна\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"}],\"text\":\"Регистрация сохранена: 905a8378-3d8f-472d-b547-8753316bc176\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:23.101237+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "e6543297-df27-475f-8d44-c54e09cc1a21",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e11": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e12": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e13": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e14": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e15": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e16": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e17": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e18": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e19": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e20": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e12]\n    - link \"Каталог\" [ref=e13]\n    - link \"Регистрация\" [ref=e14]\n    - link \"Заказ\" [ref=e15]\n    - link \"Заявки\" [ref=e16]\n- main\n  - heading \"Регистрация\" [level=1, ref=e11]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e19]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e20]: anna@example.test\n        - StaticText \"anna@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e17]\n    - button \"Отправить\" [ref=e18]\n  - status\n    - StaticText \"Регистрация сохранена: 905a8378-3d8f-472d-b547-8753316bc176\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:24.038142+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "2ed86878-cab7-4b6f-bb5f-84523f129e46",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\2ed86878-cab7-4b6f-bb5f-84523f129e46-screenshot.png",
+        "expiresAt": "2026-11-16T07:56:23.964Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:25.252021+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "3b59e95b-7108-47ae-8e93-f87ca897d7e7",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e22]",
+              "    - link \"Каталог\" [ref=e23]",
+              "    - link \"Регистрация\" [ref=e24]",
+              "    - link \"Заказ\" [ref=e25]",
+              "    - link \"Заявки\" [ref=e26]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e21]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e29]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e30]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e27]",
+              "    - button \"Отправить\" [ref=e28]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:26.014737+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "68194c57-c3e4-4691-8284-51b59f323b1e",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e21": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e22": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e23": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e24": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e25": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e26": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e27": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e28": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e29": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e30": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e22]\n    - link \"Каталог\" [ref=e23]\n    - link \"Регистрация\" [ref=e24]\n    - link \"Заказ\" [ref=e25]\n    - link \"Заявки\" [ref=e26]\n- main\n  - heading \"Регистрация\" [level=1, ref=e21]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e29]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e30]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e27]\n    - button \"Отправить\" [ref=e28]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:26.655858+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "0dadaf55-65b4-46d3-9e17-753deb462718",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:27.760163+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e29",
+      "--value",
+      ""
+    ],
+    "response": {
+      "id": "ea2828e2-dad0-4f7a-9e7c-090b4d0df95a",
+      "ok": true,
+      "result": {
+        "filled": "@e29",
+        "effects": {
+          "settled": true,
+          "page": "unchanged"
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:28.741467+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e30",
+      "--value",
+      "s2@example.test"
+    ],
+    "response": {
+      "id": "2770a7ae-9bf6-4f9d-b35f-895a641a0f6c",
+      "ok": true,
+      "result": {
+        "filled": "@e30",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e30]: s2@example.test",
+              "        - StaticText \"s2@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:30.472764+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e27"
+    ],
+    "response": {
+      "id": "b758c83a-90d7-4c7d-9ade-54df629b28bd",
+      "ok": true,
+      "result": {
+        "checked": "@e27",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e27]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:32.452684+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e28"
+    ],
+    "response": {
+      "id": "93e07463-3ce1-4f6d-ad30-c7373f944069",
+      "ok": true,
+      "result": {
+        "clicked": "@e28",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Ошибки: name\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:33.187137+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "5a092aa6-ca12-43d9-9b4f-22c325924aab",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:33.825145+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "5e87868c-09e8-48d5-a54b-18fb96e8419e",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s2@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s2@example.test\",\"name\":\"\",\"token\":\"test-token-02\"},\"response\":{\"errors\":[\"name\"]},\"status\":400}],\"name\":\"\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"}],\"text\":\"Ошибки: name\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:34.621760+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "e94774e7-8cc3-46c7-a35e-b0c478dbf3a2",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e21": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e22": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e23": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e24": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e25": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e26": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e27": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e28": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e29": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e30": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e22]\n    - link \"Каталог\" [ref=e23]\n    - link \"Регистрация\" [ref=e24]\n    - link \"Заказ\" [ref=e25]\n    - link \"Заявки\" [ref=e26]\n- main\n  - heading \"Регистрация\" [level=1, ref=e21]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e29]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e30]: s2@example.test\n        - StaticText \"s2@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e27]\n    - button \"Отправить\" [ref=e28]\n  - status\n    - StaticText \"Ошибки: name\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:35.454804+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "6f665071-a85e-4163-9a6f-cd59676ca99c",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\6f665071-a85e-4163-9a6f-cd59676ca99c-screenshot.png",
+        "expiresAt": "2026-11-16T07:56:35.373Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:36.604764+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "9aa6ed49-7e93-4e3d-b2c2-2cdc21a7fc07",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e32]",
+              "    - link \"Каталог\" [ref=e33]",
+              "    - link \"Регистрация\" [ref=e34]",
+              "    - link \"Заказ\" [ref=e35]",
+              "    - link \"Заявки\" [ref=e36]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e31]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e39]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e40]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e37]",
+              "    - button \"Отправить\" [ref=e38]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:37.353783+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "a370d775-47c3-4ce0-96e1-2cee1f7a6de4",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e31": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e32": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e33": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e34": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e35": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e36": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e37": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e38": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e39": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e40": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e32]\n    - link \"Каталог\" [ref=e33]\n    - link \"Регистрация\" [ref=e34]\n    - link \"Заказ\" [ref=e35]\n    - link \"Заявки\" [ref=e36]\n- main\n  - heading \"Регистрация\" [level=1, ref=e31]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e39]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e40]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e37]\n    - button \"Отправить\" [ref=e38]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:38.014814+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "7696d664-7476-421b-9770-29aac9c0dcef",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:39.195050+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e39",
+      "--value",
+      "Анна"
+    ],
+    "response": {
+      "id": "f2ebfe04-f2e2-4c67-8799-b194926ed901",
+      "ok": true,
+      "result": {
+        "filled": "@e39",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e39]: Анна",
+              "        - StaticText \"Анна\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:40.173438+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e40",
+      "--value",
+      "not-an-email"
+    ],
+    "response": {
+      "id": "cca2ab3f-f259-4ff1-bfa5-9482fc3bb9f5",
+      "ok": true,
+      "result": {
+        "filled": "@e40",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e40]: not-an-email",
+              "        - StaticText \"not-an-email\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:41.906515+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e37"
+    ],
+    "response": {
+      "id": "9dd44abc-764a-455f-9b72-3c8a21e83c32",
+      "ok": true,
+      "result": {
+        "checked": "@e37",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e37]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:42.954229+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e38"
+    ],
+    "response": {
+      "id": "476535c4-5fbf-47a2-a01f-b787af2e2e28",
+      "ok": true,
+      "result": {
+        "clicked": "@e38",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: a754ccd5-1c94-4c42-b9af-3739aca2d3b4\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:43.658233+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "a8b1e988-c219-44d0-9a88-071c87c7635b",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:44.386286+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "e1abd6f3-57cc-4dd5-87f1-003f9bf9c009",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"not-an-email\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"not-an-email\",\"name\":\"Анна\",\"token\":\"test-token-03\"},\"response\":{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},\"status\":201}],\"name\":\"Анна\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"}],\"text\":\"Регистрация сохранена: a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:45.649129+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "75a10845-7061-4636-9f40-d6f4df59bfd4",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e31": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e32": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e33": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e34": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e35": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e36": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e37": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e38": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e39": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e40": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e32]\n    - link \"Каталог\" [ref=e33]\n    - link \"Регистрация\" [ref=e34]\n    - link \"Заказ\" [ref=e35]\n    - link \"Заявки\" [ref=e36]\n- main\n  - heading \"Регистрация\" [level=1, ref=e31]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e39]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e40]: not-an-email\n        - StaticText \"not-an-email\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e37]\n    - button \"Отправить\" [ref=e38]\n  - status\n    - StaticText \"Регистрация сохранена: a754ccd5-1c94-4c42-b9af-3739aca2d3b4\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:47.358616+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "f8011e30-ac1b-4d3f-9c4a-8122031587be",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\f8011e30-ac1b-4d3f-9c4a-8122031587be-screenshot.png",
+        "expiresAt": "2026-11-16T07:56:47.286Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:48.957531+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "e061adeb-0570-41a5-8412-57b5889525ee",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e42]",
+              "    - link \"Каталог\" [ref=e43]",
+              "    - link \"Регистрация\" [ref=e44]",
+              "    - link \"Заказ\" [ref=e45]",
+              "    - link \"Заявки\" [ref=e46]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e41]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e49]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e50]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e47]",
+              "    - button \"Отправить\" [ref=e48]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:50.210413+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "8d281791-ac65-4e95-9fa9-33782c39fd5e",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e41": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e42": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e43": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e44": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e45": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e46": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e47": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e48": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e49": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e50": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e42]\n    - link \"Каталог\" [ref=e43]\n    - link \"Регистрация\" [ref=e44]\n    - link \"Заказ\" [ref=e45]\n    - link \"Заявки\" [ref=e46]\n- main\n  - heading \"Регистрация\" [level=1, ref=e41]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e49]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e50]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e47]\n    - button \"Отправить\" [ref=e48]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:51.374452+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "9cc82488-ecd6-46e4-94ac-217b4944bc38",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:53.089258+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e49",
+      "--value",
+      "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа"
+    ],
+    "response": {
+      "id": "ea519d0b-5740-414e-bbc1-faf867fafd4d",
+      "ok": true,
+      "result": {
+        "filled": "@e49",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e49]: ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+              "        - StaticText \"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:54.735011+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e50",
+      "--value",
+      "s4@example.test"
+    ],
+    "response": {
+      "id": "5b630328-dc8a-4f5d-a77b-678767dee6af",
+      "ok": true,
+      "result": {
+        "filled": "@e50",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e50]: s4@example.test",
+              "        - StaticText \"s4@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:56.400685+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e47"
+    ],
+    "response": {
+      "id": "fcf76203-83c7-4e66-82e1-aec629b85f39",
+      "ok": true,
+      "result": {
+        "checked": "@e47",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e47]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:58.065645+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e48"
+    ],
+    "response": {
+      "id": "fd6ac0bd-b728-4d1c-aba5-a969120d5c96",
+      "ok": true,
+      "result": {
+        "clicked": "@e48",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: 503bb916-610f-49d7-b713-a3ada065d4e5\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:56:59.281992+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "107476cf-9c1e-4ba3-a3b2-bd8bbe0dcdf9",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:00.332482+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "cb158e1c-7414-44a4-beb8-6b66d7e3f219",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s4@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s4@example.test\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},\"response\":{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},\"status\":201}],\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"}],\"text\":\"Регистрация сохранена: 503bb916-610f-49d7-b713-a3ada065d4e5\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:01.519680+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "230835f4-969d-4d9e-8892-5d296fbbe51b",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e41": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e42": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e43": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e44": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e45": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e46": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e47": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e48": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e49": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e50": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e42]\n    - link \"Каталог\" [ref=e43]\n    - link \"Регистрация\" [ref=e44]\n    - link \"Заказ\" [ref=e45]\n    - link \"Заявки\" [ref=e46]\n- main\n  - heading \"Регистрация\" [level=1, ref=e41]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e49]: ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\n        - StaticText \"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e50]: s4@example.test\n        - StaticText \"s4@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e47]\n    - button \"Отправить\" [ref=e48]\n  - status\n    - StaticText \"Регистрация сохранена: 503bb916-610f-49d7-b713-a3ada065d4e5\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:03.219355+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "d4e4a99a-538c-40ce-bb83-2adaa183790b",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\d4e4a99a-538c-40ce-bb83-2adaa183790b-screenshot.png",
+        "expiresAt": "2026-11-16T07:57:03.135Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:04.785033+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "3730a6d4-6576-4c9a-80ce-1e1056edc0f3",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e52]",
+              "    - link \"Каталог\" [ref=e53]",
+              "    - link \"Регистрация\" [ref=e54]",
+              "    - link \"Заказ\" [ref=e55]",
+              "    - link \"Заявки\" [ref=e56]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e51]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e59]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e60]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e57]",
+              "    - button \"Отправить\" [ref=e58]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:06.021754+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "320255db-4111-476d-85f7-6509ebb315a9",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e51": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e52": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e53": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e54": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e55": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e56": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e57": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e58": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e59": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e60": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e52]\n    - link \"Каталог\" [ref=e53]\n    - link \"Регистрация\" [ref=e54]\n    - link \"Заказ\" [ref=e55]\n    - link \"Заявки\" [ref=e56]\n- main\n  - heading \"Регистрация\" [level=1, ref=e51]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e59]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e60]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e57]\n    - button \"Отправить\" [ref=e58]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:07.175358+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "fbaa8cd0-87b9-4fc6-aff9-116a65f638b8",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:08.848076+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e59",
+      "--value",
+      "аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа"
+    ],
+    "response": {
+      "id": "e5bb3190-d81f-4437-8e24-f2e29264144c",
+      "ok": true,
+      "result": {
+        "filled": "@e59",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e59]: аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+              "        - StaticText \"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:10.436135+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e60",
+      "--value",
+      "s5@example.test"
+    ],
+    "response": {
+      "id": "6f9c0c67-631c-4f34-8553-dc238b2ebfc4",
+      "ok": true,
+      "result": {
+        "filled": "@e60",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e60]: s5@example.test",
+              "        - StaticText \"s5@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:12.023475+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e57"
+    ],
+    "response": {
+      "id": "c9a69e94-21b9-4465-ad33-6e75444c23a5",
+      "ok": true,
+      "result": {
+        "checked": "@e57",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e57]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:13.798388+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e58"
+    ],
+    "response": {
+      "id": "651e1dad-0e2a-43fd-ab92-ed878b94aa77",
+      "ok": true,
+      "result": {
+        "clicked": "@e58",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: f4d90237-1409-4098-9cd2-89a65c0766e1\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:14.989518+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "e0df3651-0f3b-4005-b118-70fc256d0c09",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:16.018062+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "ee5f3e01-53a2-4ddb-8cee-0d8563fa1354",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s5@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s5@example.test\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},\"response\":{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},\"status\":201}],\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"}],\"text\":\"Регистрация сохранена: f4d90237-1409-4098-9cd2-89a65c0766e1\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:17.278009+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "e95c1993-096c-494b-8706-3e9aa6ec05c0",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e51": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e52": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e53": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e54": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e55": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e56": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e57": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e58": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e59": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e60": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e52]\n    - link \"Каталог\" [ref=e53]\n    - link \"Регистрация\" [ref=e54]\n    - link \"Заказ\" [ref=e55]\n    - link \"Заявки\" [ref=e56]\n- main\n  - heading \"Регистрация\" [level=1, ref=e51]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e59]: аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\n        - StaticText \"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e60]: s5@example.test\n        - StaticText \"s5@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e57]\n    - button \"Отправить\" [ref=e58]\n  - status\n    - StaticText \"Регистрация сохранена: f4d90237-1409-4098-9cd2-89a65c0766e1\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:18.902328+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "b6046f55-5253-4229-80d6-a9cbb0f08076",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\b6046f55-5253-4229-80d6-a9cbb0f08076-screenshot.png",
+        "expiresAt": "2026-11-16T07:57:18.824Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:20.503258+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "be2e2321-bb7f-43ca-ad75-06d940ed2515",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e62]",
+              "    - link \"Каталог\" [ref=e63]",
+              "    - link \"Регистрация\" [ref=e64]",
+              "    - link \"Заказ\" [ref=e65]",
+              "    - link \"Заявки\" [ref=e66]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e61]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e69]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e70]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e67]",
+              "    - button \"Отправить\" [ref=e68]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:21.735863+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "1fad8cb4-8a39-4f75-8fe7-2406d7ce3ae8",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e61": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e62": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e63": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e64": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e65": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e66": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e67": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e68": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e69": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e70": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e62]\n    - link \"Каталог\" [ref=e63]\n    - link \"Регистрация\" [ref=e64]\n    - link \"Заказ\" [ref=e65]\n    - link \"Заявки\" [ref=e66]\n- main\n  - heading \"Регистрация\" [level=1, ref=e61]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e69]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e70]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e67]\n    - button \"Отправить\" [ref=e68]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:22.707084+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "02ccbe41-6a91-49b3-a480-ab98a4b4afa6",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:24.265265+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e69",
+      "--value",
+      "Анна"
+    ],
+    "response": {
+      "id": "b79536dc-27d7-4524-921d-e66f11c2cd97",
+      "ok": true,
+      "result": {
+        "filled": "@e69",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e69]: Анна",
+              "        - StaticText \"Анна\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:25.778804+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e70",
+      "--value",
+      "a b@example.test"
+    ],
+    "response": {
+      "id": "de9f0b26-8efb-40fb-8c80-00d45e28fb34",
+      "ok": true,
+      "result": {
+        "filled": "@e70",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e70]: a b@example.test",
+              "        - StaticText \"a b@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:27.873172+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e67"
+    ],
+    "response": {
+      "id": "9d3f07bb-c4af-4327-8fd1-eb0f90a618aa",
+      "ok": true,
+      "result": {
+        "checked": "@e67",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e67]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:29.636384+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e68"
+    ],
+    "response": {
+      "id": "be85f6e9-3c39-4d49-84b6-2974424f4cee",
+      "ok": true,
+      "result": {
+        "clicked": "@e68",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:30.827524+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "dbd03fd7-e206-45f4-819c-50e8ec2d7755",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:31.908006+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "464b457e-ce36-4fff-99f1-9417889c2ae1",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"a b@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"a b@example.test\",\"name\":\"Анна\",\"token\":\"test-token-06\"},\"response\":{\"email\":\"a b@example.test\",\"id\":\"e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"name\":\"Анна\",\"token\":\"test-token-06\"},\"status\":201}],\"name\":\"Анна\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},{\"email\":\"a b@example.test\",\"id\":\"e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"name\":\"Анна\",\"token\":\"test-token-06\"}],\"text\":\"Регистрация сохранена: e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:33.117998+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "c3a5cfa9-5e91-4638-b040-7a0463ebf415",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e61": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e62": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e63": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e64": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e65": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e66": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e67": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e68": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e69": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e70": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e62]\n    - link \"Каталог\" [ref=e63]\n    - link \"Регистрация\" [ref=e64]\n    - link \"Заказ\" [ref=e65]\n    - link \"Заявки\" [ref=e66]\n- main\n  - heading \"Регистрация\" [level=1, ref=e61]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e69]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e70]: a b@example.test\n        - StaticText \"a b@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e67]\n    - button \"Отправить\" [ref=e68]\n  - status\n    - StaticText \"Регистрация сохранена: e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:34.692307+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "59ffad25-69ba-426f-8b8e-d663947fc48e",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\59ffad25-69ba-426f-8b8e-d663947fc48e-screenshot.png",
+        "expiresAt": "2026-11-16T07:57:34.620Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:36.317463+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "e260b4e3-a148-49ac-ac4e-8107a10af8f1",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e72]",
+              "    - link \"Каталог\" [ref=e73]",
+              "    - link \"Регистрация\" [ref=e74]",
+              "    - link \"Заказ\" [ref=e75]",
+              "    - link \"Заявки\" [ref=e76]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e71]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e79]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e80]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e77]",
+              "    - button \"Отправить\" [ref=e78]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:37.523351+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "644888cd-5baa-453e-b669-f4fc0e2d77b0",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e71": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e72": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e73": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e74": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e75": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e76": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e77": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e78": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e79": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e80": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e72]\n    - link \"Каталог\" [ref=e73]\n    - link \"Регистрация\" [ref=e74]\n    - link \"Заказ\" [ref=e75]\n    - link \"Заявки\" [ref=e76]\n- main\n  - heading \"Регистрация\" [level=1, ref=e71]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e79]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e80]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e77]\n    - button \"Отправить\" [ref=e78]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:38.604704+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "b40252be-5064-45bb-a65b-66ba0a89faa8",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:40.273212+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e79",
+      "--value",
+      "Анна"
+    ],
+    "response": {
+      "id": "0892b66a-0fc1-4526-9399-9ec21be2a741",
+      "ok": true,
+      "result": {
+        "filled": "@e79",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e79]: Анна",
+              "        - StaticText \"Анна\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:41.765163+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e80",
+      "--value",
+      "s7@example.test"
+    ],
+    "response": {
+      "id": "98130146-b450-430f-9942-9da2c7652185",
+      "ok": true,
+      "result": {
+        "filled": "@e80",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e80]: s7@example.test",
+              "        - StaticText \"s7@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:43.459463+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e77"
+    ],
+    "response": {
+      "id": "ca579a66-88ff-4468-b1bb-102850dcdd0e",
+      "ok": true,
+      "result": {
+        "checked": "@e77",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e77]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:45.028638+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e78"
+    ],
+    "response": {
+      "id": "6efac864-590b-4ede-8246-bbc4b0406dc3",
+      "ok": true,
+      "result": {
+        "clicked": "@e78",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: 5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:46.233450+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "667739f1-d0ca-4f5e-bfb0-9e7d3372c3e3",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:47.323653+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "e3784674-dd28-4449-af08-26ed6a9e7a6c",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s7@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s7@example.test\",\"name\":\"Анна\",\"token\":\"test-token-07\"},\"response\":{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"},\"status\":201}],\"name\":\"Анна\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},{\"email\":\"a b@example.test\",\"id\":\"e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"name\":\"Анна\",\"token\":\"test-token-06\"},{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"}],\"text\":\"Регистрация сохранена: 5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:48.478356+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "d7dcb63c-4663-40dd-9228-2b9176f9e639",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e71": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e72": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e73": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e74": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e75": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e76": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e77": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e78": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e79": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e80": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e72]\n    - link \"Каталог\" [ref=e73]\n    - link \"Регистрация\" [ref=e74]\n    - link \"Заказ\" [ref=e75]\n    - link \"Заявки\" [ref=e76]\n- main\n  - heading \"Регистрация\" [level=1, ref=e71]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e79]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e80]: s7@example.test\n        - StaticText \"s7@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e77]\n    - button \"Отправить\" [ref=e78]\n  - status\n    - StaticText \"Регистрация сохранена: 5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:50.113332+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "5253b177-cd46-4fe8-a5c8-2546e11348f5",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\5253b177-cd46-4fe8-a5c8-2546e11348f5-screenshot.png",
+        "expiresAt": "2026-11-16T07:57:50.028Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:51.762659+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e78"
+    ],
+    "response": {
+      "id": "f03910a2-b89c-477f-9a3b-bbaa0a26ebd4",
+      "ok": true,
+      "result": {
+        "clicked": "@e78",
+        "effects": {
+          "settled": true,
+          "page": "unchanged"
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:52.849230+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "b0f8baba-b4e3-4f4f-b9c3-c9ddb696c404",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s7@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s7@example.test\",\"name\":\"Анна\",\"token\":\"test-token-07\"},\"response\":{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"},\"status\":201},{\"request\":{\"consent\":true,\"email\":\"s7@example.test\",\"name\":\"Анна\",\"token\":\"test-token-07\"},\"response\":{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"},\"status\":200}],\"name\":\"Анна\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},{\"email\":\"a b@example.test\",\"id\":\"e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"name\":\"Анна\",\"token\":\"test-token-06\"},{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"}],\"text\":\"Регистрация сохранена: 5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:53.987602+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "c972c50d-63cd-4fa0-abc9-c3f1a8dbd883",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e71": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e72": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e73": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e74": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e75": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e76": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e77": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e78": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e79": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e80": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e72]\n    - link \"Каталог\" [ref=e73]\n    - link \"Регистрация\" [ref=e74]\n    - link \"Заказ\" [ref=e75]\n    - link \"Заявки\" [ref=e76]\n- main\n  - heading \"Регистрация\" [level=1, ref=e71]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e79]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e80]: s7@example.test\n        - StaticText \"s7@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e77]\n    - button \"Отправить\" [ref=e78]\n  - status\n    - StaticText \"Регистрация сохранена: 5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:55.540168+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "c16d4813-85d2-4ca6-943d-968462101f4e",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\c16d4813-85d2-4ca6-943d-968462101f4e-screenshot.png",
+        "expiresAt": "2026-11-16T07:57:55.465Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:57.187037+00:00",
+    "args": [
+      "reload"
+    ],
+    "response": {
+      "id": "57427ef0-828e-4654-b20d-b4b12992b758",
+      "ok": true,
+      "result": {
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "- banner",
+              "  - StaticText \"Учебная мастерская\"",
+              "  - navigation",
+              "    - link \"Главная\" [ref=e82]",
+              "    - link \"Каталог\" [ref=e83]",
+              "    - link \"Регистрация\" [ref=e84]",
+              "    - link \"Заказ\" [ref=e85]",
+              "    - link \"Заявки\" [ref=e86]",
+              "- main",
+              "  - heading \"Регистрация\" [level=1, ref=e81]",
+              "  - paragraph",
+              "    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"",
+              "  - form",
+              "    - LabelText",
+              "      - StaticText \"Имя\"",
+              "      - textbox \"Имя\" [ref=e89]",
+              "    - LabelText",
+              "      - StaticText \"Email\"",
+              "      - textbox \"Email\" [ref=e90]",
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e87]",
+              "    - button \"Отправить\" [ref=e88]",
+              "  - status"
+            ],
+            "removedLines": 0,
+            "full": true,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:58.513490+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "f6248caa-2d17-4f85-a250-c5b14b7e8675",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e81": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e82": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e83": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e84": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e85": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e86": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e87": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e88": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e89": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e90": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e82]\n    - link \"Каталог\" [ref=e83]\n    - link \"Регистрация\" [ref=e84]\n    - link \"Заказ\" [ref=e85]\n    - link \"Заявки\" [ref=e86]\n- main\n  - heading \"Регистрация\" [level=1, ref=e81]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e89]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e90]\n    - checkbox \" Согласен с учебной обработкой\" [checked=false, ref=e87]\n    - button \"Отправить\" [ref=e88]\n  - status",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:57:59.573449+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "window.__observed=[];const originalFetch=window.fetch;window.fetch=async(...a)=>{const r=await originalFetch(...a);if(a[0]==='/api/register'){const body=await r.clone().json();window.__observed.push({request:JSON.parse(a[1].body),status:r.status,response:body});}return r;};true"
+    ],
+    "response": {
+      "id": "c358ac05-277f-4c84-b503-2b5000405ea4",
+      "ok": true,
+      "result": {
+        "result": "true",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:01.238405+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e89",
+      "--value",
+      ""
+    ],
+    "response": {
+      "id": "42dc75f6-beba-4945-adae-3c22da35ef83",
+      "ok": true,
+      "result": {
+        "filled": "@e89",
+        "effects": {
+          "settled": true,
+          "page": "unchanged"
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:02.712997+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e90",
+      "--value",
+      "s8@example.test"
+    ],
+    "response": {
+      "id": "e8d761eb-9aa3-45b4-a7a1-0fc9134b3c78",
+      "ok": true,
+      "result": {
+        "filled": "@e90",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Email\" [ref=e90]: s8@example.test",
+              "        - StaticText \"s8@example.test\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:04.638508+00:00",
+    "args": [
+      "check",
+      "--element",
+      "@e87"
+    ],
+    "response": {
+      "id": "c3cf30a9-9352-4b49-b316-ef557488e5ff",
+      "ok": true,
+      "result": {
+        "checked": "@e87",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e87]"
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:06.224196+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e88"
+    ],
+    "response": {
+      "id": "81a72af6-025c-434c-9e61-b0a0226b72ff",
+      "ok": true,
+      "result": {
+        "clicked": "@e88",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Ошибки: name\""
+            ],
+            "removedLines": 0,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:07.403428+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "a4366b6f-e45f-458f-b7be-02e12ae79765",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:08.493618+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "48228cf1-adc8-4ff9-bad7-be6168b5e7e4",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s8@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s8@example.test\",\"name\":\"\",\"token\":\"test-token-08\"},\"response\":{\"errors\":[\"name\"]},\"status\":400}],\"name\":\"\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},{\"email\":\"a b@example.test\",\"id\":\"e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"name\":\"Анна\",\"token\":\"test-token-06\"},{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"}],\"text\":\"Ошибки: name\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:09.682029+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "674924ed-7fc4-4b0a-a23a-58f7c1eaa36f",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e81": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e82": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e83": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e84": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e85": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e86": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e87": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e88": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e89": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e90": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e82]\n    - link \"Каталог\" [ref=e83]\n    - link \"Регистрация\" [ref=e84]\n    - link \"Заказ\" [ref=e85]\n    - link \"Заявки\" [ref=e86]\n- main\n  - heading \"Регистрация\" [level=1, ref=e81]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e89]\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e90]: s8@example.test\n        - StaticText \"s8@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e87]\n    - button \"Отправить\" [ref=e88]\n  - status\n    - StaticText \"Ошибки: name\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:11.285038+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "0ae80298-d3e4-45f3-bac3-d0eb6a38f815",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\0ae80298-d3e4-45f3-bac3-d0eb6a38f815-screenshot.png",
+        "expiresAt": "2026-11-16T07:58:11.193Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:12.900104+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e89",
+      "--value",
+      "Анна"
+    ],
+    "response": {
+      "id": "13f5fb48-d5d5-4a7d-81ae-2dae61dd215f",
+      "ok": true,
+      "result": {
+        "filled": "@e89",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "      - textbox \"Имя\" [ref=e89]: Анна",
+              "        - StaticText \"Анна\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:14.563925+00:00",
+    "args": [
+      "fill",
+      "--element",
+      "@e90",
+      "--value",
+      "s8@example.test"
+    ],
+    "response": {
+      "id": "06b8f413-4d2d-4762-bb81-18a1f6f9aafe",
+      "ok": true,
+      "result": {
+        "filled": "@e90",
+        "effects": {
+          "settled": true,
+          "page": "unchanged"
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:16.121408+00:00",
+    "args": [
+      "click",
+      "--element",
+      "@e88"
+    ],
+    "response": {
+      "id": "841a1f81-0696-43a4-9825-9ee30fd15566",
+      "ok": true,
+      "result": {
+        "clicked": "@e88",
+        "effects": {
+          "settled": true,
+          "page": {
+            "lines": [
+              "    - StaticText \"Регистрация сохранена: 64b5fba6-ab72-48f0-b31a-eec73bcd69e0\""
+            ],
+            "removedLines": 1,
+            "full": false,
+            "truncated": false
+          }
+        }
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:17.400530+00:00",
+    "args": [
+      "wait",
+      "--selector",
+      "#result:not(:empty)"
+    ],
+    "response": {
+      "id": "96b7494a-6993-4853-b3ed-6ada439c1b8d",
+      "ok": true,
+      "result": {
+        "selector": "#result:not(:empty)",
+        "waited": "selector"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:18.505754+00:00",
+    "args": [
+      "eval",
+      "--expression",
+      "(async()=>({url:location.href,name:document.getElementById('name').value,email:document.getElementById('email').value,consent:document.getElementById('consent').checked,text:document.getElementById('result').textContent,exchanges:window.__observed,registrations:await(await fetch('/api/registrations')).json()}))()"
+    ],
+    "response": {
+      "id": "6901615e-4d9d-419e-bc24-6e66eeff6fb8",
+      "ok": true,
+      "result": {
+        "result": "{\"consent\":true,\"email\":\"s8@example.test\",\"exchanges\":[{\"request\":{\"consent\":true,\"email\":\"s8@example.test\",\"name\":\"\",\"token\":\"test-token-08\"},\"response\":{\"errors\":[\"name\"]},\"status\":400},{\"request\":{\"consent\":true,\"email\":\"s8@example.test\",\"name\":\"Анна\",\"token\":\"test-token-08\"},\"response\":{\"email\":\"s8@example.test\",\"id\":\"64b5fba6-ab72-48f0-b31a-eec73bcd69e0\",\"name\":\"Анна\",\"token\":\"test-token-08\"},\"status\":201}],\"name\":\"Анна\",\"registrations\":[{\"email\":\"anna@example.test\",\"id\":\"905a8378-3d8f-472d-b547-8753316bc176\",\"name\":\"Анна\",\"token\":\"test-token-01\"},{\"email\":\"not-an-email\",\"id\":\"a754ccd5-1c94-4c42-b9af-3739aca2d3b4\",\"name\":\"Анна\",\"token\":\"test-token-03\"},{\"email\":\"s4@example.test\",\"id\":\"503bb916-610f-49d7-b713-a3ada065d4e5\",\"name\":\"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-04\"},{\"email\":\"s5@example.test\",\"id\":\"f4d90237-1409-4098-9cd2-89a65c0766e1\",\"name\":\"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\",\"token\":\"test-token-05\"},{\"email\":\"a b@example.test\",\"id\":\"e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a\",\"name\":\"Анна\",\"token\":\"test-token-06\"},{\"email\":\"s7@example.test\",\"id\":\"5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d\",\"name\":\"Анна\",\"token\":\"test-token-07\"},{\"email\":\"s8@example.test\",\"id\":\"64b5fba6-ab72-48f0-b31a-eec73bcd69e0\",\"name\":\"Анна\",\"token\":\"test-token-08\"}],\"text\":\"Регистрация сохранена: 64b5fba6-ab72-48f0-b31a-eec73bcd69e0\",\"url\":\"http://127.0.0.1:18764/register\"}",
+        "origin": "http://127.0.0.1:18764/register"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:19.720430+00:00",
+    "args": [
+      "snapshot"
+    ],
+    "response": {
+      "id": "6b89b40b-605c-40c2-a05e-20fc0812b4d6",
+      "ok": true,
+      "result": {
+        "origin": "http://127.0.0.1:18764/register",
+        "refs": {
+          "e81": {
+            "name": "Регистрация",
+            "role": "heading"
+          },
+          "e82": {
+            "name": "Главная",
+            "role": "link"
+          },
+          "e83": {
+            "name": "Каталог",
+            "role": "link"
+          },
+          "e84": {
+            "name": "Регистрация",
+            "role": "link"
+          },
+          "e85": {
+            "name": "Заказ",
+            "role": "link"
+          },
+          "e86": {
+            "name": "Заявки",
+            "role": "link"
+          },
+          "e87": {
+            "name": " Согласен с учебной обработкой",
+            "role": "checkbox"
+          },
+          "e88": {
+            "name": "Отправить",
+            "role": "button"
+          },
+          "e89": {
+            "name": "Имя",
+            "role": "textbox"
+          },
+          "e90": {
+            "name": "Email",
+            "role": "textbox"
+          }
+        },
+        "removedRefs": [],
+        "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e82]\n    - link \"Каталог\" [ref=e83]\n    - link \"Регистрация\" [ref=e84]\n    - link \"Заказ\" [ref=e85]\n    - link \"Заявки\" [ref=e86]\n- main\n  - heading \"Регистрация\" [level=1, ref=e81]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e89]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e90]: s8@example.test\n        - StaticText \"s8@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e87]\n    - button \"Отправить\" [ref=e88]\n  - status\n    - StaticText \"Регистрация сохранена: 64b5fba6-ab72-48f0-b31a-eec73bcd69e0\"",
+        "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+        "url": "http://127.0.0.1:18764/register",
+        "title": "Регистрация"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  },
+  {
+    "utc": "2026-11-15T07:58:21.367019+00:00",
+    "args": [
+      "screenshot"
+    ],
+    "response": {
+      "id": "6dd157d6-cc18-47b7-8238-3329a49652f3",
+      "ok": true,
+      "result": {
+        "format": "png",
+        "path": "C:\\Users\\JUBANI~1.D\\AppData\\Local\\Temp\\orca-browser-screenshots\\6dd157d6-cc18-47b7-8238-3329a49652f3-screenshot.png",
+        "expiresAt": "2026-11-16T07:58:21.293Z"
+      },
+      "_meta": {
+        "runtimeId": "8e644804-e848-48b4-bd03-ec4448919d1a"
+      }
+    }
+  }
+]

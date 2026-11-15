@@ -1,0 +1,21 @@
+{
+  "operation": "Synthetic form-token pseudonymisation for publication; no scanner exclusions",
+  "tokens_replaced": 8,
+  "changed_files": [
+    "evidence\\browser\\commands.json",
+    "evidence\\browser\\scenario1.json",
+    "evidence\\browser\\scenario2.json",
+    "evidence\\browser\\scenario3.json",
+    "evidence\\browser\\scenario4.json",
+    "evidence\\browser\\scenario5.json",
+    "evidence\\browser\\scenario6.json",
+    "evidence\\browser\\scenario7-first.json",
+    "evidence\\browser\\scenario7-repeat.json",
+    "evidence\\browser\\scenario8-empty.json",
+    "evidence\\browser\\scenario8-fixed.json",
+    "result\\matrix.csv"
+  ],
+  "original_evidence_preserved_locally_outside_git": true,
+  "id_fields_unchanged": true,
+  "consistent_substitution_across_all_text_evidence": true
+}

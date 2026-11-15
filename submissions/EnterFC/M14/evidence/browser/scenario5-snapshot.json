@@ -1,0 +1,50 @@
+{
+  "origin": "http://127.0.0.1:18764/register",
+  "refs": {
+    "e51": {
+      "name": "Регистрация",
+      "role": "heading"
+    },
+    "e52": {
+      "name": "Главная",
+      "role": "link"
+    },
+    "e53": {
+      "name": "Каталог",
+      "role": "link"
+    },
+    "e54": {
+      "name": "Регистрация",
+      "role": "link"
+    },
+    "e55": {
+      "name": "Заказ",
+      "role": "link"
+    },
+    "e56": {
+      "name": "Заявки",
+      "role": "link"
+    },
+    "e57": {
+      "name": " Согласен с учебной обработкой",
+      "role": "checkbox"
+    },
+    "e58": {
+      "name": "Отправить",
+      "role": "button"
+    },
+    "e59": {
+      "name": "Имя",
+      "role": "textbox"
+    },
+    "e60": {
+      "name": "Email",
+      "role": "textbox"
+    }
+  },
+  "removedRefs": [],
+  "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e52]\n    - link \"Каталог\" [ref=e53]\n    - link \"Регистрация\" [ref=e54]\n    - link \"Заказ\" [ref=e55]\n    - link \"Заявки\" [ref=e56]\n- main\n  - heading \"Регистрация\" [level=1, ref=e51]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e59]: аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\n        - StaticText \"аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e60]: s5@example.test\n        - StaticText \"s5@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e57]\n    - button \"Отправить\" [ref=e58]\n  - status\n    - StaticText \"Регистрация сохранена: f4d90237-1409-4098-9cd2-89a65c0766e1\"",
+  "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+  "url": "http://127.0.0.1:18764/register",
+  "title": "Регистрация"
+}

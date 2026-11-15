@@ -1,0 +1,50 @@
+{
+  "origin": "http://127.0.0.1:18764/register",
+  "refs": {
+    "e11": {
+      "name": "Регистрация",
+      "role": "heading"
+    },
+    "e12": {
+      "name": "Главная",
+      "role": "link"
+    },
+    "e13": {
+      "name": "Каталог",
+      "role": "link"
+    },
+    "e14": {
+      "name": "Регистрация",
+      "role": "link"
+    },
+    "e15": {
+      "name": "Заказ",
+      "role": "link"
+    },
+    "e16": {
+      "name": "Заявки",
+      "role": "link"
+    },
+    "e17": {
+      "name": " Согласен с учебной обработкой",
+      "role": "checkbox"
+    },
+    "e18": {
+      "name": "Отправить",
+      "role": "button"
+    },
+    "e19": {
+      "name": "Имя",
+      "role": "textbox"
+    },
+    "e20": {
+      "name": "Email",
+      "role": "textbox"
+    }
+  },
+  "removedRefs": [],
+  "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e12]\n    - link \"Каталог\" [ref=e13]\n    - link \"Регистрация\" [ref=e14]\n    - link \"Заказ\" [ref=e15]\n    - link \"Заявки\" [ref=e16]\n- main\n  - heading \"Регистрация\" [level=1, ref=e11]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e19]: Анна\n        - StaticText \"Анна\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e20]: anna@example.test\n        - StaticText \"anna@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e17]\n    - button \"Отправить\" [ref=e18]\n  - status\n    - StaticText \"Регистрация сохранена: 905a8378-3d8f-472d-b547-8753316bc176\"",
+  "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+  "url": "http://127.0.0.1:18764/register",
+  "title": "Регистрация"
+}

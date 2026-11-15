@@ -1,0 +1,31 @@
+{
+  "consent": true,
+  "email": "s2@example.test",
+  "exchanges": [
+    {
+      "request": {
+        "consent": true,
+        "email": "s2@example.test",
+        "name": "",
+        "token": "test-token-02"
+      },
+      "response": {
+        "errors": [
+          "name"
+        ]
+      },
+      "status": 400
+    }
+  ],
+  "name": "",
+  "registrations": [
+    {
+      "email": "anna@example.test",
+      "id": "905a8378-3d8f-472d-b547-8753316bc176",
+      "name": "Анна",
+      "token": "test-token-01"
+    }
+  ],
+  "text": "Ошибки: name",
+  "url": "http://127.0.0.1:18764/register"
+}
