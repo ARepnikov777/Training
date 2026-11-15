@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<title>Распакуй архив в новую папку E01-kit</title>
+<rect width="1600" height="900" fill="#f5f7fa"/>
+<g data-src="document" transform="translate(-30.0 200.0) scale(1.0)"><rect x="100" y="100" width="180" height="240" rx="16" fill="white" stroke="#172b3a" stroke-width="8"/><path d="M130 160h110M130 200h110M130 240h70" stroke="#1d8794" stroke-width="12"/></g>
+<text x="160" y="610" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="middle">E01.zip</text>
+<g data-src="arrow" transform=" translate(-600.0 180.0) scale(1.0 1.0)"><path d="M900 240h200m-60-60 60 60-60 60" fill="none" stroke="#1d8794" stroke-width="16" vector-effect="non-scaling-stroke"/></g>
+<g data-src="folder" transform="translate(-817.0 -339.0) scale(3.06 3.3)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="590" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">E01-kit</text>
+<g data-src="folder" transform="translate(-627.5 -45.5) scale(2.75 2.35)"><path d="M450 130h100l40 40h180v180H450z" fill="white" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="635" y="336" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">E01</text>
+<g data-src="document" transform="translate(635.0 340.0) scale(0.45)"><rect x="100" y="100" width="180" height="240" rx="16" fill="white" stroke="#172b3a" stroke-width="8"/><path d="M130 160h110M130 200h110M130 240h70" stroke="#1d8794" stroke-width="12"/></g>
+<text x="800" y="457" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="600" fill="#172b3a" text-anchor="start">README.md</text>
+<g data-src="folder" transform="translate(498.0 483.2) scale(0.36 0.36)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="800" y="587" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="600" fill="#172b3a" text-anchor="start">input</text>
+<g data-src="folder" transform="translate(498.0 613.2) scale(0.36 0.36)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="800" y="717" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="600" fill="#172b3a" text-anchor="start">checks</text>
+</svg>
