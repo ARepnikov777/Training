@@ -1,0 +1,114 @@
+{
+  "dpi": 240,
+  "ocr_languages": "rus+eng",
+  "documents": [
+    {
+      "document": "01-text.pdf",
+      "sha256": "7ce24c85607c591f31f537d6e4fc63df5ee4f85f2ff001108597ad046bf164e3",
+      "status": "ok",
+      "pages": [
+        {
+          "page": 1,
+          "source_rotation": 0,
+          "tables": [],
+          "source_image": "01-text/page-001/source.png",
+          "normalized_image": "01-text/page-001/normalized.png",
+          "native_text_path": "01-text/page-001/native.txt",
+          "method": "native",
+          "confidence": null,
+          "manual_review": false,
+          "status": "ok",
+          "text_path": "01-text/page-001/text.txt"
+        }
+      ],
+      "page_count": 1
+    },
+    {
+      "document": "02-scan.pdf",
+      "sha256": "3f424cceea3f5f68377b9a71bb0c3c55bc422a4450d8fb567f38d31149254f08",
+      "status": "ok",
+      "pages": [
+        {
+          "page": 1,
+          "source_rotation": 0,
+          "tables": [],
+          "source_image": "02-scan/page-001/source.png",
+          "normalized_image": "02-scan/page-001/normalized.png",
+          "native_text_path": "02-scan/page-001/native.txt",
+          "method": "ocr",
+          "confidence": 92,
+          "manual_review": true,
+          "status": "ok",
+          "ocr_json_path": "02-scan/page-001/ocr.json",
+          "text_path": "02-scan/page-001/text.txt"
+        },
+        {
+          "page": 2,
+          "source_rotation": 0,
+          "tables": [],
+          "source_image": "02-scan/page-002/source.png",
+          "normalized_image": "02-scan/page-002/normalized.png",
+          "native_text_path": "02-scan/page-002/native.txt",
+          "method": "ocr",
+          "confidence": 91,
+          "manual_review": true,
+          "status": "ok",
+          "ocr_json_path": "02-scan/page-002/ocr.json",
+          "text_path": "02-scan/page-002/text.txt"
+        },
+        {
+          "page": 3,
+          "source_rotation": 0,
+          "tables": [],
+          "source_image": "02-scan/page-003/source.png",
+          "normalized_image": "02-scan/page-003/normalized.png",
+          "native_text_path": "02-scan/page-003/native.txt",
+          "method": "ocr",
+          "confidence": 93,
+          "manual_review": true,
+          "status": "ok",
+          "ocr_json_path": "02-scan/page-003/ocr.json",
+          "text_path": "02-scan/page-003/text.txt"
+        }
+      ],
+      "page_count": 3
+    },
+    {
+      "document": "03-rotated-table.pdf",
+      "sha256": "306af1b2666dcd0842cefabc5daa01a94c7205a60846897b1931df644d6c884d",
+      "status": "ok",
+      "pages": [
+        {
+          "page": 1,
+          "source_rotation": 90,
+          "tables": [
+            {
+              "csv_path": "03-rotated-table/page-001/table-1.csv",
+              "cells_path": "03-rotated-table/page-001/table-1-cells.csv",
+              "rows": 6,
+              "columns": 5
+            }
+          ],
+          "source_image": "03-rotated-table/page-001/source.png",
+          "normalized_image": "03-rotated-table/page-001/normalized.png",
+          "native_text_path": "03-rotated-table/page-001/native.txt",
+          "method": "ocr",
+          "confidence": 93,
+          "manual_review": true,
+          "status": "ok",
+          "ocr_json_path": "03-rotated-table/page-001/ocr.json",
+          "text_path": "03-rotated-table/page-001/text.txt"
+        }
+      ],
+      "page_count": 1
+    },
+    {
+      "document": "04-broken.pdf",
+      "sha256": "eca6a6505cb2129162243d3b9e066c42731c8315911b6fd2f2f92d6feacd6bcd",
+      "status": "error",
+      "pages": [],
+      "error": "FileDataError: Failed to open file 'C:\\\\Users\\\\Jubaniyazov.d\\\\orca\\\\workspaces\\\\Lesson1\\\\Training-H04\\\\submissions\\\\EnterFC\\\\H04\\\\kit\\\\H04\\\\input\\\\04-broken.pdf'."
+    }
+  ],
+  "coordinate_system": "PDF points, top-left origin, source page normalized to rotation 0"
+}

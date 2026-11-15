@@ -1,0 +1,225 @@
+{
+  "text": "Сумма, KZT\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t270\t86\t-1\t\n2\t1\t1\t0\t0\t0\t8\t25\t199\t33\t-1\t\n3\t1\t1\t1\t0\t0\t8\t25\t199\t33\t-1\t\n4\t1\t1\t1\t1\t0\t8\t25\t199\t33\t-1\t\n5\t1\t1\t1\t1\t1\t8\t26\t119\t32\t93.245171\tСумма,\n5\t1\t1\t1\t1\t2\t144\t25\t63\t26\t90.384109\tKZT\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 91,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 8,
+        "y0": 25,
+        "x1": 207,
+        "y1": 58
+      },
+      "text": "Сумма, KZT\n",
+      "confidence": 91,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 8,
+            "y0": 25,
+            "x1": 207,
+            "y1": 58
+          },
+          "text": "Сумма, KZT\n",
+          "confidence": 91,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 8,
+                "y0": 25,
+                "x1": 207,
+                "y1": 58
+              },
+              "text": "Сумма, KZT\n",
+              "confidence": 91,
+              "rowAttributes": {
+                "rowHeight": 31,
+                "descenders": 5,
+                "ascenders": 7
+              },
+              "baseline": {
+                "x0": 8,
+                "y0": 51,
+                "x1": 207,
+                "y1": 51
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 8,
+                    "y0": 26,
+                    "x1": 127,
+                    "y1": 58
+                  },
+                  "text": "Сумма,",
+                  "confidence": 93,
+                  "choices": [
+                    {
+                      "text": "Сумма,",
+                      "confidence": 93
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 8,
+                        "y0": 26,
+                        "x1": 28,
+                        "y1": 51
+                      },
+                      "text": "С",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 31,
+                        "y0": 32,
+                        "x1": 48,
+                        "y1": 58
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 52,
+                        "y0": 32,
+                        "x1": 72,
+                        "y1": 51
+                      },
+                      "text": "м",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 77,
+                        "y0": 32,
+                        "x1": 97,
+                        "y1": 51
+                      },
+                      "text": "м",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 89,
+                        "y0": 26,
+                        "x1": 110,
+                        "y1": 58
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 101,
+                        "y0": 32,
+                        "x1": 127,
+                        "y1": 56
+                      },
+                      "text": ",",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 144,
+                    "y0": 25,
+                    "x1": 207,
+                    "y1": 51
+                  },
+                  "text": "KZT",
+                  "confidence": 90,
+                  "choices": [
+                    {
+                      "text": "KZT",
+                      "confidence": 90
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 144,
+                        "y0": 25,
+                        "x1": 163,
+                        "y1": 51
+                      },
+                      "text": "K",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 164,
+                        "y0": 25,
+                        "x1": 185,
+                        "y1": 51
+                      },
+                      "text": "Z",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 186,
+                        "y0": 25,
+                        "x1": 207,
+                        "y1": 51
+                      },
+                      "text": "T",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

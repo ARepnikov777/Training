@@ -1,0 +1,31 @@
+document,page,table,row,column,value,bbox,method,confidence,manual_review,raw_path
+03-rotated-table.pdf,1,1,1,1,Артикул,"[32.85, 100.35, 122.55, 130.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r1-c1.json
+03-rotated-table.pdf,1,1,1,2,Наименование,"[122.55, 100.35, 282.75, 130.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r1-c2.json
+03-rotated-table.pdf,1,1,1,3,"Кол-во, шт.","[282.75, 100.35, 367.65, 130.04999999999998]",ocr,95,True,03-rotated-table/page-001/table-1-r1-c3.json
+03-rotated-table.pdf,1,1,1,4,"Цена, KZT","[367.65, 100.35, 452.84999999999997, 130.04999999999998]",ocr,91,True,03-rotated-table/page-001/table-1-r1-c4.json
+03-rotated-table.pdf,1,1,1,5,"Сумма, KZT","[452.84999999999997, 100.35, 537.6, 130.04999999999998]",ocr,91,True,03-rotated-table/page-001/table-1-r1-c5.json
+03-rotated-table.pdf,1,1,2,1,А101,"[32.85, 130.04999999999998, 122.55, 160.04999999999998]",ocr,89,True,03-rotated-table/page-001/table-1-r2-c1.json
+03-rotated-table.pdf,1,1,2,2,Кабель USB,"[122.55, 130.04999999999998, 282.75, 160.04999999999998]",ocr,94,True,03-rotated-table/page-001/table-1-r2-c2.json
+03-rotated-table.pdf,1,1,2,3,8,"[282.75, 130.04999999999998, 367.65, 160.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r2-c3.json
+03-rotated-table.pdf,1,1,2,4,2500,"[367.65, 130.04999999999998, 452.84999999999997, 160.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r2-c4.json
+03-rotated-table.pdf,1,1,2,5,20000,"[452.84999999999997, 130.04999999999998, 537.6, 160.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r2-c5.json
+03-rotated-table.pdf,1,1,3,1,А102,"[32.85, 160.04999999999998, 122.55, 190.04999999999998]",ocr,91,True,03-rotated-table/page-001/table-1-r3-c1.json
+03-rotated-table.pdf,1,1,3,2,Мышь,"[122.55, 160.04999999999998, 282.75, 190.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r3-c2.json
+03-rotated-table.pdf,1,1,3,3,5,"[282.75, 160.04999999999998, 367.65, 190.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r3-c3.json
+03-rotated-table.pdf,1,1,3,4,6000,"[367.65, 160.04999999999998, 452.84999999999997, 190.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r3-c4.json
+03-rotated-table.pdf,1,1,3,5,30000,"[452.84999999999997, 160.04999999999998, 537.6, 190.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r3-c5.json
+03-rotated-table.pdf,1,1,4,1,А103,"[32.85, 190.04999999999998, 122.55, 220.04999999999998]",ocr,90,True,03-rotated-table/page-001/table-1-r4-c1.json
+03-rotated-table.pdf,1,1,4,2,Клавиатура,"[122.55, 190.04999999999998, 282.75, 220.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r4-c2.json
+03-rotated-table.pdf,1,1,4,3,4,"[282.75, 190.04999999999998, 367.65, 220.04999999999998]",ocr,95,True,03-rotated-table/page-001/table-1-r4-c3.json
+03-rotated-table.pdf,1,1,4,4,9000,"[367.65, 190.04999999999998, 452.84999999999997, 220.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r4-c4.json
+03-rotated-table.pdf,1,1,4,5,36000,"[452.84999999999997, 190.04999999999998, 537.6, 220.04999999999998]",ocr,90,True,03-rotated-table/page-001/table-1-r4-c5.json
+03-rotated-table.pdf,1,1,5,1,А104,"[32.85, 220.04999999999998, 122.55, 250.04999999999998]",ocr,91,True,03-rotated-table/page-001/table-1-r5-c1.json
+03-rotated-table.pdf,1,1,5,2,Наушники,"[122.55, 220.04999999999998, 282.75, 250.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r5-c2.json
+03-rotated-table.pdf,1,1,5,3,3,"[282.75, 220.04999999999998, 367.65, 250.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r5-c3.json
+03-rotated-table.pdf,1,1,5,4,14000,"[367.65, 220.04999999999998, 452.84999999999997, 250.04999999999998]",ocr,96,True,03-rotated-table/page-001/table-1-r5-c4.json
+03-rotated-table.pdf,1,1,5,5,42000,"[452.84999999999997, 220.04999999999998, 537.6, 250.04999999999998]",ocr,95,True,03-rotated-table/page-001/table-1-r5-c5.json
+03-rotated-table.pdf,1,1,6,1,ИТОГО,"[32.85, 250.04999999999998, 122.55, 279.9]",ocr,84,True,03-rotated-table/page-001/table-1-r6-c1.json
+03-rotated-table.pdf,1,1,6,2,В,"[122.55, 250.04999999999998, 282.75, 279.9]",ocr,28,True,03-rotated-table/page-001/table-1-r6-c2.json
+03-rotated-table.pdf,1,1,6,3,20,"[282.75, 250.04999999999998, 367.65, 279.9]",ocr,96,True,03-rotated-table/page-001/table-1-r6-c3.json
+03-rotated-table.pdf,1,1,6,4,ВО,"[367.65, 250.04999999999998, 452.84999999999997, 279.9]",ocr,9,True,03-rotated-table/page-001/table-1-r6-c4.json
+03-rotated-table.pdf,1,1,6,5,128000,"[452.84999999999997, 250.04999999999998, 537.6, 279.9]",ocr,96,True,03-rotated-table/page-001/table-1-r6-c5.json

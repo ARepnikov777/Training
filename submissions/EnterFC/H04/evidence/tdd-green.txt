@@ -1,0 +1,10 @@
+test_broken_first_does_not_stop_two_text_pages (test_batch.BatchTests.test_broken_first_does_not_stop_two_text_pages) ... Consider using the pymupdf_layout package for a greatly improved page layout analysis.
+ok
+test_image_only_page_uses_real_ocr (test_batch.BatchTests.test_image_only_page_uses_real_ocr) ... ok
+test_rotated_grid_exports_table_and_cell_provenance (test_batch.BatchTests.test_rotated_grid_exports_table_and_cell_provenance) ... ok
+test_rotated_raster_grid_exports_ocr_cells (test_batch.BatchTests.test_rotated_raster_grid_exports_ocr_cells) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.170s
+
+OK

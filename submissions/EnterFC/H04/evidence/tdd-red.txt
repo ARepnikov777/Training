@@ -1,0 +1,58 @@
+test_broken_first_does_not_stop_two_text_pages (test_batch.BatchTests.test_broken_first_does_not_stop_two_text_pages) ... FAIL
+test_image_only_page_uses_real_ocr (test_batch.BatchTests.test_image_only_page_uses_real_ocr) ... FAIL
+test_rotated_grid_exports_table_and_cell_provenance (test_batch.BatchTests.test_rotated_grid_exports_table_and_cell_provenance) ... FAIL
+test_rotated_raster_grid_exports_ocr_cells (test_batch.BatchTests.test_rotated_raster_grid_exports_ocr_cells) ... FAIL
+
+======================================================================
+FAIL: test_broken_first_does_not_stop_two_text_pages (test_batch.BatchTests.test_broken_first_does_not_stop_two_text_pages)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-H04\submissions\EnterFC\H04\test_batch.py", line 29, in test_broken_first_does_not_stop_two_text_pages
+    self.assertEqual([d["status"] for d in result["documents"]], ["error", "ok"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['error', 'ok']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'error'
+
+- []
++ ['error', 'ok']
+
+======================================================================
+FAIL: test_image_only_page_uses_real_ocr (test_batch.BatchTests.test_image_only_page_uses_real_ocr)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-H04\submissions\EnterFC\H04\test_batch.py", line 48, in test_image_only_page_uses_real_ocr
+    self.assertEqual(len(result["documents"]), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_rotated_grid_exports_table_and_cell_provenance (test_batch.BatchTests.test_rotated_grid_exports_table_and_cell_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-H04\submissions\EnterFC\H04\test_batch.py", line 79, in test_rotated_grid_exports_table_and_cell_provenance
+    self.check_table()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-H04\submissions\EnterFC\H04\test_batch.py", line 88, in check_table
+    self.assertEqual(len(result["documents"]), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_rotated_raster_grid_exports_ocr_cells (test_batch.BatchTests.test_rotated_raster_grid_exports_ocr_cells)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-H04\submissions\EnterFC\H04\test_batch.py", line 84, in test_rotated_raster_grid_exports_ocr_cells
+    self.check_table()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Jubaniyazov.d\orca\workspaces\Lesson1\Training-H04\submissions\EnterFC\H04\test_batch.py", line 88, in check_table
+    self.assertEqual(len(result["documents"]), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.171s
+
+FAILED (failures=4)

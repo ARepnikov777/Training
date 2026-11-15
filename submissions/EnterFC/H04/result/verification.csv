@@ -1,0 +1,11 @@
+document,page,control,observed,evidence_or_arithmetic,outcome
+01-text.pdf,1,Акт А-017,А-017,native + visual,match
+01-text.pdf,1,ноутбуки; цена; сумма,12; 245000; 2940000,12 * 245000 = 2940000,match
+02-scan.pdf,1,Акт А-017,raw A-017; reviewed А-017,visual + text-layer document; glyph alphabet ambiguous,notation_normalized
+02-scan.pdf,1,ноутбуки; цена; сумма,12; 245000; 2940000,OCR + visual; 12 * 245000,match
+02-scan.pdf,2,партия; предметы,OR-2026-11; 36,OCR + visual; 12 + 12 + 12 = 36,match
+02-scan.pdf,3,длительность; бюджет,90 минут; 18500 KZT,OCR + visual,match
+03-rotated-table.pdf,1,количество,8; 5; 4; 3; total 20,8 + 5 + 4 + 3 = 20,match
+03-rotated-table.pdf,1,суммы строк,20000; 30000; 36000; 42000,8*2500; 5*6000; 4*9000; 3*14000,match
+03-rotated-table.pdf,1,общая сумма,128000 KZT,20000 + 30000 + 36000 + 42000 = 128000,match
+04-broken.pdf,,ошибка чтения,FileDataError,manifest + errors.csv; tests broken-first continuation,match

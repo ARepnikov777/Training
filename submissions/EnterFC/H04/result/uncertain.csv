@@ -1,0 +1,11 @@
+document,page,location,engine_confidence,reason,resolution
+02-scan.pdf,1,whole page,92,OCR requires visual check; act A/А alphabet not encoded in image,checked; normalization documented; alphabet uncertainty remains
+02-scan.pdf,2,whole page,91,OCR requires visual check; footer separator recognized as dot,checked; footer corrected from image
+02-scan.pdf,3,whole page,93,OCR requires visual check; budget wraps to next line; footer dot,checked; amount 18500 confirmed; footer corrected
+03-rotated-table.pdf,1,whole page; table rows 1-6 columns 1-5,93,90 degree PDF rotation; header №1 read as Nel; all 30 cells inspected,checked; header corrected; 30 cell records retained
+03-rotated-table.pdf,1,table 1 row 2 col 1,89,Cyrillic А in raw OCR; Latin A convention in result; image cannot resolve Unicode,open alphabet ambiguity; visible identifier confirmed
+03-rotated-table.pdf,1,table 1 row 3 col 1,91,Cyrillic А in raw OCR; Latin A convention in result; image cannot resolve Unicode,open alphabet ambiguity; visible identifier confirmed
+03-rotated-table.pdf,1,table 1 row 4 col 1,90,Cyrillic А in raw OCR; Latin A convention in result; image cannot resolve Unicode,open alphabet ambiguity; visible identifier confirmed
+03-rotated-table.pdf,1,table 1 row 5 col 1,91,Cyrillic А in raw OCR; Latin A convention in result; image cannot resolve Unicode,open alphabet ambiguity; visible identifier confirmed
+03-rotated-table.pdf,1,table 1 row 6 col 2,28,OCR В in visually empty cell,checked blank; raw retained
+03-rotated-table.pdf,1,table 1 row 6 col 4,9,OCR ВО in visually empty cell,checked blank; raw retained

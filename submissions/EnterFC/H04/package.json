@@ -1,0 +1,1 @@
+{"name":"h04-pdf-batch","version":"1.0.0","private":true,"dependencies":{"@tesseract.js-data/eng":"1.0.0","@tesseract.js-data/rus":"1.0.0","tesseract.js":"6.0.1"}}
