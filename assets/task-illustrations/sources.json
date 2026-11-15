@@ -1,0 +1,110 @@
+[
+  {
+    "issue": 52,
+    "code": "SA01",
+    "pack": "H09",
+    "source_files": "input/sources/01-program.md; input/sources/02-materials.md",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "c61eddbe0fca019134206d3511f9e8fa6fc179ecb877d88d62fdd04e324460bc",
+    "screenshot": "SA01.png"
+  },
+  {
+    "issue": 53,
+    "code": "SA02",
+    "pack": "H02",
+    "source_files": "input/project/discount.py; input/project/shipping.py",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "a8d3e6d3a8d9adb74de3bb9e32ed3f9b4c8e069d3f2adb35258a84b9abdf0c45",
+    "screenshot": "SA02.png"
+  },
+  {
+    "issue": 54,
+    "code": "SA03",
+    "pack": "H12",
+    "source_files": "input/elements.svg",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "d040527f7c7141285768551668a0d39bb98a8727a6c4d46ee5820752f489067d",
+    "screenshot": "SA03.png"
+  },
+  {
+    "issue": 55,
+    "code": "SA04",
+    "pack": "H07",
+    "source_files": "input/nov-1.csv; input/nov-2.csv",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "1c2ec2846602b31624d2d46a7c48fec048b094b9f74c16035a1eeecc1f7092b7",
+    "screenshot": "SA04.png"
+  },
+  {
+    "issue": 56,
+    "code": "SA05",
+    "pack": "H08",
+    "source_files": "input/scenarios.csv",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "e429c7c8e6d1599f3f03dcfa4b4ffccb6d42a18b7183964284ad1b54b5dd06c8",
+    "screenshot": "SA05.png"
+  },
+  {
+    "issue": 57,
+    "code": "SA06",
+    "pack": "H11",
+    "source_files": "input/products.csv; input/product-1.png..product-5.png",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "bb28ea29307ef12f0c843d9d618bb791892a695dfda4a41fc42a5b593b50ebf3",
+    "screenshot": "SA06.png"
+  },
+  {
+    "issue": 58,
+    "code": "SA07",
+    "pack": "H06",
+    "source_files": "input/meeting.mp3; input/notes.md",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "23f71791b4b61ac3be14bbc488af7b8903441205ebef80bfd029fef53d6d2555",
+    "screenshot": "SA07.png"
+  },
+  {
+    "issue": 59,
+    "code": "SA08",
+    "pack": "H05",
+    "source_files": "input/specification.pdf (first-page fragment)",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "70a6beb8906d0d2af438dff0430863260d9d0d3d26e436557605c7e93026aae8",
+    "screenshot": "SA08.png"
+  },
+  {
+    "issue": 60,
+    "code": "SA09",
+    "pack": "H03",
+    "source_files": "input/import-valid.csv",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "6a1ad6af433815bee1ba616948167230ad49f922ae035393b10cfcfd18f5cec0",
+    "screenshot": "SA09.png"
+  },
+  {
+    "issue": 61,
+    "code": "SA10",
+    "pack": "H01",
+    "source_files": "input/archive.zip (first10files, paths and sizes)",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "beed1c99c3a7e21f35e0d4d72bee49b6b3e8d709437e402466c17bdd679517dc",
+    "screenshot": "SA10.png"
+  },
+  {
+    "issue": 73,
+    "code": "SA11",
+    "pack": "H04",
+    "source_files": "input/02-scan.pdf; input/03-rotated-table.pdf (firstpages)",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "fb384691f9cb2ee828f5c2a4c78bf211a668795173d1ad139a7ff94280f4b5c0",
+    "screenshot": "SA11.png"
+  },
+  {
+    "issue": 74,
+    "code": "SA12",
+    "pack": "H13",
+    "source_files": "input/site/serve.py /catalog (original local stand)",
+    "source_commit": "22aad84cc6666d2b0abca011e95a96b12e69c9cd",
+    "sha256": "f0877412ed8ae7e32111a303ab53bcdcc22f264753ec391e2314ca24671480e6",
+    "screenshot": "SA12.png"
+  }
+]
