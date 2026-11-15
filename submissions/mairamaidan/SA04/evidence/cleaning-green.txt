@@ -1,0 +1,13 @@
+$ python3 -m unittest discover -s tests -v
+test_bad_header_and_broken_csv_raise (test_cleaning.CleaningTests) ... ok
+test_extra_fields_and_missing_file (test_cleaning.CleaningTests) ... ok
+test_h07 (test_cleaning.CleaningTests) ... ok
+test_multiline_record_keeps_raw_text_and_first_line (test_cleaning.CleaningTests) ... ok
+test_validation_duplicates_and_exact_raw_record (test_cleaning.CleaningTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.009s
+
+OK
+
+exit code: 0

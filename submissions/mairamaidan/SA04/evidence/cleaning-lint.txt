@@ -1,0 +1,4 @@
+$ /tmp/sa04-checks-20261115/bin/ruff check src/cleaning.py tests/test_cleaning.py
+All checks passed!
+
+exit code: 0

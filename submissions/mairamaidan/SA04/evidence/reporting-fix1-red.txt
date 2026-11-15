@@ -1,0 +1,19 @@
+test_decimal_precision_and_zero_categories (test_reporting.ReportingTests) ... ok
+test_empty_rows (test_reporting.ReportingTests) ... ok
+test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests) ... ok
+test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests) ... ok
+test_summarize_counts_and_totals (test_reporting.ReportingTests) ... ok
+test_summarize_is_independent_of_caller_exponent_limits (test_reporting.ReportingTests) ... FAIL
+
+======================================================================
+FAIL: test_summarize_is_independent_of_caller_exponent_limits (test_reporting.ReportingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 54, in test_summarize_is_independent_of_caller_exponent_limits
+    self.assertEqual(small["total"], Decimal("0.00000001"))
+AssertionError: Decimal('0E-7') != Decimal('1E-8')
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1)

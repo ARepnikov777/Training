@@ -37,3 +37,22 @@
 - Контракт v1 утверждён. Созданы Orca worktree SA04-clean и SA04-report, ветки student/mairamaidan/SA04-clean и -report, base 746c00d. Общие входы и каркасы подготовлены координатором до передачи права записи.
 - Базовые проверки: 9 pytest passed, Ruff check/format tools tests passed. Проверочный venv вне репозитория: pytest 8.4.2, pypdf 6.21.4, Ruff 0.17.5, Python 3.9; это версии среды, не все pinned версии requirements-build.txt.
 - attempts=0; дедлайн 12:01:32 UTC сохранён. Запускаются два worker одновременно; области записи непересекающиеся.
+
+### 10:37–10:41 UTC: Execute → Join (проверка компонентов)
+
+- `/root/sa04_clean`, agent_type=worker, gpt-6.1-terra high: 5 тестов GREEN, RED с ожидаемыми AssertionError (дополнительно IndexError пустого каркаса). Право записи передано координатору.
+- `/root/sa04_report`, agent_type=worker, gpt-6.1-terra high: 5 тестов GREEN, RED с ожидаемыми AssertionError. Право записи передано координатору.
+- В интеграционное дерево перенесены только разрешённые модули, тесты и evidence каждого worker. Координатор прочитал код и прогнал объединённые 10 unittest: OK.
+- Независимый `/root/sa04_module_review`, agent_type=reviewer: проверка двух компонентов по отдельным diff-пакетам до T5.
+- Дополнительный Ruff обнаружил механические замечания стиля. Владельцы получили ограниченный follow-up на Ruff fix/format без изменений поведения и повтор тестов, в своих worktree. Это завершение текущей работы до Join, не возврат после функционального провала: attempts=0.
+- Исправлена ошибка команды координатора: первый перенос использовал неверный cwd и завершился FileNotFoundError до копирования кода; выполнен правильный перенос и реальный прогон 10 тестов. Предшествующий прогон 0 тестов не засчитывается.
+
+### 10:41:38 UTC: Join → Fix → Execute (attempts=1/2)
+
+Reviewer `/root/sa04_module_review`: T3 ACCEPT; T4 P2 — унаследованные Decimal Emin/Emax вызывают overflow или потерю малой суммы. Координатор воспроизвёл без больших fixture: localcontext Emax=6/Emin=-6; 10000000 → Overflow, 0.00000001 → 0E-7. Причина подтверждена, исходный срок сохранён. Владельцу `/root/sa04_report` отправлен ограниченный fix1 с RED/GREEN и последующим scoped re-review.
+
+### 10:44 UTC: Execute → Join → Integrate
+
+Fix1 `/root/sa04_report`: RED 0E-7 != 1E-8, затем 6 GREEN. Изменён только локальный диапазон Decimal, без смены контракта. Scoped reviewer `/root/sa04_module_review`: ACCEPT, исходные большие/малые случаи проверены, контекст вызывающего кода сохранён. Reports/modules-review-2.md. Координатор: объединённые 11 unittest, Ruff check и format — OK. Оба компонента приняты.
+
+Для T5 подготовлен отдельный Orca worktree SA04-integrate, ветка student/mairamaidan/SA04-integrate; только он владеет общим запуском. Запускается `/root/sa04_integrate`, agent_type=worker, модель из TOML. attempts=1/2, дедлайн12:01:32 UTC неизменен.

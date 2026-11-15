@@ -1,0 +1,216 @@
+diff --git a/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/src/reporting.py b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/src/reporting.py
+new file mode 100644
+index 0000000..ff78d37
+--- /dev/null
++++ b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/src/reporting.py
+@@ -0,0 +1,49 @@
++"""Точные показатели и детерминированный текст отчёта."""
++from decimal import Decimal, localcontext
++
++
++def summarize(clean_rows, categories):
++    amounts = [Decimal(row["amount"]) for row in clean_rows]
++    # Сохраняем все десятичные разряды даже при сумме длиннее контекста Decimal.
++    if amounts:
++        highest = max(amount.adjusted() for amount in amounts)
++        lowest = min(amount.as_tuple().exponent for amount in amounts)
++        precision = max(1, highest - lowest + 1 + len(str(len(amounts))))
++    else:
++        precision = 1
++    with localcontext() as context:
++        context.prec = precision
++        totals = {category: Decimal(0) for category in categories.values()}
++        for row, amount in zip(clean_rows, amounts):
++            totals[row["category"]] += amount
++        total = sum(amounts, Decimal(0))
++    return {"clean_rows": len(clean_rows), "total": total, "category_totals": totals}
++
++
++def render_report(clean_rows, stats, sources, rules):
++    summary = summarize(clean_rows, rules["categories"])
++    lines = ["# Отчёт", "", "## Источники"]
++    lines.extend("- " + source for source in sources)
++    if not sources:
++        lines.append("- Нет")
++    lines.extend([
++        "", "## Показатели",
++        "- Уникальных операций: {}".format(summary["clean_rows"]),
++        "- Общая сумма: {} KZT".format(format(summary["total"], "f")),
++        "", "| Категория | Сумма, KZT |", "| --- | ---: |",
++    ])
++    for category, amount in summary["category_totals"].items():
++        lines.append("| {} | {} |".format(category, format(amount, "f")))
++    lines.extend([
++        "", "## Баланс строк",
++        "- Исходных строк: {}".format(stats["source_rows"]),
++        "- Корректных уникальных строк: {}".format(stats["clean_rows"]),
++        "- Полных повторов: {}".format(stats["duplicate_rows"]),
++        "- Отклонённых строк: {}".format(stats["rejected_rows"]),
++        "", "## Допущения",
++        "- Валидация предшествует исключению повторов: проверяются поля, реальная дата, категория и конечная неотрицательная сумма.",
++        "- Полный повтор совпадает по всем четырём исходным полям; повтор неверной записи отклоняется.",
++        "- При конфликте id с другими значениями сохраняется первая корректная запись, последующая отклоняется.",
++        "",
++    ])
++    return "\n".join(lines)
+
+diff --git a/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py
+new file mode 100644
+index 0000000..6342f18
+--- /dev/null
++++ b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py
+@@ -0,0 +1,52 @@
++import unittest
++from decimal import Decimal
++
++from src.reporting import summarize, render_report
++
++
++CATEGORIES = {"Food": "Еда", "Travel": "Транспорт", "Office": "Канцелярия"}
++RULES = {"categories": CATEGORIES}
++ROWS = [
++    {"id": "1", "date": "2024-11-01", "category": "Еда", "amount": "200"},
++    {"id": "2", "date": "2024-11-02", "category": "Еда", "amount": "300"},
++    {"id": "3", "date": "2024-11-03", "category": "Транспорт", "amount": "200"},
++    {"id": "4", "date": "2024-11-04", "category": "Канцелярия", "amount": "300"},
++]
++STATS = {"source_rows": 8, "clean_rows": 4, "duplicate_rows": 1, "rejected_rows": 3}
++
++
++class ReportingTests(unittest.TestCase):
++    def test_summarize_counts_and_totals(self):
++        self.assertEqual(summarize(ROWS, CATEGORIES), {
++            "clean_rows": 4, "total": Decimal("1000"),
++            "category_totals": {"Еда": Decimal("500"), "Транспорт": Decimal("200"), "Канцелярия": Decimal("300")},
++        })
++
++    def test_decimal_precision_and_zero_categories(self):
++        rows = [dict(ROWS[0], amount="0.1"), dict(ROWS[1], amount="0.2")]
++        result = summarize(rows, CATEGORIES)
++        self.assertEqual(result["total"], Decimal("0.3"))
++        self.assertEqual(result["category_totals"], {"Еда": Decimal("0.3"), "Транспорт": Decimal("0"), "Канцелярия": Decimal("0")})
++        rows = [dict(ROWS[0], amount="123456789012345678901234567890.1"), dict(ROWS[1], amount="0.2")]
++        self.assertEqual(summarize(rows, CATEGORIES)["total"], Decimal("123456789012345678901234567890.3"))
++
++    def test_empty_rows(self):
++        self.assertEqual(summarize([], CATEGORIES), {"clean_rows": 0, "total": Decimal("0"), "category_totals": {"Еда": Decimal("0"), "Транспорт": Decimal("0"), "Канцелярия": Decimal("0")}})
++
++    def test_report_contains_sources_totals_balance_and_assumptions(self):
++        report = render_report(ROWS, STATS, ["nov-1.csv", "nov-2.csv"], RULES)
++        for value in ("nov-1.csv", "nov-2.csv", "1000", "KZT", "Еда", "500", "Транспорт", "200", "Канцелярия", "300", "8", "4", "1", "3", "валидац", "повтор", "конфликт"):
++            self.assertIn(value.lower(), report.lower())
++        for line in ("Исходных строк: 8", "Корректных уникальных строк: 4", "Полных повторов: 1", "Отклонённых строк: 3", "| Еда | 500 |", "| Транспорт | 200 |", "| Канцелярия | 300 |"):
++            self.assertIn(line, report)
++        self.assertEqual(report, render_report(ROWS, STATS, ["nov-1.csv", "nov-2.csv"], RULES))
++
++    def test_report_empty_rows_keeps_all_categories(self):
++        report = render_report([], {"source_rows": 0, "clean_rows": 0, "duplicate_rows": 0, "rejected_rows": 0}, [], RULES)
++        for category in CATEGORIES.values():
++            self.assertIn(category, report)
++        self.assertIn("0", report)
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+diff --git a/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-green.txt b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-green.txt
+new file mode 100644
+index 0000000..96b362d
+--- /dev/null
++++ b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-green.txt
+@@ -0,0 +1,10 @@
++test_decimal_precision_and_zero_categories (test_reporting.ReportingTests) ... ok
++test_empty_rows (test_reporting.ReportingTests) ... ok
++test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests) ... ok
++test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests) ... ok
++test_summarize_counts_and_totals (test_reporting.ReportingTests) ... ok
++
++----------------------------------------------------------------------
++Ran 5 tests in 0.001s
++
++OK
+
+diff --git a/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-red.txt b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-red.txt
+new file mode 100644
+index 0000000..de85b3e
+--- /dev/null
++++ b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-red.txt
+@@ -0,0 +1,62 @@
++test_decimal_precision_and_zero_categories (test_reporting.ReportingTests) ... FAIL
++test_empty_rows (test_reporting.ReportingTests) ... FAIL
++test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests) ... FAIL
++test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests) ... FAIL
++test_summarize_counts_and_totals (test_reporting.ReportingTests) ... FAIL
++
++======================================================================
++FAIL: test_decimal_precision_and_zero_categories (test_reporting.ReportingTests)
++----------------------------------------------------------------------
++Traceback (most recent call last):
++  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 28, in test_decimal_precision_and_zero_categories
++    self.assertEqual(result["total"], Decimal("0.3"))
++AssertionError: Decimal('0') != Decimal('0.3')
++
++======================================================================
++FAIL: test_empty_rows (test_reporting.ReportingTests)
++----------------------------------------------------------------------
++Traceback (most recent call last):
++  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 34, in test_empty_rows
++    self.assertEqual(summarize([], CATEGORIES), {"clean_rows": 0, "total": Decimal("0"), "category_totals": {"Еда": Decimal("0"), "Транспорт": Decimal("0"), "Канцелярия": Decimal("0")}})
++AssertionError: {'cle[51 chars]s': {}} != {'cle[51 chars]s': {'Еда': Decimal('0'), 'Транспорт': Decimal[30 chars]0')}}
++- {'category_totals': {}, 'clean_rows': 0, 'total': Decimal('0')}
+++ {'category_totals': {'Еда': Decimal('0'),
+++                      'Канцелярия': Decimal('0'),
+++                      'Транспорт': Decimal('0')},
+++  'clean_rows': 0,
+++  'total': Decimal('0')}
++
++======================================================================
++FAIL: test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests)
++----------------------------------------------------------------------
++Traceback (most recent call last):
++  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 39, in test_report_contains_sources_totals_balance_and_assumptions
++    self.assertIn(value, report)
++AssertionError: 'nov-1.csv' not found in ''
++
++======================================================================
++FAIL: test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests)
++----------------------------------------------------------------------
++Traceback (most recent call last):
++  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 45, in test_report_empty_rows_keeps_all_categories
++    self.assertIn(category, report)
++AssertionError: 'Еда' not found in ''
++
++======================================================================
++FAIL: test_summarize_counts_and_totals (test_reporting.ReportingTests)
++----------------------------------------------------------------------
++Traceback (most recent call last):
++  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/tests/test_reporting.py", line 20, in test_summarize_counts_and_totals
++    self.assertEqual(summarize(ROWS, CATEGORIES), {
++AssertionError: {'clean_rows': 0, 'total': Decimal('0'), 'category_totals': {}} != {'clean_rows': 4, 'total': Decimal('1000'), 'category_to[85 chars]0')}}
++- {'category_totals': {}, 'clean_rows': 0, 'total': Decimal('0')}
+++ {'category_totals': {'Еда': Decimal('500'),
+++                      'Канцелярия': Decimal('300'),
+++                      'Транспорт': Decimal('200')},
+++  'clean_rows': 4,
+++  'total': Decimal('1000')}
++
++----------------------------------------------------------------------
++Ran 5 tests in 0.002s
++
++FAILED (failures=5)
+
+diff --git a/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-report.md b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-report.md
+new file mode 100644
+index 0000000..35955e6
+--- /dev/null
++++ b/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-report/submissions/mairamaidan/SA04/evidence/reporting-report.md
+@@ -0,0 +1,9 @@
++# SA04 T4 — показатели и отчёт
++
++Цель: реализовать `summarize` и `render_report` по контракту `interfaces.md` без зависимости от cleaning и без сторонних библиотек.
++
++Результат: показатели суммируются через `Decimal` с точностью, достаточной для всех входных разрядов; в итог входят нулевые категории. Отчёт содержит источники, показатели, таблицу категорий, баланс и допущения, без времени и абсолютных путей. Тесты используют независимые ручные записи.
++
++Проверка из каталога решения: `python3 -m unittest discover -s tests -v`. RED: пять ожидаемых `AssertionError` на вызываемом каркасе (см. `reporting-red.txt`). GREEN: пять тестов успешно (см. `reporting-green.txt`); тесты проверяют 4 записи и 1000 KZT, 0.1 + 0.2, сумму длиннее стандартной точности Decimal, пустой набор, категории, баланс, источники, допущения и детерминизм. После первоначального GREEN-прогона поправлена регистрозависимость проверки текста, затем повторный прогон успешен.
++
++Ограничения: интеграция с cleaning, CLI и независимым verify здесь не проверялась; их реализация в другом worktree. Python 3.9-совместимый синтаксис, проверка выполнена доступным `python3`, конкретную версию см. ниже. Коммит и публикация не выполнялись. Право записи передано координатору.
