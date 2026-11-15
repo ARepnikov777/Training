@@ -1,0 +1,27 @@
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/build_catalog.py --input /var/folders/b7/v38935y11tq873g6ttx9t9_c0000gn/T/sa06-negative-dhrkkiwg/input --output /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/evidence/negative-bad.pdf
+Exit code: 0; expected: 0
+
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/validate_catalog.py --pdf /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/evidence/negative-bad.pdf
+FAIL: P01: embedded image differs from product-1.png
+Exit code: 1; expected: 1
+
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/build_catalog.py --input /var/folders/b7/v38935y11tq873g6ttx9t9_c0000gn/T/sa06-negative-dhrkkiwg/input --output /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/evidence/negative-restored.pdf
+Exit code: 0; expected: 0
+
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/validate_catalog.py --pdf /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/evidence/negative-restored.pdf
+id,csv_line,image,page,result
+P01,2,product-1.png,1,OK
+P02,3,product-2.png,1,OK
+P03,4,product-3.png,2,OK
+P04,5,product-4.png,2,OK
+P05,6,product-5.png,3,OK
+Exit code: 0; expected: 0
+
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/validate_catalog.py
+id,csv_line,image,page,result
+P01,2,product-1.png,1,OK
+P02,3,product-2.png,1,OK
+P03,4,product-3.png,2,OK
+P04,5,product-4.png,2,OK
+P05,6,product-5.png,3,OK
+Exit code: 0; expected: 0

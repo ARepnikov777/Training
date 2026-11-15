@@ -1,0 +1,66 @@
+{
+  "milestone": "https://github.com/ARepnikov777/Training/milestone/8",
+  "milestone_number": 8,
+  "subissues": [
+    {
+      "number": 124,
+      "id": 6402980490,
+      "title": "[SA06.1] Vrnur — Граф и контракт",
+      "url": "https://github.com/ARepnikov777/Training/issues/124",
+      "role": "координатор",
+      "dependencies": "нет",
+      "files": "workflow.md, briefs/, decomposition.md, evidence/workflow*",
+      "dod": "Граф сохранён до предметных запусков, проверен graph_check и Mermaid, N/T/параллелизм указаны"
+    },
+    {
+      "number": 125,
+      "id": 6402981231,
+      "title": "[SA06.2] Vrnur — Сверить товарные данные",
+      "url": "https://github.com/ARepnikov777/Training/issues/125",
+      "role": "explorer",
+      "dependencies": "Граф и контракт",
+      "files": "только чтение source/H11/input/products.csv, brief.md и README",
+      "dod": "Отдельный отчёт пяти строк CSV с точными полями, csv_line и page 2+2+1"
+    },
+    {
+      "number": 126,
+      "id": 6402981938,
+      "title": "[SA06.3] Vrnur — Проверить изображения и происхождение",
+      "url": "https://github.com/ARepnikov777/Training/issues/126",
+      "role": "explorer",
+      "dependencies": "Граф и контракт",
+      "files": "только чтение source/H11/input/*.png, LICENSE.md, provenance.md",
+      "dod": "Отдельный визуальный отчёт пяти изображений, SHA256 и лицензий"
+    },
+    {
+      "number": 127,
+      "id": 6402982884,
+      "title": "[SA06.4] Vrnur — Собрать каталог и проверки",
+      "url": "https://github.com/ARepnikov777/Training/issues/127",
+      "role": "worker",
+      "dependencies": "оба explorer-отчёта",
+      "files": "build_catalog.py, validate_catalog.py, tests/, requirements.txt, fonts/, result/, evidence/test*, evidence/negative*",
+      "dod": "Редактируемая сборка, PDF A4 3 страницы 2+2+1, пять точных карточек, ведомость сверки, Red/Green и безопасная подмена изображения обнаружена"
+    },
+    {
+      "number": 128,
+      "id": 6402983534,
+      "title": "[SA06.5] Vrnur — Независимое ревью",
+      "url": "https://github.com/ARepnikov777/Training/issues/128",
+      "role": "reviewer",
+      "dependencies": "сборка и приёмка координатора",
+      "files": "только чтение всей области SA06, отчёт в ответе без записи",
+      "dod": "Все страницы просмотрены и все карточки сверены, отрицательный сценарий проверен, подтверждённые замечания исправлены или эскалированы"
+    },
+    {
+      "number": 129,
+      "id": 6402984147,
+      "title": "[SA06.6] Vrnur — Локальная приёмка и один PR",
+      "url": "https://github.com/ARepnikov777/Training/issues/129",
+      "role": "координатор",
+      "dependencies": "положительное reviewer и отрицательный сценарий",
+      "files": "README.md, run-log.md, reviewer-report.md, evidence/, briefs/, decomposition.md",
+      "dod": "Каждый DoD с доказательством, gitleaks staged и свои commits exit 0, один PR main, комментарий #57 со всеми ссылками; merge человеку"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+id,csv_line,image,page,result
+P01,2,product-1.png,1,OK
+P02,3,product-2.png,1,OK
+P03,4,product-3.png,2,OK
+P04,5,product-4.png,2,OK
+P05,6,product-5.png,3,OK

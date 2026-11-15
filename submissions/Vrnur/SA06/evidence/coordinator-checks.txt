@@ -1,0 +1,33 @@
+$ python -m unittest discover -s /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/tests -v
+Подмена: validator exit 1; FAIL: P01: embedded image differs from product-1.png
+Восстановление: validator exit 0
+test_build_and_validate_and_detect_substitution (test_catalog.CatalogTest.test_build_and_validate_and_detect_substitution) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.780s
+
+OK
+Exit code: 0
+
+$ python /Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/validate_catalog.py
+id,csv_line,image,page,result
+P01,2,product-1.png,1,OK
+P02,3,product-2.png,1,OK
+P03,4,product-3.png,2,OK
+P04,5,product-4.png,2,OK
+P05,6,product-5.png,3,OK
+Exit code: 0
+
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /var/folders/b7/v38935y11tq873g6ttx9t9_c0000gn/T/sa06-clean-w485qv9r/SA06/build_catalog.py
+Exit code: 0
+
+$ /Users/arnursain/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /var/folders/b7/v38935y11tq873g6ttx9t9_c0000gn/T/sa06-clean-w485qv9r/SA06/validate_catalog.py
+id,csv_line,image,page,result
+P01,2,product-1.png,1,OK
+P02,3,product-2.png,1,OK
+P03,4,product-3.png,2,OK
+P04,5,product-4.png,2,OK
+P05,6,product-5.png,3,OK
+Exit code: 0
+
+Clean rebuild from isolated directory: PASS. Source files match original ZIP and 14/14 internal checksums (coordinator checked).

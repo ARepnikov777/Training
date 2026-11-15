@@ -1,0 +1,36 @@
+{
+  "interface": "native Codex collaboration tools via current ChatGPT session",
+  "model_overrides": false,
+  "agents": [
+    {
+      "id": "/root/read_readme",
+      "agent_type": "explorer",
+      "purpose": "readiness smoke test only",
+      "result": "completed"
+    },
+    {
+      "id": "/root/research_data",
+      "agent_type": "explorer",
+      "purpose": "data Research",
+      "result": "completed"
+    },
+    {
+      "id": "/root/research_images",
+      "agent_type": "explorer",
+      "purpose": "image Research",
+      "result": "completed"
+    },
+    {
+      "id": "/root/build_catalog",
+      "agent_type": "worker",
+      "purpose": "readiness then followup implementation",
+      "result": "completed"
+    },
+    {
+      "id": "/root/catalog_review",
+      "agent_type": "reviewer",
+      "purpose": "readiness then independent review",
+      "result": "completed: independent review and Negative/Restore verification accepted"
+    }
+  ]
+}
