@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Как пройти учебное задание</title>
-<!-- Исходник руководства SA03. Текст перенесён из text/steps.md, подписи рисунков — из interfaces.md v1.1.
+<!-- Исходник руководства SA03. Текст перенесён из text/steps.md, подписи рисунков — из interfaces.md v1.3.
      Сборка PDF и PNG: см. build.md. -->
 <style>
 :root {
@@ -86,6 +86,17 @@ p code, li code, td code { white-space: nowrap; }
 #s5 .top { grid-template-columns: 1fr 140mm; }
 table.log th, table.log td { padding: 4.2mm 3mm; }
 pre .nb { white-space: nowrap; }
+#submit .top { grid-template-columns: 1fr 100mm; column-gap: 8mm; }
+#submit .txt ol, #submit .txt ul { margin-bottom: 0.8mm; }
+#submit .txt li { margin-bottom: 0.2mm; }
+#submit .bottom { display: block; margin-top: 1mm; }
+#submit .bottom ul { margin-bottom: 0.8mm; }
+#submit pre { margin-bottom: 0.8mm; padding: 1mm 2.5mm; }
+.journal { margin-top: 2.5mm; }
+.journal h2 { margin-bottom: 1mm; }
+.journal p { margin-bottom: 0.8mm; }
+table.log th, table.log td { padding: 1mm 3mm; }
+.errors { margin-top: 3mm; }
 </style>
 </head>
 <body>
@@ -180,7 +191,9 @@ Copy-Item <span class="nb">-Path</span> "$HOME\Course\E01-kit\E01" <span class="
 <div class="bottom"><div><p><strong>Проверь.</strong> В <code>E01-work\result</code> три папки, в каждой по 4 файла, всего 12. В <code>input\files</code> по-прежнему 12 файлов. В <code>result</code> нет ничего, кроме этих трёх папок.</p></div><div><p class="lab"><strong>Если не так.</strong></p>
 <ul><li>В <code>input\files</code> пусто или меньше файлов: скрипт перемещал файлы. Удали <code>E01-work</code>, повтори S4 и замени перемещение на копирование.</li><li>Какой-то файл не попал в <code>result</code>: проверь сравнение расширений, например регистр букв.</li></ul><p class="see">См. рисунок 5.</p></div></div>
 </section>
-
+<section class="errors"><h2>Частые ошибки</h2>
+<ul><li><strong>Вложенная папка E01 после распаковки.</strong> Архив содержит корневую папку <code>E01</code>, поэтому файлы оказываются в <code>E01-kit\E01\...</code>, а не в <code>E01-kit\...</code>. Все пути в руководстве это учитывают.</li><li><strong>Кодировка.</strong> Файлы комплекта в UTF-8 без BOM. Windows PowerShell 5.1 без <code>-Encoding UTF8</code> покажет вместо кириллицы нечитаемые символы. Добавляй <code>-Encoding UTF8</code> к <code>Get-Content</code> или открывай файлы в VS Code.</li><li><strong>Правка оригинала вместо копии.</strong> Любые изменения — только в <code>E01-work</code>. Если тронул <code>E01-kit</code>, удали его и распакуй архив заново (S2).</li><li><strong>SHA-256 не совпал.</strong> Не пытайся «починить» архив: удали файл и скачай заново (S1).</li></ul>
+</section>
 <footer class="pno">4 / 6</footer>
 </div>
 <div class="page" data-page="5">
@@ -200,7 +213,7 @@ $ref = Get-Content "$HOME\Course\E01-kit\E01\checksums.json" <span class="nb">-E
 $ref.PSObject.Properties | Where-Object Name <span class="nb">-like</span> 'input/files/*' |
   Where-Object { (Get-FileHash (Join-Path "$HOME\Course\E01-work" $_.Name)).Hash.ToLower() <span class="nb">-ne</span> $_.Value } |
   ForEach-Object { "ИЗМЕНЁН: $($_.Name)" }   # пустой вывод = исходники целы
-# S6 — содержимое result совпадает с исходниками (добавлено в v1.1)
+# S6 — содержимое result совпадает с исходниками
 (Get-ChildItem "$HOME\Course\E01-work\result" <span class="nb">-Recurse</span> <span class="nb">-File</span>).Count   # 12
 Get-ChildItem "$HOME\Course\E01-work\result" <span class="nb">-Recurse</span> <span class="nb">-File</span> |
   Where-Object { (Get-FileHash $_.FullName).Hash <span class="nb">-ne</span> (Get-FileHash "$HOME\Course\E01-work\input\files\$($_.Name)").Hash } |
@@ -213,8 +226,18 @@ Get-ChildItem "$HOME\Course\E01-work\result" <span class="nb">-Recurse</span> <s
 <footer class="pno">5 / 6</footer>
 </div>
 <div class="page" data-page="6">
-<section class="errors"><h2>Частые ошибки</h2>
-<ul><li><strong>Вложенная папка E01 после распаковки.</strong> Архив содержит корневую папку <code>E01</code>, поэтому файлы оказываются в <code>E01-kit\E01\...</code>, а не в <code>E01-kit\...</code>. Все пути в руководстве это учитывают.</li><li><strong>Кодировка.</strong> Файлы комплекта в UTF-8 без BOM. Windows PowerShell 5.1 без <code>-Encoding UTF8</code> покажет вместо кириллицы нечитаемые символы. Добавляй <code>-Encoding UTF8</code> к <code>Get-Content</code> или открывай файлы в VS Code.</li><li><strong>Правка оригинала вместо копии.</strong> Любые изменения — только в <code>E01-work</code>. Если тронул <code>E01-kit</code>, удали его и распакуй архив заново (S2).</li><li><strong>SHA-256 не совпал.</strong> Не пытайся «починить» архив: удали файл и скачай заново (S1).</li></ul>
+<section class="step wide submit" id="submit">
+<h2>Что приложить к сдаче</h2>
+<div class="top"><div class="txt"><p><strong>Зачем.</strong> Полный порядок описан в разделе «Подготовка и сдача задания» README репозитория; здесь суть.</p>
+<p class="lab"><strong>Сделай.</strong></p>
+<ol><li>В клоне репозитория создай ветку <code>student/LOGIN/E01</code> (<code>LOGIN</code> — твой GitHub-логин) и папку <code>submissions/LOGIN/E01/</code>.</li><li>Положи в неё только нужное:<ul><li><code>README.md</code> — что сделано, как запустить, все пункты DoD из issue с доказательствами, журнал;</li><li>скрипт решения из <code>E01-solution</code>;</li><li>копию <code>result/</code> из <code>E01-work</code>;</li><li><code>evidence/</code> — вывод проверок S6 (три строки <code>OK</code>, пустые выводы, число <code>12</code>).</li></ul></li><li>Не клади <code>E01-kit</code>, весь <code>E01-work</code>, <code>.git</code>, токены и кеши.</li><li>Сохрани результат и отправь ветку командами из README репозитория:</li></ol>
+<pre><code>git add submissions/LOGIN/E01
+git diff --cached --check
+git diff --cached
+git commit -m "[E01] Решение задания"
+git push -u origin student/LOGIN/E01</code></pre>
+<ol start="5"><li>В GitHub открой Pull Request: base — <code>main</code>, compare — <code>student/LOGIN/E01</code>. В описании напиши <code>Задание: #7</code>. Не пиши <code>Closes</code>: задание остаётся открытым для других. Слить PR может только преподаватель.</li></ol></div><div class="side"><figure><img src="../figures/fig-07.png" alt="Рисунок 7. Сложи в submissions/LOGIN/E01 только нужное и открой PR"><figcaption>Рисунок 7. Сложи в submissions/LOGIN/E01 только нужное и открой PR</figcaption></figure><div class="bottom"><div><p><strong>Проверь.</strong> <code>git status</code> показывает изменения только в <code>submissions/LOGIN/E01/</code>, а в PR нет <code>E01-kit</code> и <code>.git</code>.</p></div><div><p class="lab"><strong>Если не так.</strong></p>
+<ul><li>В <code>git status</code> лишние папки: не добавляй их, <code>git add</code> делай только для <code>submissions/LOGIN/E01</code>.</li><li>Замечания преподавателя: исправь новыми коммитами в той же ветке.</li></ul><p class="see">См. рисунок 7.</p></div></div></div></div>
 </section>
 <section class="journal"><h2>Журнал прохождения</h2>
 <p>Заполняй по ходу работы и сохрани в <code>E01-solution</code> рядом с README решения.</p>
