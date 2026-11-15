@@ -228,6 +228,16 @@ Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File |
 
 1. В клоне репозитория создай ветку `student/LOGIN/E01` (`LOGIN` — твой GitHub-логин) и папку
    `submissions/LOGIN/E01/`.
+
+   ```bash
+   git clone https://github.com/ARepnikov777/Training.git
+   cd Training
+   git switch main
+   git pull --ff-only origin main
+   git switch -c student/LOGIN/E01
+   ```
+
+   Команды `git clone` и `cd Training` нужны только при первом клонировании.
 2. Положи в неё только нужное:
    - `README.md` — что сделано, как запустить, все пункты DoD из issue с доказательствами,
      журнал;
