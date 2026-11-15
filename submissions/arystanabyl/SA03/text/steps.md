@@ -197,9 +197,9 @@ $ref.PSObject.Properties | Where-Object Name -like 'input/files/*' |
   Where-Object { (Get-FileHash (Join-Path "$HOME\Course\E01-work" $_.Name)).Hash.ToLower() -ne $_.Value } |
   ForEach-Object { "ИЗМЕНЁН: $($_.Name)" }   # пустой вывод = исходники целы
 # S6 — содержимое result совпадает с исходниками (добавлено в v1.1)
-(Get-ChildItem "$HOME\Course\E01-workesult" -Recurse -File).Count   # 12
-Get-ChildItem "$HOME\Course\E01-workesult" -Recurse -File |
-  Where-Object { (Get-FileHash $_.FullName).Hash -ne (Get-FileHash "$HOME\Course\E01-work\inputiles\$($_.Name)").Hash } |
+(Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File).Count   # 12
+Get-ChildItem "$HOME\Course\E01-work\result" -Recurse -File |
+  Where-Object { (Get-FileHash $_.FullName).Hash -ne (Get-FileHash "$HOME\Course\E01-work\input\files\$($_.Name)").Hash } |
   ForEach-Object { "НЕ СОВПАДАЕТ: $($_.Name)" }   # пустой вывод = содержимое совпадает
 ```
 
@@ -216,7 +216,7 @@ Get-ChildItem "$HOME\Course\E01-workesult" -Recurse -File |
 - Ошибка про отсутствующую папку `result\...`: S5 не создал одну из категорий.
 - Строка `НЕ СОВПАДАЕТ: ...`: скрипт изменил файл при копировании (например, перекодировал текст
   или переписал строки). Исправь скрипт так, чтобы он копировал файл как есть, удали `result` и повтори S5.
-  Ошибка «не удаётся найти путь» в этой проверке — в `result` лежит лишний файл, которого нет в `inputiles`.
+  Ошибка «не удаётся найти путь» в этой проверке — в `result` лежит лишний файл, которого нет в `input\files`.
 
 См. рисунок 6.
 
