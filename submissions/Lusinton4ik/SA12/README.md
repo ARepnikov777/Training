@@ -1,7 +1,7 @@
 # SA12 — восстановимый браузерный сбор каталога
 
 Задание: [#74](https://github.com/ARepnikov777/Training/issues/74), исполнитель Lusinton4ik.
-Сдача: [единый draft PR #139 в main](https://github.com/ARepnikov777/Training/pull/139).
+Сдача: [единый PR #139, готовый к ревью в main](https://github.com/ARepnikov777/Training/pull/139).
 Локальная приёмка завершена; преподавательская приёмка и merge остаются человеку.
 Предметные уточнения: [H13 #49](https://github.com/ARepnikov777/Training/issues/49).
 [Веха SA12](https://github.com/ARepnikov777/Training/milestone/6), нативные подзадачи
@@ -128,7 +128,7 @@ collector.py в worktree (10:33:35Z). Полная версия PNG улучша
 | Персональная веха / native sub-issues | [Веха](https://github.com/ARepnikov777/Training/milestone/6), #110–#114; [parent](evidence/tracker-parent.json), [native children](evidence/tracker-children.json); входы/зависимости/владельцы/files/branches в briefs |
 | Граф до реализации / пределы | workflow/plan, ранний Explore PASS в run-log, `graph-check.txt`, PNG/SVG; N=2, T=120мин от 10:26:17Z, до3 агентов; кодовые writers последовательно |
 | Реальные роли / интеграция / отрицательный сценарий | `agents.json`, run-log, отчёты и scoped review; [27 tests OK](evidence/integrated-tests.txt), negative validation ниже; итоговое независимое ревью дополняет этот набор |
-| Единый PR / ссылки / без merge | [PR139](https://github.com/ARepnikov777/Training/pull/139), base main, head student/Lusinton4ik/SA12, OPEN draft/MERGEABLE; [обратные ссылки в #74](https://github.com/ARepnikov777/Training/issues/74#issuecomment-6893546899), [проверка публикации](evidence/publication.json). Merge не выполнялся |
+| Единый PR / ссылки / без merge | [PR139](https://github.com/ARepnikov777/Training/pull/139), base main, head student/Lusinton4ik/SA12, OPEN, готов к ревью; [обратные ссылки в #74](https://github.com/ARepnikov777/Training/issues/74#issuecomment-6893546899), [проверка публикации](evidence/publication.json). Merge не выполнялся |
 
 ## Предметный DoD H13 — дословно из issue
 

@@ -1,14 +1,14 @@
 {
-  "verified_utc": "2026-11-15T11:21:32.123643+00:00",
+  "verified_utc": "2026-11-15T11:33:42.305721+00:00",
   "pull_request": {
-    "number": 139,
-    "url": "https://github.com/ARepnikov777/Training/pull/139",
-    "state": "OPEN",
-    "isDraft": true,
     "baseRefName": "main",
     "headRefName": "student/Lusinton4ik/SA12",
-    "headRefOid": "40edd3db23a1770a9ad75d5dda15a53add9bd91b",
-    "mergeable": "MERGEABLE"
+    "headRefOid": "bf447685e55d2bbfcc0fa4f088126f0fb218a24d",
+    "isDraft": false,
+    "mergeable": "MERGEABLE",
+    "number": 139,
+    "state": "OPEN",
+    "url": "https://github.com/ARepnikov777/Training/pull/139"
   },
   "reviewed_code_commit": "40edd3db23a1770a9ad75d5dda15a53add9bd91b",
   "files_all_in_scope": true,
@@ -26,5 +26,6 @@
     114
   ],
   "merged": false,
-  "teacher_acceptance": "not performed"
+  "teacher_acceptance": "not performed",
+  "ready_for_review": true
 }

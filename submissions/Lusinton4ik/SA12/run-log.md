@@ -58,3 +58,5 @@ Ruling: финальное ревью выявило избыточное обе
 | 2026-11-15T11:21:32.155276+00:00 | /root coordinator | Delivery | commit40edd3d, staged0, history1 checksum-only; первый push не прошёл auth, remote проверен, credential helper gh успешно отправил ветку; создан единый draftPR139, base/main и обратные ссылки проверены | no blind retries | evidence/publication.json |
 
 | 2026-11-15T11:24:39.975648+00:00 | /root coordinator | Delivery final checks | README9 DoD checked, native children5 checked/open, code unchanged since review; own servers PID33184/43836/26896 stopped | within deadline | tracker-final.json, publication.json |
+
+| 2026-11-15T11:33:42.332408+00:00 | /root coordinator | Finish | по просьбе пользователя завершена сдача: PR139 переведён из draft в ready for review, состояние прочитано обратно; готовится финальный commit документов | metadata only | publication.json |

@@ -65,4 +65,4 @@ Merge и окончательная приёмка остаются препод
 - [x] README решения содержит инструкцию и доказательства по каждому пункту DoD.
 - [x] Результат проверен по своей инструкции; секреты, зависимости и кеши не добавлены.
 
-Обратные ссылки: https://github.com/ARepnikov777/Training/issues/74#issuecomment-6893546899 . Итоговое независимое ревью: reviewer-report.md, local spec PASS / quality PASS. PR оставлен draft; merge и приёмка человеком не выполнялись.
+Обратные ссылки: https://github.com/ARepnikov777/Training/issues/74#issuecomment-6893546899 . Итоговое независимое ревью: reviewer-report.md, local spec PASS / quality PASS. PR готов к ревью; merge и приёмка человеком не выполнялись.
