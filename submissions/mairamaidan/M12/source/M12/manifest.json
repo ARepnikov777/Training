@@ -1,0 +1,16 @@
+{
+  "code": "M12",
+  "issue": 33,
+  "title": "[M12] Инфографика по данным",
+  "goal": "Преобразуй результаты синтетического опроса из survey.csv в инфографику. Покажи все четыре категории с точными числами, единицами и пропорциональной шкалой.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/rasterize.html",
+    "input/survey.csv"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}
