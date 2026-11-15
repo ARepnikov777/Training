@@ -54,3 +54,5 @@ Ruling: history gitleaks exit 1 на исходном checksum H09; вычисл
 Ruling: финальное ревью выявило избыточное обещание history без находок в нашем briefs/review.md. Основное задание этого не требует; формулировка приведена к фактическому контракту: staged без находок, history с честным exit и доказательным разбором каждой находки без исключений/подавления. Issue114 обновлён. Логика и пределы исправлений не изменены.
 
 | 2026-11-15T11:17:15.757498+00:00 | /root/sa12_review reviewer → coordinator | Review → Accept → Done_accepted | local spec PASS, quality PASS, findings0, все H13 и4локальныхSA12 подтверждены; publication pending | attempts=2/2, retries=1/2 | reviewer-report.md |
+
+| 2026-11-15T11:21:32.155276+00:00 | /root coordinator | Delivery | commit40edd3d, staged0, history1 checksum-only; первый push не прошёл auth, remote проверен, credential helper gh успешно отправил ветку; создан единый draftPR139, base/main и обратные ссылки проверены | no blind retries | evidence/publication.json |
