@@ -1,0 +1,3 @@
+# Независимое ревью SA08
+
+Тип reviewer, только чтение, без переделегирования. Worktree SA08-integration, submissions/YK-cloud-hub/SA08/. Проверить требования evidence/assignment-59.md, contract.md и workflow.md; исходные PDF (или сохранённые рендеры) и три CSV; comparison.csv, findings.md, questions-to-supplier.md; полный snapshot diff /tmp/sa08-review.diff. Проверить 5 контрольных несовпадений, неоднозначности, совпадения, достоверность ссылок и выводов. Контроль разрешён после первого результата. Дать accepted либо changes_requested с конкретным файлом/строкой/источником. Не редактировать файлы, не считать PR опубликованным. Журнал и README пока дополняются после фактических проверок.

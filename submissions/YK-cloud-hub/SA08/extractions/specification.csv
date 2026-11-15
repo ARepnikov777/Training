@@ -1,0 +1,12 @@
+parameter,value,unit,source_file,page,quote,notes
+model,Orion L15,,specification.pdf,1,"12 ноутбуков Orion L15, RAM 8 GB, SSD 512 GB.",
+quantity,12,ноутбуков,specification.pdf,1,"12 ноутбуков Orion L15, RAM 8 GB, SSD 512 GB.",
+ram,8,GB,specification.pdf,1,"12 ноутбуков Orion L15, RAM 8 GB, SSD 512 GB.",
+storage,512,GB,specification.pdf,1,"12 ноутбуков Orion L15, RAM 8 GB, SSD 512 GB.",SSD
+unit_price,NOT_STATED,,specification.pdf,1,,Проверена страница 1.
+total_price,NOT_STATED,,specification.pdf,1,,Проверена страница 1.
+delivery_date,NOT_STATED,,specification.pdf,1,,Проверена страница 1.
+warranty,24,месяца,specification.pdf,1,Гарантия: 24 месяца.,
+vat,не указан,,specification.pdf,1,НДС: не указан.,Ставка и включение в цену не определены.
+initial_setup,объём работ требует согласования,,specification.pdf,1,Первичная настройка: объём работ требует согласования.,
+location,аудитория 305,,specification.pdf,1,Адрес: аудитория 305.,
