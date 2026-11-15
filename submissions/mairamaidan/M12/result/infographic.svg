@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Синтетический опрос: результаты по категориям</title><desc id="desc">Документы — 20 человек; Программирование — 35; Браузер — 30; Графика — 15. Всего 100. Общая нулевая база, 20 пикселей на человека.</desc>
+<rect width="1600" height="900" fill="#F4F5EF"/>
+<g font-family="Arial, sans-serif" fill="#192D32">
+<text x="100" y="92" font-size="22" letter-spacing="3">УЧЕБНЫЕ ДАННЫЕ / 2026</text>
+<text x="100" y="158" font-size="48" font-weight="bold">Результаты синтетического опроса</text>
+<text x="100" y="208" font-size="25" fill="#52646A">Четыре категории · 100 человек · числа вымышленные</text>
+<rect x="100" y="246" width="1400" height="480" rx="20" fill="white"/>
+
+<path d="M460 288V654" stroke="#DCE4E3" stroke-width="2"/><text x="460" y="695" font-size="23" text-anchor="middle">0</text>
+<path d="M660 288V654" stroke="#DCE4E3" stroke-width="2"/><text x="660" y="695" font-size="23" text-anchor="middle">10</text>
+<path d="M860 288V654" stroke="#DCE4E3" stroke-width="2"/><text x="860" y="695" font-size="23" text-anchor="middle">20</text>
+<path d="M1060 288V654" stroke="#DCE4E3" stroke-width="2"/><text x="1060" y="695" font-size="23" text-anchor="middle">30</text>
+<path d="M1260 288V654" stroke="#DCE4E3" stroke-width="2"/><text x="1260" y="695" font-size="23" text-anchor="middle">40</text>
+<path d="M460 288V654" stroke="#52646A" stroke-width="3"/>
+<text x="425" y="345" text-anchor="end" font-size="27">Документы</text><rect id="bar-0" x="460" y="310" width="400" height="52" fill="#16766D"/><text x="880" y="345" font-size="27" font-weight="bold">20 человек</text>
+<text x="425" y="433" text-anchor="end" font-size="27">Программирование</text><rect id="bar-1" x="460" y="398" width="700" height="52" fill="#16766D"/><text x="1180" y="433" font-size="27" font-weight="bold">35 человек</text>
+<text x="425" y="521" text-anchor="end" font-size="27">Браузер</text><rect id="bar-2" x="460" y="486" width="600" height="52" fill="#16766D"/><text x="1080" y="521" font-size="27" font-weight="bold">30 человек</text>
+<text x="425" y="609" text-anchor="end" font-size="27">Графика</text><rect id="bar-3" x="460" y="574" width="300" height="52" fill="#16766D"/><text x="780" y="609" font-size="27" font-weight="bold">15 человек</text>
+<text x="1360" y="695" font-size="22">человек</text>
+<text x="100" y="780" font-size="24">Источник: Синтетический опрос для курса, 14.11.2026, n=100</text>
+<text x="100" y="824" font-size="21" fill="#52646A">Данные: survey.csv · Общая нулевая база · Деление шкалы: 10 человек</text>
+</g></svg>
