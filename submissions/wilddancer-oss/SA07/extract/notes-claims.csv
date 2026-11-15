@@ -1,0 +1,14 @@
+claim_id,notes_ref,notes_text,topic,field,value,owner,deadline
+N1a,input/notes.md:3,Дата 21.11.2026,date,date,21.11.2026,не указан,не указан
+N1b,input/notes.md:3,аудитория 204,room,room,204,не указан,не указан
+N1c,input/notes.md:3,начало 10:00,start_time,start_time,10:00,не указан,не указан
+N2a,input/notes.md:4,Анна готовит архивы,archives,owner,Анна,Анна,18.11.2026
+N2b,input/notes.md:4,готовит архивы до 18.11.2026,archives,deadline,18.11.2026,Анна,18.11.2026
+N3a,input/notes.md:5,Илья проверяет стенд,stand,owner,Илья,Илья,19.11.2026
+N3b,input/notes.md:5,проверяет стенд до 19.11.2026,stand,deadline,19.11.2026,Илья,19.11.2026
+N4a,input/notes.md:6,Мария проверяет файлы,files_check,owner,Мария,Мария,18.11.2026
+N4b,input/notes.md:6,проверяет файлы до 18.11.2026,files_check,deadline,18.11.2026,Мария,18.11.2026
+N5a,input/notes.md:7,Кофе-брейк за 25000 KZT,coffee,amount,25000 KZT,не указан,не указан
+N5b,input/notes.md:7,Кофе-брейк за 25000 KZT включить в действующий план,coffee,status,включить в действующий план,не указан,не указан
+N6,input/notes.md:8,Наклейки купить обязательно,stickers,status,купить обязательно,не указан,не указан
+N7,input/notes.md:9,Бюджет 180000 KZT,budget,amount,180000 KZT,не указан,не указан
