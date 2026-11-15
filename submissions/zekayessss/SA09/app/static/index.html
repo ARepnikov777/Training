@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявки практикума</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>Заявки практикума</h1>
+
+    <section aria-labelledby="create-h">
+      <h2 id="create-h">Новая заявка</h2>
+      <form id="create-form" novalidate>
+        <label>Название
+          <input id="create-title" name="title" type="text" maxlength="200" autocomplete="off">
+        </label>
+        <label>Описание
+          <textarea id="create-description" name="description" rows="2"></textarea>
+        </label>
+        <button type="submit">Создать</button>
+        <p id="create-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="list-h">
+      <h2 id="list-h">Заявки</h2>
+      <div class="toolbar">
+        <label>Поиск по названию
+          <input id="filter-q" type="search" autocomplete="off">
+        </label>
+        <label>Статус
+          <select id="filter-status">
+            <option value="">Все</option>
+            <option value="новая">новая</option>
+            <option value="в работе">в работе</option>
+            <option value="готово">готово</option>
+          </select>
+        </label>
+        <a id="export-link" class="button" href="/api/export" download="tasks.csv">Экспорт CSV</a>
+      </div>
+      <p id="list-error" class="error" role="alert"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>id</th><th>Название</th><th>Описание</th><th>Статус</th><th>Действия</th></tr>
+          </thead>
+          <tbody id="tasks-body"></tbody>
+        </table>
+      </div>
+      <p id="list-empty" class="muted" hidden>Заявок нет.</p>
+    </section>
+
+    <section aria-labelledby="import-h">
+      <h2 id="import-h">Импорт CSV</h2>
+      <form id="import-form">
+        <input id="import-file" type="file" accept=".csv,text/csv">
+        <button type="submit">Импортировать</button>
+      </form>
+      <p id="import-error" class="error" role="alert"></p>
+      <div id="import-result" hidden>
+        <p id="import-accepted" class="ok"></p>
+        <div id="import-errors-block" hidden>
+          <h3>Ошибки строк</h3>
+          <ul id="import-errors"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
