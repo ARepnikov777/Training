@@ -1,0 +1,29 @@
+--- materials/M15/input/site/app.js
++++ submissions/zekayessss/M15/result/site/app.js
+@@ -16,12 +16,12 @@
+ if ($('shop')) {
+   $('shop').onsubmit = async (event) => {
+     event.preventDefault();
+-    const buggy = (await config).mode === 'shop-buggy';
++    // M15: проверка и скидка применяются всегда, независимо от режима config.json.
+     const price = Number($('price').value), qty = Number($('quantity').value), discount = Number($('discount').value);
+-    if (!buggy && ([$('price'), $('quantity'), $('discount')].some((x) => !x.value.trim()) || !Number.isFinite(price) || price < 0 || !Number.isInteger(qty) || qty <= 0 || !Number.isFinite(discount) || discount < 0 || discount > 100)) {
++    if ([$('price'), $('quantity'), $('discount')].some((x) => !x.value.trim()) || !Number.isFinite(price) || price < 0 || !Number.isInteger(qty) || qty <= 0 || !Number.isFinite(discount) || discount < 0 || discount > 100) {
+       $('total').textContent = 'Ошибка: проверьте цену, количество и скидку'; return;
+     }
+-    $('total').textContent = (price * qty * (buggy ? 1 : 1 - discount / 100)).toFixed(2);
++    $('total').textContent = (price * qty * (1 - discount / 100)).toFixed(2);
+   };
+ }
+ if ($('ticket')) {
+--- materials/M15/input/site/serve.py
++++ submissions/zekayessss/M15/result/site/serve.py
+@@ -159,7 +159,7 @@
+                     """<p>Правила: цена ≥ 0; количество — положительное целое; скидка 0–100%. Пустые поля недопустимы.</p>
+ <form id="shop" novalidate><label>Цена<input id="price" value="1000"></label>
+ <label>Количество<input id="quantity" value="3"></label><label>Скидка, %<input id="discount" value="10"></label><button>Рассчитать</button></form>
+-<p id="total" role="status"></p><p><a href="/missing">Контакты</a></p><script src="/app.js"></script>""",
++<p id="total" role="status"></p><p><a href="/contacts">Контакты</a></p><script src="/app.js"></script>""",
+                 ),
+             )
+         if route == "/tickets":

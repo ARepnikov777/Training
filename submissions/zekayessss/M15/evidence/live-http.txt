@@ -1,0 +1,21 @@
+Ручная проверка стенда живыми HTTP-запросами (curl), 2026-11-15 16:41 +05
+
+### ДО (исходник): python3 ../../../materials/M15/input/site/serve.py --port 8765
+/shop → <a href="/missing">Контакты</a>
+переход по ссылке /missing → HTTP 404, <h1>: <h1>404</h1>
+GET /catalog → HTTP 200
+GET /register → HTTP 200
+GET /contacts → HTTP 200
+GET /tickets → HTTP 200
+GET / → HTTP 200
+GET /api/config → {"mode":"shop-buggy","synthetic":true}
+
+### ПОСЛЕ (исправление): python3 result/site/serve.py --port 8766
+/shop → <a href="/contacts">Контакты</a>
+переход по ссылке /contacts → HTTP 200, <h1>: <h1>Контакты</h1>
+GET /catalog → HTTP 200
+GET /register → HTTP 200
+GET /contacts → HTTP 200
+GET /tickets → HTTP 200
+GET / → HTTP 200
+GET /api/config → {"mode":"shop-buggy","synthetic":true}
