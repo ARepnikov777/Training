@@ -1,0 +1,29 @@
+$ python3 -m unittest discover -s tests -v
+test_bad_header_and_broken_csv_raise (test_cleaning.CleaningTests) ... ok
+test_extra_fields_and_missing_file (test_cleaning.CleaningTests) ... ok
+test_h07 (test_cleaning.CleaningTests) ... ok
+test_multiline_record_keeps_raw_text_and_first_line (test_cleaning.CleaningTests) ... ok
+test_validation_duplicates_and_exact_raw_record (test_cleaning.CleaningTests) ... ok
+test_bad_header_fails (test_pipeline.PipelineTests) ... ok
+test_missing_input_fails (test_pipeline.PipelineTests) ... ok
+test_outputs_and_repeat (test_pipeline.PipelineTests) ... ok
+test_decimal_precision_and_zero_categories (test_reporting.ReportingTests) ... ok
+test_empty_rows (test_reporting.ReportingTests) ... ok
+test_report_contains_sources_totals_balance_and_assumptions (test_reporting.ReportingTests) ... ok
+test_report_empty_rows_keeps_all_categories (test_reporting.ReportingTests) ... ok
+test_summarize_counts_and_totals (test_reporting.ReportingTests) ... ok
+test_summarize_is_independent_of_caller_exponent_limits (test_reporting.ReportingTests) ... ok
+test_conflicting_report_values_are_rejected (test_verify.VerifyTests) ... ok
+test_modified_rejected_input_is_not_accepted (test_verify.VerifyTests) ... ok
+test_original_and_tampering (test_verify.VerifyTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.618s
+
+OK
+
+exit: 0
+
+$ /tmp/sa04-checks-20261115/bin/ruff check src/pipeline.py src/verify.py tests/test_pipeline.py tests/test_verify.py
+All checks passed!
+exit: 0

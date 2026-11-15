@@ -1,0 +1,51 @@
+--- before/src/verify.py
+
++++ after/src/verify.py
+
+@@ -136,0 +137,11 @@
+
++    metric_lines = required[2:8]
++    for line in metric_lines:
++        prefix = line.split(":", 1)[0] + ":"
++        if [item for item in report if item.startswith(prefix)] != [line]:
++            raise ValueError("Расхождение report.md")
++    for category, amount in expected["category_totals"].items():
++        prefix = f"| {category} |"
++        if [item for item in report if item.startswith(prefix)] != [
++            f"| {category} | {amount} |"
++        ]:
++            raise ValueError("Расхождение report.md")
+--- before/tests/test_verify.py
+
++++ after/tests/test_verify.py
+
+@@ -82,0 +83,28 @@
+
++
++    def test_conflicting_report_values_are_rejected(self):
++        with tempfile.TemporaryDirectory() as temp:
++            output = Path(temp) / "out"
++            shutil.copytree(ROOT / "result", output)
++            args = (
++                "--input",
++                ROOT / "input",
++                "--output",
++                output,
++                "--expected",
++                ROOT / "checks/expected.json",
++            )
++            report = output / "report.md"
++            original = report.read_text(encoding="utf-8")
++            for correct, wrong in (
++                ("- Общая сумма: 1000 KZT", "- Общая сумма: 1001 KZT"),
++                ("| Еда | 500 |", "| Еда | 501 |"),
++            ):
++                with self.subTest(correct=correct):
++                    self.assertIn(correct, original)
++                    report.write_text(
++                        original.replace(correct, wrong + "\n" + correct),
++                        encoding="utf-8",
++                    )
++                    self.assertNotEqual(run("verify", *args).returncode, 0)
++            report.write_text(original, encoding="utf-8")
++            self.assertEqual(run("verify", *args).returncode, 0)

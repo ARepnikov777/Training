@@ -22,34 +22,34 @@
 
 ### Task 1: Исследование (#102)
 
-- [ ] explorer читает только относящиеся материалы, возвращает факты со строками; координатор сохраняет research/input-facts.md.
-- [ ] Координатор сверяет контрольные числа и контракт.
+- [x] explorer читает только относящиеся материалы, возвращает факты со строками; координатор сохраняет research/input-facts.md.
+- [x] Координатор сверяет контрольные числа и контракт.
 
 ### Task 2: Контракт и граф (#103)
 
-- [ ] Утвердить interfaces.md, отдельные брифы, N/T/параллелизм и области записи.
-- [ ] Проверить и отрендерить workflow.md; reviewer проверяет граф до реализации.
+- [x] Утвердить interfaces.md, отдельные брифы, N/T/параллелизм и области записи.
+- [x] Проверить и отрендерить workflow.md; reviewer проверяет граф до реализации.
 
 ### Task 3: Очистка (#104)
 
-- [ ] worker в отдельном worktree: src/cleaning.py, tests/test_cleaning.py, evidence/cleaning-*.
-- [ ] Поведенческий RED, минимальная реализация GREEN, затем упрощение и общий модульный прогон.
+- [x] worker в отдельном worktree: src/cleaning.py, tests/test_cleaning.py, evidence/cleaning-*.
+- [x] Поведенческий RED, минимальная реализация GREEN, затем упрощение и общий модульный прогон.
 
 ### Task 4: Расчёт/отчёт (#105)
 
-- [ ] Параллельный worker: src/reporting.py, tests/test_reporting.py, evidence/reporting-*; только утверждённый интерфейс, без зависимости от реализации T3.
-- [ ] RED → GREEN, предметные суммы и стабильный текст отчёта.
+- [x] Параллельный worker: src/reporting.py, tests/test_reporting.py, evidence/reporting-*; только утверждённый интерфейс, без зависимости от реализации T3.
+- [x] RED → GREEN, предметные суммы и стабильный текст отчёта.
 
 ### Task 5: Интеграция (#106)
 
-- [ ] Координатор принимает diff/тесты T3/T4 и переносит только их разрешённые файлы.
-- [ ] worker: src/pipeline.py, tests/test_pipeline.py, src/verify.py, tests/test_verify.py, README.md, evidence/integration-* и result/*.
-- [ ] RED → GREEN для CLI и независимой проверки; два запуска, чистая папка, отрицательный сценарий на копии.
+- [x] Координатор принимает diff/тесты T3/T4 и переносит только их разрешённые файлы.
+- [x] worker: src/pipeline.py, tests/test_pipeline.py, src/verify.py, tests/test_verify.py, README.md, evidence/integration-* и result/*.
+- [x] RED → GREEN для CLI и независимой проверки; два запуска, чистая папка, отрицательный сценарий на копии.
 
 ### Task 6: Ревью/сдача (#107)
 
-- [ ] Отдельный reviewer проверяет весь пакет по исходным строкам и DoD.
-- [ ] Возвраты только в пределах workflow.md; самостоятельная приёмка координатором.
+- [x] Отдельный reviewer проверяет весь пакет по исходным строкам и DoD.
+- [x] Возвраты только в пределах workflow.md; самостоятельная приёмка координатором.
 - [ ] Gitleaks staged → commit; Gitleaks history → push своей учебной ветки; один PR main без Closes. Merge и закрытие #55 — преподавателем.
 
 ## Preflight: конфликты и решения

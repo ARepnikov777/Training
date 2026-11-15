@@ -56,3 +56,24 @@ Reviewer `/root/sa04_module_review`: T3 ACCEPT; T4 P2 — унаследован
 Fix1 `/root/sa04_report`: RED 0E-7 != 1E-8, затем 6 GREEN. Изменён только локальный диапазон Decimal, без смены контракта. Scoped reviewer `/root/sa04_module_review`: ACCEPT, исходные большие/малые случаи проверены, контекст вызывающего кода сохранён. Reports/modules-review-2.md. Координатор: объединённые 11 unittest, Ruff check и format — OK. Оба компонента приняты.
 
 Для T5 подготовлен отдельный Orca worktree SA04-integrate, ветка student/mairamaidan/SA04-integrate; только он владеет общим запуском. Запускается `/root/sa04_integrate`, agent_type=worker, модель из TOML. attempts=1/2, дедлайн12:01:32 UTC неизменен.
+
+### 10:47–10:49 UTC: Integrate → Validate → Negative → Review
+
+- `/root/sa04_integrate`, agent_type=worker, gpt-6.1-terra high: T5 передан, 16 unittest GREEN, независимый verify и повторный запуск подтверждены; evidence/integration-report.md.
+- Координатор прочитал оба новых модуля и тесты, перенёс только разрешённые файлы; самостоятельно прогнал 16 unittest, pipeline, verify.
+- Повтор в той же папке побайтно совпал. В отдельной чистой папке с одними src/input/checks результат побайтно совпал. На отдельной копии удалена последняя операция clean.csv: verify=1, Расхождение clean.csv; восстановлена: verify=0. Полный вывод evidence/coordinator-checks.txt.
+- Ruff check/format всех 10 Python-файлов решения OK; тесты репозитория 9 passed. Входы и checks побайтно равны materials/H07.
+- Gitleaks staged чист; raw history exit1 на одной исходной контрольной сумме H09, совпадение с реальным SHA256 проверено без вывода значения. Разбор evidence/gitleaks-review.md; это не успешный raw scan и исключения не добавлялись.
+- attempts=1/2, дедлайн12:01:32UTC сохранён. Следующий переход зависит от независимого итогового reviewer.
+
+### 10:52 UTC: Review → Fix → Execute (attempts=2/2)
+
+Итоговый независимый `/root/sa04_final_review`, agent_type=reviewer, gpt-6.1-sol high: CHANGES_REQUESTED, одно P2 — verifier допускает конфликтующий показатель рядом с верным. Координатор воспроизвёл на отдельной копии, evidence/final-review-repro1.txt; исходный result не изменён. Передано прежнему владельцу `/root/sa04_integrate` одной fix-wave: единственность показателей/категорий, тест до исправления, GREEN и scoped re-review. Это последний разрешённый возврат; дедлайн12:01:32UTC не сбрасывается.
+
+### 10:54:58 UTC: Execute → Validate → Negative → Review → Accept → Done_accepted
+
+- `/root/sa04_integrate` fix2: RED подтвердил конфликтующую сумму и категорию; GREEN 17 тестов, Ruff OK. Переданы только verify.py, test_verify.py и соответствующие evidence.
+- Scoped `/root/sa04_final_review`: ADDRESSED, ACCEPT; самостоятельно проверил исходный отчёт0, конфликты всех шести показателей и трёх категорий1, восстановленный0. Новых существенных дефектов нет, reports/review-2.md.
+- Координатор: 17 unittest и Ruff check/format10files OK, повторил конфликтующие значения и восстановление (evidence/final-checks.txt). Отчёт открыт в браузере, видимы источники, категории, сумма и баланс, evidence/report.png.
+- Локальные критерии подтверждены. attempts=2/2, срок не превышен (23 минуты 26 секунд от старта). Локальная приёмка завершена, внешняя сдача и приёмка преподавателем — отдельный следующий шаг.
+- Ruling: единственная находка Gitleaks истории признана false positive по вычисленному SHA256 и независимому ревью; сдача продолжается без изменения сканера или истории, raw-код1 явно сообщается. Ошибочная классификация могла бы скрыть секрет, поэтому значение проверено по содержимому файла, а не по одному похожему формату.

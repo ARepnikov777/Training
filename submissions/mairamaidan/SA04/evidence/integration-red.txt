@@ -1,0 +1,64 @@
+$ python3 -m unittest discover -s tests -p test_pipeline.py -v
+test_missing_input_fails (test_pipeline.PipelineTests) ... ok
+test_outputs_and_repeat (test_pipeline.PipelineTests) ... FAIL
+
+======================================================================
+FAIL: test_outputs_and_repeat (test_pipeline.PipelineTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-integrate/submissions/mairamaidan/SA04/tests/test_pipeline.py", line 21, in test_outputs_and_repeat
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : pipeline пока не реализован
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.127s
+
+FAILED (failures=1)
+
+exit: 1
+$ python3 -m unittest discover -s tests -p test_verify.py -v
+test_original_and_tampering (test_verify.VerifyTests) ... FAIL
+
+======================================================================
+FAIL: test_original_and_tampering (test_verify.VerifyTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-integrate/submissions/mairamaidan/SA04/tests/test_verify.py", line 14, in test_original_and_tampering
+    self.assertEqual(run('verify', *args).returncode, 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.167s
+
+FAILED (failures=1)
+
+verify RED exit: 1
+$ python3 -m unittest discover -s tests -p test_verify.py -v (первый вариант дополнительного теста)
+test_modified_rejected_input_is_not_accepted (test_verify.VerifyTests) ... ok
+test_original_and_tampering (test_verify.VerifyTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.873s
+
+OK
+
+modified source RED exit: 0
+$ python3 -m unittest discover -s tests -p test_verify.py -v (подмена источника и реестра)
+test_modified_rejected_input_is_not_accepted (test_verify.VerifyTests) ... FAIL
+test_original_and_tampering (test_verify.VerifyTests) ... ok
+
+======================================================================
+FAIL: test_modified_rejected_input_is_not_accepted (test_verify.VerifyTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/maira/orca/workspaces/Training-ARepnikov777/SA04-integrate/submissions/mairamaidan/SA04/tests/test_verify.py", line 45, in test_modified_rejected_input_is_not_accepted
+    self.assertNotEqual(result.returncode, 0)
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.928s
+
+FAILED (failures=1)
+
+modified source and rejection RED exit: 1
