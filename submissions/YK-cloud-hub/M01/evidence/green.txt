@@ -1,0 +1,14 @@
+test_cli_preview_apply_and_error_exit (test_sorter.SorterTests) ... ok
+test_default_preview_preserves_source_and_existing_output (test_sorter.SorterTests) ... ok
+test_existing_files_and_natural_suffix_are_not_overwritten (test_sorter.SorterTests) ... ok
+test_missing_source_and_nested_output_fail_without_writes (test_sorter.SorterTests) ... ok
+test_output_ancestor_cannot_copy_back_into_source (test_sorter.SorterTests) ... ok
+test_preview_does_not_create_output (test_sorter.SorterTests) ... ok
+test_read_error_is_propagated_even_in_preview (test_sorter.SorterTests) ... ok
+test_recursive_categories_conflicts_and_source_preserved (test_sorter.SorterTests) ... ok
+test_skips_are_explained_in_journal (test_sorter.SorterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.123s
+
+OK

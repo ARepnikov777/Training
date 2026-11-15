@@ -1,0 +1,83 @@
+test_cli_preview_apply_and_error_exit (test_sorter.SorterTests) ... ERROR
+test_default_preview_preserves_source_and_existing_output (test_sorter.SorterTests) ... ERROR
+test_existing_files_and_natural_suffix_are_not_overwritten (test_sorter.SorterTests) ... ERROR
+test_missing_source_and_nested_output_fail_without_writes (test_sorter.SorterTests) ... ERROR
+test_preview_does_not_create_output (test_sorter.SorterTests) ... FAIL
+test_read_error_is_propagated_even_in_preview (test_sorter.SorterTests) ... FAIL
+test_recursive_categories_conflicts_and_source_preserved (test_sorter.SorterTests) ... ERROR
+test_skips_are_explained_in_journal (test_sorter.SorterTests) ... ERROR
+
+======================================================================
+ERROR: test_cli_preview_apply_and_error_exit (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 101, in test_cli_preview_apply_and_error_exit
+    self.assertEqual(json.loads(preview.stdout)[0]['action'], 'would_copy')
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_default_preview_preserves_source_and_existing_output (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 38, in test_default_preview_preserves_source_and_existing_output
+    self.assertEqual([r['action'] for r in records], ['would_copy'] * 2)
+TypeError: 'NoneType' object is not iterable
+
+======================================================================
+ERROR: test_existing_files_and_natural_suffix_are_not_overwritten (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 69, in test_existing_files_and_natural_suffix_are_not_overwritten
+    copy_files(self.source, self.output, dry_run=False)
+TypeError: copy_files() got an unexpected keyword argument 'dry_run'
+
+======================================================================
+ERROR: test_missing_source_and_nested_output_fail_without_writes (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 91, in test_missing_source_and_nested_output_fail_without_writes
+    copy_files(self.source, self.source / 'sorted', dry_run=False)
+TypeError: copy_files() got an unexpected keyword argument 'dry_run'
+
+======================================================================
+ERROR: test_recursive_categories_conflicts_and_source_preserved (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 53, in test_recursive_categories_conflicts_and_source_preserved
+    records = copy_files(self.source, self.output, dry_run=False)
+TypeError: copy_files() got an unexpected keyword argument 'dry_run'
+
+======================================================================
+ERROR: test_skips_are_explained_in_journal (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 80, in test_skips_are_explained_in_journal
+    records = copy_files(self.source, self.output, dry_run=False)
+TypeError: copy_files() got an unexpected keyword argument 'dry_run'
+
+======================================================================
+FAIL: test_preview_does_not_create_output (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 45, in test_preview_does_not_create_output
+    self.assertFalse(self.output.exists())
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_read_error_is_propagated_even_in_preview (test_sorter.SorterTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/test_sorter.py", line 116, in test_read_error_is_propagated_even_in_preview
+    copy_files(self.source, self.output)
+AssertionError: PermissionError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.044s
+
+FAILED (failures=2, errors=6)

@@ -1,0 +1,5 @@
+Системный Python 3.9.6 не содержит pytest. После сетевой ошибки песочницы инструменты установлены с разрешением во временное окружение /private/tmp/m01-check-env.
+Итоговый /private/tmp/m01-check-env/bin/python -m pytest tests -q: 9 passed (project-tests.txt). HTTP-тест запущен с разрешением открытия локального порта вне песочницы.
+ruff check tools tests и код решения: успешно. ruff format --check тех же файлов: успешно (lint.txt).
+Синтаксическая компиляция starter.py/test_sorter.py: успешно с PYTHONPYCACHEPREFIX=/private/tmp/m01-pycache.
+git diff --check: успешно; новые файлы дополнительно проверены на конечные пробелы.

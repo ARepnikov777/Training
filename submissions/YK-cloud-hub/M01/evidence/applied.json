@@ -1,0 +1,26 @@
+[
+  {
+    "source": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/source/M01/input/files/a/report.txt",
+    "target": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/result/documents/report.txt",
+    "action": "copied",
+    "reason": ""
+  },
+  {
+    "source": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/source/M01/input/files/b/report.txt",
+    "target": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/result/documents/report__2.txt",
+    "action": "copied",
+    "reason": ""
+  },
+  {
+    "source": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/source/M01/input/files/c/data.csv",
+    "target": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/result/tables/data.csv",
+    "action": "copied",
+    "reason": ""
+  },
+  {
+    "source": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/source/M01/input/files/c/note.md",
+    "target": "/Users/yerbolkozhagul/orca/workspaces/Training/Решение-локальных-задач/submissions/YK-cloud-hub/M01/result/documents/note.md",
+    "action": "copied",
+    "reason": ""
+  }
+]
