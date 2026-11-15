@@ -1,0 +1,77 @@
+{
+  "consent": true,
+  "email": "s7@example.test",
+  "exchanges": [
+    {
+      "request": {
+        "consent": true,
+        "email": "s7@example.test",
+        "name": "Анна",
+        "token": "test-token-07"
+      },
+      "response": {
+        "email": "s7@example.test",
+        "id": "5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d",
+        "name": "Анна",
+        "token": "test-token-07"
+      },
+      "status": 201
+    },
+    {
+      "request": {
+        "consent": true,
+        "email": "s7@example.test",
+        "name": "Анна",
+        "token": "test-token-07"
+      },
+      "response": {
+        "email": "s7@example.test",
+        "id": "5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d",
+        "name": "Анна",
+        "token": "test-token-07"
+      },
+      "status": 200
+    }
+  ],
+  "name": "Анна",
+  "registrations": [
+    {
+      "email": "anna@example.test",
+      "id": "905a8378-3d8f-472d-b547-8753316bc176",
+      "name": "Анна",
+      "token": "test-token-01"
+    },
+    {
+      "email": "not-an-email",
+      "id": "a754ccd5-1c94-4c42-b9af-3739aca2d3b4",
+      "name": "Анна",
+      "token": "test-token-03"
+    },
+    {
+      "email": "s4@example.test",
+      "id": "503bb916-610f-49d7-b713-a3ada065d4e5",
+      "name": "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+      "token": "test-token-04"
+    },
+    {
+      "email": "s5@example.test",
+      "id": "f4d90237-1409-4098-9cd2-89a65c0766e1",
+      "name": "аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+      "token": "test-token-05"
+    },
+    {
+      "email": "a b@example.test",
+      "id": "e98d9a5a-fa69-419c-b7ae-1a0a66b3eb4a",
+      "name": "Анна",
+      "token": "test-token-06"
+    },
+    {
+      "email": "s7@example.test",
+      "id": "5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d",
+      "name": "Анна",
+      "token": "test-token-07"
+    }
+  ],
+  "text": "Регистрация сохранена: 5eb7ca8d-6136-4920-a0f1-56fbd2a71f7d",
+  "url": "http://127.0.0.1:18764/register"
+}

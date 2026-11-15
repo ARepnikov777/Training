@@ -1,0 +1,38 @@
+{
+  "consent": true,
+  "email": "not-an-email",
+  "exchanges": [
+    {
+      "request": {
+        "consent": true,
+        "email": "not-an-email",
+        "name": "Анна",
+        "token": "test-token-03"
+      },
+      "response": {
+        "email": "not-an-email",
+        "id": "a754ccd5-1c94-4c42-b9af-3739aca2d3b4",
+        "name": "Анна",
+        "token": "test-token-03"
+      },
+      "status": 201
+    }
+  ],
+  "name": "Анна",
+  "registrations": [
+    {
+      "email": "anna@example.test",
+      "id": "905a8378-3d8f-472d-b547-8753316bc176",
+      "name": "Анна",
+      "token": "test-token-01"
+    },
+    {
+      "email": "not-an-email",
+      "id": "a754ccd5-1c94-4c42-b9af-3739aca2d3b4",
+      "name": "Анна",
+      "token": "test-token-03"
+    }
+  ],
+  "text": "Регистрация сохранена: a754ccd5-1c94-4c42-b9af-3739aca2d3b4",
+  "url": "http://127.0.0.1:18764/register"
+}

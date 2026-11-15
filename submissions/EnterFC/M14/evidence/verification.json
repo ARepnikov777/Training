@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-15T08:16:03.157293+00:00",
+  "scenarios": 8,
+  "passed": 5,
+  "failed": [
+    3,
+    4,
+    6
+  ],
+  "defect_classes": 2,
+  "screenshots": 10,
+  "browser_commands": 99,
+  "all_commands_ok": true,
+  "input_checksums_match": true,
+  "working_copy_source_equal": true,
+  "scenario7_same_id_token_no_duplicate": true,
+  "scenario8_fresh_form_then_correction_same_token": true,
+  "local_links_checked": 47,
+  "own_server_stopped": true,
+  "review": "self-check by implementer; not independent"
+}

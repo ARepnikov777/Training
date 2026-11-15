@@ -1,0 +1,50 @@
+{
+  "origin": "http://127.0.0.1:18764/register",
+  "refs": {
+    "e41": {
+      "name": "Регистрация",
+      "role": "heading"
+    },
+    "e42": {
+      "name": "Главная",
+      "role": "link"
+    },
+    "e43": {
+      "name": "Каталог",
+      "role": "link"
+    },
+    "e44": {
+      "name": "Регистрация",
+      "role": "link"
+    },
+    "e45": {
+      "name": "Заказ",
+      "role": "link"
+    },
+    "e46": {
+      "name": "Заявки",
+      "role": "link"
+    },
+    "e47": {
+      "name": " Согласен с учебной обработкой",
+      "role": "checkbox"
+    },
+    "e48": {
+      "name": "Отправить",
+      "role": "button"
+    },
+    "e49": {
+      "name": "Имя",
+      "role": "textbox"
+    },
+    "e50": {
+      "name": "Email",
+      "role": "textbox"
+    }
+  },
+  "removedRefs": [],
+  "snapshot": "- banner\n  - StaticText \"Учебная мастерская\"\n  - navigation\n    - link \"Главная\" [ref=e42]\n    - link \"Каталог\" [ref=e43]\n    - link \"Регистрация\" [ref=e44]\n    - link \"Заказ\" [ref=e45]\n    - link \"Заявки\" [ref=e46]\n- main\n  - heading \"Регистрация\" [level=1, ref=e41]\n  - paragraph\n    - StaticText \"Только вымышленные данные. Имя: 1–80 символов; email: адрес с @ и точкой в домене; согласие обязательно.\"\n  - form\n    - LabelText\n      - StaticText \"Имя\"\n      - textbox \"Имя\" [ref=e49]: ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\n        - StaticText \"ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа\"\n    - LabelText\n      - StaticText \"Email\"\n      - textbox \"Email\" [ref=e50]: s4@example.test\n        - StaticText \"s4@example.test\"\n    - checkbox \" Согласен с учебной обработкой\" [checked=true, ref=e47]\n    - button \"Отправить\" [ref=e48]\n  - status\n    - StaticText \"Регистрация сохранена: 503bb916-610f-49d7-b713-a3ada065d4e5\"",
+  "browserPageId": "e6c12ae1-1ec9-4e0e-bd38-8770a4de55f4",
+  "url": "http://127.0.0.1:18764/register",
+  "title": "Регистрация"
+}

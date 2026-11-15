@@ -1,0 +1,44 @@
+{
+  "consent": true,
+  "email": "s4@example.test",
+  "exchanges": [
+    {
+      "request": {
+        "consent": true,
+        "email": "s4@example.test",
+        "name": "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+        "token": "test-token-04"
+      },
+      "response": {
+        "email": "s4@example.test",
+        "id": "503bb916-610f-49d7-b713-a3ada065d4e5",
+        "name": "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+        "token": "test-token-04"
+      },
+      "status": 201
+    }
+  ],
+  "name": "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+  "registrations": [
+    {
+      "email": "anna@example.test",
+      "id": "905a8378-3d8f-472d-b547-8753316bc176",
+      "name": "Анна",
+      "token": "test-token-01"
+    },
+    {
+      "email": "not-an-email",
+      "id": "a754ccd5-1c94-4c42-b9af-3739aca2d3b4",
+      "name": "Анна",
+      "token": "test-token-03"
+    },
+    {
+      "email": "s4@example.test",
+      "id": "503bb916-610f-49d7-b713-a3ada065d4e5",
+      "name": "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+      "token": "test-token-04"
+    }
+  ],
+  "text": "Регистрация сохранена: 503bb916-610f-49d7-b713-a3ada065d4e5",
+  "url": "http://127.0.0.1:18764/register"
+}
