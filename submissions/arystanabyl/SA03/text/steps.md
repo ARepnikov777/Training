@@ -181,7 +181,8 @@ Copy-Item -Path "$HOME\Course\E01-kit\E01" -Destination "$HOME\Course\E01-work" 
 
 1. Сверь состав `result` с `expected.json`.
 2. Сверь хеши исходников в рабочей копии с `checksums.json` из `E01-kit`.
-3. Запиши в README решения, как запускать скрипт, и повтори запуск на свежей копии (S4 → S5 → S6).
+3. Проверь, что в `result` ровно 12 файлов и содержимое каждого совпадает с исходником.
+4. Запиши в README решения, как запускать скрипт, и повтори запуск на свежей копии (S4 → S5 → S6).
 
 ```powershell
 # S6 — состав result по категориям
@@ -195,10 +196,17 @@ $ref = Get-Content "$HOME\Course\E01-kit\E01\checksums.json" -Encoding UTF8 -Raw
 $ref.PSObject.Properties | Where-Object Name -like 'input/files/*' |
   Where-Object { (Get-FileHash (Join-Path "$HOME\Course\E01-work" $_.Name)).Hash.ToLower() -ne $_.Value } |
   ForEach-Object { "ИЗМЕНЁН: $($_.Name)" }   # пустой вывод = исходники целы
+# S6 — содержимое result совпадает с исходниками (добавлено в v1.1)
+(Get-ChildItem "$HOME\Course\E01-workesult" -Recurse -File).Count   # 12
+Get-ChildItem "$HOME\Course\E01-workesult" -Recurse -File |
+  Where-Object { (Get-FileHash $_.FullName).Hash -ne (Get-FileHash "$HOME\Course\E01-work\inputiles\$($_.Name)").Hash } |
+  ForEach-Object { "НЕ СОВПАДАЕТ: $($_.Name)" }   # пустой вывод = содержимое совпадает
 ```
 
 **Проверь.** Первая часть выводит три строки: `documents : OK`, `images : OK`, `tables : OK`.
-Вторая часть ничего не выводит — значит, ни один из 12 исходников не изменён. В README решения
+Вторая часть ничего не выводит — значит, ни один из 12 исходников не изменён. Третья часть
+выводит `12`, а сверка содержимого ничего не выводит — копии в `result` побайтно совпадают с
+исходниками. В README решения
 есть блок с командой запуска и отметка о повторном прогоне.
 
 **Если не так.**
@@ -206,6 +214,9 @@ $ref.PSObject.Properties | Where-Object Name -like 'input/files/*' |
 - `РАСХОЖДЕНИЕ` по категории: открой эту папку в `result` и сравни имена с `expected.json`.
 - Строка `ИЗМЕНЁН: ...`: скрипт трогал исходник. Исправь скрипт, удали `E01-work` и начни с S4.
 - Ошибка про отсутствующую папку `result\...`: S5 не создал одну из категорий.
+- Строка `НЕ СОВПАДАЕТ: ...`: скрипт изменил файл при копировании (например, перекодировал текст
+  или переписал строки). Исправь скрипт так, чтобы он копировал файл как есть, удали `result` и повтори S5.
+  Ошибка «не удаётся найти путь» в этой проверке — в `result` лежит лишний файл, которого нет в `inputiles`.
 
 См. рисунок 6.
 
