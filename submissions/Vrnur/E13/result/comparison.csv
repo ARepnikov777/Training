@@ -1,0 +1,4 @@
+supplier,name,ram_GB,ssd_GB,screen_inches,price,currency,availability,url,checked_at
+Учебный Альфа,Orion L15 / 16 GB / 512 GB,16,512,15.6,245000,KZT,в наличии,http://127.0.0.1:8765/product?id=P001,2026-11-15T12:57:30+0500
+Учебный Бета,Orion L15 / 16 GB / 512 GB,16,512,15.6,239000,KZT,нет в наличии,http://127.0.0.1:8765/product?id=P002,2026-11-15T12:57:31+0500
+Учебный Гамма,Orion L15 / 16 GB / 512 GB,16,512,15.6,249000,KZT,null,http://127.0.0.1:8765/product?id=P003,2026-11-15T12:57:31+0500
