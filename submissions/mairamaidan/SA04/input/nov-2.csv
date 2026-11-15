@@ -1,0 +1,6 @@
+id,date,category,amount
+A3,2026-11-02,Office,300
+A4,2026-11-03,Food,400
+A5,bad-date,Food,500
+A6,2026-11-04,Unknown,600
+A7,2026-11-05,Travel,-20
