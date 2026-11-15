@@ -50,7 +50,7 @@
 
 - [x] Отдельный reviewer проверяет весь пакет по исходным строкам и DoD.
 - [x] Возвраты только в пределах workflow.md; самостоятельная приёмка координатором.
-- [ ] Gitleaks staged → commit; Gitleaks history → push своей учебной ветки; один PR main без Closes. Merge и закрытие #55 — преподавателем.
+- [x] Gitleaks staged → commit; Gitleaks history → push своей учебной ветки; один PR main без Closes. Merge и закрытие #55 — преподавателем.
 
 ## Preflight: конфликты и решения
 

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-15T10:56:51.413784Z",
+  "checked_at_utc": "2026-11-15T11:03:16.614916Z",
   "repository": "ARepnikov777/Training",
   "parent": 55,
   "milestone": 4,
@@ -13,5 +13,16 @@
   ],
   "assignee": "mairamaidan",
   "label": "subagents",
-  "verified": true
+  "verified": true,
+  "parent_state": "open",
+  "closed_children": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "pr": 136,
+  "draft": true
 }
