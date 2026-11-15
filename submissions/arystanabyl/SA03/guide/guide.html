@@ -86,16 +86,22 @@ p code, li code, td code { white-space: nowrap; }
 #s5 .top { grid-template-columns: 1fr 140mm; }
 table.log th, table.log td { padding: 4.2mm 3mm; }
 pre .nb { white-space: nowrap; }
-#submit .top { grid-template-columns: 1fr 100mm; column-gap: 8mm; }
+li pre code { white-space: pre-wrap; }
+#submit .top { grid-template-columns: 1fr 92mm; column-gap: 7mm; }
 #submit .txt ol, #submit .txt ul { margin-bottom: 0.8mm; }
 #submit .txt li { margin-bottom: 0.2mm; }
 #submit .bottom { display: block; margin-top: 1mm; }
 #submit .bottom ul { margin-bottom: 0.8mm; }
 #submit pre { margin-bottom: 0.8mm; padding: 1mm 2.5mm; }
-.journal { margin-top: 2.5mm; }
+.journal { margin-top: 1mm; }
 .journal h2 { margin-bottom: 1mm; }
 .journal p { margin-bottom: 0.8mm; }
-table.log th, table.log td { padding: 1mm 3mm; }
+table.log th, table.log td { padding: 0.1mm 3mm; }
+table.log { font-size: 10pt; }
+#submit pre code { line-height: 1.05; }
+#submit pre { padding: 0.6mm 2.5mm; margin-bottom: 0.4mm; }
+#submit .txt li { margin-bottom: 0; }
+.journal { margin-top: 0; }
 .errors { margin-top: 3mm; }
 </style>
 </head>
@@ -230,7 +236,11 @@ Get-ChildItem "$HOME\Course\E01-work\result" <span class="nb">-Recurse</span> <s
 <h2>Что приложить к сдаче</h2>
 <div class="top"><div class="txt"><p><strong>Зачем.</strong> Полный порядок описан в разделе «Подготовка и сдача задания» README репозитория; здесь суть.</p>
 <p class="lab"><strong>Сделай.</strong></p>
-<ol><li>В клоне репозитория создай ветку <code>student/LOGIN/E01</code> (<code>LOGIN</code> — твой GitHub-логин) и папку <code>submissions/LOGIN/E01/</code>.</li><li>Положи в неё только нужное:<ul><li><code>README.md</code> — что сделано, как запустить, все пункты DoD из issue с доказательствами, журнал;</li><li>скрипт решения из <code>E01-solution</code>;</li><li>копию <code>result/</code> из <code>E01-work</code>;</li><li><code>evidence/</code> — вывод проверок S6 (три строки <code>OK</code>, пустые выводы, число <code>12</code>).</li></ul></li><li>Не клади <code>E01-kit</code>, весь <code>E01-work</code>, <code>.git</code>, токены и кеши.</li><li>Сохрани результат и отправь ветку командами из README репозитория:</li></ol>
+<ol><li>В клоне репозитория создай ветку <code>student/LOGIN/E01</code> (<code>LOGIN</code> — твой GitHub-логин) и папку <code>submissions/LOGIN/E01/</code>.<pre><code>git clone https://github.com/ARepnikov777/Training.git
+cd Training
+git switch main
+git pull --ff-only origin main
+git switch -c student/LOGIN/E01</code></pre>Команды <code>git clone</code> и <code>cd Training</code> нужны только при первом клонировании.</li><li>Положи в неё только нужное:<ul><li><code>README.md</code> — что сделано, как запустить, все пункты DoD из issue с доказательствами, журнал;</li><li>скрипт решения из <code>E01-solution</code>;</li><li>копию <code>result/</code> из <code>E01-work</code>;</li><li><code>evidence/</code> — вывод проверок S6 (три строки <code>OK</code>, пустые выводы, число <code>12</code>).</li></ul></li><li>Не клади <code>E01-kit</code>, весь <code>E01-work</code>, <code>.git</code>, токены и кеши.</li><li>Сохрани результат и отправь ветку командами из README репозитория:</li></ol>
 <pre><code>git add submissions/LOGIN/E01
 git diff --cached --check
 git diff --cached
