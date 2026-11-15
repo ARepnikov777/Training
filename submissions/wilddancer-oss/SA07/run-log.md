@@ -51,3 +51,4 @@
 
 - Push только интеграционной ветки `student/wilddancer-oss/SA07`. Первый push: 403 от учётных данных git в связке ключей macOS (API показывает право `write`); повтор с `gh auth git-credential` тем же аккаунтом прошёл. Конфигурация git не менялась.
 - PR [#88](https://github.com/ARepnikov777/Training/pull/88) в `main`, комментарий со ссылками в #58. Merge - преподаватель.
+- 15:08. По просьбе слушателя созданы глобальные роли Claude Code `explorer`, `worker`, `reviewer`, `docs_researcher` (`~/.claude/agents/`, каталога раньше не было). Проверка в новой сессии `claude -p`: доступны все 4, запущен `explorer`, ссылка `README.md:57` проверена. Запуск 1 не повторялся. `evidence/agents-probe.md`.

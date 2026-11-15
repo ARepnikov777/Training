@@ -37,6 +37,7 @@ PR: [#88](https://github.com/ARepnikov777/Training/pull/88)
 | Отчёт reviewer | [`reviews/`](reviews/) |
 | Отрицательный сценарий | [`evidence/negative-scenario.md`](evidence/negative-scenario.md) |
 | Журнал запуска | [`run-log.md`](run-log.md) |
+| Именованные субагенты Claude Code и их проверка | [`agents/`](agents/), [`evidence/agents-probe.md`](evidence/agents-probe.md) |
 
 Коротко по существу: практикум 20 ноября, аудитория 305, начало 10:00, 15
 участников. Поручения: Анна - архивы до 18 ноября, Илья - стенд до 19 ноября,
@@ -75,6 +76,16 @@ PR: [#88](https://github.com/ARepnikov777/Training/pull/88)
 сверял живое состояние (`git status`, diff путей, `check_package.py`) и сам
 вливал ветки в `student/wilddancer-oss/SA07`. Субагенты не делали push и merge
 и ничего не публиковали на GitHub.
+
+### Именованные роли (после запуска 1)
+
+По просьбе слушателя после `Done_accepted` созданы глобальные роли Claude Code
+`explorer`, `worker`, `reviewer`, `docs_researcher` (`~/.claude/agents/`, копии в
+[`agents/`](agents/)) по образцу учебных ролей Codex. Проверка в новой сессии:
+запущен субагент типа `explorer`, его ссылка `README.md:57` проверена
+([`evidence/agents-probe.md`](evidence/agents-probe.md)). Запуск 1 выполнен
+встроенными типами до создания ролей и не повторялся; `worker`, `reviewer` и
+`docs_researcher` в новой форме не запускались.
 
 ## Предметные критерии
 
