@@ -1,0 +1,21 @@
+id,name,category,price,currency,supplier,availability,ram_GB,ssd_GB,screen_inches,source_url
+P001,Orion L15 / 16 GB / 512 GB,laptop,245000,KZT,Учебный Альфа,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P001
+P002,Orion L15 / 16 GB / 512 GB,laptop,239000,KZT,Учебный Бета,нет в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P002
+P003,Orion L15 / 16 GB / 512 GB,laptop,249000,KZT,Учебный Гамма,,16,512,15.6,http://127.0.0.1:8765/product?id=P003
+P004,Orion L04,laptop,204000,KZT,Поставщик 04,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P004
+P005,Orion L05,laptop,205000,KZT,Поставщик 05,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P005
+P006,Orion L06,laptop,206000,KZT,Поставщик 06,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P006
+P007,Orion L07,laptop,207000,KZT,Поставщик 07,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P007
+P008,Orion L08,laptop,208000,KZT,Поставщик 08,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P008
+P009,Orion L09,laptop,209000,KZT,Поставщик 09,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P009
+P010,Orion L10,laptop,210000,KZT,Поставщик 10,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P010
+P011,Orion L11,laptop,211000,KZT,Поставщик 11,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P011
+P012,Orion L12,laptop,212000,KZT,Поставщик 12,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P012
+P013,Orion L13,laptop,213000,KZT,Поставщик 13,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P013
+P014,Orion L14,laptop,214000,KZT,Поставщик 14,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P014
+P015,Orion L15,laptop,215000,KZT,Поставщик 15,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P015
+P016,Orion L16,laptop,216000,KZT,Поставщик 16,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P016
+P017,Orion L17,laptop,217000,KZT,Поставщик 17,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P017
+P018,Orion L18,laptop,218000,KZT,Поставщик 18,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P018
+P019,Orion L19,laptop,219000,KZT,Поставщик 19,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P019
+P020,Orion L20,laptop,220000,KZT,Поставщик 20,в наличии,16,512,15.6,http://127.0.0.1:8765/product?id=P020
