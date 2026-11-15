@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<title>Результат — в отдельной папке result</title>
+<rect width="1600" height="900" fill="#f5f7fa"/>
+<g data-src="folder" transform="translate(-670.0 -21.0) scale(1.6 1.7)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<rect x="100" y="295" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M114 319h52M114 341h36" stroke="#1d8794" stroke-width="9"/>
+<rect x="210" y="295" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M224 319h52M224 341h36" stroke="#1d8794" stroke-width="9"/>
+<rect x="320" y="295" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M334 319h52M334 341h36" stroke="#1d8794" stroke-width="9"/>
+<rect x="430" y="295" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M444 319h52M444 341h36" stroke="#1d8794" stroke-width="9"/>
+<rect x="100" y="385" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M114 409h52M114 431h36" stroke="#7063a3" stroke-width="9"/>
+<rect x="210" y="385" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M224 409h52M224 431h36" stroke="#7063a3" stroke-width="9"/>
+<rect x="320" y="385" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M334 409h52M334 431h36" stroke="#7063a3" stroke-width="9"/>
+<rect x="430" y="385" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M444 409h52M444 431h36" stroke="#7063a3" stroke-width="9"/>
+<rect x="100" y="475" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M114 499h52M114 521h36" stroke="#f1b34a" stroke-width="9"/>
+<rect x="210" y="475" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M224 499h52M224 521h36" stroke="#f1b34a" stroke-width="9"/>
+<rect x="320" y="475" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M334 499h52M334 521h36" stroke="#f1b34a" stroke-width="9"/>
+<rect x="430" y="475" width="80" height="70" rx="10" fill="white" stroke="#172b3a" stroke-width="5"/>
+<path d="M444 499h52M444 521h36" stroke="#f1b34a" stroke-width="9"/>
+<text x="326" y="640" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="middle">E01-work/input/files</text>
+<text x="326" y="705" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="400" fill="#172b3a" text-anchor="middle">12 файлов</text>
+<text x="326" y="770" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="600" fill="#1d8794" text-anchor="middle">исходники на месте</text>
+<g data-src="arrow" transform=" translate(-290.0 150.0) scale(1.0 1.0)"><path d="M900 240h200m-60-60 60 60-60 60" fill="none" stroke="#1d8794" stroke-width="16" vector-effect="non-scaling-stroke"/></g>
+<g data-src="folder" transform="translate(-120.0 -283.0) scale(2.2 3.1)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="895" y="212" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">result</text>
+<g data-src="folder" transform="translate(741.0 245.4) scale(0.42 0.42)"><path d="M450 130h100l40 40h180v180H450z" fill="white" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<path d="M965 365h70" stroke="#1d8794" stroke-width="12"/>
+<text x="1110" y="368" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">documents</text>
+<g data-src="folder" transform="translate(741.0 405.4) scale(0.42 0.42)"><path d="M450 130h100l40 40h180v180H450z" fill="white" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<path d="M965 525h70" stroke="#7063a3" stroke-width="12"/>
+<text x="1110" y="528" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">images</text>
+<g data-src="folder" transform="translate(741.0 565.4) scale(0.42 0.42)"><path d="M450 130h100l40 40h180v180H450z" fill="white" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<path d="M965 685h70" stroke="#f1b34a" stroke-width="12"/>
+<text x="1110" y="688" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#172b3a" text-anchor="start">tables</text>
+</svg>
