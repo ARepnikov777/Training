@@ -6,8 +6,8 @@
 - [x] T2–T4: три worker в разных worktree, проверка каждого CSV координатором.
 - [x] T5: один worker синтеза, первый результат до checks, затем сверка.
 - [x] T6: отдельный reviewer, максимум 2 исправления, отрицательная копия и повторное ревью.
-- [ ] T7: README по каждому DoD, воспроизводимость, финальная проверка. PR при разрешённой публикации; merge только преподавателю.
+- [x] T7: README по каждому DoD, воспроизводимость, финальная проверка. PR при разрешённой публикации; merge только преподавателю.
 
 Проверяем особенно: отсутствие условия против противоположного утверждения; ссылки на обе стороны расхождения; дословность цитат; вычисление против исходной суммы; соблюдение ограничений и реальность запусков. Документы не требуют TDD; исполняемая логика в продукт не добавляется.
 
-T7 local package prepared; final acceptance/secret scan and delivery recorded separately. Commit/push/PR pending authorization; do not mark full delivery complete.
+T7 delivered in draft PR #138; user-authorized history exception recorded in evidence/delivery.md. Teacher review and merge remain pending.

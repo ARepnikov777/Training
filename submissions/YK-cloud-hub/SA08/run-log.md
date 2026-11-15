@@ -32,3 +32,4 @@ Ruling: synthesis and read-only review use integration worktree rather than extr
 
 Local accepted only. Commit/push/PR and teacher acceptance remain pending. No external operation has unknown outcome.
 | 2026-11-15T11:13:28.799197+00:00 | Delivery | coordinator | commit b778f64 created; staged scan clean; full-history scan exit 1 on verified old checksum false positive | stop before push, request narrow exception decision | 0 | evidence/delivery-blocker.md |
+| 2026-11-15T11:20:53.907260+00:00 | Delivery | coordinator | user-approved exact fingerprint exception, history scan PASS, push verified, draft PR 138 created | await teacher review | 0 | evidence/delivery.md |
