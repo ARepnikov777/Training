@@ -1,0 +1,7 @@
+changed: ['1', '2', '3'] PASS
+deleted: ['5'] PASS
+added: ['6'] PASS
+unchanged: ['4'] PASS
+All 6 rows: exact quotes, page references and absent clauses PASS
+v1 SHA-256 4b2a962efec1c24e6a48d96c1f54a20da3d0bb66c331362cd8657c25662a72e4 PASS
+v2 SHA-256 d777093c63197e6d5208aada3da84f52a35d5689510e88986579e6e0748cfdd8 PASS
