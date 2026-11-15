@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<title>Прочитай README.md и input/rules.md</title>
+<rect width="1600" height="900" fill="#f5f7fa"/>
+<g data-src="document" transform="translate(-50.0 80.0) scale(1.2)"><rect x="100" y="100" width="180" height="240" rx="16" fill="white" stroke="#172b3a" stroke-width="8"/><path d="M130 160h110M130 200h110M130 240h70" stroke="#1d8794" stroke-width="12"/></g>
+<text x="178" y="570" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#172b3a" text-anchor="middle">README.md</text>
+<g data-src="document" transform="translate(270.0 80.0) scale(1.2)"><rect x="100" y="100" width="180" height="240" rx="16" fill="white" stroke="#172b3a" stroke-width="8"/><path d="M130 160h110M130 200h110M130 240h70" stroke="#1d8794" stroke-width="12"/></g>
+<text x="498" y="570" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#172b3a" text-anchor="middle">input/rules.md</text>
+<g data-src="circle" transform="translate(-845.0 88.5) scale(1.05)"><circle cx="1300" cy="230" r="100" fill="#7063a3" fill-opacity="0.28"/></g>
+<circle cx="520" cy="330" r="105" fill="none" stroke="#7063a3" stroke-width="16"/>
+<path d="M594 404l90 90" stroke="#7063a3" stroke-width="30" stroke-linecap="round"/>
+<g data-src="arrow" transform=" translate(-80.0 168.0) scale(0.9 0.9)"><path d="M900 240h200m-60-60 60 60-60 60" fill="none" stroke="#1d8794" stroke-width="16" vector-effect="non-scaling-stroke"/></g>
+<g data-src="folder" transform="translate(735.0 65.0) scale(0.5 0.5)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="1150" y="192" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" fill="#172b3a" text-anchor="start">documents</text>
+<text x="1150" y="242" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="400" fill="#1d8794" text-anchor="start">.txt .md .json .pdf</text>
+<g data-src="folder" transform="translate(735.0 295.0) scale(0.5 0.5)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="1150" y="422" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" fill="#172b3a" text-anchor="start">images</text>
+<text x="1150" y="472" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="400" fill="#1d8794" text-anchor="start">.png</text>
+<g data-src="folder" transform="translate(735.0 525.0) scale(0.5 0.5)"><path d="M450 130h100l40 40h180v180H450z" fill="#f1b34a" stroke="#172b3a" stroke-width="8" vector-effect="non-scaling-stroke"/></g>
+<text x="1150" y="652" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" fill="#172b3a" text-anchor="start">tables</text>
+<text x="1150" y="702" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="400" fill="#1d8794" text-anchor="start">.csv</text>
+</svg>
