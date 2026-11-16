@@ -1,0 +1,22 @@
+{
+  "code": "H11",
+  "issue": 47,
+  "title": "[H11] Локальный каталог товаров",
+  "goal": "Собери трёхстраничный PDF-каталог пяти учебных товаров из CSV и изображений. Для каждой карточки сверь название, описание, цену и изображение.",
+  "inputs": [
+    "input/LICENSE.md",
+    "input/brief.md",
+    "input/elements.svg",
+    "input/product-1.png",
+    "input/product-2.png",
+    "input/product-3.png",
+    "input/product-4.png",
+    "input/product-5.png",
+    "input/products.csv",
+    "input/provenance.md",
+    "input/rasterize.html"
+  ],
+  "checks": [
+    "checks/checklist.json"
+  ]
+}

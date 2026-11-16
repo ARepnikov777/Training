@@ -1,0 +1,17 @@
+test_build_and_validate_and_detect_substitution (test_catalog.CatalogTest.test_build_and_validate_and_detect_substitution) ... FAIL
+
+======================================================================
+FAIL: test_build_and_validate_and_detect_substitution (test_catalog.CatalogTest.test_build_and_validate_and_detect_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/arnursain/orca/workspaces/Training/sa06/submissions/Vrnur/SA06/tests/test_catalog.py", line 21, in test_build_and_validate_and_detect_substitution
+    self.assertEqual(build.returncode, 0, build.stderr)
+AssertionError: 1 != 0 : Catalog generation is not implemented
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)
+
+Exit code: 1

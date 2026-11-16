@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-11-15T16:08:42.056128+05:00",
+  "parent": {
+    "number": 57,
+    "url": "https://github.com/ARepnikov777/Training/issues/57",
+    "state": "open",
+    "milestone": 8,
+    "assignees": [
+      "Vrnur"
+    ],
+    "labels": [
+      "subagents"
+    ]
+  },
+  "subissues": [
+    {
+      "number": 124,
+      "url": "https://github.com/ARepnikov777/Training/issues/124",
+      "state": "open",
+      "milestone": 8,
+      "assignees": [
+        "Vrnur"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 125,
+      "url": "https://github.com/ARepnikov777/Training/issues/125",
+      "state": "open",
+      "milestone": 8,
+      "assignees": [
+        "Vrnur"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 126,
+      "url": "https://github.com/ARepnikov777/Training/issues/126",
+      "state": "open",
+      "milestone": 8,
+      "assignees": [
+        "Vrnur"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 127,
+      "url": "https://github.com/ARepnikov777/Training/issues/127",
+      "state": "open",
+      "milestone": 8,
+      "assignees": [
+        "Vrnur"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 128,
+      "url": "https://github.com/ARepnikov777/Training/issues/128",
+      "state": "open",
+      "milestone": 8,
+      "assignees": [
+        "Vrnur"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    },
+    {
+      "number": 129,
+      "url": "https://github.com/ARepnikov777/Training/issues/129",
+      "state": "open",
+      "milestone": 8,
+      "assignees": [
+        "Vrnur"
+      ],
+      "labels": [
+        "subagents"
+      ]
+    }
+  ],
+  "pr": {
+    "number": 137,
+    "url": "https://github.com/ARepnikov777/Training/pull/137",
+    "state": "open",
+    "milestone": 8,
+    "assignees": [
+      "Vrnur"
+    ],
+    "labels": [
+      "subagents"
+    ],
+    "base": "main",
+    "head": "student/Vrnur/SA06",
+    "sha": "fb345a3d3c3ad23d8964bb2fad3289f75e169eaa",
+    "merged": false,
+    "matching_pr_count": 1
+  },
+  "comment_url": "https://github.com/ARepnikov777/Training/issues/57#issuecomment-6893410776",
+  "checks": "PASS"
+}

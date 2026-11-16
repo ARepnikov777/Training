@@ -1,0 +1,13 @@
+[1] states=15 edges=28
+[1] unsupported_syntax=[]
+[1] empty_graph=False
+[1] missing_start=False
+[1] missing_finish=False
+[1] dead_ends=[]
+[1] unreachable_states=[]
+[1] no_final_path=[]
+[1] choices_without_else=[]
+[1] multiple_else=[]
+[1] unbounded_loops=[]
+[1] escalation_not_final=[]
+OK

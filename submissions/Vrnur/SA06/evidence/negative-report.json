@@ -1,0 +1,38 @@
+{
+  "bad_build": {
+    "exit_code": 0,
+    "expected": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "bad_validation": {
+    "exit_code": 1,
+    "expected": 1,
+    "stdout": "",
+    "stderr": "FAIL: P01: embedded image differs from product-1.png\n"
+  },
+  "restored_build": {
+    "exit_code": 0,
+    "expected": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "restored_validation": {
+    "exit_code": 0,
+    "expected": 0,
+    "stdout": "id,csv_line,image,page,result\nP01,2,product-1.png,1,OK\nP02,3,product-2.png,1,OK\nP03,4,product-3.png,2,OK\nP04,5,product-4.png,2,OK\nP05,6,product-5.png,3,OK\n",
+    "stderr": ""
+  },
+  "final_validation": {
+    "exit_code": 0,
+    "expected": 0,
+    "stdout": "id,csv_line,image,page,result\nP01,2,product-1.png,1,OK\nP02,3,product-2.png,1,OK\nP03,4,product-3.png,2,OK\nP04,5,product-4.png,2,OK\nP05,6,product-5.png,3,OK\n",
+    "stderr": ""
+  },
+  "time": "2026-11-15T15:59:32.819156+05:00",
+  "scenario": "P01 PNG replaced by P02 on temporary copy, PDF validated against trusted original input",
+  "final_pdf_sha256": "8f073c8c5f9825bc10bc35ee5b712a65d0c45f4b77659b66b3748774e57154c5",
+  "final_pdf_unchanged": true,
+  "transition": "Decision → Negative → Restore → Final_check",
+  "repair_attempts": 0
+}

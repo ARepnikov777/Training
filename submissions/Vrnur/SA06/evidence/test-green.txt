@@ -1,0 +1,10 @@
+test_build_and_validate_and_detect_substitution (test_catalog.CatalogTest.test_build_and_validate_and_detect_substitution) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.768s
+
+OK
+Подмена: validator exit 1; FAIL: P01: embedded image differs from product-1.png
+Восстановление: validator exit 0
+
+Exit code: 0
