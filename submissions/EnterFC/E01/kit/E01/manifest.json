@@ -1,0 +1,24 @@
+{
+  "code": "E01",
+  "issue": 7,
+  "title": "[E01] Порядок в папке",
+  "goal": "Напиши скрипт, который копирует 12 файлов из input/files в папки documents, images и tables по правилам input/rules.md. Проверь, что ни один файл не потерян и исходная папка не изменилась.",
+  "inputs": [
+    "input/files/manual.pdf",
+    "input/files/notes.md",
+    "input/files/picture-1.png",
+    "input/files/picture-2.png",
+    "input/files/picture-3.png",
+    "input/files/picture-4.png",
+    "input/files/readme.txt",
+    "input/files/record.json",
+    "input/files/table-1.csv",
+    "input/files/table-2.csv",
+    "input/files/table-3.csv",
+    "input/files/table-4.csv",
+    "input/rules.md"
+  ],
+  "checks": [
+    "checks/expected.json"
+  ]
+}

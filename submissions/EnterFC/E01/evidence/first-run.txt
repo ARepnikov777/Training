@@ -1,0 +1,4 @@
+$ python -B sort_files.py kit/E01/input/files result
+Copied 12 files to result
+
+exit_code=0

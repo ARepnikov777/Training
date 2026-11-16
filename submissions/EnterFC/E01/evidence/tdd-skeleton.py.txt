@@ -1,0 +1,7 @@
+﻿"""Copy E01 files into the required categories."""
+from pathlib import Path
+
+
+def copy_files(source: Path, destination: Path) -> None:
+    """Implementation pending the first failing behavior tests."""
+    return None

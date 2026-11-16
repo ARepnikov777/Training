@@ -1,0 +1,20 @@
+{
+  "documents": [
+    "manual.pdf",
+    "notes.md",
+    "readme.txt",
+    "record.json"
+  ],
+  "images": [
+    "picture-1.png",
+    "picture-2.png",
+    "picture-3.png",
+    "picture-4.png"
+  ],
+  "tables": [
+    "table-1.csv",
+    "table-2.csv",
+    "table-3.csv",
+    "table-4.csv"
+  ]
+}

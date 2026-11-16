@@ -1,0 +1,13 @@
+$ python -B -m unittest -v test_sort_files.py
+test_all_twelve_files_have_required_categories (test_sort_files.CopyFilesTests.test_all_twelve_files_have_required_categories) ... ok
+test_copies_preserve_every_byte (test_sort_files.CopyFilesTests.test_copies_preserve_every_byte) ... ok
+test_output_cannot_be_created_inside_source (test_sort_files.CopyFilesTests.test_output_cannot_be_created_inside_source) ... ok
+test_repeat_on_fresh_copy_matches_first_run (test_sort_files.CopyFilesTests.test_repeat_on_fresh_copy_matches_first_run) ... ok
+test_source_names_and_bytes_remain_unchanged (test_sort_files.CopyFilesTests.test_source_names_and_bytes_remain_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.156s
+
+OK
+
+exit_code=0
