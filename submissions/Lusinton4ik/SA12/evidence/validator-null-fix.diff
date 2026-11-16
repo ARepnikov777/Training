@@ -1,0 +1,44 @@
+diff --git a/submissions/Lusinton4ik/SA12/evidence/validator-before-null-fix.py.txt b/submissions/Lusinton4ik/SA12/validate.py
+index 5677fc2..e368eec 100644
+--- a/submissions/Lusinton4ik/SA12/evidence/validator-before-null-fix.py.txt
++++ b/submissions/Lusinton4ik/SA12/validate.py
+@@ -9,6 +9,7 @@ from urllib.parse import parse_qs, urlsplit
+
+ FIELDS = ('id', 'name', 'category', 'price', 'currency', 'supplier',
+           'availability', 'ram_GB', 'ssd_GB', 'screen_inches')
++NULLABLE = {'availability', 'ram_GB', 'ssd_GB', 'screen_inches'}
+
+
+ def read_json(path):
+@@ -43,6 +44,8 @@ def local_url(value, product_id):
+
+
+ def matches(actual, expected, is_csv):
++    if expected is None:
++        return actual == '' if is_csv else actual is None
+     if is_csv and isinstance(expected, (int, Decimal)) and not isinstance(expected, bool):
+         try:
+             number = Decimal(actual)
+@@ -78,7 +81,7 @@ def validate(data_path, expected_path, catalog_path):
+             raise ValueError('expected IDs must contain exactly 50 unique IDs')
+         catalog_by_id = {}
+         for row in catalog:
+-            if not isinstance(row, dict) or any(f not in row or row[f] is None or row[f] == '' for f in FIELDS):
++            if not isinstance(row, dict) or any(f not in row or row[f] == '' or (row[f] is None and f not in NULLABLE) for f in FIELDS):
+                 raise ValueError('catalog row has missing fields')
+             key = id_key(row['id'])
+             if key in catalog_by_id:
+@@ -105,7 +108,7 @@ def validate(data_path, expected_path, catalog_path):
+             if key not in expected_keys:
+                 errors.append(f'unexpected id {key}')
+             for field in FIELDS:
+-                if field not in row or row[field] is None or row[field] == '':
++                if field not in row:
+                     errors.append(f'row {index} id {key}: missing {field}')
+                 elif key in catalog_by_id and not matches(row[field], catalog_by_id[key][field], is_csv):
+                     errors.append(f'row {index} id {key}: mismatch {field}')
+@@ -141,3 +144,4 @@ def main():
+
+ if __name__ == '__main__':
+     raise SystemExit(main())
++

@@ -1,0 +1,13 @@
+Command: gitleaks git --staged --redact .
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+4:17PM INF 0 commits scanned.
+4:17PM INF scanned ~728907 bytes (728.91 KB) in 918ms
+4:17PM INF no leaks found
+
+exit=0

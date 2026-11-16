@@ -1,0 +1,7 @@
+[
+  {
+    "url": "http://127.0.0.1:8875/catalog?page=3&fail=1",
+    "status": 503,
+    "resolved": true
+  }
+]

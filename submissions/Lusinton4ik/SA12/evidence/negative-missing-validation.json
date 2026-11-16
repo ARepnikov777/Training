@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\lyudm\\AppData\\Local\\Temp\\sa12-python-3.12.10\\python.exe",
+    "-X",
+    "utf8",
+    "submissions\\Lusinton4ik\\SA12\\validate.py",
+    "--data",
+    "submissions\\Lusinton4ik\\SA12\\evidence\\negative-missing.json",
+    "--expected-ids",
+    "submissions\\Lusinton4ik\\SA12\\kit\\H13\\checks\\expected-ids.json",
+    "--catalog",
+    "submissions\\Lusinton4ik\\SA12\\kit\\H13\\input\\site\\catalog.json"
+  ],
+  "exit": 1,
+  "report": {
+    "ok": false,
+    "count": 49,
+    "unique_count": 49,
+    "errors": [
+      "expected 50 records, got 49",
+      "missing id P050",
+      "expected 50 unique IDs, got 49"
+    ]
+  },
+  "repair_source": "own browser products.json, never reference JSON"
+}

@@ -1,0 +1,34 @@
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid integer field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_checkpoint_rejects_null_in_required_fields_without_changes (test_collector.NullableFieldTests.test_checkpoint_rejects_null_in_required_fields_without_changes) ... Invalid checkpoint: invalid record
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid integer field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+ok
+test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export) ... ok
+test_invalid_legacy_checkpoint_is_not_rewritten (test_collector.NullableFieldTests.test_invalid_legacy_checkpoint_is_not_rewritten) ... Invalid checkpoint: invalid integer field
+ok
+test_legacy_checkpoint_is_canonicalized_on_resume (test_collector.NullableFieldTests.test_legacy_checkpoint_is_canonicalized_on_resume) ... ok
+test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) ... ok
+test_resume_loads_checkpoint_with_null_fields (test_collector.NullableFieldTests.test_resume_loads_checkpoint_with_null_fields) ... ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 12.962s
+
+OK
+
+exit=0

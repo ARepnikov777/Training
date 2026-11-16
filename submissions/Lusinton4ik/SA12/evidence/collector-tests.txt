@@ -1,0 +1,473 @@
+RED: initial stub, exit 1
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+python.exe : test_corrupt_checkpoint_leaves_all_files_unchanged
+(test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... ok
+At line:104 char:1
++ & 'C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe'  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_corrupt_ch...changed) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_interruption_resume_and_idempotent_rerun
+(test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... FAIL
+test_wrong_base_checkpoint_leaves_files_unchanged
+(test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... FAIL
+
+======================================================================
+FAIL: test_interruption_resume_and_idempotent_rerun
+(test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py",
+line 43, in test_interruption_resume_and_idempotent_rerun
+    self.assertEqual(collector.collect(BASE, self.output, first, True), 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_wrong_base_checkpoint_leaves_files_unchanged
+(test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py",
+line 88, in test_wrong_base_checkpoint_leaves_files_unchanged
+    self.assertEqual(collector.collect(BASE, self.output, FakeBrowser(), True), 2)
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.067s
+
+FAILED (failures=2)
+
+
+GREEN: final, exit 0
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid numeric field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 6.850s
+
+OK
+
+REVIEW FIX RED, exit 1
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid numeric field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... FAIL
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... FAIL
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+======================================================================
+FAIL: test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 195, in test_loading_goto_waits_before_reading_card_dom
+    self.assertEqual(result["url"], target)
+AssertionError: 'http://localhost:8000/catalog?page=1' != 'http://localhost:8000/product?id=p1'
+- http://localhost:8000/catalog?page=1
+?                        - ----  ----
++ http://localhost:8000/product?id=p1
+?                       +++++   +++
+
+
+======================================================================
+FAIL: test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 208, in test_mismatched_loaded_url_is_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+----------------------------------------------------------------------
+Ran 9 tests in 7.031s
+
+FAILED (failures=2)
+
+REVIEW FIX GREEN, exit 0
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid numeric field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 6.979s
+
+OK
+
+NULLABLE FIX RED, exit 1
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid numeric field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_checkpoint_rejects_null_in_required_fields_without_changes (test_collector.NullableFieldTests.test_checkpoint_rejects_null_in_required_fields_without_changes) ... Invalid checkpoint: invalid record
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid numeric field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+ok
+test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export) ... Collection failed: Invalid numeric field: could not convert string to float: 'None'
+FAIL
+test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) ...
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='id') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='name') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='category') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='currency') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='supplier') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='price') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='ram_GB') ... FAIL
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+======================================================================
+FAIL: test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 223, in test_dom_nulls_survive_checkpoint_resume_and_csv_export
+    self.assertEqual(collector.collect(BASE, output, NullableBrowser(), True), 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 247, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='name')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 247, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='category')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 247, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='currency')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 247, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='supplier')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 247, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='price')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 253, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='ram_GB')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 253, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+----------------------------------------------------------------------
+Ran 12 tests in 8.732s
+
+FAILED (failures=8)
+
+NULLABLE RESUME RED, exit 1
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid numeric field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_checkpoint_rejects_null_in_required_fields_without_changes (test_collector.NullableFieldTests.test_checkpoint_rejects_null_in_required_fields_without_changes) ... Invalid checkpoint: invalid record
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid numeric field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+ok
+test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export) ... Collection failed: Invalid numeric field: could not convert string to float: 'None'
+FAIL
+test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) ...
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='id') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='name') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='category') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='currency') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='supplier') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='price') ... FAIL
+  test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='ram_GB') ... FAIL
+test_resume_loads_checkpoint_with_null_fields (test_collector.NullableFieldTests.test_resume_loads_checkpoint_with_null_fields) ... Invalid checkpoint: invalid text field
+FAIL
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+======================================================================
+FAIL: test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 223, in test_dom_nulls_survive_checkpoint_resume_and_csv_export
+    self.assertEqual(collector.collect(BASE, output, NullableBrowser(), True), 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 263, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='name')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 263, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='category')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 263, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='currency')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 263, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='supplier')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 263, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='price')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 269, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) (field='ram_GB')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 269, in test_non_nullable_and_invalid_values_are_rejected
+    with self.assertRaises(collector.CollectorError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CollectorError not raised
+
+======================================================================
+FAIL: test_resume_loads_checkpoint_with_null_fields (test_collector.NullableFieldTests.test_resume_loads_checkpoint_with_null_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 251, in test_resume_loads_checkpoint_with_null_fields
+    self.assertEqual(collector.collect(BASE, output, browser), 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 13 tests in 8.050s
+
+FAILED (failures=9)
+
+NULLABLE FIX GREEN, exit 0
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid integer field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_checkpoint_rejects_null_in_required_fields_without_changes (test_collector.NullableFieldTests.test_checkpoint_rejects_null_in_required_fields_without_changes) ... Invalid checkpoint: invalid record
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid integer field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+ok
+test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export) ... ok
+test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) ... ok
+test_resume_loads_checkpoint_with_null_fields (test_collector.NullableFieldTests.test_resume_loads_checkpoint_with_null_fields) ... ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 10.765s
+
+OK
+
+LEGACY MIGRATION RED, exit 1
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid integer field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_checkpoint_rejects_null_in_required_fields_without_changes (test_collector.NullableFieldTests.test_checkpoint_rejects_null_in_required_fields_without_changes) ... Invalid checkpoint: invalid record
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid integer field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+ok
+test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export) ... ok
+test_invalid_legacy_checkpoint_is_not_rewritten (test_collector.NullableFieldTests.test_invalid_legacy_checkpoint_is_not_rewritten) ... Invalid checkpoint: invalid availability
+ok
+test_legacy_checkpoint_is_canonicalized_on_resume (test_collector.NullableFieldTests.test_legacy_checkpoint_is_canonicalized_on_resume) ... Invalid checkpoint: invalid availability
+FAIL
+test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) ... ok
+test_resume_loads_checkpoint_with_null_fields (test_collector.NullableFieldTests.test_resume_loads_checkpoint_with_null_fields) ... ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+======================================================================
+FAIL: test_legacy_checkpoint_is_canonicalized_on_resume (test_collector.NullableFieldTests.test_legacy_checkpoint_is_canonicalized_on_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lyudm\orca\workspaces\Training\SA12-worker\submissions\Lusinton4ik\SA12\tests\test_collector.py", line 267, in test_legacy_checkpoint_is_canonicalized_on_resume
+    self.assertEqual(collector.collect(BASE, output, browser), 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 15 tests in 11.916s
+
+FAILED (failures=1)
+
+LEGACY MIGRATION GREEN, exit 0
+Command: C:/Users/lyudm/AppData/Local/Temp/sa12-python-3.12.10/python.exe -X utf8 -m unittest discover -s submissions/Lusinton4ik/SA12/tests -p test_collector.py -v
+
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid integer field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_loading_goto_waits_before_reading_card_dom (test_collector.NavigationTests.test_loading_goto_waits_before_reading_card_dom) ... ok
+test_mismatched_loaded_url_is_rejected (test_collector.NavigationTests.test_mismatched_loaded_url_is_rejected) ... ok
+test_checkpoint_rejects_null_in_required_fields_without_changes (test_collector.NullableFieldTests.test_checkpoint_rejects_null_in_required_fields_without_changes) ... Invalid checkpoint: invalid record
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid integer field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+Invalid checkpoint: invalid text field
+ok
+test_dom_nulls_survive_checkpoint_resume_and_csv_export (test_collector.NullableFieldTests.test_dom_nulls_survive_checkpoint_resume_and_csv_export) ... ok
+test_invalid_legacy_checkpoint_is_not_rewritten (test_collector.NullableFieldTests.test_invalid_legacy_checkpoint_is_not_rewritten) ... Invalid checkpoint: invalid integer field
+ok
+test_legacy_checkpoint_is_canonicalized_on_resume (test_collector.NullableFieldTests.test_legacy_checkpoint_is_canonicalized_on_resume) ... ok
+test_non_nullable_and_invalid_values_are_rejected (test_collector.NullableFieldTests.test_non_nullable_and_invalid_values_are_rejected) ... ok
+test_resume_loads_checkpoint_with_null_fields (test_collector.NullableFieldTests.test_resume_loads_checkpoint_with_null_fields) ... ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 12.431s
+
+OK

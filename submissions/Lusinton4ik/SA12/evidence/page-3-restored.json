@@ -1,0 +1,11 @@
+﻿{
+  "id": "f977d8c8-d3ab-453c-bfcc-6e74e1bbb92d",
+  "ok": true,
+  "result": {
+    "result": "{\"count\":\"50\",\"rows\":10,\"status\":200,\"url\":\"http://127.0.0.1:8875/catalog?page=3\"}",
+    "origin": "http://127.0.0.1:8875/catalog?page=3"
+  },
+  "_meta": {
+    "runtimeId": "f46a8e97-e2a9-4efd-bf23-7aa29e0e9ab0"
+  }
+}

@@ -1,0 +1,146 @@
+"""Independent verification of a collected product catalogue."""
+import argparse
+import csv
+from decimal import Decimal, InvalidOperation
+import ipaddress
+import json
+from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
+
+FIELDS = ('id', 'name', 'category', 'price', 'currency', 'supplier',
+          'availability', 'ram_GB', 'ssd_GB', 'screen_inches')
+NULLABLE = {'availability', 'ram_GB', 'ssd_GB', 'screen_inches'}
+
+
+def read_json(path):
+    with open(path, encoding='utf-8-sig') as stream:
+        return json.load(stream, parse_float=Decimal)
+
+
+def id_key(value):
+    if isinstance(value, bool) or not isinstance(value, (str, int)) or str(value) == '':
+        raise ValueError(f'invalid id: {value!r}')
+    return str(value)
+
+
+def local_url(value, product_id):
+    if not isinstance(value, str):
+        return False
+    try:
+        url = urlsplit(value)
+        host = url.hostname
+        local = host == 'localhost'
+        if not local and host:
+            try:
+                local = ipaddress.ip_address(host).is_loopback
+            except ValueError:
+                pass
+        query = parse_qs(url.query, keep_blank_values=True, strict_parsing=True)
+        return (url.scheme in ('http', 'https') and local and not url.username
+                and not url.password and url.port != 0 and url.path == '/product'
+                and query.get('id') == [product_id] and not url.fragment)
+    except ValueError:
+        return False
+
+
+def matches(actual, expected, is_csv):
+    if expected is None:
+        return actual == '' if is_csv else actual is None
+    if is_csv and isinstance(expected, (int, Decimal)) and not isinstance(expected, bool):
+        try:
+            number = Decimal(actual)
+            return number.is_finite() and number == expected
+        except (InvalidOperation, TypeError, ValueError):
+            return False
+    return type(actual) is type(expected) and actual == expected
+
+
+def validate(data_path, expected_path, catalog_path):
+    report = {'ok': False, 'count': 0, 'unique_count': 0, 'errors': []}
+    errors = report['errors']
+    try:
+        is_csv = Path(data_path).suffix.lower() == '.csv'
+        if is_csv:
+            with open(data_path, encoding='utf-8-sig', newline='') as stream:
+                reader = csv.DictReader(stream)
+                if not reader.fieldnames or len(reader.fieldnames) != len(set(reader.fieldnames)):
+                    raise ValueError('CSV has missing or duplicate headers')
+                data = list(reader)
+        else:
+            data = read_json(data_path)
+        expected = read_json(expected_path)
+        catalog = read_json(catalog_path)
+        if not isinstance(data, list) or not isinstance(catalog, list):
+            raise ValueError('data and catalog must be arrays')
+        if isinstance(expected, dict):
+            expected = expected['ids'] if 'ids' in expected else list(expected)
+        if not isinstance(expected, list):
+            raise ValueError('expected IDs must be an array or object')
+        expected_keys = [id_key(x) for x in expected]
+        if len(expected_keys) != 50 or len(set(expected_keys)) != 50:
+            raise ValueError('expected IDs must contain exactly 50 unique IDs')
+        catalog_by_id = {}
+        for row in catalog:
+            if not isinstance(row, dict) or any(f not in row or row[f] == '' or (row[f] is None and f not in NULLABLE) for f in FIELDS):
+                raise ValueError('catalog row has missing fields')
+            key = id_key(row['id'])
+            if key in catalog_by_id:
+                raise ValueError(f'duplicate catalog id {key}')
+            catalog_by_id[key] = row
+        if len(catalog) != 50 or set(catalog_by_id) != set(expected_keys):
+            raise ValueError('catalog IDs differ from expected IDs')
+        report['count'] = len(data)
+        if len(data) != 50:
+            errors.append(f'expected 50 records, got {len(data)}')
+        seen = set()
+        for index, row in enumerate(data, 1):
+            if not isinstance(row, dict):
+                errors.append(f'row {index}: expected object')
+                continue
+            try:
+                key = id_key(row.get('id'))
+            except ValueError as exc:
+                errors.append(f'row {index}: {exc}')
+                continue
+            if key in seen:
+                errors.append(f'duplicate id {key}')
+            seen.add(key)
+            if key not in expected_keys:
+                errors.append(f'unexpected id {key}')
+            for field in FIELDS:
+                if field not in row:
+                    errors.append(f'row {index} id {key}: missing {field}')
+                elif key in catalog_by_id and not matches(row[field], catalog_by_id[key][field], is_csv):
+                    errors.append(f'row {index} id {key}: mismatch {field}')
+            if not local_url(row.get('source_url'), key):
+                errors.append(f'row {index} id {key}: invalid or missing source_url')
+        report['unique_count'] = len(seen)
+        for key in sorted(set(expected_keys) - seen):
+            errors.append(f'missing id {key}')
+        if len(seen) != 50:
+            errors.append(f'expected 50 unique IDs, got {len(seen)}')
+    except (OSError, UnicodeError, ValueError, KeyError, csv.Error) as exc:
+        errors.append(f'input error: {exc}')
+    report['ok'] = not errors
+    return report
+
+
+def main():
+    class Parser(argparse.ArgumentParser):
+        def error(self, message):
+            raise ValueError(message)
+    parser = Parser()
+    parser.add_argument('--data', required=True)
+    parser.add_argument('--expected-ids', required=True)
+    parser.add_argument('--catalog', required=True)
+    try:
+        args = parser.parse_args()
+        report = validate(args.data, args.expected_ids, args.catalog)
+    except ValueError as exc:
+        report = {'ok': False, 'count': 0, 'unique_count': 0, 'errors': [f'arguments: {exc}']}
+    print(json.dumps(report, ensure_ascii=False))
+    return 0 if report['ok'] else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

@@ -1,0 +1,18 @@
+{
+  "code": "H13",
+  "issue": 49,
+  "title": "[H13] Сбор данных с восстановлением",
+  "goal": "Собери через браузер 50 товаров локального каталога с сохранением прогресса. Прерви сбор после двух страниц, зафиксируй временную ошибку третьей и продолжи без пропусков и дублей.",
+  "inputs": [
+    "input/START.md",
+    "input/scenario.md",
+    "input/site/app.js",
+    "input/site/catalog.json",
+    "input/site/config.json",
+    "input/site/serve.py",
+    "input/site/style.css"
+  ],
+  "checks": [
+    "checks/expected-ids.json"
+  ]
+}

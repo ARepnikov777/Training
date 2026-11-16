@@ -1,0 +1,18 @@
+test_duplicate_id_does_not_commit_invalid_completed_checkpoint (test_collector.BoundaryTests.test_duplicate_id_does_not_commit_invalid_completed_checkpoint) ... Collection failed: Duplicate product ID: p1
+ok
+test_checkpoint_with_invalid_record_is_rejected_without_changes (test_collector.CheckpointValidationTests.test_checkpoint_with_invalid_record_is_rejected_without_changes) ... Invalid checkpoint: invalid numeric field
+ok
+test_corrupt_checkpoint_leaves_all_files_unchanged (test_collector.CollectorTest.test_corrupt_checkpoint_leaves_all_files_unchanged) ... Invalid checkpoint: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+ok
+test_interruption_resume_and_idempotent_rerun (test_collector.CollectorTest.test_interruption_resume_and_idempotent_rerun) ... ok
+test_wrong_base_checkpoint_leaves_files_unchanged (test_collector.CollectorTest.test_wrong_base_checkpoint_leaves_files_unchanged) ... Invalid checkpoint: schema version or base URL mismatch
+ok
+test_orca_commands_use_page_id_and_parse_eval_envelope (test_collector.ProcessAndOrcaTests.test_orca_commands_use_page_id_and_parse_eval_envelope) ... ok
+test_resume_in_a_new_python_process (test_collector.ProcessAndOrcaTests.test_resume_in_a_new_python_process) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 6.982s
+
+OK
+
+exit=0
