@@ -1,0 +1,245 @@
+{
+  "text": "Наименование\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t521\t86\t-1\t\n2\t1\t1\t0\t0\t0\t10\t26\t254\t25\t-1\t\n3\t1\t1\t1\t0\t0\t10\t26\t254\t25\t-1\t\n4\t1\t1\t1\t1\t0\t10\t26\t254\t25\t-1\t\n5\t1\t1\t1\t1\t1\t10\t26\t254\t25\t96.837112\tНаименование\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 96,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 10,
+        "y0": 26,
+        "x1": 264,
+        "y1": 51
+      },
+      "text": "Наименование\n",
+      "confidence": 96,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 10,
+            "y0": 26,
+            "x1": 264,
+            "y1": 51
+          },
+          "text": "Наименование\n",
+          "confidence": 96,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 10,
+                "y0": 26,
+                "x1": 264,
+                "y1": 51
+              },
+              "text": "Наименование\n",
+              "confidence": 96,
+              "rowAttributes": {
+                "rowHeight": 30.358974,
+                "descenders": 5.3589745,
+                "ascenders": 6
+              },
+              "baseline": {
+                "x0": 10,
+                "y0": 51,
+                "x1": 264,
+                "y1": 51
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 10,
+                    "y0": 26,
+                    "x1": 264,
+                    "y1": 51
+                  },
+                  "text": "Наименование",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Наименование",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 10,
+                        "y0": 26,
+                        "x1": 29,
+                        "y1": 51
+                      },
+                      "text": "Н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 34,
+                        "y0": 32,
+                        "x1": 50,
+                        "y1": 51
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 55,
+                        "y0": 32,
+                        "x1": 71,
+                        "y1": 51
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 76,
+                        "y0": 32,
+                        "x1": 96,
+                        "y1": 51
+                      },
+                      "text": "м",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 100,
+                        "y0": 32,
+                        "x1": 117,
+                        "y1": 51
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 123,
+                        "y0": 32,
+                        "x1": 139,
+                        "y1": 51
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 143,
+                        "y0": 32,
+                        "x1": 161,
+                        "y1": 51
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 165,
+                        "y0": 32,
+                        "x1": 180,
+                        "y1": 51
+                      },
+                      "text": "в",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 184,
+                        "y0": 32,
+                        "x1": 200,
+                        "y1": 51
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 205,
+                        "y0": 32,
+                        "x1": 221,
+                        "y1": 51
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 226,
+                        "y0": 32,
+                        "x1": 242,
+                        "y1": 51
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 247,
+                        "y0": 32,
+                        "x1": 264,
+                        "y1": 51
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

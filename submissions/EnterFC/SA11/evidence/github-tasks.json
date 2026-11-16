@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "number": 141,
+      "id": 6414644230,
+      "html_url": "https://github.com/ARepnikov777/Training/issues/141",
+      "title": "[SA11] EnterFC — 1. Инвентаризация четырёх PDF"
+    },
+    {
+      "number": 142,
+      "id": 6414645018,
+      "html_url": "https://github.com/ARepnikov777/Training/issues/142",
+      "title": "[SA11] EnterFC — 2. Контракт результатов и ошибок"
+    },
+    {
+      "number": 143,
+      "id": 6414645782,
+      "html_url": "https://github.com/ARepnikov777/Training/issues/143",
+      "title": "[SA11] EnterFC — 3. Текстовый PDF"
+    },
+    {
+      "number": 144,
+      "id": 6414646748,
+      "html_url": "https://github.com/ARepnikov777/Training/issues/144",
+      "title": "[SA11] EnterFC — 4. Скан и повёрнутая таблица"
+    },
+    {
+      "number": 145,
+      "id": 6414647889,
+      "html_url": "https://github.com/ARepnikov777/Training/issues/145",
+      "title": "[SA11] EnterFC — 5. Интеграция и независимое ревью"
+    }
+  ],
+  "milestone": {
+    "number": 10,
+    "html_url": "https://github.com/ARepnikov777/Training/milestone/10",
+    "title": "SA11 — EnterFC — пакет PDF по графу нативных субагентов"
+  }
+}

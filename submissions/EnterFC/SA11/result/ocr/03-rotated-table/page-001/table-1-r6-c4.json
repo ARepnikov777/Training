@@ -1,0 +1,115 @@
+{
+  "text": "ВО\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t271\t87\t-1\t\n2\t1\t1\t0\t0\t0\t0\t0\t269\t87\t-1\t\n3\t1\t1\t1\t0\t0\t0\t0\t271\t87\t-1\t\n4\t1\t1\t1\t1\t0\t0\t0\t269\t87\t-1\t\n5\t1\t1\t1\t1\t1\t0\t0\t269\t87\t9.504959\tВО\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 9,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 0,
+        "y0": 0,
+        "x1": 269,
+        "y1": 87
+      },
+      "text": "ВО\n",
+      "confidence": 9,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 0,
+            "y0": 0,
+            "x1": 271,
+            "y1": 87
+          },
+          "text": "ВО\n",
+          "confidence": 9,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 0,
+                "y0": 0,
+                "x1": 269,
+                "y1": 87
+              },
+              "text": "ВО\n",
+              "confidence": 9,
+              "rowAttributes": {
+                "rowHeight": 20,
+                "descenders": 5,
+                "ascenders": 5
+              },
+              "baseline": {
+                "x0": 0,
+                "y0": 87,
+                "x1": 271,
+                "y1": 87
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 0,
+                    "y0": 0,
+                    "x1": 269,
+                    "y1": 87
+                  },
+                  "text": "ВО",
+                  "confidence": 9,
+                  "choices": [
+                    {
+                      "text": "ВО",
+                      "confidence": 9
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 0,
+                        "y0": 0,
+                        "x1": 44,
+                        "y1": 87
+                      },
+                      "text": "В",
+                      "confidence": 89,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 0,
+                        "y0": 0,
+                        "x1": 269,
+                        "y1": 87
+                      },
+                      "text": "О",
+                      "confidence": 87,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

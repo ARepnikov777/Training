@@ -1,0 +1,212 @@
+{
+  "text": "Цена, KZT\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t271\t86\t-1\t\n2\t1\t1\t0\t0\t0\t10\t26\t172\t30\t-1\t\n3\t1\t1\t1\t0\t0\t10\t26\t172\t30\t-1\t\n4\t1\t1\t1\t1\t0\t10\t26\t172\t30\t-1\t\n5\t1\t1\t1\t1\t1\t10\t26\t93\t30\t91.166328\tЦена,\n5\t1\t1\t1\t1\t2\t120\t26\t62\t25\t92.131760\tKZT\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 91,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 10,
+        "y0": 26,
+        "x1": 182,
+        "y1": 56
+      },
+      "text": "Цена, KZT\n",
+      "confidence": 91,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 10,
+            "y0": 26,
+            "x1": 182,
+            "y1": 56
+          },
+          "text": "Цена, KZT\n",
+          "confidence": 91,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 10,
+                "y0": 26,
+                "x1": 182,
+                "y1": 56
+              },
+              "text": "Цена, KZT\n",
+              "confidence": 91,
+              "rowAttributes": {
+                "rowHeight": 30,
+                "descenders": 5,
+                "ascenders": 6
+              },
+              "baseline": {
+                "x0": 10,
+                "y0": 51,
+                "x1": 182,
+                "y1": 51
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 10,
+                    "y0": 26,
+                    "x1": 103,
+                    "y1": 56
+                  },
+                  "text": "Цена,",
+                  "confidence": 91,
+                  "choices": [
+                    {
+                      "text": "Цена,",
+                      "confidence": 91
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 10,
+                        "y0": 26,
+                        "x1": 32,
+                        "y1": 56
+                      },
+                      "text": "Ц",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 35,
+                        "y0": 32,
+                        "x1": 52,
+                        "y1": 51
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 56,
+                        "y0": 32,
+                        "x1": 72,
+                        "y1": 51
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 77,
+                        "y0": 32,
+                        "x1": 93,
+                        "y1": 51
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 98,
+                        "y0": 47,
+                        "x1": 103,
+                        "y1": 56
+                      },
+                      "text": ",",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 120,
+                    "y0": 26,
+                    "x1": 182,
+                    "y1": 51
+                  },
+                  "text": "KZT",
+                  "confidence": 92,
+                  "choices": [
+                    {
+                      "text": "KZT",
+                      "confidence": 92
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 120,
+                        "y0": 26,
+                        "x1": 139,
+                        "y1": 51
+                      },
+                      "text": "K",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 140,
+                        "y0": 26,
+                        "x1": 160,
+                        "y1": 51
+                      },
+                      "text": "Z",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 162,
+                        "y0": 26,
+                        "x1": 182,
+                        "y1": 51
+                      },
+                      "text": "T",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

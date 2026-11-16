@@ -1,0 +1,102 @@
+{
+  "text": "5\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t270\t87\t-1\t\n2\t1\t1\t0\t0\t0\t9\t27\t16\t25\t-1\t\n3\t1\t1\t1\t0\t0\t9\t27\t16\t25\t-1\t\n4\t1\t1\t1\t1\t0\t9\t27\t16\t25\t-1\t\n5\t1\t1\t1\t1\t1\t9\t27\t16\t25\t96.583870\t5\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 96,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 9,
+        "y0": 27,
+        "x1": 25,
+        "y1": 52
+      },
+      "text": "5\n",
+      "confidence": 96,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 9,
+            "y0": 27,
+            "x1": 25,
+            "y1": 52
+          },
+          "text": "5\n",
+          "confidence": 96,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 9,
+                "y0": 27,
+                "x1": 25,
+                "y1": 52
+              },
+              "text": "5\n",
+              "confidence": 96,
+              "rowAttributes": {
+                "rowHeight": 34.666668,
+                "descenders": 8.666667,
+                "ascenders": 8.666667
+              },
+              "baseline": {
+                "x0": 9,
+                "y0": 52,
+                "x1": 25,
+                "y1": 52
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 9,
+                    "y0": 27,
+                    "x1": 25,
+                    "y1": 52
+                  },
+                  "text": "5",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "5",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 9,
+                        "y0": 27,
+                        "x1": 25,
+                        "y1": 52
+                      },
+                      "text": "5",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}
