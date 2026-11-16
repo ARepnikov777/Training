@@ -109,7 +109,7 @@
     },
     "comments": 0,
     "created_at": "2026-11-16T05:10:46Z",
-    "updated_at": "2026-11-16T05:10:46Z",
+    "updated_at": "2026-11-16T05:51:27Z",
     "closed_at": null,
     "assignee": {
       "login": "EnterFC",
@@ -217,7 +217,7 @@
       "deployments_url": "https://api.github.com/repos/ARepnikov777/Training/deployments",
       "created_at": "2026-11-10T03:41:08Z",
       "updated_at": "2026-11-14T02:18:29Z",
-      "pushed_at": "2026-11-15T11:43:54Z",
+      "pushed_at": "2026-11-16T05:50:14Z",
       "git_url": "git://github.com/ARepnikov777/Training.git",
       "ssh_url": "git@github.com:ARepnikov777/Training.git",
       "clone_url": "https://github.com/ARepnikov777/Training.git",
@@ -264,7 +264,7 @@
         "pull": true
       }
     },
-    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `explorer`.\n\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\nЗависимости: проверка роли и входов.\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: inventory.md.\nВетка: student/EnterFC/SA11-inventory; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\n\n## Definition of Done (DoD)\n\n- [ ] Четыре входа, страницы, текстовый слой, поворот и повреждение перечислены по реальному чтению.\n- [ ] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\n",
+    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `explorer`.\r\n\r\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\r\nЗависимости: проверка роли и входов.\r\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: inventory.md.\r\nВетка: student/EnterFC/SA11 (explorer только читает, inventory.md сохраняет координатор); отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\r\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\r\n\r\n## Definition of Done (DoD)\r\n\r\n- [x] Четыре входа, страницы, текстовый слой, поворот и повреждение перечислены по реальному чтению.\r\n- [x] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\r\n\r\n<!-- EnterFC-SA11-completion -->\r\nФактический worktree: `Training-SA11` в локальном каталоге Lesson1; точный путь и полномочия сохранены в брифах submissions/EnterFC/SA11/. Параллельная запись text/OCR разнесена по разным деревьям.\r\nЛокальная приёмка подтверждена координатором и независимым нативным reviewer; граф, run-log и evidence переданы в PR https://github.com/ARepnikov777/Training/pull/146. Подзадача остаётся открытой; приёмка преподавателем и merge не выполнялись.\r\n",
     "reactions": {
       "url": "https://api.github.com/repos/ARepnikov777/Training/issues/141/reactions",
       "total_count": 0,
@@ -392,7 +392,7 @@
     },
     "comments": 0,
     "created_at": "2026-11-16T05:10:50Z",
-    "updated_at": "2026-11-16T05:10:50Z",
+    "updated_at": "2026-11-16T05:51:29Z",
     "closed_at": null,
     "assignee": {
       "login": "EnterFC",
@@ -500,7 +500,7 @@
       "deployments_url": "https://api.github.com/repos/ARepnikov777/Training/deployments",
       "created_at": "2026-11-10T03:41:08Z",
       "updated_at": "2026-11-14T02:18:29Z",
-      "pushed_at": "2026-11-15T11:43:54Z",
+      "pushed_at": "2026-11-16T05:50:14Z",
       "git_url": "git://github.com/ARepnikov777/Training.git",
       "ssh_url": "git@github.com:ARepnikov777/Training.git",
       "clone_url": "https://github.com/ARepnikov777/Training.git",
@@ -547,7 +547,7 @@
         "pull": true
       }
     },
-    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `worker`.\n\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\nЗависимости: #141.\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: contract.md, schema.json, tests/test_contract.py.\nВетка: student/EnterFC/SA11-contract; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\n\n## Definition of Done (DoD)\n\n- [ ] Успешная запись содержит source/page/method/text/tables/uncertainty; ошибка отделена. Тесты проверяют пропущенный page и ошибку без остановки пакета.\n- [ ] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\n",
+    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `worker`.\r\n\r\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\r\nЗависимости: #141.\r\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: contract.md, schema.json, src/contract.py, tests/test_contract.py.\r\nВетка: student/EnterFC/SA11 (один пишущий worker, координатор ждал передачи записи); отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\r\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\r\n\r\n## Definition of Done (DoD)\r\n\r\n- [x] Успешная запись содержит source/page/method/text/tables/uncertainty; ошибка отделена. Тесты проверяют пропущенный page и ошибку без остановки пакета.\r\n- [x] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\r\n\r\n<!-- EnterFC-SA11-completion -->\r\nФактический worktree: `Training-SA11` в локальном каталоге Lesson1; точный путь и полномочия сохранены в брифах submissions/EnterFC/SA11/. Параллельная запись text/OCR разнесена по разным деревьям.\r\nЛокальная приёмка подтверждена координатором и независимым нативным reviewer; граф, run-log и evidence переданы в PR https://github.com/ARepnikov777/Training/pull/146. Подзадача остаётся открытой; приёмка преподавателем и merge не выполнялись.\r\n",
     "reactions": {
       "url": "https://api.github.com/repos/ARepnikov777/Training/issues/142/reactions",
       "total_count": 0,
@@ -675,7 +675,7 @@
     },
     "comments": 0,
     "created_at": "2026-11-16T05:10:55Z",
-    "updated_at": "2026-11-16T05:10:55Z",
+    "updated_at": "2026-11-16T05:51:31Z",
     "closed_at": null,
     "assignee": {
       "login": "EnterFC",
@@ -783,7 +783,7 @@
       "deployments_url": "https://api.github.com/repos/ARepnikov777/Training/deployments",
       "created_at": "2026-11-10T03:41:08Z",
       "updated_at": "2026-11-14T02:18:29Z",
-      "pushed_at": "2026-11-15T11:43:54Z",
+      "pushed_at": "2026-11-16T05:50:14Z",
       "git_url": "git://github.com/ARepnikov777/Training.git",
       "ssh_url": "git@github.com:ARepnikov777/Training.git",
       "clone_url": "https://github.com/ARepnikov777/Training.git",
@@ -830,7 +830,7 @@
         "pull": true
       }
     },
-    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `worker`.\n\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\nЗависимости: #142.\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: src/text_extract.py, tests/test_text_extract.py, result/text/, evidence/text/.\nВетка: student/EnterFC/SA11-text; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\n\n## Definition of Done (DoD)\n\n- [ ] Каждая страница 01-text.pdf извлечена с provenance; raw сохранён до checks; RED/GREEN и сверка записаны.\n- [ ] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\n",
+    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `worker`.\r\n\r\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\r\nЗависимости: #142.\r\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: src/text_extract.py, tests/test_text_extract.py, result/text/, evidence/text/.\r\nВетка: student/EnterFC/SA11-text; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\r\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\r\n\r\n## Definition of Done (DoD)\r\n\r\n- [x] Каждая страница 01-text.pdf извлечена с provenance; raw сохранён до checks; RED/GREEN и сверка записаны.\r\n- [x] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\r\n\r\n<!-- EnterFC-SA11-completion -->\r\nФактический worktree: `Training-SA11-text` в локальном каталоге Lesson1; точный путь и полномочия сохранены в брифах submissions/EnterFC/SA11/. Параллельная запись text/OCR разнесена по разным деревьям.\r\nЛокальная приёмка подтверждена координатором и независимым нативным reviewer; граф, run-log и evidence переданы в PR https://github.com/ARepnikov777/Training/pull/146. Подзадача остаётся открытой; приёмка преподавателем и merge не выполнялись.\r\n",
     "reactions": {
       "url": "https://api.github.com/repos/ARepnikov777/Training/issues/143/reactions",
       "total_count": 0,
@@ -958,7 +958,7 @@
     },
     "comments": 0,
     "created_at": "2026-11-16T05:10:59Z",
-    "updated_at": "2026-11-16T05:11:00Z",
+    "updated_at": "2026-11-16T05:51:32Z",
     "closed_at": null,
     "assignee": {
       "login": "EnterFC",
@@ -1066,7 +1066,7 @@
       "deployments_url": "https://api.github.com/repos/ARepnikov777/Training/deployments",
       "created_at": "2026-11-10T03:41:08Z",
       "updated_at": "2026-11-14T02:18:29Z",
-      "pushed_at": "2026-11-15T11:43:54Z",
+      "pushed_at": "2026-11-16T05:50:14Z",
       "git_url": "git://github.com/ARepnikov777/Training.git",
       "ssh_url": "git@github.com:ARepnikov777/Training.git",
       "clone_url": "https://github.com/ARepnikov777/Training.git",
@@ -1113,7 +1113,7 @@
         "pull": true
       }
     },
-    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `worker`.\n\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\nЗависимости: #142.\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: src/ocr_extract.*, tests/test_ocr_extract.*, result/ocr/, evidence/ocr/.\nВетка: student/EnterFC/SA11-ocr; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\n\n## Definition of Done (DoD)\n\n- [ ] 02-scan.pdf и 03-rotated-table.pdf распознаны, таблица CSV UTF-8 comma decimal dot; страницы и сомнительные ячейки указаны; raw до checks, RED/GREEN.\n- [ ] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\n",
+    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `worker`.\r\n\r\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\r\nЗависимости: #142.\r\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: src/ocr_extract.*, tests/test_ocr_extract.*, result/ocr/, evidence/ocr/, src/package.json, src/package-lock.json.\r\nВетка: student/EnterFC/SA11-ocr; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\r\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\r\n\r\n## Definition of Done (DoD)\r\n\r\n- [x] 02-scan.pdf и 03-rotated-table.pdf распознаны, таблица CSV UTF-8 comma decimal dot; страницы и сомнительные ячейки указаны; raw до checks, RED/GREEN.\r\n- [x] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\r\n\r\n<!-- EnterFC-SA11-completion -->\r\nФактический worktree: `Training-SA11-ocr` в локальном каталоге Lesson1; точный путь и полномочия сохранены в брифах submissions/EnterFC/SA11/. Параллельная запись text/OCR разнесена по разным деревьям.\r\nЛокальная приёмка подтверждена координатором и независимым нативным reviewer; граф, run-log и evidence переданы в PR https://github.com/ARepnikov777/Training/pull/146. Подзадача остаётся открытой; приёмка преподавателем и merge не выполнялись.\r\n",
     "reactions": {
       "url": "https://api.github.com/repos/ARepnikov777/Training/issues/144/reactions",
       "total_count": 0,
@@ -1241,7 +1241,7 @@
     },
     "comments": 0,
     "created_at": "2026-11-16T05:11:05Z",
-    "updated_at": "2026-11-16T05:11:05Z",
+    "updated_at": "2026-11-16T05:51:34Z",
     "closed_at": null,
     "assignee": {
       "login": "EnterFC",
@@ -1349,7 +1349,7 @@
       "deployments_url": "https://api.github.com/repos/ARepnikov777/Training/deployments",
       "created_at": "2026-11-10T03:41:08Z",
       "updated_at": "2026-11-14T02:18:29Z",
-      "pushed_at": "2026-11-15T11:43:54Z",
+      "pushed_at": "2026-11-16T05:50:14Z",
       "git_url": "git://github.com/ARepnikov777/Training.git",
       "ssh_url": "git@github.com:ARepnikov777/Training.git",
       "clone_url": "https://github.com/ARepnikov777/Training.git",
@@ -1396,7 +1396,7 @@
         "pull": true
       }
     },
-    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `coordinator + reviewer`.\n\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\nЗависимости: #143, #144.\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: run_batch.py, report.md, README.md, run-log.md, reviewer-report.md, evidence/negative/.\nВетка: student/EnterFC/SA11; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\n\n## Definition of Done (DoD)\n\n- [ ] Новый batch продолжает после 04-broken.pdf; все пригодные страницы и числа сверены; отдельный reviewer принимает основной результат, отклоняет копию без page и принимает исправление. Один PR, без merge.\n- [ ] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\n",
+    "body": "Родитель: #73. Исполнитель: @EnterFC. Роль: `coordinator + reviewer`.\r\n\r\nВходы: submissions/EnterFC/SA11/kit/H04/input, workflow.md и принятые результаты зависимостей.\r\nЗависимости: #143, #144.\r\nВыход и разрешённые файлы внутри submissions/EnterFC/SA11/: run_batch.py, tests/test_batch.py, report.md, README.md, run-log.md, reviewer-report.md, evidence/negative/.\r\nВетка: student/EnterFC/SA11; отдельный worktree для параллельных пишущих исполнителей, точный путь фиксируется в брифе до запуска. Общими файлами владеет координатор.\r\nЗапреты: не менять kit/materials/downloads/другие решения; не делегировать; без push/merge/публикации исполнителем. Checks только после raw. N=2 общий, T=3600 секунд, max_parallel=3.\r\n\r\n## Definition of Done (DoD)\r\n\r\n- [x] Новый batch продолжает после 04-broken.pdf; все пригодные страницы и числа сверены; отдельный reviewer принимает основной результат, отклоняет копию без page и принимает исправление. Один PR, без merge.\r\n- [x] Артефакты, команды, фактические exit codes и ограничения переданы координатору; он проверил результат.\r\n\r\n<!-- EnterFC-SA11-completion -->\r\nФактический worktree: `Training-SA11` в локальном каталоге Lesson1; точный путь и полномочия сохранены в брифах submissions/EnterFC/SA11/. Параллельная запись text/OCR разнесена по разным деревьям.\r\nЛокальная приёмка подтверждена координатором и независимым нативным reviewer; граф, run-log и evidence переданы в PR https://github.com/ARepnikov777/Training/pull/146. Подзадача остаётся открытой; приёмка преподавателем и merge не выполнялись.\r\n",
     "reactions": {
       "url": "https://api.github.com/repos/ARepnikov777/Training/issues/145/reactions",
       "total_count": 0,

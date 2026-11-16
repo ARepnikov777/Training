@@ -1,0 +1,21 @@
+{
+  "pr": "https://github.com/ARepnikov777/Training/pull/146",
+  "base": "main",
+  "head": "student/EnterFC/SA11",
+  "initial_commit": "ffaa0e7b1c57ee001c6c9f660950a7eaf866ffea",
+  "unique_pr": true,
+  "all_pr_files_in_sa11": 263,
+  "parent_issue_open": true,
+  "result_comment": "https://github.com/ARepnikov777/Training/issues/73#issuecomment-6908561423",
+  "result_comment_unique": true,
+  "milestone": 10,
+  "native_subissues": [
+    141,
+    142,
+    143,
+    144,
+    145
+  ],
+  "created_as_draft": true,
+  "note": "Final readiness is verified live after the final documentation push."
+}
