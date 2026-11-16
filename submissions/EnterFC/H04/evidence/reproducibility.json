@@ -1,0 +1,23 @@
+{
+  "raw_files_sha256_verified": 97,
+  "kit_files_sha256_verified": 7,
+  "repeat_statuses_identical": true,
+  "repeat_text_and_tables_identical": [
+    "01-text/page-001/text.txt",
+    "02-scan/page-001/text.txt",
+    "02-scan/page-002/text.txt",
+    "02-scan/page-003/text.txt",
+    "03-rotated-table/page-001/table-1.csv",
+    "03-rotated-table/page-001/text.txt"
+  ],
+  "reviewed_table_cells": 30,
+  "table_quantity_total": 20,
+  "table_amount_total_KZT": 128000,
+  "table_row_products_match": true,
+  "reviewed_blank_cells": [
+    "r6c2",
+    "r6c4"
+  ],
+  "markdown_links_valid": true,
+  "remaining_uncertainty": "Raster identifiers do not establish original Unicode alphabet A/А; normalization convention recorded."
+}

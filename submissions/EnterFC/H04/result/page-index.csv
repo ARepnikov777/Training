@@ -1,0 +1,6 @@
+document,page,method,engine_confidence,raw_text,reviewed_text,source_image,review_status
+01-text.pdf,1,native,,evidence/primary-raw/01-text/page-001/text.txt,result/01-text/page-001.txt,evidence/primary-raw/01-text/page-001/source.png,visually_checked_by_worker
+02-scan.pdf,1,ocr,92,evidence/primary-raw/02-scan/page-001/text.txt,result/02-scan/page-001.txt,evidence/primary-raw/02-scan/page-001/source.png,visually_checked_by_worker
+02-scan.pdf,2,ocr,91,evidence/primary-raw/02-scan/page-002/text.txt,result/02-scan/page-002.txt,evidence/primary-raw/02-scan/page-002/source.png,visually_checked_by_worker
+02-scan.pdf,3,ocr,93,evidence/primary-raw/02-scan/page-003/text.txt,result/02-scan/page-003.txt,evidence/primary-raw/02-scan/page-003/source.png,visually_checked_by_worker
+03-rotated-table.pdf,1,ocr,93,evidence/primary-raw/03-rotated-table/page-001/text.txt,result/03-rotated-table/page-001.txt,evidence/primary-raw/03-rotated-table/page-001/source.png,visually_checked_by_worker
