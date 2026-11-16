@@ -1,0 +1,25 @@
+{
+  "negative_candidate_rejected": true,
+  "corrected_accepted_and_equals_main": true,
+  "pages": {
+    "01-text.pdf": 1,
+    "02-scan.pdf": 3,
+    "03-rotated-table.pdf": 1
+  },
+  "errors": [
+    "04-broken.pdf"
+  ],
+  "table_shape_including_header": [
+    6,
+    5
+  ],
+  "cells": 30,
+  "quantity": 20,
+  "total_kzt": 128000,
+  "row_products_match": true,
+  "control_fragments_match": true,
+  "archive_hash_matches": true,
+  "kit_files_equal_archive": 8,
+  "raw_cell_paths_exist": true,
+  "note": "OCR textual discrepancies are documented separately; numeric agreement is not full textual accuracy."
+}

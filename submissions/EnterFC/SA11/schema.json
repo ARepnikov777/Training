@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SA11 batch",
+  "type": "object",
+  "required": ["pages", "errors"],
+  "additionalProperties": false,
+  "properties": {
+    "pages": {"type": "array", "items": {"$ref": "#/$defs/page"}},
+    "errors": {"type": "array", "items": {"$ref": "#/$defs/error"}}
+  },
+  "$defs": {
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "table": {
+      "type": "object", "required": ["columns", "rows"], "additionalProperties": false,
+      "properties": {
+        "columns": {"$ref": "#/$defs/strings"},
+        "rows": {"type": "array", "items": {"$ref": "#/$defs/strings"}}
+      }
+    },
+    "page": {
+      "type": "object", "required": ["source", "page", "method", "text", "tables", "uncertainty"], "additionalProperties": false,
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "page": {"type": "integer", "minimum": 1},
+        "method": {"type": "string", "minLength": 1},
+        "text": {"type": "string"},
+        "tables": {"type": "array", "items": {"$ref": "#/$defs/table"}},
+        "uncertainty": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "error": {
+      "type": "object", "required": ["source", "error", "continued"], "additionalProperties": false,
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "error": {"type": "string", "minLength": 1},
+        "continued": {"const": true}
+      }
+    }
+  }
+}

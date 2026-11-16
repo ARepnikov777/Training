@@ -1,0 +1,7 @@
+# Бриф worker — контракт (#142)
+
+Рабочее дерево: Training-SA11, ветка student/EnterFC/SA11. Писать только submissions/EnterFC/SA11/{contract.md,schema.json,src/contract.py,tests/test_contract.py,evidence/contract/}. Другие файлы и handoff.md сохранять. Без переделегирования, commit/push/внешней публикации.
+
+Цель: общий небольшой контракт для двух независимых обработчиков. Входы: workflow.md, inventory.md, kit/H04/README.md, реальные входы, без checks. Успешная запись: source (имя PDF), page (целое 1-based), method, text, tables, uncertainty. Ошибка документа: source, error, continued=true; ошибки отделены от страниц. Таблица: columns и rows, provenance наследуется от страницы; сомнительные места в uncertainty. Обработчики возвращают list[dict] страниц, интегратор собирает pages/errors.
+
+Публичный интерфейс src/contract.py: validate_page(record) -> None, ValueError при нарушении; validate_batch(payload) -> None, payload={pages:[...],errors:[...]}. Не делать универсальный валидатор. Нужны отсутствующий page, page=0/bool, корректная страница, отдельная ошибка и запрет успеха с error. TDD: сначала осмысленный RED (не ошибка импорта), затем GREEN; сохранить команды/вывод в evidence/contract/. README контракта и JSON Schema должны соответствовать коду. Использовать стандартную библиотеку, pytest уже доступен в окружении H04. Возврат: файлы, команды, результаты, ограничения. Общий N=2/T=3600/max_parallel=3; started_at=2026-11-16T10:08:31+05:00, attempts=0. Не сбрасывать счётчики.

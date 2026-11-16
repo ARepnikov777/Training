@@ -1,0 +1,330 @@
+.FFFFFFFFFFFFFFFFFFF                                                     [100%]
+================================== FAILURES ===================================
+______________ test_rejects_missing_or_invalid_page_number[None] ______________
+
+page = {'source': '03-rotated-table.pdf', 'method': 'ocr', 'text': 'Таблица', 'tables': [{'columns': ['Название', 'Значение'], 'rows': [['Итого', '12']]}], ...}
+invalid = None
+
+    @pytest.mark.parametrize("invalid", [None, 0, True, -1, 1.5, "1"])
+    def test_rejects_missing_or_invalid_page_number(page, invalid):
+        if invalid is None:
+            del page["page"]
+        else:
+            page["page"] = invalid
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:34: Failed
+_______________ test_rejects_missing_or_invalid_page_number[0] ________________
+
+page = {'source': '03-rotated-table.pdf', 'page': 0, 'method': 'ocr', 'text': 'Таблица', ...}
+invalid = 0
+
+    @pytest.mark.parametrize("invalid", [None, 0, True, -1, 1.5, "1"])
+    def test_rejects_missing_or_invalid_page_number(page, invalid):
+        if invalid is None:
+            del page["page"]
+        else:
+            page["page"] = invalid
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:34: Failed
+______________ test_rejects_missing_or_invalid_page_number[True] ______________
+
+page = {'source': '03-rotated-table.pdf', 'page': True, 'method': 'ocr', 'text': 'Таблица', ...}
+invalid = True
+
+    @pytest.mark.parametrize("invalid", [None, 0, True, -1, 1.5, "1"])
+    def test_rejects_missing_or_invalid_page_number(page, invalid):
+        if invalid is None:
+            del page["page"]
+        else:
+            page["page"] = invalid
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:34: Failed
+_______________ test_rejects_missing_or_invalid_page_number[-1] _______________
+
+page = {'source': '03-rotated-table.pdf', 'page': -1, 'method': 'ocr', 'text': 'Таблица', ...}
+invalid = -1
+
+    @pytest.mark.parametrize("invalid", [None, 0, True, -1, 1.5, "1"])
+    def test_rejects_missing_or_invalid_page_number(page, invalid):
+        if invalid is None:
+            del page["page"]
+        else:
+            page["page"] = invalid
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:34: Failed
+______________ test_rejects_missing_or_invalid_page_number[1.5] _______________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1.5, 'method': 'ocr', 'text': 'Таблица', ...}
+invalid = 1.5
+
+    @pytest.mark.parametrize("invalid", [None, 0, True, -1, 1.5, "1"])
+    def test_rejects_missing_or_invalid_page_number(page, invalid):
+        if invalid is None:
+            del page["page"]
+        else:
+            page["page"] = invalid
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:34: Failed
+_______________ test_rejects_missing_or_invalid_page_number[1] ________________
+
+page = {'source': '03-rotated-table.pdf', 'page': '1', 'method': 'ocr', 'text': 'Таблица', ...}
+invalid = '1'
+
+    @pytest.mark.parametrize("invalid", [None, 0, True, -1, 1.5, "1"])
+    def test_rejects_missing_or_invalid_page_number(page, invalid):
+        if invalid is None:
+            del page["page"]
+        else:
+            page["page"] = invalid
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:34: Failed
+____________________ test_rejects_error_mixed_into_success ____________________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': 'ocr', 'text': 'Таблица', ...}
+
+    def test_rejects_error_mixed_into_success(page):
+        page["error"] = "Ошибка"
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:40: Failed
+__________________ test_rejects_invalid_page_fields[source-] __________________
+
+page = {'source': '', 'page': 1, 'method': 'ocr', 'text': 'Таблица', ...}
+field = 'source', value = ''
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+__________________ test_rejects_invalid_page_fields[method-] __________________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': '', 'text': 'Таблица', ...}
+field = 'method', value = ''
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+_________________ test_rejects_invalid_page_fields[text-None] _________________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': 'ocr', 'text': None, ...}
+field = 'text', value = None
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+_______________ test_rejects_invalid_page_fields[tables-value3] _______________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': 'ocr', 'text': 'Таблица', ...}
+field = 'tables', value = {}
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+____________ test_rejects_invalid_page_fields[uncertainty-value4] _____________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': 'ocr', 'text': 'Таблица', ...}
+field = 'uncertainty', value = [42]
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+_______________ test_rejects_invalid_page_fields[tables-value5] _______________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': 'ocr', 'text': 'Таблица', ...}
+field = 'tables', value = [{'columns': ['A'], 'rows': [[1]]}]
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+_______________ test_rejects_invalid_page_fields[tables-value6] _______________
+
+page = {'source': '03-rotated-table.pdf', 'page': 1, 'method': 'ocr', 'text': 'Таблица', ...}
+field = 'tables', value = [{'columns': ['A'], 'rows': 'bad'}]
+
+    @pytest.mark.parametrize("field,value", [
+        ("source", ""), ("method", ""), ("text", None), ("tables", {}),
+        ("uncertainty", [42]), ("tables", [{"columns": ["A"], "rows": [[1]]}]),
+        ("tables", [{"columns": ["A"], "rows": "bad"}]),
+    ])
+    def test_rejects_invalid_page_fields(page, field, value):
+        page[field] = value
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:53: Failed
+_______________ test_rejects_malformed_batch_or_error[payload0] _______________
+
+payload = {}
+
+    @pytest.mark.parametrize("payload", [
+        {}, {"pages": [], "errors": {}},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": False}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": 1}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": True, "page": 1}]},
+    ])
+    def test_rejects_malformed_batch_or_error(payload):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:64: Failed
+_______________ test_rejects_malformed_batch_or_error[payload1] _______________
+
+payload = {'pages': [], 'errors': {}}
+
+    @pytest.mark.parametrize("payload", [
+        {}, {"pages": [], "errors": {}},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": False}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": 1}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": True, "page": 1}]},
+    ])
+    def test_rejects_malformed_batch_or_error(payload):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:64: Failed
+_______________ test_rejects_malformed_batch_or_error[payload2] _______________
+
+payload = {'pages': [], 'errors': [{'source': '04-broken.pdf', 'error': 'bad', 'continued': False}]}
+
+    @pytest.mark.parametrize("payload", [
+        {}, {"pages": [], "errors": {}},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": False}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": 1}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": True, "page": 1}]},
+    ])
+    def test_rejects_malformed_batch_or_error(payload):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:64: Failed
+_______________ test_rejects_malformed_batch_or_error[payload3] _______________
+
+payload = {'pages': [], 'errors': [{'source': '04-broken.pdf', 'error': 'bad', 'continued': 1}]}
+
+    @pytest.mark.parametrize("payload", [
+        {}, {"pages": [], "errors": {}},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": False}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": 1}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": True, "page": 1}]},
+    ])
+    def test_rejects_malformed_batch_or_error(payload):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:64: Failed
+_______________ test_rejects_malformed_batch_or_error[payload4] _______________
+
+payload = {'pages': [], 'errors': [{'source': '04-broken.pdf', 'error': 'bad', 'continued': True, 'page': 1}]}
+
+    @pytest.mark.parametrize("payload", [
+        {}, {"pages": [], "errors": {}},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": False}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": 1}]},
+        {"pages": [], "errors": [{"source": "04-broken.pdf", "error": "bad", "continued": True, "page": 1}]},
+    ])
+    def test_rejects_malformed_batch_or_error(payload):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+submissions\EnterFC\SA11\tests\test_contract.py:64: Failed
+=========================== short test summary info ===========================
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_missing_or_invalid_page_number[None]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_missing_or_invalid_page_number[0]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_missing_or_invalid_page_number[True]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_missing_or_invalid_page_number[-1]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_missing_or_invalid_page_number[1.5]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_missing_or_invalid_page_number[1]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_error_mixed_into_success
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[source-]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[method-]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[text-None]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[tables-value3]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[uncertainty-value4]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[tables-value5]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_invalid_page_fields[tables-value6]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_malformed_batch_or_error[payload0]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_malformed_batch_or_error[payload1]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_malformed_batch_or_error[payload2]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_malformed_batch_or_error[payload3]
+FAILED submissions/EnterFC/SA11/tests/test_contract.py::test_rejects_malformed_batch_or_error[payload4]
+19 failed, 1 passed in 0.41s
+PYTEST_EXIT=1

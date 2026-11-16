@@ -1,0 +1,4125 @@
+{
+  "text": "ВЕДОМОСТЬ КОМПЛЕКТАЦИИ\n\nПартия: OR-2026-11. Место приёмки: аудитория 305.\n\nКаждый комплект: ноутбук, блок питания, инструкция.\n\nНоутбуки: 12 штук. Блоки питания: 12 штук. Инструкции: 12 штук.\n\nВсего предметов: 36. Проверил: Михаил Волков. Дата: 13.11.2026.\n\nУчебный скан . страница 2\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t1984\t2807\t-1\t\n2\t1\t1\t0\t0\t0\t153\t166\t1302\t276\t-1\t\n3\t1\t1\t1\t0\t0\t153\t166\t566\t33\t-1\t\n4\t1\t1\t1\t1\t0\t153\t166\t566\t33\t-1\t\n5\t1\t1\t1\t1\t1\t153\t166\t235\t33\t91.611397\tВЕДОМОСТЬ\n5\t1\t1\t1\t1\t2\t405\t166\t314\t32\t96.103188\tКОМПЛЕКТАЦИИ\n3\t1\t1\t2\t0\t0\t153\t245\t1022\t37\t-1\t\n4\t1\t1\t2\t1\t0\t153\t245\t1022\t37\t-1\t\n5\t1\t1\t2\t1\t1\t153\t246\t146\t36\t93.184547\tПартия:\n5\t1\t1\t2\t1\t2\t317\t246\t225\t28\t91.168243\tOR-2026-11.\n5\t1\t1\t2\t1\t3\t560\t246\t114\t28\t93.304245\tМесто\n5\t1\t1\t2\t1\t4\t690\t245\t174\t37\t91.791664\tприёмки:\n5\t1\t1\t2\t1\t5\t880\t253\t203\t29\t96.464096\tаудитория\n5\t1\t1\t2\t1\t6\t1100\t246\t75\t28\t96.526421\t305.\n3\t1\t1\t3\t0\t0\t153\t325\t1081\t37\t-1\t\n4\t1\t1\t3\t1\t0\t153\t325\t1081\t37\t-1\t\n5\t1\t1\t3\t1\t1\t153\t325\t154\t33\t95.244781\tКаждый\n5\t1\t1\t3\t1\t2\t325\t333\t190\t21\t94.873016\tкомплект:\n5\t1\t1\t3\t1\t3\t535\t325\t160\t37\t91.640877\tноутбук,\n5\t1\t1\t3\t1\t4\t712\t325\t87\t29\t96.107857\tблок\n5\t1\t1\t3\t1\t5\t817\t333\t165\t24\t86.526329\tпитания,\n5\t1\t1\t3\t1\t6\t1000\t333\t234\t29\t94.895271\tинструкция.\n3\t1\t1\t4\t0\t0\t153\t405\t1302\t37\t-1\t\n4\t1\t1\t4\t1\t0\t153\t405\t1302\t37\t-1\t\n5\t1\t1\t4\t1\t1\t153\t405\t189\t37\t96.564445\tНоутбуки:\n5\t1\t1\t4\t1\t2\t360\t407\t40\t27\t96.356590\t12\n5\t1\t1\t4\t1\t3\t418\t413\t105\t29\t95.668236\tштук.\n5\t1\t1\t4\t1\t4\t542\t407\t111\t27\t96.404999\tБлоки\n5\t1\t1\t4\t1\t5\t670\t413\t167\t21\t96.340302\tпитания:\n5\t1\t1\t4\t1\t6\t856\t407\t39\t27\t96.520493\t12\n5\t1\t1\t4\t1\t7\t913\t413\t104\t29\t94.779114\tштук.\n5\t1\t1\t4\t1\t8\t1035\t407\t239\t35\t94.779114\tИнструкции:\n5\t1\t1\t4\t1\t9\t1292\t407\t40\t27\t94.066147\t12\n5\t1\t1\t4\t1\t10\t1350\t413\t105\t29\t94.066147\tштук.\n2\t1\t2\t0\t0\t0\t153\t487\t1292\t35\t-1\t\n3\t1\t2\t1\t0\t0\t153\t487\t1292\t35\t-1\t\n4\t1\t2\t1\t1\t0\t153\t487\t1292\t35\t-1\t\n5\t1\t2\t1\t1\t1\t153\t487\t104\t27\t96.920044\tВсего\n5\t1\t2\t1\t1\t2\t275\t493\t215\t29\t96.204201\tпредметов:\n5\t1\t2\t1\t1\t3\t509\t487\t53\t27\t96.030502\t36.\n5\t1\t2\t1\t1\t4\t580\t487\t192\t35\t96.238594\tПроверил:\n5\t1\t2\t1\t1\t5\t792\t487\t141\t27\t95.455650\tМихаил\n5\t1\t2\t1\t1\t6\t950\t487\t142\t27\t96.221260\tВолков.\n5\t1\t2\t1\t1\t7\t1109\t487\t102\t32\t96.556007\tДата:\n5\t1\t2\t1\t1\t8\t1231\t487\t214\t27\t96.326134\t13.11.2026.\n2\t1\t3\t0\t0\t0\t151\t2657\t514\t37\t-1\t\n3\t1\t3\t1\t0\t0\t151\t2657\t514\t37\t-1\t\n4\t1\t3\t1\t1\t0\t151\t2657\t514\t37\t-1\t\n5\t1\t3\t1\t1\t1\t151\t2657\t161\t28\t96.372528\tУчебный\n5\t1\t3\t1\t1\t2\t330\t2665\t82\t20\t91.552292\tскан\n5\t1\t3\t1\t1\t3\t432\t2670\t4\t5\t0.000000\t.\n5\t1\t3\t1\t1\t4\t454\t2665\t177\t29\t96.549644\tстраница\n5\t1\t3\t1\t1\t5\t648\t2659\t17\t26\t96.963860\t2\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 91,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 153,
+        "y0": 166,
+        "x1": 1455,
+        "y1": 442
+      },
+      "text": "ВЕДОМОСТЬ КОМПЛЕКТАЦИИ\n\nПартия: OR-2026-11. Место приёмки: аудитория 305.\n\nКаждый комплект: ноутбук, блок питания, инструкция.\n\nНоутбуки: 12 штук. Блоки питания: 12 штук. Инструкции: 12 штук.\n\n",
+      "confidence": 94,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 153,
+            "y0": 166,
+            "x1": 719,
+            "y1": 199
+          },
+          "text": "ВЕДОМОСТЬ КОМПЛЕКТАЦИИ\n\n",
+          "confidence": 93,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 153,
+                "y0": 166,
+                "x1": 719,
+                "y1": 199
+              },
+              "text": "ВЕДОМОСТЬ КОМПЛЕКТАЦИИ\n\n",
+              "confidence": 93,
+              "rowAttributes": {
+                "rowHeight": 38.5,
+                "descenders": 8.5,
+                "ascenders": 8.5
+              },
+              "baseline": {
+                "x0": 153,
+                "y0": 194,
+                "x1": 719,
+                "y1": 194
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 153,
+                    "y0": 166,
+                    "x1": 388,
+                    "y1": 199
+                  },
+                  "text": "ВЕДОМОСТЬ",
+                  "confidence": 91,
+                  "choices": [
+                    {
+                      "text": "ВЕДОМОСТЬ",
+                      "confidence": 91
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 153,
+                        "y0": 166,
+                        "x1": 173,
+                        "y1": 194
+                      },
+                      "text": "В",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 178,
+                        "y0": 166,
+                        "x1": 196,
+                        "y1": 194
+                      },
+                      "text": "Е",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 200,
+                        "y0": 166,
+                        "x1": 225,
+                        "y1": 199
+                      },
+                      "text": "Д",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 228,
+                        "y0": 167,
+                        "x1": 254,
+                        "y1": 194
+                      },
+                      "text": "О",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 260,
+                        "y0": 166,
+                        "x1": 285,
+                        "y1": 194
+                      },
+                      "text": "М",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 288,
+                        "y0": 167,
+                        "x1": 314,
+                        "y1": 194
+                      },
+                      "text": "О",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 318,
+                        "y0": 167,
+                        "x1": 340,
+                        "y1": 194
+                      },
+                      "text": "С",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 341,
+                        "y0": 166,
+                        "x1": 365,
+                        "y1": 194
+                      },
+                      "text": "Т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 368,
+                        "y0": 167,
+                        "x1": 388,
+                        "y1": 194
+                      },
+                      "text": "Ь",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 405,
+                    "y0": 166,
+                    "x1": 719,
+                    "y1": 198
+                  },
+                  "text": "КОМПЛЕКТАЦИИ",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "КОМПЛЕКТАЦИИ",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 405,
+                        "y0": 166,
+                        "x1": 427,
+                        "y1": 194
+                      },
+                      "text": "К",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 429,
+                        "y0": 167,
+                        "x1": 454,
+                        "y1": 194
+                      },
+                      "text": "О",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 460,
+                        "y0": 166,
+                        "x1": 485,
+                        "y1": 194
+                      },
+                      "text": "М",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 492,
+                        "y0": 166,
+                        "x1": 513,
+                        "y1": 194
+                      },
+                      "text": "П",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 517,
+                        "y0": 166,
+                        "x1": 539,
+                        "y1": 194
+                      },
+                      "text": "Л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 547,
+                        "y0": 166,
+                        "x1": 565,
+                        "y1": 194
+                      },
+                      "text": "Е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 568,
+                        "y0": 166,
+                        "x1": 592,
+                        "y1": 198
+                      },
+                      "text": "К",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 570,
+                        "y0": 166,
+                        "x1": 615,
+                        "y1": 194
+                      },
+                      "text": "Т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 615,
+                        "y0": 166,
+                        "x1": 640,
+                        "y1": 194
+                      },
+                      "text": "А",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 643,
+                        "y0": 167,
+                        "x1": 667,
+                        "y1": 198
+                      },
+                      "text": "Ц",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 672,
+                        "y0": 166,
+                        "x1": 693,
+                        "y1": 194
+                      },
+                      "text": "И",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 698,
+                        "y0": 166,
+                        "x1": 719,
+                        "y1": 194
+                      },
+                      "text": "И",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "bbox": {
+            "x0": 153,
+            "y0": 245,
+            "x1": 1175,
+            "y1": 282
+          },
+          "text": "Партия: OR-2026-11. Место приёмки: аудитория 305.\n\n",
+          "confidence": 93,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 153,
+                "y0": 245,
+                "x1": 1175,
+                "y1": 282
+              },
+              "text": "Партия: OR-2026-11. Место приёмки: аудитория 305.\n\n",
+              "confidence": 93,
+              "rowAttributes": {
+                "rowHeight": 36,
+                "descenders": 8,
+                "ascenders": 7
+              },
+              "baseline": {
+                "x0": 153,
+                "y0": 274,
+                "x1": 1175,
+                "y1": 274
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 153,
+                    "y0": 246,
+                    "x1": 299,
+                    "y1": 282
+                  },
+                  "text": "Партия:",
+                  "confidence": 93,
+                  "choices": [
+                    {
+                      "text": "Партия:",
+                      "confidence": 93
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 153,
+                        "y0": 246,
+                        "x1": 174,
+                        "y1": 274
+                      },
+                      "text": "П",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 180,
+                        "y0": 253,
+                        "x1": 198,
+                        "y1": 274
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 203,
+                        "y0": 253,
+                        "x1": 222,
+                        "y1": 282
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 224,
+                        "y0": 253,
+                        "x1": 244,
+                        "y1": 274
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 248,
+                        "y0": 253,
+                        "x1": 266,
+                        "y1": 274
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 271,
+                        "y0": 253,
+                        "x1": 288,
+                        "y1": 274
+                      },
+                      "text": "я",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 294,
+                        "y0": 255,
+                        "x1": 299,
+                        "y1": 274
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 317,
+                    "y0": 246,
+                    "x1": 542,
+                    "y1": 274
+                  },
+                  "text": "OR-2026-11.",
+                  "confidence": 91,
+                  "choices": [
+                    {
+                      "text": "OR-2026-11.",
+                      "confidence": 91
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 317,
+                        "y0": 247,
+                        "x1": 342,
+                        "y1": 274
+                      },
+                      "text": "O",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 347,
+                        "y0": 246,
+                        "x1": 368,
+                        "y1": 274
+                      },
+                      "text": "R",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 368,
+                        "y0": 261,
+                        "x1": 379,
+                        "y1": 265
+                      },
+                      "text": "-",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 383,
+                        "y0": 247,
+                        "x1": 400,
+                        "y1": 274
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 405,
+                        "y0": 247,
+                        "x1": 425,
+                        "y1": 274
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 429,
+                        "y0": 247,
+                        "x1": 447,
+                        "y1": 274
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 452,
+                        "y0": 247,
+                        "x1": 472,
+                        "y1": 274
+                      },
+                      "text": "6",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 475,
+                        "y0": 261,
+                        "x1": 485,
+                        "y1": 265
+                      },
+                      "text": "-",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 490,
+                        "y0": 246,
+                        "x1": 507,
+                        "y1": 274
+                      },
+                      "text": "1",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 514,
+                        "y0": 246,
+                        "x1": 530,
+                        "y1": 274
+                      },
+                      "text": "1",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 537,
+                        "y0": 268,
+                        "x1": 542,
+                        "y1": 274
+                      },
+                      "text": ".",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 560,
+                    "y0": 246,
+                    "x1": 674,
+                    "y1": 274
+                  },
+                  "text": "Место",
+                  "confidence": 93,
+                  "choices": [
+                    {
+                      "text": "Место",
+                      "confidence": 93
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 560,
+                        "y0": 246,
+                        "x1": 585,
+                        "y1": 274
+                      },
+                      "text": "М",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 590,
+                        "y0": 253,
+                        "x1": 609,
+                        "y1": 274
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 614,
+                        "y0": 253,
+                        "x1": 630,
+                        "y1": 274
+                      },
+                      "text": "с",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 633,
+                        "y0": 253,
+                        "x1": 652,
+                        "y1": 274
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 655,
+                        "y0": 253,
+                        "x1": 674,
+                        "y1": 274
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 690,
+                    "y0": 245,
+                    "x1": 864,
+                    "y1": 282
+                  },
+                  "text": "приёмки:",
+                  "confidence": 91,
+                  "choices": [
+                    {
+                      "text": "приёмки:",
+                      "confidence": 91
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 690,
+                        "y0": 253,
+                        "x1": 708,
+                        "y1": 274
+                      },
+                      "text": "п",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 715,
+                        "y0": 253,
+                        "x1": 734,
+                        "y1": 282
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 738,
+                        "y0": 253,
+                        "x1": 756,
+                        "y1": 274
+                      },
+                      "text": "и",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 760,
+                        "y0": 245,
+                        "x1": 779,
+                        "y1": 274
+                      },
+                      "text": "ё",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 783,
+                        "y0": 253,
+                        "x1": 805,
+                        "y1": 274
+                      },
+                      "text": "м",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 801,
+                        "y0": 245,
+                        "x1": 821,
+                        "y1": 282
+                      },
+                      "text": "к",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 812,
+                        "y0": 253,
+                        "x1": 829,
+                        "y1": 274
+                      },
+                      "text": "и",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 833,
+                        "y0": 253,
+                        "x1": 864,
+                        "y1": 274
+                      },
+                      "text": ":",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 880,
+                    "y0": 253,
+                    "x1": 1083,
+                    "y1": 282
+                  },
+                  "text": "аудитория",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "аудитория",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 880,
+                        "y0": 253,
+                        "x1": 898,
+                        "y1": 274
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 902,
+                        "y0": 253,
+                        "x1": 921,
+                        "y1": 282
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 924,
+                        "y0": 253,
+                        "x1": 946,
+                        "y1": 279
+                      },
+                      "text": "д",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 952,
+                        "y0": 253,
+                        "x1": 969,
+                        "y1": 274
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 973,
+                        "y0": 253,
+                        "x1": 992,
+                        "y1": 274
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 995,
+                        "y0": 253,
+                        "x1": 1014,
+                        "y1": 274
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1018,
+                        "y0": 253,
+                        "x1": 1037,
+                        "y1": 282
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1042,
+                        "y0": 253,
+                        "x1": 1059,
+                        "y1": 274
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1066,
+                        "y0": 253,
+                        "x1": 1083,
+                        "y1": 274
+                      },
+                      "text": "я",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1100,
+                    "y0": 246,
+                    "x1": 1175,
+                    "y1": 274
+                  },
+                  "text": "305.",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "305.",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1100,
+                        "y0": 247,
+                        "x1": 1117,
+                        "y1": 274
+                      },
+                      "text": "3",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1122,
+                        "y0": 247,
+                        "x1": 1142,
+                        "y1": 274
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1139,
+                        "y0": 246,
+                        "x1": 1154,
+                        "y1": 274
+                      },
+                      "text": "5",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1146,
+                        "y0": 246,
+                        "x1": 1175,
+                        "y1": 274
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "bbox": {
+            "x0": 153,
+            "y0": 325,
+            "x1": 1234,
+            "y1": 362
+          },
+          "text": "Каждый комплект: ноутбук, блок питания, инструкция.\n\n",
+          "confidence": 93,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 153,
+                "y0": 325,
+                "x1": 1234,
+                "y1": 362
+              },
+              "text": "Каждый комплект: ноутбук, блок питания, инструкция.\n\n",
+              "confidence": 93,
+              "rowAttributes": {
+                "rowHeight": 38.5,
+                "descenders": 8.5,
+                "ascenders": 8.5
+              },
+              "baseline": {
+                "x0": 153,
+                "y0": 354,
+                "x1": 1234,
+                "y1": 354
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 153,
+                    "y0": 325,
+                    "x1": 307,
+                    "y1": 358
+                  },
+                  "text": "Каждый",
+                  "confidence": 95,
+                  "choices": [
+                    {
+                      "text": "Каждый",
+                      "confidence": 95
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 153,
+                        "y0": 327,
+                        "x1": 175,
+                        "y1": 354
+                      },
+                      "text": "К",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 179,
+                        "y0": 333,
+                        "x1": 196,
+                        "y1": 354
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 200,
+                        "y0": 333,
+                        "x1": 230,
+                        "y1": 354
+                      },
+                      "text": "ж",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 233,
+                        "y0": 333,
+                        "x1": 255,
+                        "y1": 358
+                      },
+                      "text": "д",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 260,
+                        "y0": 333,
+                        "x1": 277,
+                        "y1": 354
+                      },
+                      "text": "ы",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 279,
+                        "y0": 325,
+                        "x1": 307,
+                        "y1": 354
+                      },
+                      "text": "й",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 325,
+                    "y0": 333,
+                    "x1": 515,
+                    "y1": 354
+                  },
+                  "text": "комплект:",
+                  "confidence": 94,
+                  "choices": [
+                    {
+                      "text": "комплект:",
+                      "confidence": 94
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 325,
+                        "y0": 333,
+                        "x1": 342,
+                        "y1": 354
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 345,
+                        "y0": 333,
+                        "x1": 364,
+                        "y1": 354
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 370,
+                        "y0": 333,
+                        "x1": 392,
+                        "y1": 354
+                      },
+                      "text": "м",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 397,
+                        "y0": 333,
+                        "x1": 414,
+                        "y1": 354
+                      },
+                      "text": "п",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 420,
+                        "y0": 333,
+                        "x1": 439,
+                        "y1": 354
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 443,
+                        "y0": 333,
+                        "x1": 463,
+                        "y1": 354
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 454,
+                        "y0": 333,
+                        "x1": 475,
+                        "y1": 354
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 467,
+                        "y0": 333,
+                        "x1": 484,
+                        "y1": 354
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 486,
+                        "y0": 333,
+                        "x1": 515,
+                        "y1": 354
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 535,
+                    "y0": 325,
+                    "x1": 695,
+                    "y1": 362
+                  },
+                  "text": "ноутбук,",
+                  "confidence": 91,
+                  "choices": [
+                    {
+                      "text": "ноутбук,",
+                      "confidence": 91
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 535,
+                        "y0": 333,
+                        "x1": 553,
+                        "y1": 354
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 557,
+                        "y0": 333,
+                        "x1": 576,
+                        "y1": 354
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 578,
+                        "y0": 333,
+                        "x1": 597,
+                        "y1": 362
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 599,
+                        "y0": 333,
+                        "x1": 619,
+                        "y1": 354
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 622,
+                        "y0": 325,
+                        "x1": 641,
+                        "y1": 354
+                      },
+                      "text": "б",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 645,
+                        "y0": 333,
+                        "x1": 664,
+                        "y1": 362
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 658,
+                        "y0": 325,
+                        "x1": 678,
+                        "y1": 362
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 668,
+                        "y0": 333,
+                        "x1": 695,
+                        "y1": 357
+                      },
+                      "text": ",",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 712,
+                    "y0": 325,
+                    "x1": 799,
+                    "y1": 354
+                  },
+                  "text": "блок",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "блок",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 712,
+                        "y0": 325,
+                        "x1": 731,
+                        "y1": 354
+                      },
+                      "text": "б",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 735,
+                        "y0": 333,
+                        "x1": 754,
+                        "y1": 354
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 759,
+                        "y0": 333,
+                        "x1": 777,
+                        "y1": 354
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 782,
+                        "y0": 333,
+                        "x1": 799,
+                        "y1": 354
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 817,
+                    "y0": 333,
+                    "x1": 982,
+                    "y1": 357
+                  },
+                  "text": "питания,",
+                  "confidence": 86,
+                  "choices": [
+                    {
+                      "text": "питания,",
+                      "confidence": 86
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 817,
+                        "y0": 333,
+                        "x1": 835,
+                        "y1": 354
+                      },
+                      "text": "п",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 840,
+                        "y0": 333,
+                        "x1": 858,
+                        "y1": 354
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 861,
+                        "y0": 333,
+                        "x1": 881,
+                        "y1": 353
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 884,
+                        "y0": 333,
+                        "x1": 902,
+                        "y1": 354
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 908,
+                        "y0": 333,
+                        "x1": 926,
+                        "y1": 354
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 920,
+                        "y0": 333,
+                        "x1": 941,
+                        "y1": 357
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 932,
+                        "y0": 333,
+                        "x1": 971,
+                        "y1": 354
+                      },
+                      "text": "я",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 977,
+                        "y0": 348,
+                        "x1": 982,
+                        "y1": 357
+                      },
+                      "text": ",",
+                      "confidence": 98,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1000,
+                    "y0": 333,
+                    "x1": 1234,
+                    "y1": 362
+                  },
+                  "text": "инструкция.",
+                  "confidence": 94,
+                  "choices": [
+                    {
+                      "text": "инструкция.",
+                      "confidence": 94
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1000,
+                        "y0": 333,
+                        "x1": 1018,
+                        "y1": 354
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1025,
+                        "y0": 333,
+                        "x1": 1043,
+                        "y1": 354
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1047,
+                        "y0": 333,
+                        "x1": 1064,
+                        "y1": 354
+                      },
+                      "text": "с",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1066,
+                        "y0": 333,
+                        "x1": 1086,
+                        "y1": 354
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1090,
+                        "y0": 333,
+                        "x1": 1109,
+                        "y1": 362
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1112,
+                        "y0": 333,
+                        "x1": 1131,
+                        "y1": 362
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1135,
+                        "y0": 333,
+                        "x1": 1153,
+                        "y1": 354
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1157,
+                        "y0": 333,
+                        "x1": 1177,
+                        "y1": 358
+                      },
+                      "text": "ц",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1171,
+                        "y0": 333,
+                        "x1": 1191,
+                        "y1": 362
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1182,
+                        "y0": 333,
+                        "x1": 1199,
+                        "y1": 354
+                      },
+                      "text": "я",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1206,
+                        "y0": 333,
+                        "x1": 1234,
+                        "y1": 354
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "bbox": {
+            "x0": 153,
+            "y0": 405,
+            "x1": 1455,
+            "y1": 442
+          },
+          "text": "Ноутбуки: 12 штук. Блоки питания: 12 штук. Инструкции: 12 штук.\n\n",
+          "confidence": 95,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 153,
+                "y0": 405,
+                "x1": 1455,
+                "y1": 442
+              },
+              "text": "Ноутбуки: 12 штук. Блоки питания: 12 штук. Инструкции: 12 штук.\n\n",
+              "confidence": 95,
+              "rowAttributes": {
+                "rowHeight": 35,
+                "descenders": 8,
+                "ascenders": 6
+              },
+              "baseline": {
+                "x0": 153,
+                "y0": 434,
+                "x1": 1455,
+                "y1": 434
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 153,
+                    "y0": 405,
+                    "x1": 342,
+                    "y1": 442
+                  },
+                  "text": "Ноутбуки:",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Ноутбуки:",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 153,
+                        "y0": 407,
+                        "x1": 174,
+                        "y1": 434
+                      },
+                      "text": "Н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 180,
+                        "y0": 413,
+                        "x1": 199,
+                        "y1": 434
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 201,
+                        "y0": 413,
+                        "x1": 220,
+                        "y1": 442
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 223,
+                        "y0": 413,
+                        "x1": 242,
+                        "y1": 434
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 245,
+                        "y0": 405,
+                        "x1": 264,
+                        "y1": 434
+                      },
+                      "text": "б",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 266,
+                        "y0": 413,
+                        "x1": 285,
+                        "y1": 442
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 290,
+                        "y0": 413,
+                        "x1": 307,
+                        "y1": 434
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 302,
+                        "y0": 405,
+                        "x1": 322,
+                        "y1": 442
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 313,
+                        "y0": 413,
+                        "x1": 342,
+                        "y1": 434
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 360,
+                    "y0": 407,
+                    "x1": 400,
+                    "y1": 434
+                  },
+                  "text": "12",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "12",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 360,
+                        "y0": 407,
+                        "x1": 377,
+                        "y1": 434
+                      },
+                      "text": "1",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 383,
+                        "y0": 407,
+                        "x1": 400,
+                        "y1": 434
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 418,
+                    "y0": 413,
+                    "x1": 523,
+                    "y1": 442
+                  },
+                  "text": "штук.",
+                  "confidence": 95,
+                  "choices": [
+                    {
+                      "text": "штук.",
+                      "confidence": 95
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 418,
+                        "y0": 413,
+                        "x1": 446,
+                        "y1": 434
+                      },
+                      "text": "ш",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 445,
+                        "y0": 413,
+                        "x1": 468,
+                        "y1": 442
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 451,
+                        "y0": 413,
+                        "x1": 491,
+                        "y1": 442
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 495,
+                        "y0": 413,
+                        "x1": 512,
+                        "y1": 434
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 519,
+                        "y0": 428,
+                        "x1": 523,
+                        "y1": 434
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 542,
+                    "y0": 407,
+                    "x1": 653,
+                    "y1": 434
+                  },
+                  "text": "Блоки",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Блоки",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 542,
+                        "y0": 407,
+                        "x1": 561,
+                        "y1": 434
+                      },
+                      "text": "Б",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 565,
+                        "y0": 413,
+                        "x1": 584,
+                        "y1": 434
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 589,
+                        "y0": 413,
+                        "x1": 607,
+                        "y1": 434
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 612,
+                        "y0": 413,
+                        "x1": 629,
+                        "y1": 434
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 635,
+                        "y0": 413,
+                        "x1": 653,
+                        "y1": 434
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 670,
+                    "y0": 413,
+                    "x1": 837,
+                    "y1": 434
+                  },
+                  "text": "питания:",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "питания:",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 670,
+                        "y0": 413,
+                        "x1": 688,
+                        "y1": 434
+                      },
+                      "text": "п",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 693,
+                        "y0": 413,
+                        "x1": 711,
+                        "y1": 434
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 716,
+                        "y0": 413,
+                        "x1": 736,
+                        "y1": 433
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 737,
+                        "y0": 413,
+                        "x1": 755,
+                        "y1": 434
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 762,
+                        "y0": 413,
+                        "x1": 779,
+                        "y1": 434
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 775,
+                        "y0": 413,
+                        "x1": 794,
+                        "y1": 434
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 785,
+                        "y0": 413,
+                        "x1": 803,
+                        "y1": 434
+                      },
+                      "text": "я",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 808,
+                        "y0": 413,
+                        "x1": 837,
+                        "y1": 434
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 856,
+                    "y0": 407,
+                    "x1": 895,
+                    "y1": 434
+                  },
+                  "text": "12",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "12",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 856,
+                        "y0": 407,
+                        "x1": 872,
+                        "y1": 434
+                      },
+                      "text": "1",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 878,
+                        "y0": 407,
+                        "x1": 895,
+                        "y1": 434
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 913,
+                    "y0": 413,
+                    "x1": 1017,
+                    "y1": 442
+                  },
+                  "text": "штук.",
+                  "confidence": 94,
+                  "choices": [
+                    {
+                      "text": "штук.",
+                      "confidence": 94
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 913,
+                        "y0": 413,
+                        "x1": 941,
+                        "y1": 434
+                      },
+                      "text": "ш",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 945,
+                        "y0": 413,
+                        "x1": 964,
+                        "y1": 434
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 967,
+                        "y0": 413,
+                        "x1": 986,
+                        "y1": 442
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 990,
+                        "y0": 413,
+                        "x1": 1007,
+                        "y1": 434
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1012,
+                        "y0": 428,
+                        "x1": 1017,
+                        "y1": 434
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1035,
+                    "y0": 407,
+                    "x1": 1274,
+                    "y1": 442
+                  },
+                  "text": "Инструкции:",
+                  "confidence": 94,
+                  "choices": [
+                    {
+                      "text": "Инструкции:",
+                      "confidence": 94
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1035,
+                        "y0": 407,
+                        "x1": 1056,
+                        "y1": 434
+                      },
+                      "text": "И",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1063,
+                        "y0": 413,
+                        "x1": 1081,
+                        "y1": 434
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1085,
+                        "y0": 413,
+                        "x1": 1102,
+                        "y1": 434
+                      },
+                      "text": "с",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1105,
+                        "y0": 413,
+                        "x1": 1124,
+                        "y1": 434
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1129,
+                        "y0": 413,
+                        "x1": 1147,
+                        "y1": 442
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1150,
+                        "y0": 413,
+                        "x1": 1169,
+                        "y1": 442
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1174,
+                        "y0": 413,
+                        "x1": 1191,
+                        "y1": 434
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1195,
+                        "y0": 413,
+                        "x1": 1216,
+                        "y1": 439
+                      },
+                      "text": "ц",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1210,
+                        "y0": 407,
+                        "x1": 1229,
+                        "y1": 442
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1220,
+                        "y0": 413,
+                        "x1": 1238,
+                        "y1": 434
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1245,
+                        "y0": 413,
+                        "x1": 1274,
+                        "y1": 434
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1292,
+                    "y0": 407,
+                    "x1": 1332,
+                    "y1": 434
+                  },
+                  "text": "12",
+                  "confidence": 94,
+                  "choices": [
+                    {
+                      "text": "12",
+                      "confidence": 94
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1292,
+                        "y0": 407,
+                        "x1": 1309,
+                        "y1": 434
+                      },
+                      "text": "1",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1315,
+                        "y0": 407,
+                        "x1": 1332,
+                        "y1": 434
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1350,
+                    "y0": 413,
+                    "x1": 1455,
+                    "y1": 442
+                  },
+                  "text": "штук.",
+                  "confidence": 94,
+                  "choices": [
+                    {
+                      "text": "штук.",
+                      "confidence": 94
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1350,
+                        "y0": 413,
+                        "x1": 1378,
+                        "y1": 434
+                      },
+                      "text": "ш",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1381,
+                        "y0": 413,
+                        "x1": 1401,
+                        "y1": 434
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1394,
+                        "y0": 413,
+                        "x1": 1413,
+                        "y1": 442
+                      },
+                      "text": "у",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1403,
+                        "y0": 413,
+                        "x1": 1423,
+                        "y1": 442
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1427,
+                        "y0": 413,
+                        "x1": 1455,
+                        "y1": 434
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bbox": {
+        "x0": 153,
+        "y0": 487,
+        "x1": 1445,
+        "y1": 522
+      },
+      "text": "Всего предметов: 36. Проверил: Михаил Волков. Дата: 13.11.2026.\n\n",
+      "confidence": 96,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 153,
+            "y0": 487,
+            "x1": 1445,
+            "y1": 522
+          },
+          "text": "Всего предметов: 36. Проверил: Михаил Волков. Дата: 13.11.2026.\n\n",
+          "confidence": 96,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 153,
+                "y0": 487,
+                "x1": 1445,
+                "y1": 522
+              },
+              "text": "Всего предметов: 36. Проверил: Михаил Волков. Дата: 13.11.2026.\n\n",
+              "confidence": 96,
+              "rowAttributes": {
+                "rowHeight": 35,
+                "descenders": 8,
+                "ascenders": 6
+              },
+              "baseline": {
+                "x0": 153,
+                "y0": 514,
+                "x1": 1445,
+                "y1": 514
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 153,
+                    "y0": 487,
+                    "x1": 257,
+                    "y1": 514
+                  },
+                  "text": "Всего",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Всего",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 153,
+                        "y0": 487,
+                        "x1": 173,
+                        "y1": 514
+                      },
+                      "text": "В",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 177,
+                        "y0": 493,
+                        "x1": 193,
+                        "y1": 514
+                      },
+                      "text": "с",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 197,
+                        "y0": 493,
+                        "x1": 216,
+                        "y1": 514
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 222,
+                        "y0": 493,
+                        "x1": 236,
+                        "y1": 514
+                      },
+                      "text": "г",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 238,
+                        "y0": 493,
+                        "x1": 257,
+                        "y1": 514
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 275,
+                    "y0": 493,
+                    "x1": 490,
+                    "y1": 522
+                  },
+                  "text": "предметов:",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "предметов:",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 275,
+                        "y0": 493,
+                        "x1": 293,
+                        "y1": 514
+                      },
+                      "text": "п",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 298,
+                        "y0": 493,
+                        "x1": 317,
+                        "y1": 522
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 320,
+                        "y0": 493,
+                        "x1": 339,
+                        "y1": 514
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 343,
+                        "y0": 493,
+                        "x1": 365,
+                        "y1": 519
+                      },
+                      "text": "д",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 370,
+                        "y0": 493,
+                        "x1": 392,
+                        "y1": 514
+                      },
+                      "text": "м",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 395,
+                        "y0": 493,
+                        "x1": 414,
+                        "y1": 514
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 418,
+                        "y0": 493,
+                        "x1": 437,
+                        "y1": 514
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 440,
+                        "y0": 493,
+                        "x1": 459,
+                        "y1": 514
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 450,
+                        "y0": 493,
+                        "x1": 472,
+                        "y1": 522
+                      },
+                      "text": "в",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 463,
+                        "y0": 493,
+                        "x1": 490,
+                        "y1": 514
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 509,
+                    "y0": 487,
+                    "x1": 562,
+                    "y1": 514
+                  },
+                  "text": "36.",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "36.",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 509,
+                        "y0": 487,
+                        "x1": 527,
+                        "y1": 514
+                      },
+                      "text": "3",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 532,
+                        "y0": 487,
+                        "x1": 552,
+                        "y1": 514
+                      },
+                      "text": "6",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 557,
+                        "y0": 508,
+                        "x1": 562,
+                        "y1": 514
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 580,
+                    "y0": 487,
+                    "x1": 772,
+                    "y1": 522
+                  },
+                  "text": "Проверил:",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Проверил:",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 580,
+                        "y0": 487,
+                        "x1": 601,
+                        "y1": 514
+                      },
+                      "text": "П",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 607,
+                        "y0": 493,
+                        "x1": 625,
+                        "y1": 522
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 629,
+                        "y0": 493,
+                        "x1": 647,
+                        "y1": 514
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 653,
+                        "y0": 493,
+                        "x1": 670,
+                        "y1": 514
+                      },
+                      "text": "в",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 674,
+                        "y0": 493,
+                        "x1": 693,
+                        "y1": 514
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 697,
+                        "y0": 493,
+                        "x1": 715,
+                        "y1": 522
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 720,
+                        "y0": 493,
+                        "x1": 738,
+                        "y1": 514
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 741,
+                        "y0": 493,
+                        "x1": 761,
+                        "y1": 514
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 768,
+                        "y0": 495,
+                        "x1": 772,
+                        "y1": 514
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 792,
+                    "y0": 487,
+                    "x1": 933,
+                    "y1": 514
+                  },
+                  "text": "Михаил",
+                  "confidence": 95,
+                  "choices": [
+                    {
+                      "text": "Михаил",
+                      "confidence": 95
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 792,
+                        "y0": 487,
+                        "x1": 817,
+                        "y1": 514
+                      },
+                      "text": "М",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 823,
+                        "y0": 493,
+                        "x1": 841,
+                        "y1": 514
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 845,
+                        "y0": 493,
+                        "x1": 864,
+                        "y1": 514
+                      },
+                      "text": "х",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 867,
+                        "y0": 493,
+                        "x1": 885,
+                        "y1": 514
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 892,
+                        "y0": 493,
+                        "x1": 909,
+                        "y1": 514
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 913,
+                        "y0": 493,
+                        "x1": 933,
+                        "y1": 514
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 950,
+                    "y0": 487,
+                    "x1": 1092,
+                    "y1": 514
+                  },
+                  "text": "Волков.",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Волков.",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 950,
+                        "y0": 487,
+                        "x1": 970,
+                        "y1": 514
+                      },
+                      "text": "В",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 974,
+                        "y0": 493,
+                        "x1": 992,
+                        "y1": 514
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 997,
+                        "y0": 493,
+                        "x1": 1016,
+                        "y1": 514
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1022,
+                        "y0": 493,
+                        "x1": 1039,
+                        "y1": 514
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1042,
+                        "y0": 493,
+                        "x1": 1061,
+                        "y1": 514
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1052,
+                        "y0": 487,
+                        "x1": 1074,
+                        "y1": 514
+                      },
+                      "text": "в",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1065,
+                        "y0": 493,
+                        "x1": 1092,
+                        "y1": 514
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1109,
+                    "y0": 487,
+                    "x1": 1211,
+                    "y1": 519
+                  },
+                  "text": "Дата:",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Дата:",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1109,
+                        "y0": 487,
+                        "x1": 1134,
+                        "y1": 519
+                      },
+                      "text": "Д",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1137,
+                        "y0": 493,
+                        "x1": 1155,
+                        "y1": 514
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1160,
+                        "y0": 493,
+                        "x1": 1179,
+                        "y1": 514
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1173,
+                        "y0": 487,
+                        "x1": 1192,
+                        "y1": 519
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1182,
+                        "y0": 493,
+                        "x1": 1211,
+                        "y1": 514
+                      },
+                      "text": ":",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 1231,
+                    "y0": 487,
+                    "x1": 1445,
+                    "y1": 514
+                  },
+                  "text": "13.11.2026.",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "13.11.2026.",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 1231,
+                        "y0": 487,
+                        "x1": 1247,
+                        "y1": 514
+                      },
+                      "text": "1",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1253,
+                        "y0": 487,
+                        "x1": 1271,
+                        "y1": 514
+                      },
+                      "text": "3",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1277,
+                        "y0": 508,
+                        "x1": 1282,
+                        "y1": 514
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1289,
+                        "y0": 487,
+                        "x1": 1306,
+                        "y1": 514
+                      },
+                      "text": "1",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1312,
+                        "y0": 487,
+                        "x1": 1329,
+                        "y1": 514
+                      },
+                      "text": "1",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1336,
+                        "y0": 508,
+                        "x1": 1340,
+                        "y1": 514
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1346,
+                        "y0": 487,
+                        "x1": 1364,
+                        "y1": 514
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1369,
+                        "y0": 487,
+                        "x1": 1388,
+                        "y1": 514
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1393,
+                        "y0": 487,
+                        "x1": 1411,
+                        "y1": 514
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1406,
+                        "y0": 487,
+                        "x1": 1425,
+                        "y1": 514
+                      },
+                      "text": "6",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 1416,
+                        "y0": 487,
+                        "x1": 1445,
+                        "y1": 514
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bbox": {
+        "x0": 151,
+        "y0": 2657,
+        "x1": 665,
+        "y1": 2694
+      },
+      "text": "Учебный скан . страница 2\n",
+      "confidence": 74,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 151,
+            "y0": 2657,
+            "x1": 665,
+            "y1": 2694
+          },
+          "text": "Учебный скан . страница 2\n",
+          "confidence": 74,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 151,
+                "y0": 2657,
+                "x1": 665,
+                "y1": 2694
+              },
+              "text": "Учебный скан . страница 2\n",
+              "confidence": 74,
+              "rowAttributes": {
+                "rowHeight": 33,
+                "descenders": 5,
+                "ascenders": 8
+              },
+              "baseline": {
+                "x0": 151,
+                "y0": 2685,
+                "x1": 665,
+                "y1": 2685
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 151,
+                    "y0": 2657,
+                    "x1": 312,
+                    "y1": 2685
+                  },
+                  "text": "Учебный",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "Учебный",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 151,
+                        "y0": 2659,
+                        "x1": 172,
+                        "y1": 2685
+                      },
+                      "text": "У",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 174,
+                        "y0": 2665,
+                        "x1": 190,
+                        "y1": 2685
+                      },
+                      "text": "ч",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 195,
+                        "y0": 2665,
+                        "x1": 214,
+                        "y1": 2685
+                      },
+                      "text": "е",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 219,
+                        "y0": 2657,
+                        "x1": 237,
+                        "y1": 2685
+                      },
+                      "text": "б",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 243,
+                        "y0": 2665,
+                        "x1": 261,
+                        "y1": 2685
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 267,
+                        "y0": 2665,
+                        "x1": 283,
+                        "y1": 2685
+                      },
+                      "text": "ы",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 286,
+                        "y0": 2657,
+                        "x1": 312,
+                        "y1": 2685
+                      },
+                      "text": "й",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 330,
+                    "y0": 2665,
+                    "x1": 412,
+                    "y1": 2685
+                  },
+                  "text": "скан",
+                  "confidence": 91,
+                  "choices": [
+                    {
+                      "text": "скан",
+                      "confidence": 91
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 330,
+                        "y0": 2665,
+                        "x1": 347,
+                        "y1": 2685
+                      },
+                      "text": "с",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 352,
+                        "y0": 2665,
+                        "x1": 369,
+                        "y1": 2685
+                      },
+                      "text": "к",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 372,
+                        "y0": 2665,
+                        "x1": 389,
+                        "y1": 2685
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 395,
+                        "y0": 2665,
+                        "x1": 412,
+                        "y1": 2685
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 432,
+                    "y0": 2670,
+                    "x1": 436,
+                    "y1": 2675
+                  },
+                  "text": ".",
+                  "confidence": 0,
+                  "choices": [
+                    {
+                      "text": ".",
+                      "confidence": 0
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 432,
+                        "y0": 2670,
+                        "x1": 436,
+                        "y1": 2675
+                      },
+                      "text": ".",
+                      "confidence": 84,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 454,
+                    "y0": 2665,
+                    "x1": 631,
+                    "y1": 2694
+                  },
+                  "text": "страница",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "страница",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 454,
+                        "y0": 2665,
+                        "x1": 470,
+                        "y1": 2685
+                      },
+                      "text": "с",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 473,
+                        "y0": 2665,
+                        "x1": 492,
+                        "y1": 2685
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 497,
+                        "y0": 2665,
+                        "x1": 515,
+                        "y1": 2694
+                      },
+                      "text": "р",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 519,
+                        "y0": 2665,
+                        "x1": 536,
+                        "y1": 2685
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 542,
+                        "y0": 2665,
+                        "x1": 559,
+                        "y1": 2685
+                      },
+                      "text": "н",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 567,
+                        "y0": 2665,
+                        "x1": 584,
+                        "y1": 2685
+                      },
+                      "text": "и",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 582,
+                        "y0": 2665,
+                        "x1": 601,
+                        "y1": 2694
+                      },
+                      "text": "ц",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 590,
+                        "y0": 2665,
+                        "x1": 631,
+                        "y1": 2690
+                      },
+                      "text": "а",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 648,
+                    "y0": 2659,
+                    "x1": 665,
+                    "y1": 2685
+                  },
+                  "text": "2",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "2",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 648,
+                        "y0": 2659,
+                        "x1": 665,
+                        "y1": 2685
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "AUTO",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

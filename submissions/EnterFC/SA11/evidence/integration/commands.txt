@@ -1,0 +1,5 @@
+Команды из корня worktree, Python существующего окружения H04:
+../Training-H04/submissions/EnterFC/H04/.venv/Scripts/python.exe -m pytest -q -p no:cacheprovider --basetemp submissions/EnterFC/SA11/.cache/pytest-red submissions/EnterFC/SA11/tests/test_batch.py
+RED: импортируемый stub возвращал пустой пакет, 4 failed (assertion / DID NOT RAISE), exit 1. Первичный запуск до создания .cache дал setup error, не считался RED; затем каталог создан и тест повторён.
+GREEN: тот же файл, --basetemp .cache/pytest-green; 4 passed, exit 0.
+Дополнительная проверка полноты страниц/источника: --basetemp .cache/pytest-completeness-red, 2 failed / 4 passed, exit 1; реализация проверки добавлена после ожидаемого RED. Итоговый GREEN сохранён отдельно.

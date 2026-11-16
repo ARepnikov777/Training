@@ -1,0 +1,154 @@
+{
+  "text": "20000\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t270\t87\t-1\t\n2\t1\t1\t0\t0\t0\t8\t27\t102\t25\t-1\t\n3\t1\t1\t1\t0\t0\t8\t27\t102\t25\t-1\t\n4\t1\t1\t1\t1\t0\t8\t27\t102\t25\t-1\t\n5\t1\t1\t1\t1\t1\t8\t27\t102\t25\t96.813812\t20000\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 96,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 8,
+        "y0": 27,
+        "x1": 110,
+        "y1": 52
+      },
+      "text": "20000\n",
+      "confidence": 96,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 8,
+            "y0": 27,
+            "x1": 110,
+            "y1": 52
+          },
+          "text": "20000\n",
+          "confidence": 96,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 8,
+                "y0": 27,
+                "x1": 110,
+                "y1": 52
+              },
+              "text": "20000\n",
+              "confidence": 96,
+              "rowAttributes": {
+                "rowHeight": 34,
+                "descenders": 8.5,
+                "ascenders": 8.5
+              },
+              "baseline": {
+                "x0": 8,
+                "y0": 52,
+                "x1": 110,
+                "y1": 52
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 8,
+                    "y0": 27,
+                    "x1": 110,
+                    "y1": 52
+                  },
+                  "text": "20000",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "20000",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 8,
+                        "y0": 27,
+                        "x1": 24,
+                        "y1": 52
+                      },
+                      "text": "2",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 30,
+                        "y0": 27,
+                        "x1": 47,
+                        "y1": 52
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 50,
+                        "y0": 27,
+                        "x1": 67,
+                        "y1": 52
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 71,
+                        "y0": 27,
+                        "x1": 89,
+                        "y1": 52
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 93,
+                        "y0": 27,
+                        "x1": 110,
+                        "y1": 52
+                      },
+                      "text": "0",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

@@ -1,0 +1,238 @@
+{
+  "text": "Кол-во, шт.\n",
+  "hocr": null,
+  "tsv": "1\t1\t0\t0\t0\t0\t0\t0\t270\t86\t-1\t\n2\t1\t1\t0\t0\t0\t9\t26\t193\t30\t-1\t\n3\t1\t1\t1\t0\t0\t9\t26\t193\t30\t-1\t\n4\t1\t1\t1\t1\t0\t9\t26\t193\t30\t-1\t\n5\t1\t1\t1\t1\t1\t9\t26\t122\t30\t95.782547\tКол-во,\n5\t1\t1\t1\t1\t2\t148\t32\t54\t19\t96.531311\tшт.\n",
+  "box": null,
+  "unlv": null,
+  "osd": null,
+  "pdf": null,
+  "imageColor": null,
+  "imageGrey": null,
+  "imageBinary": null,
+  "confidence": 95,
+  "blocks": [
+    {
+      "bbox": {
+        "x0": 9,
+        "y0": 26,
+        "x1": 202,
+        "y1": 56
+      },
+      "text": "Кол-во, шт.\n",
+      "confidence": 96,
+      "blocktype": 1,
+      "paragraphs": [
+        {
+          "bbox": {
+            "x0": 9,
+            "y0": 26,
+            "x1": 202,
+            "y1": 56
+          },
+          "text": "Кол-во, шт.\n",
+          "confidence": 96,
+          "is_ltr": 1,
+          "lines": [
+            {
+              "bbox": {
+                "x0": 9,
+                "y0": 26,
+                "x1": 202,
+                "y1": 56
+              },
+              "text": "Кол-во, шт.\n",
+              "confidence": 96,
+              "rowAttributes": {
+                "rowHeight": 30,
+                "descenders": 5,
+                "ascenders": 6
+              },
+              "baseline": {
+                "x0": 9,
+                "y0": 51,
+                "x1": 202,
+                "y1": 51
+              },
+              "words": [
+                {
+                  "bbox": {
+                    "x0": 9,
+                    "y0": 26,
+                    "x1": 131,
+                    "y1": 56
+                  },
+                  "text": "Кол-во,",
+                  "confidence": 95,
+                  "choices": [
+                    {
+                      "text": "Кол-во,",
+                      "confidence": 95
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 9,
+                        "y0": 26,
+                        "x1": 29,
+                        "y1": 51
+                      },
+                      "text": "К",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 31,
+                        "y0": 32,
+                        "x1": 48,
+                        "y1": 51
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 51,
+                        "y0": 32,
+                        "x1": 68,
+                        "y1": 51
+                      },
+                      "text": "л",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 73,
+                        "y0": 39,
+                        "x1": 82,
+                        "y1": 43
+                      },
+                      "text": "-",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 86,
+                        "y0": 32,
+                        "x1": 101,
+                        "y1": 51
+                      },
+                      "text": "в",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 105,
+                        "y0": 32,
+                        "x1": 122,
+                        "y1": 51
+                      },
+                      "text": "о",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 126,
+                        "y0": 47,
+                        "x1": 131,
+                        "y1": 56
+                      },
+                      "text": ",",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                },
+                {
+                  "bbox": {
+                    "x0": 148,
+                    "y0": 32,
+                    "x1": 202,
+                    "y1": 51
+                  },
+                  "text": "шт.",
+                  "confidence": 96,
+                  "choices": [
+                    {
+                      "text": "шт.",
+                      "confidence": 96
+                    }
+                  ],
+                  "font_name": "",
+                  "symbols": [
+                    {
+                      "bbox": {
+                        "x0": 148,
+                        "y0": 32,
+                        "x1": 173,
+                        "y1": 51
+                      },
+                      "text": "ш",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 166,
+                        "y0": 32,
+                        "x1": 183,
+                        "y1": 51
+                      },
+                      "text": "т",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    },
+                    {
+                      "bbox": {
+                        "x0": 175,
+                        "y0": 32,
+                        "x1": 202,
+                        "y1": 51
+                      },
+                      "text": ".",
+                      "confidence": 99,
+                      "is_superscript": 0,
+                      "is_subscript": 0,
+                      "is_dropcap": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layoutBlocks": null,
+  "psm": "SINGLE_LINE",
+  "oem": "LSTM_ONLY",
+  "version": "5.1.0-284-g9c08",
+  "debug": null,
+  "rotateRadians": 0
+}

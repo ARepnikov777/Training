@@ -1,0 +1,4 @@
+﻿RED and GREEN (from repository root):
+../Training-H04/submissions/EnterFC/H04/.venv/Scripts/python.exe -m pytest -q -p no:cacheprovider submissions/EnterFC/SA11/tests/test_contract.py
+RED: exit 1, 19 failed and 1 passed against no-op stubs; failures: DID NOT RAISE ValueError.
+GREEN: exit 0, 20 passed against implementation.

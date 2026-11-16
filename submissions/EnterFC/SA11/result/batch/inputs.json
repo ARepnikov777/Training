@@ -1,0 +1,18 @@
+[
+  {
+    "source": "01-text.pdf",
+    "sha256": "7ce24c85607c591f31f537d6e4fc63df5ee4f85f2ff001108597ad046bf164e3"
+  },
+  {
+    "source": "02-scan.pdf",
+    "sha256": "3f424cceea3f5f68377b9a71bb0c3c55bc422a4450d8fb567f38d31149254f08"
+  },
+  {
+    "source": "03-rotated-table.pdf",
+    "sha256": "306af1b2666dcd0842cefabc5daa01a94c7205a60846897b1931df644d6c884d"
+  },
+  {
+    "source": "04-broken.pdf",
+    "sha256": "eca6a6505cb2129162243d3b9e066c42731c8315911b6fd2f2f92d6feacd6bcd"
+  }
+]
