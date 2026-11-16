@@ -1,0 +1,28 @@
+# graph_check.py (2026-11-15 12:56 +05)
+# source: mbk-dev/ai-learning skills/agent-behavior-graph/scripts/graph_check.py
+
+$ python3 -I graph_check.py workflow.md
+[1] states=21 edges=36
+[1] unsupported_syntax=[]
+[1] empty_graph=False
+[1] missing_start=False
+[1] missing_finish=False
+[1] dead_ends=[]
+[1] unreachable_states=[]
+[1] no_final_path=[]
+[1] choices_without_else=[]
+[1] multiple_else=[]
+[1] unbounded_loops=[]
+[1] escalation_not_final=[]
+OK
+exit=0
+
+## Мутация 1: убран предел на fix_gate → Fix
+[1] unbounded_loops=['Accept -> accept_check -> fix_gate -> Fix -> Validate -> validate_check -> Review -> review_check -> Accept']
+exit=1
+
+## Мутация 2: убрано ребро [иначе] у validate_check
+[1] choices_without_else=['validate_check']
+exit=1
+
+Ограничение: проверка эвристическая. Она не доказывает, что счётчики реально растут и что граф исполнялся; фактический путь в run-log.md.
